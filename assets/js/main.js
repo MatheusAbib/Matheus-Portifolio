@@ -214,37 +214,51 @@
 
 })();
 
-  document.querySelector('.php-email-form').addEventListener('submit', async function (e) {
+ document.querySelector('.php-email-form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
 
-    document.querySelector('.loading').style.display = 'block';
+    // Reset e mostra loading
+    document.querySelector('.loading').style.display = 'flex';
     document.querySelector('.error-message').style.display = 'none';
     document.querySelector('.sent-message').style.display = 'none';
+    document.querySelector('.error-message').innerHTML = '';
 
     try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData
-      });
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
 
-      const result = await response.json();
+        const result = await response.json();
 
-      document.querySelector('.loading').style.display = 'none';
+        document.querySelector('.loading').style.display = 'none';
 
-      if (result.status === 'success') {
-        document.querySelector('.sent-message').innerText = result.message;
-        document.querySelector('.sent-message').style.display = 'block';
-        form.reset();
-      } else {
-        document.querySelector('.error-message').innerText = result.message || 'Erro desconhecido.';
-        document.querySelector('.error-message').style.display = 'block';
-      }
+        if (result.status === 'success') {
+            document.querySelector('.sent-message').style.display = 'block';
+            form.reset();
+            
+            // Opcional: Esconde a mensagem após 5 segundos
+            setTimeout(() => {
+                document.querySelector('.sent-message').style.display = 'none';
+            }, 5000);
+            
+        } else {
+            throw new Error(result.message || 'Erro ao enviar mensagem. Tente novamente.');
+        }
     } catch (error) {
-      document.querySelector('.loading').style.display = 'none';
-      document.querySelector('.error-message').innerText = 'Erro ao enviar. Tente novamente.';
-      document.querySelector('.error-message').style.display = 'block';
+        document.querySelector('.loading').style.display = 'none';
+        document.querySelector('.error-message').innerHTML = `
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <span>${error.message}</span>
+        `;
+        document.querySelector('.error-message').style.display = 'block';
     }
-  });
+});
+
+

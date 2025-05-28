@@ -60,12 +60,31 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
-  
+
+/* ====================== */
+/* REMOÇÃO DAS MARGENS BRANCAS */
+/* ====================== */
+
+.main {
+    padding-top: 0; /* Remove padding extra no topo */
+    margin-top: 0;
+        flex: 1 0 auto; /* Cresce para ocupar o espaço disponível */
+
 }
+
+.footer {
+    flex-shrink: 0; /* Não reduzir o footer */
+    width: 100%;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* 4. Remove espaçamento extra do último elemento antes do footer */
+body > *:last-child:not(.footer) {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 
 a {
   color: var(--accent-color);
@@ -2270,7 +2289,7 @@ section,
 }
 
 .testimonials .testimonial-content {
-  padding: 40px 30px 30px;
+  padding: 20px 15px 15px ;
   position: relative;
   flex-grow: 1;
 }
@@ -2343,7 +2362,7 @@ section,
 }
 
 .testimonials .swiper-pagination {
-  margin-top: 30px;
+  margin-top: 40px;
   position: relative;
 }
 
@@ -2497,7 +2516,7 @@ section,
 
 .portfolio-details .swiper-button-prev,
 .portfolio-details .swiper-button-next {
-  width: 48px;
+  width: 40px;
   height: 48px;
 }
 
@@ -2901,14 +2920,35 @@ section,
 
 /* Corrige o overlay */
 .hero .team-overlay {
-  background-color: rgba(0, 0, 0, 0.6); /* ou o valor original exato se for diferente */
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  
 }
 
 /* Corrige os ícones dentro do overlay */
 .hero .team-social i {
-  font-size: 1.25rem; /* aumente conforme o original, talvez 1.5rem */
-  color: #fff; /* ou outra cor usada anteriormente */
-  margin: 0 0.25rem;
+  font-size: 1.8rem; /* aumente conforme o original, talvez 1.5rem */
+  color: var(--contrast-color);
+  margin: 0 2rem;
+  justify-content: center;
+}
+
+.hero .team-social{
+  text-align: center;
+
+}
+
+.hero .team-overlay h1{
+    color: var(--contrast-color);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      line-height: 1.5;
+
+
+}
+
+.hero .team-social i:hover {
+  color: #ffffffcb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
 }
 
 /* Ajuste a transição do hover (se estiver diferente) */
@@ -3171,5 +3211,65 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# MENSSAGEM DO FORMULARIO
 --------------------------------------------------------------*/
+/* Mensagens do formulário */
+.php-email-form .loading,
+.php-email-form .error-message,
+.php-email-form .sent-message {
+    display: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.php-email-form .loading {
+    color: #0d6efd;
+    background: rgba(13, 110, 253, 0.1);
+    text-align: center;
+}
+
+
+
+.php-email-form .success-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.php-email-form .success-content i {
+    font-size: 2rem;
+    color: #5fc977;
+}
+
+.php-email-form .success-content h5 {
+    margin-bottom: 5px;
+    color: #fcfcfc;
+}
+
+.php-email-form .success-content p {
+    margin: 0;
+    color: #fcfcfc;
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.php-email-form .error-message {
+    background: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+}
+
+.php-email-form .error-message i {
+    color: #dc3545;
+    margin-right: 10px;
+}
+
