@@ -3,7 +3,7 @@
         'name' => 'seu-projeto/render-deploy',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd587d517c0d70f002720af1e0df381d1ebe7247e',
+        'reference' => 'f42dde1006e1e8452d179d69155c6c7b05d3f450',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'seu-projeto/render-deploy' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd587d517c0d70f002720af1e0df381d1ebe7247e',
+            'reference' => 'f42dde1006e1e8452d179d69155c6c7b05d3f450',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
