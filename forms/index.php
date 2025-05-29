@@ -4,7 +4,6 @@ require __DIR__ . '/../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Carrega as configurações do caminho específico
 $config = require __DIR__ . '/config.php';
 
 header('Content-Type: application/json');
@@ -26,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // Configuração do SendGrid
         $mail->isSMTP();
         $mail->Host = 'smtp.sendgrid.net';
         $mail->SMTPAuth = true;
@@ -54,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <p>Mensagem enviada pelo formulário do seu site</p>
                 </footer>
             </div>
-            ";
+        ";
 
         $mail->send();
 
