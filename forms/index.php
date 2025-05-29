@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Carrega as configurações do caminho específico
-$config = require 'C:/Users/97857/Desktop/projects/Portifolio/forms/config.php';
+$config = require __DIR__ . '/config.php';
 
 header('Content-Type: application/json');
 
