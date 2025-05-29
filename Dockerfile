@@ -15,8 +15,8 @@ WORKDIR /app
 # Instala as dependências do Composer
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Expõe a porta que o Render define automaticamente
+# Expõe a porta (Render define a variável $PORT automaticamente)
 EXPOSE 10000
 
-# Comando que inicia o servidor PHP embutido apontando para o diretório público
-CMD ["php", "-S", "0.0.0.0:$PORT", "-t", "."]
+# Inicia o servidor PHP com a variável $PORT interpretada corretamente
+CMD sh -c "php -S 0.0.0.0:$PORT -t ."
