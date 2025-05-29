@@ -1,20 +1,22 @@
 {
-    "description": "Projeto PHP com PHPMailer e DotEnv",
-    "type": "project",
+    "name": "seu-projeto/render-deploy",
+    "description": "Projeto PHP com PHPMailer",
     "require": {
-        "php": "^8.1",                      
-        "ext-mbstring": "*",              
-        "ext-openssl": "*",                 
-        "vlucas/phpdotenv": "^5.6",          
-        "phpmailer/phpmailer": "^6.10"       
+        "php": "^8.1",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^6.10"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "sort-packages": true
     },
     "scripts": {
         "post-install-cmd": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
-    },
-    "config": {
-        "optimize-autoloader": true,          
-        "platform-check": false            
     }
 }
