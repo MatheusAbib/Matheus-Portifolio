@@ -1,36 +1,16 @@
 FROM php:8.2-cli
 
-# Instala dependências do sistema e extensões PHP
-RUN apt-get update && \
-    apt-get install -y \
-    unzip \
-    curl \
-    git \
-    libzip-dev \
-    && docker-php-ext-install \
-    mbstring \
-    openssl \
-    zip \
-    && rm -rf /var/lib/apt/lists/*
+# Instalar extensões se precisar, por exemplo:
+# RUN docker-php-ext-install mysqli
 
-# Instala o Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Copia todos os arquivos do seu projeto para dentro do container
+COPY . /app
 
-# Cria diretório do app e configura permissões
-RUN mkdir -p /app && chown -R www-data:www-data /app
+# Define o diretório de trabalho
 WORKDIR /app
 
-# Copia arquivos (ignorando o que está no .dockerignore)
-COPY --chown=www-data:www-data . .
-
-# Instala dependências do Composer (com cache otimizado)
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-
-# Limpa cache para reduzir tamanho da imagem
-RUN composer clear-cache
-
-# Porta exposta (Render usa variável $PORT)
+# Expõe a porta que o Render usará
 EXPOSE 10000
 
-# Comando de inicialização otimizado para Render
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT} -t ."]
+# Usa o PHP embutido para rodar o servidor
+CMD ["php", "-S", "0.0.0.0:10000", "-t", "."]

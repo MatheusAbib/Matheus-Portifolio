@@ -2,7 +2,7 @@
     "name": "seu-projeto/render-deploy",
     "description": "Projeto PHP com PHPMailer",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "ext-mbstring": "*",
         "ext-openssl": "*",
         "ext-json": "*",
