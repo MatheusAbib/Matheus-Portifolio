@@ -9,14 +9,18 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Cria e define o diretório de trabalho
 WORKDIR /app
 
-# Copia todos os arquivos do projeto para dentro do container
-COPY . /app
+# Copia arquivos de definição do Composer primeiro para cache eficiente
+COPY composer.json composer.lock /app/
 
-# Instala as dependências do Composer
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+# Instala as dependências do Composer sem rodar scripts (evita falha por falta de .env.example)
+RUN composer install --no-scripts --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+# Agora copia o restante da aplicação
+COPY . /app
 
 # Expõe a porta (Render define a variável $PORT automaticamente)
 EXPOSE 10000
 
-# Inicia o servidor PHP com a variável $PORT interpretada corretamente
-CMD sh -c "php -S 0.0.0.0:$PORT -t ."
+
+# Usa o PHP embutido para rodar o servidor
+CMD ["php", "-S", "0.0.0.0:10000", "-t", "."]
