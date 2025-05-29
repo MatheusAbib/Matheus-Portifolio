@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: seu-portfolio
-    runtime: php
-    buildCommand: composer install --no-dev
-    startCommand: php -S 0.0.0.0:$PORT -t public
