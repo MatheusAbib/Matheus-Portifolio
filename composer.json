@@ -1,0 +1,23 @@
+{
+    "name": "seu-projeto/render-deploy",
+    "description": "Projeto PHP com PHPMailer",
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "phpmailer/phpmailer": "^6.10",
+        "symfony/polyfill-ctype": "^1.32",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "sort-packages": true
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    }
+}
