@@ -1809,10 +1809,13 @@ section,
 
 
 /* Para telas muito pequenas, ajuste o max-height para melhorar a usabilidade */
-@media (max-height: 400px) {
+@media (max-height: 480px) {
   .portfolio-scroll-container {
     max-height: 60vh;
     min-height: 200px;
+  }
+  .about-card{
+    display: none !important;
   }
 }
 
@@ -1844,6 +1847,10 @@ section,
 
    .portfolio-scroll-container::-webkit-scrollbar {
     display: none;
+  }
+
+  .about-card{
+    display: none !important;
   }
 }
 
@@ -2739,6 +2746,8 @@ section,
   margin: 0;
 }
 
+
+
 .softskills li {
   display: flex;
   align-items: center;
@@ -2751,6 +2760,12 @@ section,
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   transition: background 0.3s ease;
 }
+
+.softskills li span {
+  display: inline-block;
+  flex: 1;
+}
+
 
 .softskills li:hover {
   background: #6762ff10; 
