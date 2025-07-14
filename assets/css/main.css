@@ -471,10 +471,6 @@ h6 {
 
 }
 
-.footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
-}
 
 .footer .footer-about .logo span {
   color: var(--heading-color);
@@ -777,7 +773,7 @@ section,
   position: relative;
   overflow: hidden;
   background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  padding-bottom: 80px;
+  padding-bottom: 35px;
 }
 
 .hero .badge-wrapper .d-inline-flex {
@@ -963,141 +959,39 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
-.about .content .who-we-are {
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
 
-.about .content h3 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  padding-bottom: 10px;
-}
-
-.about .content ul i {
-  font-size: 1.25rem;
-  margin-right: 4px;
-  color: var(--accent-color);
-}
-
-.about .content p:last-child {
-  margin-bottom: 0;
-}
-
-.about .content .read-more {
+.hero .content .read-more {
   background: var(--accent-color);
   color: var(--contrast-color);
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  padding: 10px 20px;
+  margin-top: 15px;
+  font-size: 13px;
+  padding: 9px 15px;
   border-radius: 5px;
+  margin-bottom: 20px;
   transition: 0.3s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.about .content .read-more i {
+.hero .content .read-more i {
   font-size: 18px;
   margin-left: 5px;
   line-height: 0;
   transition: 0.3s;
 }
 
-.about .content .read-more:hover {
+.hero .content .read-more:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
   padding-right: 19px;
 }
 
-.about .content .read-more:hover i {
+.hero .content .read-more:hover i {
   margin-left: 10px;
 }
 
-.about .about-images img {
-  border-radius: 10px;
-}
-
-@media (min-width: 460px) and (max-width: 575px) {
-  .about-images .col-12 {
-    width: 50% !important;
-    float: left;
-  
-  }
-
-    .stacked-imgs .col-12 {
-    width: 100% !important;
-  }
-
- 
-  .stacked-imgs img,
-  .about-images img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-    .about-images .col-sm-6 {
-    width: 50% !important;
-  }
-
-}
-
-.about-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.about-card:hover {
-  transform: translateY(-5px);
-}
-
-.about-image {
-  position: relative;
-}
-
-.about-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: #fff;
-  opacity: 0;
-  transition: all 0.3s ease;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-
-.about-overlay h1 {
-  color: var(--contrast-color);
-  font-size: 1.5rem;
-}
-
-.about-image:hover .about-overlay {
-  opacity: 1;
-}
 
 .overlay-link {
   color: var(--contrast-color);
@@ -1129,11 +1023,6 @@ section,
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-
-.about-image:hover .arrow-link {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .arrow-link:focus {
   outline: 2px solid var(--contrast-color);
@@ -1813,9 +1702,6 @@ section,
     max-height: 60vh;
     min-height: 200px;
   }
-  .about-card{
-    display: none !important;
-  }
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -1848,9 +1734,6 @@ section,
     display: none;
   }
 
-  .about-card{
-    display: none !important;
-  }
 }
 
 
@@ -2584,6 +2467,7 @@ section,
 .service-details .service-tabs .tab-content h3 {
   font-size: 28px;
   font-weight: 700;
+  margin-top: 50px;
   margin-bottom: 15px;
   color: var(--heading-color);
 }
