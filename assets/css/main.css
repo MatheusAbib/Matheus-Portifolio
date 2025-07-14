@@ -728,7 +728,6 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
   position: relative;
 }
 
@@ -1004,7 +1003,7 @@ section,
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: 5px;
   transition: 0.3s;
   display: inline-flex;
@@ -2449,10 +2448,6 @@ section,
   margin-right: 15px;
 }
 
-.service-details .service-tabs {
-  margin-top: 80px;
-}
-
 .service-details .service-tabs .nav-tabs {
   border: none;
   display: flex;
@@ -2460,7 +2455,7 @@ section,
   gap: 15px;
   margin-bottom: 30px;
   overflow-x: auto;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -2468,7 +2463,6 @@ section,
     flex-wrap: nowrap;
     white-space: nowrap;
     overflow-x: auto;
-    scrollbar-width: thin;
   }
 
   .service-details .service-tabs .nav-tabs::-webkit-scrollbar {
@@ -2559,7 +2553,7 @@ section,
 
 .service-details .service-tabs .nav-tabs .nav-link {
   border: none;
-  padding: 15px 25px;
+  padding: 15px 30px;
   border-radius: 50px;
   color: var(--default-color);
   font-weight: 600;
@@ -2581,7 +2575,7 @@ section,
 }
 
 .service-details .service-tabs .tab-content {
-  padding: 40px;
+  padding: 25px;
   border-radius: 16px;
   background: var(--surface-color);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
