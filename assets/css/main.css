@@ -1627,6 +1627,27 @@ section,
   padding: 25px;
 }
 
+.portfolio-content .github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--default-color);
+  color: var(--contrast-color);
+  margin-top: 8px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.portfolio-content .github-link:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: scale(1.1);
+}
+
+
 .portfolio .portfolio-card .portfolio-content .category {
   font-size: 14px;
   color: var(--accent-color);
