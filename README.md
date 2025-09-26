@@ -34,4 +34,4 @@
 
 ---
 
-🔹 **Última atualização:** Junho de 2024
+🔹 **Última atualização:** Setembro de 2024
