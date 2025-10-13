@@ -1,0 +1,31 @@
+{
+  "name": "portifolio",
+  "version": "1.0.0",
+  "description": "**Olá, eu sou Matheus Bilitardo Abib** 👋 Desenvolvedor Jr focado em tecnologia e soluções criativas.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+"dependencies": {
+  "@sendgrid/mail": "^8.1.5",
+  "dotenv": "^16.3.1",
+  "express": "^4.18.2",
+  "cors": "^2.8.5",
+  "body-parser": "^1.20.2"
+},
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusAbib/Matheus-Portifolio.git"
+  },
+  "keywords": ["portifolio", "developer", "sendgrid", "email", "nodejs"],
+  "author": "Matheus Bilitardo Abib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusAbib/Matheus-Portifolio/issues"
+  },
+  "homepage": "https://github.com/MatheusAbib/Matheus-Portifolio#readme"
+}
