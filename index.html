@@ -259,12 +259,17 @@
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="service-details-tab-4-tab" data-bs-toggle="tab" data-bs-target="#service-details-tab-4" type="button" role="tab" aria-selected="false">
-                Logica de programação
+                Lógica de programação
               </button>
             </li>
              <li class="nav-item" role="presentation">
               <button class="nav-link" id="service-details-tab-5-tab" data-bs-toggle="tab" data-bs-target="#service-details-tab-5" type="button" role="tab" aria-selected="false">
                 Inteligência Artificial
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="service-details-tab-5-tab" data-bs-toggle="tab" data-bs-target="#service-details-tab-6" type="button" role="tab" aria-selected="false">
+                Java
               </button>
             </li>
             
@@ -375,13 +380,35 @@
               </div>
             </div>
 
+
+              <div class="tab-pane fade" id="service-details-tab-6" role="tabpanel">
+              <div class="row align-items-center">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+                  <img src="assets/img/services/Java.png" alt="" class="img-fluid rounded-4">
+                </div>
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                  <h3>Competências</h3>
+                  <p>Java · Spring Bootn · API Rest · Database · Lombok</p>
+                  <div class="row gy-4 mt-3">
+                    <div class="col-md-6">
+                      <div class="feature-item">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h4>Sobre o curso</h4>
+                        <p>Especialização em Minicurso de Java</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
   <!-- Services Section -->
-<section id="servicos" class="services section">
+<section id="services" class="services section">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Serviços</h2>
@@ -1335,6 +1362,93 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+// VERSÃO SIMPLES E DIRETA
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('=== INICIANDO SCRIPT DE CERTIFICADOS ===');
+  
+  // Criar modal
+  const modal = document.createElement('div');
+  modal.style.cssText = `
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+  `;
+  modal.innerHTML = `
+    <span style="
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    " onclick="this.parentElement.style.display='none'; document.body.style.overflow='auto'">&times;</span>
+    <img style="
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(93,87,244,0.5);
+    ">
+  `;
+  document.body.appendChild(modal);
+  const modalImg = modal.querySelector('img');
+  
+  // Aplicar a todas as imagens dos certificados
+  const images = document.querySelectorAll('.service-details img.img-fluid.rounded-4');
+  console.log('Encontradas', images.length, 'imagens de certificados');
+  
+  images.forEach(img => {
+    // Adicionar wrapper
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = `
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+    `;
+    
+    // Inserir wrapper
+    img.parentNode.insertBefore(wrapper, img);
+    wrapper.appendChild(img);
+    
+    // Adicionar efeito hover
+    wrapper.onmouseenter = () => {
+      img.style.transform = 'scale(1.1)';
+      img.style.transition = 'transform 0.3s ease';
+    };
+    wrapper.onmouseleave = () => {
+      img.style.transform = 'scale(1)';
+    };
+    
+    // Adicionar clique
+    wrapper.onclick = () => {
+      console.log('Abrindo:', img.src);
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+      document.body.style.overflow = 'hidden';
+    };
+  });
+  
+  // Fechar ao clicar fora
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  };
+  
+  console.log('=== SCRIPT CONFIGURADO ===');
+});
+</script>
+  
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-    
 /* Fontes */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -2008,6 +2007,11 @@ section,
   margin-bottom: 0;
 }
 
+
+
+
+
+
 @media (max-width: 768px) {
   .service-details .service-main-content .section-header h2 {
     font-size: 28px;
@@ -2189,7 +2193,7 @@ section,
 }
 
 .service-details .service-tabs .tab-content .feature-item {
-  padding: 20px;
+  padding: 10px;
   background: color-mix(in srgb, var(--background-color), transparent 50%);
   border-radius: 12px;
   height: 100%;
@@ -2209,7 +2213,8 @@ section,
 .service-details .service-tabs .tab-content .feature-item h4 {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-top: 10px;
+
 }
 
 .service-details .service-tabs .tab-content .feature-item p {
@@ -2406,3 +2411,100 @@ section,
     padding: 30px 20px;
   }
 }
+
+
+/* ========== EFEITO ZOOM NOS CERTIFICADOS ========== */
+.certificate-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+}
+
+.certificate-img-wrapper img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.certificate-img-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+.certificate-img-wrapper:hover {
+  cursor: zoom-in;
+}
+
+/* Modal para visualização em tela cheia */
+.certificate-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: fadeIn 0.3s ease;
+}
+
+.certificate-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 95%;
+  max-height: 95%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(93, 87, 244, 0.4);
+}
+
+.certificate-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 100000;
+}
+
+.certificate-modal-close:hover {
+  color: #5d57f4;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Indicador de clique */
+.certificate-img-wrapper::after {
+  content: '🔍 Clique para ampliar';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.certificate-img-wrapper:hover::after {
+  opacity: 1;
+}
+/* ========== FIM DO EFEITO ZOOM ========== */
+
