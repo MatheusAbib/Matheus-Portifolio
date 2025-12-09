@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Matheus Abib - Portifólio</title>
+  <title>Matheus Abib - Portfólio</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -28,34 +28,46 @@
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
   <link href="assets/css/main.css" rel="stylesheet">
-
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">Matheus Abib</h1><span>.</span> 
-      </a>
+    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <h1 class="sitename">Matheus Abib</h1><span>.</span> 
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero">Sobre mim</a></li>
-          <li><a href="#metodologias">Metodologias</a></li>
-          <li><a href="#service-details">Certificados</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#portfolio">Projetos</a></li>
-          <li><a href="#contact">Contato</a></li>
-          
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" data-translate="menu_about">Sobre mim</a></li>
+        <li><a href="#metodologias" data-translate="menu_methodologies">Metodologias</a></li>
+        <li><a href="#service-details" data-translate="menu_certificates">Certificados</a></li>
+        <li><a href="#services" data-translate="menu_services">Serviços</a></li>
+        <li><a href="#portfolio" data-translate="menu_projects">Projetos</a></li>
+        <li><a href="#contact" data-translate="menu_contact">Contato</a></li>
+        <!-- Mantém o botão no menu também (para desktop) -->
+        <li class="d-none d-xl-block">
+          <button class="btn-translate" id="translateBtn" data-lang="pt">
+            <i class="bi bi-translate"></i>
+            <span data-translate="btn_translate">PT/EN</span>
+          </button>
+        </li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-
+    <!-- Botão de tradução mobile (APENAS quando menu NÃO está ativo) -->
+    <div class="d-xl-none translate-mobile translate-mobile-header">
+      <button class="btn-translate" id="translateBtnMobileHeader" data-lang="pt">
+        <i class="bi bi-translate"></i>
+        <span data-translate="btn_translate">PT/EN</span>
+      </button>
     </div>
-  </header>
+
+  </div>
+</header>
 <section class="main">
 
 <section id="hero" class="hero section">
@@ -75,9 +87,21 @@
         <span class="badge-text me-3">Inovação & Tecnologia</span>
       </div>
     </div>
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <h1 class="hero-title mb-0">Bem-vindo!</h1>
+          <div class="hero-social d-flex">
+            <a href="https://github.com/MatheusAbib" target="_blank" class="social-icon">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://wa.me/11975072008" target="_blank" class="social-icon">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" class="social-icon">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
 
-    <h1 class="hero-title mb-4">Bem-vindo!</h1>
-    
     <div class="hero-description mb-4">
       <p>Sou um <strong>desenvolvedor web</strong> atuando com <strong>tecnologias front-end e back-end</strong>, focado em melhorar a experiência do usuário e funcionalidade dos sistemas.</p>
 
@@ -86,16 +110,31 @@
       <p>Tenho habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade, engenharia de software</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel, PowerPoint.</strong></p>
     </div>
 
-    <a href="assets/CV/CV-Matheus-Abib.pdf" target="_blank" class="read-more">
-      <span>Meu currículo</span>
-      <i class="bi bi-arrow-right"></i>
-    </a>
-
-    <a href="assets/CV/Matheus-Abib-CV.pdf" target="_blank" class="read-more">
-      <span>My Curriculum</span>
-      <i class="bi bi-arrow-right"></i>
-    </a>
+  <div class="translate-and-download">
+    <div class="dropdown-curriculo">
+      <button class="read-more" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span>Download CV</span>
+        <i class="bi bi-arrow-down-circle"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="assets/CV/CV-Matheus-Abib.pdf" target="_blank">
+          <i class="bi bi-file-earmark-text me-2"></i>Português (Brasil)
+        </a></li>
+        <li><a class="dropdown-item" href="assets/CV/Matheus-Abib-CV.pdf" target="_blank">
+          <i class="bi bi-file-earmark-text me-2"></i>English
+        </a></li>
+      </ul>
+    </div>
+    
+    <!-- Botão de tradução mobile (só aparece em mobile) -->
+    <div class="translate-mobile d-xl-none">
+      <button class="btn-translate" id="translateBtnMobile" data-lang="pt">
+        <i class="bi bi-translate"></i>
+        <span data-translate="btn_translate">PT/EN</span>
+      </button>
+    </div>
   </div>
+</div>
 
   <!-- Foto ao lado da descrição -->
   <div class="col-lg-5 col-md-5">
@@ -103,14 +142,9 @@
       <div class="team-card">
         <div class="team-image">
           <img src="assets/img/Eu.jpg" class="img-fluid" alt="">
-          <div class="team-overlay">
-            <h1>Esse sou eu!</h1>
-            <div class="team-social">
-              <a href="https://github.com/MatheusAbib" target="_blank"><i class="bi bi-github"></i></a>
-              <a href="https://wa.me/11975072008" target="_blank"><i class="bi bi-whatsapp"></i></a>
-              <a href="https://www.linkedin.com/in/matheusabib/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <div class="team-overlay">
+              <h1 data-translate="photo_overlay">Esse sou eu!</h1>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -138,8 +172,8 @@
             <i class="bi bi-award"></i>
           </div>
           <div class="feature-content">
-           <h3 class="feature-title">Excelência Técnica.</h3>
-              <p class="feature-text">Foco em interfaces intuitivas, design responsivo e atenção aos detalhes para melhor experiência do usuário.</p>
+           <h3 class="feature-title" data-translate="feature_2_title">Excelência Técnica.</h3>
+              <p class="feature-text" data-translate="feature_2_text">Foco em interfaces intuitivas, design responsivo e atenção aos detalhes para melhor experiência do usuário.</p>
           </div>
         </div>
       </div>
@@ -150,8 +184,8 @@
             <i class="bi bi-people"></i>
           </div>
           <div class="feature-content">
-            <h3 class="feature-title">Comunicação em Equipe</h3>
-            <p class="feature-text">Habilidade em trabalhar em equipe, ouvir ativamente e contribuir de forma produtiva.</p>
+            <h3 class="feature-title" data-translate="feature_3_title">Comunicação em Equipe</h3>
+            <p class="feature-text" data-translate="feature_3_text">Habilidade em trabalhar em equipe, ouvir ativamente e contribuir de forma produtiva.</p>
           </div>
         </div>
       </div>
@@ -281,13 +315,13 @@
                   <img src="assets/img/services/banco-de-dados.jpg" alt="" class="img-fluid rounded-4">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-                  <h3>Competências</h3>
+                  <h3 data-translate="competencias">Competências</h3>
                   <p>Microsoft Power BI · Microsoft Excel · Dashboards · Análise de dados · Gerenciamento de planilhas</p>
                   <div class="row gy-4 mt-3">
                     <div class="col-md-6">
                       <div class="feature-item">
                         <i class="bi bi-graph-up-arrow"></i>
-                        <h4>Sobre o curso</h4>
+                        <h4 data-translate="sobre_curso">Sobre o curso</h4>
                         <p>Microsoft Power BI Para Business Intelligence e Data Science</p>
                       </div>
                     </div>
@@ -302,13 +336,13 @@
                   <img src="assets/img/services/web-development.jpg" alt="" class="img-fluid rounded-4">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-                  <h3>Competências</h3>
+                  <h3 data-translate="competencias">Competências</h3>
                   <p>CSS · Bootstrap · JavaScript · HTML5 · AJAX</p>
                   <div class="row gy-4 mt-3">
                     <div class="col-md-6">
                       <div class="feature-item">
                       <i class="bi bi-graph-up-arrow"></i>
-                        <h4>Sobre o curso</h4>
+                        <h4 data-translate="sobre_curso">Sobre o curso</h4>
                         <p>HTML, CSS and Javascript for web Developers - Coursera</p>
                       </div>
                     </div>
@@ -323,13 +357,13 @@
                   <img src="assets/img/services/banco-de-dados (2).jpg" alt="" class="img-fluid rounded-4">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-                  <h3>Competências</h3>
+                  <h3 data-translate="competencias">Competências</h3>
                   <p>Banco de dados · SQL · Gerenciamento de planilhas · Analise de dados</p>
                   <div class="row gy-4 mt-3">
                     <div class="col-md-6">
                       <div class="feature-item">
                         <i class="bi bi-graph-up-arrow"></i>                        
-                        <h4>Sobre o curso</h4>
+                        <h4 data-translate="sobre_curso">Sobre o curso</h4>
                         <p>Banco de Dados - Plataforma Mundi - IFSul</p>
                       </div>
                     </div>
@@ -344,13 +378,13 @@
                   <img src="assets/img/services/Logica-de-programacao.jpg" alt="" class="img-fluid rounded-4">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-                  <h3>Competências</h3>
+                  <h3 data-translate="competencias">Competências</h3>
                   <p>Java script · Git · GitHub · lógica</p>
                   <div class="row gy-4 mt-3">
                     <div class="col-md-6">
                       <div class="feature-item">
                        <i class="bi bi-graph-up-arrow"></i>                        
-                        <h4>Sobre o curso</h4>
+                        <h4 data-translate="sobre_curso">Sobre o curso</h4>
                         <p>GFT start #6 - Lógica de programação - DIO</p>
                       </div>
                     </div>
@@ -365,13 +399,13 @@
                   <img src="assets/img/services/IA.jpg" alt="" class="img-fluid rounded-4">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-                  <h3>Competências</h3>
+                  <h3 data-translate="competencias">Competências</h3>
                   <p> Fundamentos de Inteligência Artificial · Aprendizado Supervisionado e Não Supervisionado · Pré-processamento de Dados · Desenvolvimento com Python</p>
                   <div class="row gy-4 mt-3">
                     <div class="col-md-6">
                       <div class="feature-item">
                        <i class="bi bi-graph-up-arrow"></i>                        
-                        <h4>Sobre o curso</h4>
+                        <h4 data-translate="sobre_curso">Sobre o curso</h4>
                         <p> Imersão inteligencia artificial 2° edição - Alura</p>
                       </div>
                     </div>
@@ -387,13 +421,13 @@
                   <img src="assets/img/services/Java.png" alt="" class="img-fluid rounded-4">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-                  <h3>Competências</h3>
+                  <h3 data-translate="competencias">Competências</h3>
                   <p>Java · Spring Boot · API Rest · Database · Lombok</p>
                   <div class="row gy-4 mt-3">
                     <div class="col-md-6">
                       <div class="feature-item">
                         <i class="bi bi-graph-up-arrow"></i>
-                        <h4>Sobre o curso</h4>
+                        <h4 data-translate="sobre_curso">Sobre o curso</h4>
                         <p>Especialização em Minicurso de Java</p>
                       </div>
                     </div>
@@ -1239,9 +1273,9 @@
               <div class="icon-box">
                 <i class="bi bi-telephone"></i>
               </div>
-              <h3>Formas de contato</h3>
+              <h3 data-translate="contact_title_2">Formas de contato</h3>
               <p>
-                Celular: (11) 97507-2008
+                <a data-translate="contact_phone">Celular: (11) 97507-2008</a>
                 <br>
                 Email: 
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=matheus.abib.ma@gmail.com" target="_blank">
@@ -1257,8 +1291,8 @@
               <div class="icon-box">
                 <i class="bi bi-clock"></i>
               </div>
-              <h3>Disponibilidade</h3>
-              <p>Segunda - Domingo: 8:00 - 20:00<br>
+              <h3 data-translate="availability_title">Disponibilidade</h3>
+              <p data-translate="availability_text">Segunda - Domingo: 8:00 - 20:00<br>
             </div>
           </div>
         </div>
@@ -1266,84 +1300,81 @@
         </div>
 
       </div>
-    </section><!-- /Contact Section -->
+    </section>
 
   </main>
 
-  <footer id="footer" class="footer light-background">
-    
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Matheus Abib</span><span>.</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>Matheus Bilitardo Abib</p>
-            <p>Mogi das Cruzes, São Paulo</p>
-            <br>
-          </div>
-          <div class="social-links d-flex">
-            <a href="https://wa.me/11975072008" target="_blank"><i class="bi bi-whatsapp"></i></a>
-            <a href="https://github.com/MatheusAbib" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/matheusabib/" target="_blank"><i class="bi bi-linkedin"></i></a>
-          </div>
+<footer id="footer" class="footer light-background">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Matheus Abib</span><span>.</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>Matheus Bilitardo Abib</p>
+          <p>Mogi das Cruzes, São Paulo</p>
+          <br>
         </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Links</h4>
-          <ul>
-            <li><a href="#about">Sobre mim</a></li>
-            <li><a href="#metodologias">Metodologias</a></li>
-            <li><a href="#services">Serviços</a></li>
-	          <li><a href="#portfolio">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
-
-
-          </ul>
+        <div class="social-links d-flex">
+          <a href="https://wa.me/11975072008" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://github.com/MatheusAbib" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/matheusabib/" target="_blank"><i class="bi bi-linkedin"></i></a>
         </div>
+      </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Meus Serviços</h4>
-          <ul>
-            <li>Web Design</li>
-            <li>Desenvolvimento web</li>
-            <li>Gerenciamento de dados</li>
-            <li>Suporte</li>
-          </ul>
-        </div>
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4 data-translate="footer_links">Links</h4>
+        <ul>
+          <li><a href="#hero" data-translate="menu_about">Sobre mim</a></li>
+          <li><a href="#metodologias" data-translate="menu_methodologies">Metodologias</a></li>
+          <li><a href="#service-details" data-translate="menu_certificates">Certificados</a></li>
+          <li><a href="#services" data-translate="menu_services">Serviços</a></li>
+          <li><a href="#portfolio" data-translate="menu_projects">Projetos</a></li>
+          <li><a href="#contact" data-translate="menu_contact">Contato</a></li>
+        </ul>
+      </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Ferramentas</h4>
-          <ul>
-            <li>VsCode | IntelliJ</li>
-            <li>Power BI</li>
-            <li>Spring Boot</li>
-            <li>Excel | Word | Power Point</li>
-            <li>WebServer - MySql</li>
-            <li>Kanban | Trello</li>
-          </ul>
-        </div>
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4 data-translate="footer_services">Meus Serviços</h4>
+        <ul>
+          <li data-translate="service_webdesign">Web Design</li>
+          <li data-translate="service_webdev">Desenvolvimento web</li>
+          <li data-translate="service_datamgmt">Gerenciamento de dados</li>
+          <li data-translate="service_support">Suporte</li>
+        </ul>
+      </div>
 
-         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Projetos</h4>
-          <ul>
-            <li><a href="https://matheusabib.github.io/Tela-de-links-Figma/" target="_blank">Designe UI/UX - Figma</a></li>
-            <li><a href="https://matheusabib.github.io/Tela-de-Links-PowerBI/" target="_blank">Dashboards - Power BI</a></li>
-            <li><a href="#portfolio">Web Sites</a></li>
-          </ul>
-        </div>
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4 data-translate="footer_tools">Ferramentas</h4>
+        <ul>
+          <li>VsCode | IntelliJ</li>
+          <li>Power BI</li>
+          <li>Spring Boot</li>
+          <li>Excel | Word | Power Point</li>
+          <li>WebServer - MySql</li>
+          <li>Kanban | Trello</li>
+        </ul>
+      </div>
 
-        
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Matheus Abib.</strong><span> Todos os direitos reservados</span></p>
-      <div class="credits">
-        Designed by <a href="">Matheus Abib</a>
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4 data-translate="footer_projects">Projetos</h4>
+        <ul>
+          <li><a href="https://matheusabib.github.io/Tela-de-links-Figma/" target="_blank" data-translate="project_figma">Designe UI/UX - Figma</a></li>
+          <li><a href="https://matheusabib.github.io/Tela-de-Links-PowerBI/" target="_blank" data-translate="project_powerbi">Dashboards - Power BI</a></li>
+          <li><a href="#portfolio" data-translate="project_websites">Web Sites</a></li>
+        </ul>
       </div>
     </div>
+  </div>
 
-  </footer>
+  <div class="container copyright text-center mt-4">
+    <p>© <span data-translate="copyright">Copyright</span> <strong class="px-1 sitename">Matheus Abib.</strong><span data-translate="rights"> Todos os direitos reservados</span></p>
+    <div class="credits" data-translate="designed_by">
+      Designed by <a href="">Matheus Abib</a>
+    </div>
+  </div>
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -1361,94 +1392,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <script>
-// VERSÃO SIMPLES E DIRETA
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('=== INICIANDO SCRIPT DE CERTIFICADOS ===');
-  
-  // Criar modal
-  const modal = document.createElement('div');
-  modal.style.cssText = `
-    display: none;
-    position: fixed;
-    z-index: 99999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-    justify-content: center;
-    align-items: center;
-  `;
-  modal.innerHTML = `
-    <span style="
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-    " onclick="this.parentElement.style.display='none'; document.body.style.overflow='auto'">&times;</span>
-    <img style="
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-      box-shadow: 0 0 30px rgba(93,87,244,0.5);
-    ">
-  `;
-  document.body.appendChild(modal);
-  const modalImg = modal.querySelector('img');
-  
-  // Aplicar a todas as imagens dos certificados
-  const images = document.querySelectorAll('.service-details img.img-fluid.rounded-4');
-  console.log('Encontradas', images.length, 'imagens de certificados');
-  
-  images.forEach(img => {
-    // Adicionar wrapper
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = `
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      cursor: pointer;
-      display: block;
-    `;
-    
-    // Inserir wrapper
-    img.parentNode.insertBefore(wrapper, img);
-    wrapper.appendChild(img);
-    
-    // Adicionar efeito hover
-    wrapper.onmouseenter = () => {
-      img.style.transform = 'scale(1.1)';
-      img.style.transition = 'transform 0.3s ease';
-    };
-    wrapper.onmouseleave = () => {
-      img.style.transform = 'scale(1)';
-    };
-    
-    // Adicionar clique
-    wrapper.onclick = () => {
-      console.log('Abrindo:', img.src);
-      modal.style.display = 'flex';
-      modalImg.src = img.src;
-      document.body.style.overflow = 'hidden';
-    };
-  });
-  
-  // Fechar ao clicar fora
-  modal.onclick = (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-  };
-  
-  console.log('=== SCRIPT CONFIGURADO ===');
-});
-</script>
-  
 </body>
 
 </html>
