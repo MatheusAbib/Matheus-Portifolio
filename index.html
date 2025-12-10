@@ -48,24 +48,15 @@
         <li><a href="#portfolio" data-translate="menu_projects">Projetos</a></li>
         <li><a href="#contact" data-translate="menu_contact">Contato</a></li>
         <!-- Mantém o botão no menu também (para desktop) -->
-        <li class="d-none d-xl-block">
-          <button class="btn-translate" id="translateBtn" data-lang="pt">
-            <i class="bi bi-translate"></i>
-            <span data-translate="btn_translate">PT/EN</span>
-          </button>
-        </li>
+          <li class="d-none d-xl-block">
+            <button class="btn-translate" id="translateBtnDesktop" data-lang="pt">
+              <i class="bi bi-translate"></i>
+              <span data-translate="btn_translate">PT/EN</span>
+            </button>
+          </li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
-
-    <!-- Botão de tradução mobile (APENAS quando menu NÃO está ativo) -->
-    <div class="d-xl-none translate-mobile translate-mobile-header">
-      <button class="btn-translate" id="translateBtnMobileHeader" data-lang="pt">
-        <i class="bi bi-translate"></i>
-        <span data-translate="btn_translate">PT/EN</span>
-      </button>
-    </div>
-
   </div>
 </header>
 <section class="main">
@@ -1392,6 +1383,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-</body>
 
+</body>
 </html>
