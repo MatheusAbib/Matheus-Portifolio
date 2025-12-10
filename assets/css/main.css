@@ -177,6 +177,8 @@ h6 {
 .footer .social-links a:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
+  transform: translateY(-3px);
+  background: rgba(93, 87, 244, 0.2);
 }
 
 .footer h4 {

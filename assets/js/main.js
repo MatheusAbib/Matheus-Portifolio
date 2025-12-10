@@ -255,7 +255,7 @@
       project_websites: "Web Sites",
       copyright: "© Copyright",
       rights: "Todos os direitos reservados",
-      designed_by: "Designed by"
+      designed_by: "Designed by Matheus Abib"
     },
     
     en: {
@@ -411,7 +411,7 @@
       project_websites: "Websites",
       copyright: "© Copyright",
       rights: "All rights reserved",
-      designed_by: "Designed by"
+      designed_by: "Designed by Matheus Abib"
     }
   };
 
