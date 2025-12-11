@@ -42,18 +42,12 @@
 
 }
 
-.footer {
-    flex-shrink: 0; /* Não reduzir o footer */
-    width: 100%;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
 /* 4. Remove espaçamento extra do último elemento antes do footer */
 body > *:last-child:not(.footer) {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
+
 
 
 a {
@@ -326,7 +320,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 5% 0 0;
+  padding: 5% 0 20px;
   scroll-margin-top: 98px;
   overflow: clip;
 }
