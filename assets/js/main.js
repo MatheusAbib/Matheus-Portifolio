@@ -220,11 +220,6 @@
       project_livros: "E-Commerce - Livros Online",
       project_notas: "Bloco de Notas",
       project_personagens: "Diário de Personagens",
-      project_moveis: "Casa Confortável - Loja de Móveis",
-      project_figma_links: "Meus Projetos Figma",
-      project_conversor: "Conversor de Moedas",
-      project_lamen: "Yummy Lamen - Restaurante de Lamen",
-      project_tarot: "Cartas do Destino - Tarot Online",
       project_login: "Página de Login",
           
       // Technologies
@@ -377,11 +372,7 @@
       project_notas: "Notepad",
       project_personagens: "Characters Diary",
       project_moveis: "Comfortable Home - Furniture Store",
-      project_figma_links: "My Figma Projects",
-      project_conversor: "Currency Converter",
-      project_lamen: "Yummy Lamen - Ramen Restaurant",
-      project_tarot: "Destiny Cards - Online Tarot",
-      project_login: "Login Page",
+    
           
       // Technologies
       tech_title: "Technologies I Master",
