@@ -1,10 +1,3 @@
-/**
-* Template Name: Invent
-* Template URL: https://bootstrapmade.com/invent-bootstrap-business-template/
-* Updated: May 12 2025 with Bootstrap v5.3.6
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -205,22 +198,26 @@
       filter_fun: "Diversão",
 
       // Portfolio Projects
-      project_floricultura: "Floricultura Web",
-      project_receitas: "Jornal de Receitas",
-      project_dashboard: "Dashboard de Vendas",
-      project_forca: "Jogo da Forca",
-      project_crud: "CRUD - Formulário de Cadastro",
-      project_dashboards: "Meus Dashboards Power BI",
-      project_tarefas: "Gerenciador de Tarefas",
-      project_uno: "UNO",
-      project_editor: "Editor de Imagem",
-      project_todolist: "To Do List",
-      project_sucos: "Dona Sucos - Loja de Sucos",
-      project_musica: "Tocador de Música",
-      project_livros: "E-Commerce - Livros Online",
-      project_notas: "Bloco de Notas",
-      project_personagens: "Diário de Personagens",
-      project_login: "Página de Login",
+    project_floricultura: "Floricultura Web",
+    project_receitas: "Jornal de Receitas",
+    project_dashboard: "Dashboard de Vendas",
+    project_forca: "Jogo da Forca",
+    project_crud: "CRUD - Formulário de Cadastro",
+    project_dashboards: "Meus Dashboards Power BI",
+    project_tarefas: "Gerenciador de Tarefas",
+    project_uno: "UNO",
+    project_editor: "Editor de Imagem",
+    project_todolist: "To Do List",
+    project_sucos: "Dona Sucos - Loja de Sucos",
+    project_musica: "Tocador de Música",
+    project_livros: "E-Commerce - Livros Online",
+    project_notas: "Bloco de Notas",
+    project_personagens: "Diário de Personagens",
+    project_figma_links: "Meus Projetos Figma",
+    project_conversor: "Conversor de Moedas",
+    project_lamen: "Yummy Lamen - Restaurante de Lamen",
+    project_tarot: "Cartas do Destino - Tarot Online",
+    project_login: "Página de Login",
           
       // Technologies
       tech_title: "Tecnologias que domino",
@@ -356,22 +353,26 @@
       filter_fun: "Fun",
 
       // Portfolio Projects
-      project_floricultura: "Floriculture Web",
-      project_receitas: "Recipe Journal",
-      project_dashboard: "Sales Dashboard",
-      project_forca: "Hangman Game",
-      project_crud: "CRUD - Registration Form",
-      project_dashboards: "My Power BI Dashboards",
-      project_tarefas: "Task Manager",
-      project_uno: "UNO",
-      project_editor: "Image Editor",
-      project_todolist: "To Do List",
-      project_sucos: "Dona Sucos - Juice Shop",
-      project_musica: "Music Player",
-      project_livros: "E-Commerce - Online Books",
-      project_notas: "Notepad",
-      project_personagens: "Characters Diary",
-      project_moveis: "Comfortable Home - Furniture Store",
+     project_floricultura: "Floriculture Website",
+    project_receitas: "Recipe Journal",
+    project_dashboard: "Sales Dashboard",
+    project_forca: "Hangman Game",
+    project_crud: "CRUD - Registration Form",
+    project_dashboards: "My Power BI Dashboards",
+    project_tarefas: "Task Manager",
+    project_uno: "UNO Card Game",
+    project_editor: "Image Editor",
+    project_todolist: "To Do List",
+    project_sucos: "Dona Sucos - Juice Store",
+    project_musica: "Music Player",
+    project_livros: "E-Commerce - Online Books",
+    project_notas: "Notepad",
+    project_personagens: "Characters Diary",
+    project_figma_links: "My Figma Projects",
+    project_conversor: "Currency Converter",
+    project_lamen: "Yummy Lamen - Ramen Restaurant",
+    project_tarot: "Destiny Cards - Online Tarot",
+    project_login: "Login Page",
     
           
       // Technologies
@@ -738,12 +739,11 @@
         { selector: '.portfolio-item:nth-child(13) h3', key: 'project_livros' },
         { selector: '.portfolio-item:nth-child(14) h3', key: 'project_notas' },
         { selector: '.portfolio-item:nth-child(15) h3', key: 'project_personagens' },
-        { selector: '.portfolio-item:nth-child(16) h3', key: 'project_moveis' },
-        { selector: '.portfolio-item:nth-child(17) h3', key: 'project_figma_links' },
-        { selector: '.portfolio-item:nth-child(18) h3', key: 'project_conversor' },
-        { selector: '.portfolio-item:nth-child(19) h3', key: 'project_lamen' },
-        { selector: '.portfolio-item:nth-child(20) h3', key: 'project_tarot' },
-        { selector: '.portfolio-item:nth-child(21) h3', key: 'project_login' }
+        { selector: '.portfolio-item:nth-child(16) h3', key: 'project_figma_links' },
+        { selector: '.portfolio-item:nth-child(17) h3', key: 'project_conversor' },
+        { selector: '.portfolio-item:nth-child(18) h3', key: 'project_lamen' },
+        { selector: '.portfolio-item:nth-child(19) h3', key: 'project_tarot' },
+        { selector: '.portfolio-item:nth-child(20) h3', key: 'project_login' }
       ];
       
       // Traduzir cada projeto
