@@ -1,4 +1,4 @@
-
+    
 (function() {
   "use strict";
 
@@ -1349,8 +1349,8 @@
             text-align: left;
           }
           .hero .content .translate-and-download {
-            flex-direction: row;
-            justify-content: flex-start;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
           }
         }
         

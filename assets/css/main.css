@@ -459,7 +459,7 @@ section,
 }
 
 .hero .feature-boxes {
-  margin-top: 3rem;
+  margin-top: -1rem;
 }
 
 .hero .feature-boxes .feature-box {
@@ -1719,6 +1719,100 @@ section,
   align-items: center;
   position: relative;
 }
+
+/* ========== DROPDOWN DO CURRÍCULO ========== */
+.dropdown-curriculo {
+  position: relative;
+  display: inline-block;
+}
+
+/* Para desktop: dropdown ao lado direito */
+@media (min-width: 992px) {
+  .dropdown-curriculo.dropend .dropdown-menu {
+    top: 0;
+    left: 100%;
+    right: auto;
+    margin-top: 0;
+    margin-left: 10px;
+    transform: none !important;
+  }
+  
+  /* Garantir que o dropdown não quebre para baixo */
+  .dropdown-curriculo.dropend .dropdown-menu {
+    position: absolute;
+    inset: 0 auto auto 0;
+  }
+}
+
+@media (max-width: 765px) {
+  .dropdown-menu {
+    top: 0;
+    left: 100%;
+    right: auto;
+    margin-top: 0;
+    margin-left: 10px;
+    transform: none !important;
+  }
+
+}
+
+/* Ajustes para o botão do dropdown */
+.dropdown-curriculo .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-curriculo .read-more:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do dropdown menu */
+.dropdown-curriculo .dropdown-menu {
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  min-width: 200px;
+}
+
+.dropdown-curriculo .dropdown-item {
+  padding: 10px 16px;
+  color: var(--default-color);
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.dropdown-curriculo .dropdown-item:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+.dropdown-curriculo .dropdown-item i {
+  color: var(--accent-color);
+  font-size: 16px;
+}
+
+/* Para mobile: comportamento padrão (abaixo) */
+@media (max-width: 991.98px) {
+  .dropdown-curriculo .dropdown-menu {
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 10px;
+  }
+}
+
 
 /* Estilo para os ícones sociais no hero */
 .hero-social {
