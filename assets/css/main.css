@@ -1746,15 +1746,14 @@ section,
 
 @media (max-width: 765px) {
   .dropdown-menu {
-    top: 0;
-    left: 100%;
-    right: auto;
-    margin-top: 0;
-    margin-left: 10px;
+    margin-top: -27px !important;
+    margin-left: 55% !important;
     transform: none !important;
   }
-
+  
+  
 }
+
 
 /* Ajustes para o botão do dropdown */
 .dropdown-curriculo .read-more {
