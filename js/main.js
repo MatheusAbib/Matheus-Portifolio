@@ -201,6 +201,7 @@
     project_floricultura: "Floricultura Web",
     project_receitas: "Jornal de Receitas",
     project_dashboard: "Dashboard de Vendas",
+    project_calendario: "Calendário",
     project_forca: "Jogo da Forca",
     project_crud: "CRUD - Formulário de Cadastro",
     project_dashboards: "Meus Dashboards Power BI",
@@ -353,9 +354,10 @@
       filter_fun: "Fun",
 
       // Portfolio Projects
-     project_floricultura: "Floriculture Website",
+    project_floricultura: "Floriculture Website",
     project_receitas: "Recipe Journal",
     project_dashboard: "Sales Dashboard",
+    project_calendario: "Calendar",
     project_forca: "Hangman Game",
     project_crud: "CRUD - Registration Form",
     project_dashboards: "My Power BI Dashboards",
@@ -727,24 +729,26 @@
         { selector: '.portfolio-item:nth-child(1) h3', key: 'project_floricultura' },
         { selector: '.portfolio-item:nth-child(2) h3', key: 'project_receitas' },
         { selector: '.portfolio-item:nth-child(3) h3', key: 'project_dashboard' },
-        { selector: '.portfolio-item:nth-child(4) h3', key: 'project_forca' },
-        { selector: '.portfolio-item:nth-child(5) h3', key: 'project_crud' },
-        { selector: '.portfolio-item:nth-child(6) h3', key: 'project_dashboards' },
-        { selector: '.portfolio-item:nth-child(7) h3', key: 'project_tarefas' },
-        { selector: '.portfolio-item:nth-child(8) h3', key: 'project_uno' },
-        { selector: '.portfolio-item:nth-child(9) h3', key: 'project_editor' },
-        { selector: '.portfolio-item:nth-child(10) h3', key: 'project_todolist' },
-        { selector: '.portfolio-item:nth-child(11) h3', key: 'project_sucos' },
-        { selector: '.portfolio-item:nth-child(12) h3', key: 'project_musica' },
-        { selector: '.portfolio-item:nth-child(13) h3', key: 'project_livros' },
-        { selector: '.portfolio-item:nth-child(14) h3', key: 'project_notas' },
-        { selector: '.portfolio-item:nth-child(15) h3', key: 'project_personagens' },
-        { selector: '.portfolio-item:nth-child(16) h3', key: 'project_figma_links' },
-        { selector: '.portfolio-item:nth-child(17) h3', key: 'project_conversor' },
-        { selector: '.portfolio-item:nth-child(18) h3', key: 'project_lamen' },
-        { selector: '.portfolio-item:nth-child(19) h3', key: 'project_tarot' },
-        { selector: '.portfolio-item:nth-child(20) h3', key: 'project_login' }
+        { selector: '.portfolio-item:nth-child(4) h3', key: 'project_calendario' },
+        { selector: '.portfolio-item:nth-child(5) h3', key: 'project_forca' },
+        { selector: '.portfolio-item:nth-child(6) h3', key: 'project_crud' },
+        { selector: '.portfolio-item:nth-child(7) h3', key: 'project_dashboards' },
+        { selector: '.portfolio-item:nth-child(8) h3', key: 'project_tarefas' },
+        { selector: '.portfolio-item:nth-child(9) h3', key: 'project_uno' },
+        { selector: '.portfolio-item:nth-child(10) h3', key: 'project_editor' },
+        { selector: '.portfolio-item:nth-child(11) h3', key: 'project_todolist' },
+        { selector: '.portfolio-item:nth-child(12) h3', key: 'project_sucos' },
+        { selector: '.portfolio-item:nth-child(13) h3', key: 'project_musica' },
+        { selector: '.portfolio-item:nth-child(14) h3', key: 'project_livros' },
+        { selector: '.portfolio-item:nth-child(15) h3', key: 'project_notas' },
+        { selector: '.portfolio-item:nth-child(16) h3', key: 'project_personagens' },
+        { selector: '.portfolio-item:nth-child(17) h3', key: 'project_figma_links' },
+        { selector: '.portfolio-item:nth-child(18) h3', key: 'project_conversor' },
+        { selector: '.portfolio-item:nth-child(19) h3', key: 'project_lamen' },
+        { selector: '.portfolio-item:nth-child(20) h3', key: 'project_tarot' },
+        { selector: '.portfolio-item:nth-child(21) h3', key: 'project_login' }
       ];
+
       
       // Traduzir cada projeto
       projectMap.forEach(({ selector, key }) => {
