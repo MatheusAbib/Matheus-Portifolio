@@ -1540,7 +1540,6 @@ const projectMap = [
     }
   }
 
-  // ===================== CÓDIGO PRINCIPAL =====================
   document.addEventListener('DOMContentLoaded', function() {
     // Event listeners básicos
     document.addEventListener('scroll', toggleScrolled);
@@ -1720,6 +1719,90 @@ const projectMap = [
         }
       });
     }
+    
   });
   
 })();
+
+// Adicione após o código do Isotope existente
+function initPortfolioFilters() {
+  const filterButtons = document.querySelectorAll('.portfolio-filters li');
+  let activeFilters = new Set();
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const filter = this.getAttribute('data-filter');
+      
+      if (filter === '*') {
+        // Reset para todos
+        activeFilters.clear();
+        filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+        this.classList.add('filter-active');
+        
+        // Mostra todos os projetos
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          item.style.display = 'block';
+        });
+      } else {
+        // Alterna o filtro
+        if (activeFilters.has(filter)) {
+          activeFilters.delete(filter);
+          this.classList.remove('filter-active');
+        } else {
+          // Remove o filtro "Todos" se estiver ativo
+          const allFilter = document.querySelector('[data-filter="*"]');
+          if (allFilter && allFilter.classList.contains('filter-active')) {
+            allFilter.classList.remove('filter-active');
+            activeFilters.delete('*');
+          }
+          
+          activeFilters.add(filter);
+          this.classList.add('filter-active');
+        }
+        
+        // Aplica filtros combinados
+        applyCombinedFilters();
+      }
+    });
+  });
+  
+  function applyCombinedFilters() {
+    const items = document.querySelectorAll('.portfolio-item');
+    
+    if (activeFilters.size === 0) {
+      // Mostra todos
+      items.forEach(item => {
+        item.style.display = 'block';
+      });
+      return;
+    }
+    
+    items.forEach(item => {
+      const itemClasses = Array.from(item.classList);
+      
+      // Verifica se o item tem TODAS as classes de filtro ativas
+      let shouldShow = true;
+      activeFilters.forEach(filter => {
+        const className = filter.replace('.', '');
+        if (!itemClasses.includes(className)) {
+          shouldShow = false;
+        }
+      });
+      
+      if (shouldShow) {
+        item.style.display = 'block';
+        // Efeito visual
+        item.style.opacity = '0';
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transition = 'opacity 0.3s ease';
+        }, 10);
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+}
+
