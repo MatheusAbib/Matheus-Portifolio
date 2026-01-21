@@ -1136,6 +1136,7 @@ const projectMap = [
             gap: 15px;
             align-items: center;
             margin-top: 20px;
+            margin-bottom: 20px;
           }
           .hero .content .translate-and-download .dropdown-curriculo {
             order: 1;
@@ -1278,10 +1279,6 @@ const projectMap = [
           .hero .badge-wrapper .d-inline-flex .badge-text {
             font-size: 0.75rem;
           }
-          .hero .badge-wrapper .d-inline-flex {
-            margin-top: -15px;
-            margin-bottom: 10px;
-          }
           .hero .hero-title {
             font-size: 1.75rem;
           }
@@ -1348,6 +1345,9 @@ const projectMap = [
             margin: 0 auto !important;
             justify-content: center !important;
           }
+        .hero .feature-boxes {
+                    margin-bottom: 2rem;
+            }
           .hero .feature-boxes .feature-box {
             flex-direction: row;
             align-items: flex-start;
