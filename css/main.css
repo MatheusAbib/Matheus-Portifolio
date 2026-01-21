@@ -1120,46 +1120,55 @@ section,
 }
 
 .contact .info-card {
-  background-color: var(--surface-color);
-  padding: 30px;
-  text-align: center;
-  height: 100%;
-  border-radius: 10px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  transition: all 0.3s ease-in-out;
+padding: 1.6rem;
+    border-radius: 14px;
+    background: linear-gradient(145deg,
+ color-mix(in srgb, var(--accent-color), transparent 95%), var(--surface-color));
+    border: 2px solid
+ color-mix(in srgb, var(--accent-color), transparent 85%);
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact .info-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(93, 87, 244, 0.15);
 }
 
 .contact .info-card .icon-box {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #667eea));
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+  flex-shrink: 0;
+  margin-bottom: 1.5rem;
 }
 
 .contact .info-card .icon-box i {
-  font-size: 24px;
-  color: var(--accent-color);
+  font-size: 2rem;
+  color: var(--contrast-color);
 }
 
 .contact .info-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
 }
 
 .contact .info-card p {
-  margin: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 0;
 }
 
 .contact .form-wrapper .input-group .input-group-text {
