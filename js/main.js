@@ -941,7 +941,7 @@ const projectMap = [
           .navmenu a:focus {
             color: var(--nav-color);
             padding: 18px 15px;
-            font-size: 15px;
+            font-size: 16px;
             font-family: var(--nav-font);
             font-weight: 600;
             display: flex;
@@ -1172,11 +1172,51 @@ const projectMap = [
             transition-delay: 0 !important;
           }
 
+            .tech-tags {
+            gap: 4px;
+          }
+          
+          .tech-tags .tag {
+            font-size: 0.65rem;
+            padding: 2px 8px;
+          }
+          
+          .stack-badge {
+            font-size: 0.7rem;
+            padding: 3px 10px;
+          }
+
           section,
           .section {
             padding: 18% 0 0;
        
           }
+
+          .hero-highlight {
+          padding: 2.5rem 2rem;
+          margin-bottom: 3rem;
+          border-radius: 24px;
+          background-size: 
+            cover, cover, cover,
+            30px 30px, 30px 30px,
+            150px 150px,
+            cover;
+        }
+        
+        .hero-highlight::before,
+        .hero-highlight::after {
+          filter: blur(30px);
+        }
+        
+        .hero-highlight .hero-title {
+          font-size: 2.2rem;
+        }
+        
+        .hero-highlight .social-icon {
+          width: 44px;
+          height: 44px;
+          font-size: 1.1rem;
+        }
         }
         
         /* === Hero Title (max-width: 991.98px) === */
@@ -1197,6 +1237,14 @@ const projectMap = [
         
         /* === Services & How We Work (max-width: 767.98px) === */
         @media (max-width: 767.98px) {
+
+          .header .logo h1{
+          font-size: 24px;
+          }
+          .header .logo span{
+          font-size: 24px;
+          }
+        
           .services .service-item {
             padding: 1.5rem;
             margin-bottom: 1rem;
@@ -1315,11 +1363,24 @@ const projectMap = [
         @media (max-width: 992px) {
           .services-alt .content-block {
             margin-right: 0;
-            margin-bottom: 3rem;
+        
           }
           .custom-box {
             width: 100%;
             margin-left: 5%;
+          }
+
+          .hero-highlight {
+            padding: 3rem 2.5rem;
+            border-radius: 28px;
+          }
+          
+          .hero-highlight .hero-title {
+            font-size: 2.5rem;
+          }
+          
+          .hero-highlight .hero-description {
+            font-size: 1.15rem;
           }
         }
         
@@ -1330,7 +1391,8 @@ const projectMap = [
             min-height: 200px;
           }
         }
-        
+
+
         /* === Dispositivos touch === */
         @media (hover: none) and (pointer: coarse) {
           .portfolio-scroll-container {
@@ -1348,16 +1410,56 @@ const projectMap = [
         .hero .feature-boxes {
                     margin-bottom: 2rem;
             }
-          .hero .feature-boxes .feature-box {
-            flex-direction: row;
-            align-items: flex-start;
-            text-align: left;
-          }
+
           .hero .content .translate-and-download {
             flex-direction: row-reverse;
             justify-content: flex-end;
           }
+
+            .hero-highlight {
+            padding: 2rem 1.2rem;
+            border-radius: 12px;
+          }
+          
+          .hero-highlight .hero-title {
+            font-size: 1.4rem;
+          }
+          
+          .hero-highlight .hero-description {
+            font-size: 1rem;
+            line-height: 1.7;
+          }
+          
+          .hero-highlight .translate-and-download {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+          }
         }
+
+        @media (max-width: 765px) {
+        .dropdown-menu {
+          margin-top: -27px !important;
+          margin-left: 55% !important;
+          transform: none !important;
+        }
+      }
+
+        @media (min-width: 992px) {
+        .dropdown-curriculo.dropend .dropdown-menu {
+          top: 0;
+          left: 100%;
+          right: auto;
+          margin-top: 0;
+          margin-left: 10px;
+          transform: none !important;
+        }
+        
+        .dropdown-curriculo.dropend .dropdown-menu {
+          position: absolute;
+          inset: 0 auto auto 0;
+        }
+      }
         
         /* === Tablet (min-width: 769px and max-width: 991px) === */
         @media (min-width: 769px) and (max-width: 991px) {
@@ -1422,7 +1524,7 @@ const projectMap = [
             padding: 30px 20px;
           }
           .hero-social {
-            gap: 10px;
+            gap: 9px;
           }
           .social-icon {
             width: 36px;
@@ -1519,6 +1621,9 @@ const projectMap = [
           .custom-box {
             width: 82%;
             margin-left: 18%;
+          }
+          .hero-highlight {
+            padding: 2.5rem 1.5rem;
           }
         }
       `;
