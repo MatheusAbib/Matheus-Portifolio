@@ -225,7 +225,7 @@
       
       // Contact
       contact_title: "Contato",
-      contact_desc: "Quer falar comigo? É só clicar no meu e-mail abaixo para enviar uma mensagem!",
+      contact_desc: "Clique no meu e-mail abaixo para enviar uma mensagem!",
       location_title: "Localização",
       location_text: "Mogi das Cruzes, São Paulo",
       contact_title_2: "Formas de contato",
