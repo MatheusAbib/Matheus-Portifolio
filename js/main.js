@@ -1229,7 +1229,41 @@ const projectMap = [
           }
           .how-we-work .process-item .content {
             border-width: 1px;
+            background-color: white;
           }
+
+          .how-we-work::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cpath id='wavePattern' fill='%235d57f4' fill-opacity='0.6' d='M0,150 Q250,100 500,150 T1000,150 L1000,300 L0,300 Z'/%3E%3C/defs%3E%3Cuse href='%23wavePattern' x='0'/%3E%3Cuse href='%23wavePattern' x='1000'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: bottom;
+            background-size: 650px 105%;
+            z-index: 0;
+            opacity: 0.8;
+            animation: seamlessWave 30s linear infinite;
+          }
+
+          .how-we-work::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cpath id='wavePattern2' fill='%235d57f4' fill-opacity='0.25' d='M0,180 Q125,130 250,180 Q375,230 500,180 Q625,130 750,180 Q875,230 1000,180 L1000,300 L0,300 Z'/%3E%3C/defs%3E%3Cuse href='%23wavePattern2' x='0'/%3E%3Cuse href='%23wavePattern2' x='1000'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: bottom;
+            background-size: 650px 105%;
+            z-index: -1;
+            opacity: 0.8;
+            animation: seamlessWaveReverse 30s linear infinite;
+          }
+
           .how-we-work .process-item .content:hover {
             transform: translateY(-5px);
           }
