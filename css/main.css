@@ -41,6 +41,22 @@
 
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(93, 87, 244, 0.6);
+  border-radius: 8px;
+}
+
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+
 body > *:last-child:not(.footer) {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
@@ -547,8 +563,7 @@ section,
   position: relative;
 background: linear-gradient(
   145deg,
-  var(--surface-color),
-  color-mix(in srgb, var(--surface-color), transparent 70%)
+  var(--surface-color), transparent 0%
 );
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
   border-radius: 20px;
