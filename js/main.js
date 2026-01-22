@@ -2,11 +2,7 @@
 (function() {
   "use strict";
 
-  // ===================== FUNÇÕES GLOBAIS =====================
-  
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
+
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -14,9 +10,7 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  /**
-   * Mobile nav toggle
-   */
+  
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
     const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
@@ -24,9 +18,7 @@
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
 
-  /**
-   * Toggle mobile nav dropdowns
-   */
+  
   function toggleMobileDropdown(e) {
     e.preventDefault();
     this.parentNode.classList.toggle('active');
@@ -34,9 +26,7 @@
     e.stopImmediatePropagation();
   }
 
-  /**
-   * Preloader
-   */
+
   function removePreloader() {
     const preloader = document.querySelector('#preloader');
     if (preloader) {
@@ -44,9 +34,7 @@
     }
   }
 
-  /**
-   * Scroll top button
-   */
+
   function toggleScrollTop() {
     const scrollTop = document.querySelector('.scroll-top');
     if (scrollTop) {
@@ -62,9 +50,7 @@
     });
   }
 
-  /**
-   * Animation on scroll function and init
-   */
+
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -74,9 +60,7 @@
     });
   }
 
-  /**
-   * Navmenu Scrollspy
-   */
+
   function navmenuScrollspy() {
     const navmenulinks = document.querySelectorAll('.navmenu a');
     navmenulinks.forEach(navmenulink => {
@@ -409,7 +393,6 @@
     }
   };
 
-  // Sistema de tradução completo
   class Translator {
     constructor() {
       this.currentLang = localStorage.getItem('portfolio_lang') || 'pt';
@@ -417,7 +400,6 @@
     }
     
     init() {
-      // Configurar TODOS os botões de tradução
       const translateBtns = document.querySelectorAll(
         '#translateBtnDesktop, #translateBtnMobile'
       );
@@ -460,7 +442,6 @@
     }
     
     translatePage() {
-      // Método 1: Traduzir elementos com data-translate
       document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
         if (translations[this.currentLang][key]) {
@@ -474,10 +455,8 @@
         }
       });
       
-      // Método 2: Tradução por seletores
       this.translateBySelectors();
       
-      // Atualizar meta tags para SEO
       this.updateMetaTags();
     }
     
@@ -599,12 +578,10 @@
       
       this.updateText('.info-card:nth-child(3) p', 'availability_text');
       
-      // Footer já é traduzido via data-translate, mas fazemos uma verificação extra
       this.translateFooterExtra();
     }
     
     translateCertificatesContent() {
-      // Traduzir "Competências" e "Sobre o curso" em todos os certificados
       const skillsHeaders = document.querySelectorAll('#service-details h3');
       skillsHeaders.forEach(header => {
         if (header.textContent.includes('Competências') || header.textContent.includes('Skills')) {
@@ -619,7 +596,6 @@
         }
       });
       
-      // Traduzir skills específicas de cada certificado
       this.translateCertificateSkills();
     }
     
@@ -662,7 +638,6 @@
     }
     
     translateFooterExtra() {
-      // Verificar se os títulos do footer foram traduzidos
       const footerTitles = document.querySelectorAll('.footer-links h4');
       if (footerTitles.length >= 4) {
         if (!footerTitles[0].textContent.includes('Links') && !footerTitles[0].textContent.includes('Links')) {
@@ -710,10 +685,8 @@
     }
     
     updateMetaTags() {
-      // Atualizar lang do HTML
       document.documentElement.lang = this.currentLang;
       
-      // Atualizar meta description baseado no idioma
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.content = this.currentLang === 'pt' 
@@ -724,7 +697,6 @@
 
     translatePortfolioProjects() {
       
-      // Mapeamento dos seletores para as chaves de tradução
 const projectMap = [
   { selector: '.portfolio-item:nth-child(1) h3', key: 'project_floricultura' },
   { selector: '.portfolio-item:nth-child(2) h3', key: 'project_receitas' },
@@ -750,8 +722,6 @@ const projectMap = [
 ];
 
 
-      
-      // Traduzir cada projeto
       projectMap.forEach(({ selector, key }) => {
         const element = document.querySelector(selector);
         if (element && translations[this.currentLang][key]) {
@@ -759,7 +729,6 @@ const projectMap = [
         }
       });
       
-      // Método alternativo: traduzir todos os títulos h3 dentro de .portfolio-content
       const allProjectTitles = document.querySelectorAll('.portfolio-content h3');
       allProjectTitles.forEach((title, index) => {
         if (index < projectMap.length && translations[this.currentLang][projectMap[index].key]) {
@@ -771,7 +740,6 @@ const projectMap = [
 
   // ===================== MODAL PARA IMAGENS DOS CERTIFICADOS =====================
   function setupCertificateModal() {
-    // Criar modal
     const modal = document.createElement('div');
     modal.style.cssText = `
       display: none;
@@ -804,11 +772,9 @@ const projectMap = [
     document.body.appendChild(modal);
     const modalImg = modal.querySelector('img');
     
-    // Aplicar a todas as imagens dos certificados
     const images = document.querySelectorAll('.service-details img.img-fluid.rounded-4');
     
     images.forEach(img => {
-      // Adicionar wrapper
       const wrapper = document.createElement('div');
       wrapper.style.cssText = `
         position: relative;
@@ -818,11 +784,9 @@ const projectMap = [
         display: block;
       `;
       
-      // Inserir wrapper
       img.parentNode.insertBefore(wrapper, img);
       wrapper.appendChild(img);
       
-      // Adicionar efeito hover
       wrapper.onmouseenter = () => {
         img.style.transform = 'scale(1.1)';
         img.style.transition = 'transform 0.3s ease';
@@ -831,7 +795,6 @@ const projectMap = [
         img.style.transform = 'scale(1)';
       };
       
-      // Adicionar clique
       wrapper.onclick = () => {
         console.log('Abrindo:', img.src);
         modal.style.display = 'flex';
@@ -840,7 +803,6 @@ const projectMap = [
       };
     });
     
-    // Fechar ao clicar fora
     modal.onclick = (e) => {
       if (e.target === modal) {
         modal.style.display = 'none';
@@ -868,11 +830,9 @@ const projectMap = [
     }
     
     init() {
-      // Observar mudanças no tamanho da tela
       this.handleResize();
       window.addEventListener('resize', () => this.handleResize());
       
-      // Aplicar estilos iniciais
       this.applyAllMediaQueries();
     }
     
@@ -880,14 +840,12 @@ const projectMap = [
       const width = window.innerWidth;
       const height = window.innerHeight;
       
-      // Adicionar/remover classes baseado no tamanho da tela
       this.updateBodyClasses(width, height);
     }
     
     updateBodyClasses(width, height) {
       const body = document.body;
       
-      // Remover classes antigas
       body.classList.remove(
         'is-xl', 'is-lg', 'is-md', 'is-sm', 'is-xs',
         'is-mobile', 'is-desktop', 'is-tablet',
@@ -907,14 +865,12 @@ const projectMap = [
         body.classList.add('is-xs', 'is-mobile');
       }
       
-      // Detectar touch/hover
       if ('ontouchstart' in window || navigator.maxTouchPoints) {
         body.classList.add('is-touch');
       } else {
         body.classList.add('is-hover');
       }
       
-      // Detectar altura pequena
       if (height <= 480) {
         body.classList.add('is-short-height');
       }
@@ -1631,7 +1587,6 @@ const projectMap = [
       this.styles.textContent = css;
     }
     
-    // Método para atualizar estilos dinamicamente
     updateMediaQuery(breakpoint, css) {
       const existingStyle = document.getElementById(`media-${breakpoint}`);
       if (existingStyle) {
@@ -1646,17 +1601,14 @@ const projectMap = [
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    // Event listeners básicos
     document.addEventListener('scroll', toggleScrolled);
     window.addEventListener('load', toggleScrolled);
     
-    // Mobile nav toggle
     const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
     if (mobileNavToggleBtn) {
       mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
     }
     
-    // Hide mobile nav on same-page/hash links
     document.querySelectorAll('#navmenu a').forEach(navmenu => {
       navmenu.addEventListener('click', () => {
         if (document.querySelector('.mobile-nav-active')) {
@@ -1665,15 +1617,12 @@ const projectMap = [
       });
     });
     
-    // Toggle mobile nav dropdowns
     document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
       navmenu.addEventListener('click', toggleMobileDropdown);
     });
     
-    // Preloader
     window.addEventListener('load', removePreloader);
     
-    // Scroll top button
     const scrollTop = document.querySelector('.scroll-top');
     if (scrollTop) {
       scrollTop.addEventListener('click', scrollToTop);
@@ -1681,15 +1630,12 @@ const projectMap = [
       document.addEventListener('scroll', toggleScrollTop);
     }
     
-    // Animation on scroll
     window.addEventListener('load', aosInit);
     
-    // Initiate glightbox
     const glightbox = GLightbox({
       selector: '.glightbox'
     });
     
-    // Init isotope layout and filters
     document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
       let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
       let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -1719,14 +1665,12 @@ const projectMap = [
       });
     });
     
-    // Frequently Asked Questions Toggle
     document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
       faqItem.addEventListener('click', () => {
         faqItem.parentNode.classList.toggle('faq-active');
       });
     });
     
-    // Init swiper sliders
     function initSwiper() {
       document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
         let config = JSON.parse(
@@ -1734,7 +1678,6 @@ const projectMap = [
         );
         
         if (swiperElement.classList.contains("swiper-tab")) {
-          // Função para swiper com paginação customizada se necessário
         } else {
           new Swiper(swiperElement, config);
         }
@@ -1742,7 +1685,6 @@ const projectMap = [
     }
     window.addEventListener("load", initSwiper);
     
-    // Correct scrolling position upon page load for URLs containing hash links
     window.addEventListener('load', function(e) {
       if (window.location.hash) {
         if (document.querySelector(window.location.hash)) {
@@ -1758,23 +1700,17 @@ const projectMap = [
       }
     });
     
-    // Navmenu Scrollspy
     window.addEventListener('load', navmenuScrollspy);
     document.addEventListener('scroll', navmenuScrollspy);
     
-    // Setup certificate modal
     setupCertificateModal();
     
-    // Inicializar tradutor
     const translator = new Translator();
     
-    // Inicializar media queries dinâmicas
     const dynamicMedia = new DynamicMediaQueries();
     
-    // Expor para uso global se necessário
     window.dynamicMedia = dynamicMedia;
     
-    // Event listener para formulário de contato (se existir)
     const contactForm = document.querySelector('.php-email-form');
     if (contactForm) {
       contactForm.addEventListener('submit', async function (e) {
@@ -1783,7 +1719,6 @@ const projectMap = [
         const form = e.target;
         const formData = new FormData(form);
         
-        // Reset e mostra loading
         document.querySelector('.loading').style.display = 'flex';
         document.querySelector('.error-message').style.display = 'none';
         document.querySelector('.sent-message').style.display = 'none';
@@ -1806,7 +1741,6 @@ const projectMap = [
             document.querySelector('.sent-message').style.display = 'block';
             form.reset();
             
-            // Opcional: Esconde a mensagem após 5 segundos
             setTimeout(() => {
               document.querySelector('.sent-message').style.display = 'none';
             }, 5000);
@@ -1829,7 +1763,6 @@ const projectMap = [
   
 })();
 
-// Adicione após o código do Isotope existente
 function initPortfolioFilters() {
   const filterButtons = document.querySelectorAll('.portfolio-filters li');
   let activeFilters = new Set();
@@ -1841,22 +1774,18 @@ function initPortfolioFilters() {
       const filter = this.getAttribute('data-filter');
       
       if (filter === '*') {
-        // Reset para todos
         activeFilters.clear();
         filterButtons.forEach(btn => btn.classList.remove('filter-active'));
         this.classList.add('filter-active');
         
-        // Mostra todos os projetos
         document.querySelectorAll('.portfolio-item').forEach(item => {
           item.style.display = 'block';
         });
       } else {
-        // Alterna o filtro
         if (activeFilters.has(filter)) {
           activeFilters.delete(filter);
           this.classList.remove('filter-active');
         } else {
-          // Remove o filtro "Todos" se estiver ativo
           const allFilter = document.querySelector('[data-filter="*"]');
           if (allFilter && allFilter.classList.contains('filter-active')) {
             allFilter.classList.remove('filter-active');
@@ -1867,7 +1796,6 @@ function initPortfolioFilters() {
           this.classList.add('filter-active');
         }
         
-        // Aplica filtros combinados
         applyCombinedFilters();
       }
     });
@@ -1877,7 +1805,6 @@ function initPortfolioFilters() {
     const items = document.querySelectorAll('.portfolio-item');
     
     if (activeFilters.size === 0) {
-      // Mostra todos
       items.forEach(item => {
         item.style.display = 'block';
       });
@@ -1887,7 +1814,6 @@ function initPortfolioFilters() {
     items.forEach(item => {
       const itemClasses = Array.from(item.classList);
       
-      // Verifica se o item tem TODAS as classes de filtro ativas
       let shouldShow = true;
       activeFilters.forEach(filter => {
         const className = filter.replace('.', '');
@@ -1898,7 +1824,6 @@ function initPortfolioFilters() {
       
       if (shouldShow) {
         item.style.display = 'block';
-        // Efeito visual
         item.style.opacity = '0';
         setTimeout(() => {
           item.style.opacity = '1';
