@@ -2206,7 +2206,8 @@ background: rgb(255 255 255 / 95%);
 
 .team-card {
   border-radius: 8px;
-  overflow: hidden;
+  border: 2px solid
+ color-mix(in srgb, var(--accent-color), transparent 75%);  overflow: hidden;
   position: relative;
   transform-style: preserve-3d;
   perspective: 1000px;
