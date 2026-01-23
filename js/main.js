@@ -1229,7 +1229,6 @@ const projectMap = [
           }
           .how-we-work .process-item .content {
             border-width: 1px;
-            background-color: white;
           }
 
           .how-we-work::before {
