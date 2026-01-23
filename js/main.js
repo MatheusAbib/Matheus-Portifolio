@@ -97,8 +97,8 @@
       hero_desc_3: "Possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade e engenharia de software</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.",
       cv_button: "Download CV",
       photo_overlay: "Esse sou eu!",
-      cv_portuguese: "Português (Brasil)",
-      cv_english: "English",
+      cv_portuguese: "Português",
+      cv_english: "Inglês",
       
       // Features
       feature_1_title: "Entusiasta de Tecnologia",
@@ -253,7 +253,7 @@
       hero_desc_3: "I have skills in <strong>UI/UX Design, prototyping, requirements analysis, quality control, software engineering</strong>, as well as <strong>data visualization with Power BI</strong> and proficiency in <strong>Word, Excel, PowerPoint.</strong>",
       cv_button: "Download CV",
       photo_overlay: "That's me!",
-      cv_portuguese: "Portuguese (Brazil)",
+      cv_portuguese: "Portuguese",
       cv_english: "English",
       
       // Features
