@@ -122,6 +122,7 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
+  margin-top: 5%;
   margin-bottom: -30px;
   position: relative;
 }
@@ -2364,24 +2365,10 @@ background: rgb(255 255 255 / 95%);
 
 /* ===================== FORM SECTION STYLES ===================== */
 .contact-form-section {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
   position: relative;
   overflow: hidden;
 }
 
-.contact-form-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235d57f4' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 80px 80px;
-  opacity: 0.5;
-  z-index: 0;
-}
 
 .contact-form-section .container {
   position: relative;
@@ -2392,33 +2379,14 @@ background: rgb(255 255 255 / 95%);
   color: var(--heading-color);
 }
 
-.contact-form-section .section-title p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 .contact-form {
-  background: var(--surface-color);
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
   position: relative;
   overflow: hidden;
 }
 
-.contact-form::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--accent-color), color-mix(in srgb, var(--accent-color), #667eea));
-  border-radius: 4px 0 0 4px;
-}
 
 .contact-form .form-group {
   margin-bottom: 1.5rem;

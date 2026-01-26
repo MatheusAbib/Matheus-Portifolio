@@ -1463,8 +1463,6 @@
   </div>
 </section>
 
-
-<!-- Form Section - Adicionado entre footer e contato -->
 <section id="form-section" class="contact-form-section section">
   <div class="container section-title" data-aos="fade-up">
     <h2 data-translate="contact_form_title">Envie uma mensagem</h2>
@@ -1472,83 +1470,78 @@
   </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-<form id="emailForm" 
-      class="contact-form"
-      name="contact"
-      method="POST"
-      netlify              
-      data-netlify="true" 
-      netlify-honeypot="bot-field">
-    
-    <input type="hidden" name="form-name" value="contact" />
-
-    <p class="d-none">
+    <form id="emailForm" 
+          class="contact-form"
+          name="contact"
+          method="POST"
+          netlify              
+          data-netlify="true" 
+          netlify-honeypot="bot-field">
+      
+      <input type="hidden" name="form-name" value="contact" />
+      
+      <p class="d-none">
         <label>Não preencha este campo se for humano: <input name="bot-field" /></label>
-    </p>
-    
-    <!-- Seus campos atuais continuam iguais -->
-    <div class="row gy-4">
+      </p>
+      
+      <div class="row gy-4">
         <div class="col-md-6">
-            <div class="form-group">
-                <label for="name">
-                    <i class="fas fa-user me-2"></i>Seu Nome
-                </label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Digite seu nome completo" required>
-            </div>
+          <div class="form-group">
+            <label for="name">
+              <i class="fas fa-user me-2"></i>Seu Nome
+            </label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Digite seu nome completo" required>
+          </div>
         </div>
-        
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="userEmail">
-                    <i class="fas fa-envelope me-2"></i>Seu Email
-                </label>
-                <input type="email" id="userEmail" name="email" class="form-control" placeholder="seu.email@exemplo.com" required>
-            </div>
-        </div>
-        
-        <!-- IMPORTANTE: Note que mudei o name para "email" ao invés de "userEmail" -->
-        
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="subject">
-                    <i class="fas fa-tag me-2"></i>Assunto
-                </label>
-                <input type="text" id="subject" name="subject" class="form-control" placeholder="Sobre o que gostaria de conversar?" required>
-            </div>
-        </div>
-        
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="phone">
-                    <i class="fas fa-phone me-2"></i>Telefone (opcional)
-                </label>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999">
-            </div>
-        </div>
-        
-        <div class="col-12">
-            <div class="form-group">
-                <label for="message">
-                    <i class="fas fa-comment-dots me-2"></i>Sua Mensagem
-                </label>
-                <textarea id="message" name="message" class="form-control" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
-            </div>
-        </div>
-        
-        <div class="col-12">
-            <div class="form-group">
-                <button type="submit" class="btn-submit">
-                    <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
-                </button>
-            </div>
-        </div>
-    </div>
-</form>
 
-    <div id="responseMessage" class="response-message mt-4"></div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="userEmail">
+              <i class="fas fa-envelope me-2"></i>Seu Email
+            </label>
+            <input type="email" id="userEmail" name="email" class="form-control" placeholder="seu.email@exemplo.com" required>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="subject">
+              <i class="fas fa-tag me-2"></i>Assunto
+            </label>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Sobre o que gostaria de conversar?" required>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone">
+              <i class="fas fa-phone me-2"></i>Telefone (opcional)
+            </label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group">
+            <label for="message">
+              <i class="fas fa-comment-dots me-2"></i>Sua Mensagem
+            </label>
+            <textarea id="message" name="message" class="form-control" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-group">
+            <button type="submit" class="btn-submit">
+              <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+            </button>
+            <div id="formResponse" class="response-message mt-3" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </section>
-
   </main>
 
 <footer id="footer" class="footer light-background">
@@ -1663,8 +1656,7 @@
   <!-- Main JS File -->
   <script src="js/main.js"></script>
 
-  <!-- Contact Form JS -->
-  <!-- <script src="js/contact-form.js"></script> -->
+<script src="js/netlify-form.js"></script>
 
 </body>
 </html>
