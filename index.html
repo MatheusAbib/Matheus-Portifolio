@@ -1476,10 +1476,12 @@
       class="contact-form"
       name="contact"
       method="POST"
-      data-netlify="true"
+      netlify              
+      data-netlify="true" 
       netlify-honeypot="bot-field">
     
-    <!-- Campo honeypot para spam (escondido) -->
+    <input type="hidden" name="form-name" value="contact" />
+
     <p class="d-none">
         <label>Não preencha este campo se for humano: <input name="bot-field" /></label>
     </p>
