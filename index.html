@@ -1408,63 +1408,144 @@
 
     </section><!-- /Testimonials Section -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contato</h2>
-        <p>
-        Clique no meu e-mail abaixo para enviar uma mensagem!
-        </p>
-        <br>
-      </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+<section id="contact" class="contact section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contato</h2>
+    <p>
+    Clique no meu e-mail abaixo para enviar uma mensagem!
+    </p>
+    <br>
+  </div><!-- End Section Title -->
 
-        <div class="row gy-4 mb-5">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="info-card">
-              <div class="icon-box">
-                <i class="bi bi-geo-alt"></i>
-              </div>
-              <h3>Localização</h3>
-              <p>Mogi das Cruzes, São Paulo</p>
-            </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4 mb-5">
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="info-card">
+          <div class="icon-box">
+            <i class="bi bi-geo-alt"></i>
           </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="info-card">
-              <div class="icon-box">
-                <i class="bi bi-telephone"></i>
-              </div>
-              <h3 data-translate="contact_title_2">Formas de contato</h3>
-              <p>
-                <a data-translate="contact_phone">Celular: (11) 97507-2008</a>
-                <br>
-                Email: 
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=matheus.abib.ma@gmail.com" target="_blank">
-                matheus.abib.ma@gmail.com
-                </a>
-              </p>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="info-card">
-              <div class="icon-box">
-                <i class="bi bi-clock"></i>
-              </div>
-              <h3 data-translate="availability_title">Disponibilidade</h3>
-              <p data-translate="availability_text">Segunda - Domingo: 8:00 - 20:00<br>
-            </div>
-          </div>
+          <h3>Localização</h3>
+          <p>Mogi das Cruzes, São Paulo</p>
         </div>
-
-        </div>
-
       </div>
-    </section>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="info-card">
+          <div class="icon-box">
+            <i class="bi bi-telephone"></i>
+          </div>
+          <h3 data-translate="contact_title_2">Formas de contato</h3>
+          <p>
+            <a data-translate="contact_phone">Celular: (11) 97507-2008</a>
+            <br>
+            Email: 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=matheus.abib.ma@gmail.com" target="_blank">
+            matheus.abib.ma@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="info-card">
+          <div class="icon-box">
+            <i class="bi bi-clock"></i>
+          </div>
+          <h3 data-translate="availability_title">Disponibilidade</h3>
+          <p data-translate="availability_text">Segunda - Domingo: 8:00 - 20:00<br>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Form Section - Adicionado entre footer e contato -->
+<section id="form-section" class="contact-form-section section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2 data-translate="contact_form_title">Envie uma mensagem</h2>
+    <p data-translate="contact_form_subtitle">Preencha o formulário abaixo para entrar em contato comigo</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+<form id="emailForm" 
+      class="contact-form"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+    
+    <!-- Campo honeypot para spam (escondido) -->
+    <p class="d-none">
+        <label>Não preencha este campo se for humano: <input name="bot-field" /></label>
+    </p>
+    
+    <!-- Seus campos atuais continuam iguais -->
+    <div class="row gy-4">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name">
+                    <i class="fas fa-user me-2"></i>Seu Nome
+                </label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Digite seu nome completo" required>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="userEmail">
+                    <i class="fas fa-envelope me-2"></i>Seu Email
+                </label>
+                <input type="email" id="userEmail" name="email" class="form-control" placeholder="seu.email@exemplo.com" required>
+            </div>
+        </div>
+        
+        <!-- IMPORTANTE: Note que mudei o name para "email" ao invés de "userEmail" -->
+        
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="subject">
+                    <i class="fas fa-tag me-2"></i>Assunto
+                </label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Sobre o que gostaria de conversar?" required>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="phone">
+                    <i class="fas fa-phone me-2"></i>Telefone (opcional)
+                </label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999">
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div class="form-group">
+                <label for="message">
+                    <i class="fas fa-comment-dots me-2"></i>Sua Mensagem
+                </label>
+                <textarea id="message" name="message" class="form-control" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div class="form-group">
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+    <div id="responseMessage" class="response-message mt-4"></div>
+  </div>
+</section>
 
   </main>
 
@@ -1580,6 +1661,8 @@
   <!-- Main JS File -->
   <script src="js/main.js"></script>
 
+  <!-- Contact Form JS -->
+  <!-- <script src="js/contact-form.js"></script> -->
 
 </body>
 </html>
