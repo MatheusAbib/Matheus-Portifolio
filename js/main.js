@@ -3,6 +3,33 @@
   "use strict";
 
 
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+  
+  // Remove scroll-behavior smooth do CSS se existir
+  document.documentElement.style.scrollBehavior = 'auto';
+  
+  // Inicializa Lenis
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    smoothWheel: true,
+    smoothTouch: false,
+    wheelMultiplier: 0.8,
+    touchMultiplier: 1,
+    infinite: false
+  });
+  
+  // Atualiza a cada frame
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  
+  requestAnimationFrame(raf);
+  
+  console.log('Lenis Smooth Scroll ativado!');
+
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -148,19 +175,17 @@
       
       // Services
       services_title: "Serviços",
-      service_1_title: "Desenvolvimento Front-End",
-      service_1_text: "Crio interfaces funcionais com HTML, CSS, JavaScript, TypeScript, Angular, e frameworks como Bootstrap e PrimeNG.",
-      service_2_title: "Desenvolvimento Back-End",
+      service_1_title: "Desenvolvimento Full Stack",
+      service_1_text: "Eu crio interfaces web modernas, performáticas e precisas para usuários.",
       service_2_text: "Desenvolvo sistemas robustos usando Java Spring, PHP e MySQL, garantindo segurança na manipulação de dados.",
       service_3_title: "UI/UX Design e Protótipos",
       service_3_text: "Crio layouts funcionais e intuitivos para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.",
-      service_4_title: "Controle de Qualidade e Testes",
+      service_4_title: "Engenharia de Software",
       service_4_text: "Realizo testes contínuos e avaliações para garantir que os sistemas funcionem conforme especificações e atendam aos padrões de qualidade.",
-      service_5_title: "Análise de Requisitos",
       service_5_text: "Transformo necessidades do cliente em especificações técnicas claras, garantindo que o desenvolvimento siga objetivos estratégicos.",
       service_6_title: "Power BI e Análise de Dados",
       service_6_text: "Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.",
-      see_button: "Veja",
+      see_button: "Saiba mais",
       
       // Soft Skills
       softskills_title: "Soft Skills",
@@ -258,6 +283,44 @@
       form_loading: "Enviando...",
       form_sent: "Enviado!",
 
+      modal_fullstack_title: "Desenvolvimento Full Stack",
+      modal_fullstack_subtitle: "Soluções completas do front-end ao back-end com interfaces modernas, performáticas e precisas.",
+      modal_tech_title: "Principais Tecnologias",
+      modal_tech_web_title: "Web",
+      modal_tech_web_badge: "Front-end",
+      modal_tech_web_desc: "Aplicações responsivas com HTML5, CSS3, JavaScript, PHP, TypeScript, SCSS e frameworks modernos como Bootstrap, PrimeNG e Angular.",
+      modal_tech_performance_title: "Performance",
+      modal_tech_performance_badge: "Back-end",
+      modal_tech_performance_desc: "SEO técnico, experiência do usuário, APIs escaláveis e uso de banco de dados para armazenamento, consultas e organização das informações.",
+      modal_strategy_title: "Minha estratégia",
+      
+      // Passos do processo
+      modal_step_1_title: "Análise Técnica",
+      modal_step_1_badge: "Planejamento",
+      modal_step_1_desc: "Definição da melhor abordagem tecnológica para cada projeto, considerando requisitos, escalabilidade e manutenibilidade.",
+      modal_step_1_tag1: "Requisitos",
+      modal_step_1_tag2: "Arquitetura",
+      modal_step_1_tag3: "MVP",
+      
+      modal_step_2_title: "Desenvolvimento",
+      modal_step_2_badge: "Implementação",
+      modal_step_2_desc: "Codificação limpa, organizada e fiel ao design, seguindo as melhores práticas do mercado.",
+      modal_step_2_tag1: "Clean Code",
+      modal_step_2_tag2: "Testes",
+      modal_step_2_tag3: "Versionamento",
+      
+      modal_step_3_title: "Integração",
+      modal_step_3_badge: "Conectividade",
+      modal_step_3_desc: "Conexão com APIs e serviços externos para tornar a aplicação funcional em todas as plataformas e dispositivos.",
+      modal_step_3_tag1: "APIs REST",
+      modal_step_3_tag2: "Microservices",
+      
+      modal_step_4_title: "Otimização",
+      modal_step_4_badge: "Finalização",
+      modal_step_4_desc: "Ajustes finais de performance, acessibilidade e SEO técnico, garantindo a melhor experiência para o usuário final.",
+      modal_step_4_tag1: "Performance",
+      modal_step_4_tag2: "SEO",
+      modal_step_4_tag3: "UX/UI",
     },
 
 
@@ -330,20 +393,16 @@
       cert_java_skills: "Java · Spring Boot · API Rest · Database · Lombok",
       
       // Services
-      services_title: "Services",
-      service_1_title: "Front-End Development",
-      service_1_text: "I create functional interfaces with HTML, CSS, JavaScript, TypeScript, Angular, and frameworks like Bootstrap and PrimeNG.",
-      service_2_title: "Back-End Development",
-      service_2_text: "I develop robust systems using Java Spring, PHP and MySQL, ensuring data manipulation security.",
-      service_3_title: "UI/UX Design and Prototypes",
-      service_3_text: "I create functional and intuitive layouts for users, using Figma, Canva and good UI/UX design practices.",
-      service_4_title: "Quality Control and Testing",
-      service_4_text: "I perform continuous testing and evaluations to ensure systems function according to specifications and meet quality standards.",
-      service_5_title: "Requirements Analysis",
-      service_5_text: "I transform client needs into clear technical specifications, ensuring development follows strategic objectives.",
-      service_6_title: "Power BI and Data Analysis",
-      service_6_text: "I structure complex information in interactive dashboards, facilitating analysis and strategic decision making.",
-      see_button: "See",
+  services_title: "Services",
+  service_1_title: "Full Stack Development",
+  service_1_text: "I create modern, high-performance, and precise web interfaces for users.",
+  service_3_title: "UI/UX Design and Prototypes",
+  service_3_text: "I create functional and intuitive layouts for users, using Figma, Canva and good UI/UX design practices.",
+  service_4_title: "Software Engineering", // CORRIGIDO: era service_4_text
+  service_4_text: "I perform continuous testing and evaluations to ensure systems function according to specifications and meet quality standards.",
+  service_6_title: "Power BI and Data Analysis",
+  service_6_text: "I structure complex information in interactive dashboards, facilitating analysis and strategic decision making.",
+  see_button: "Learn More",
       
       // Soft Skills
       softskills_title: "Soft Skills",
@@ -442,6 +501,49 @@
     form_error: " An error occurred while sending the message. Please try again.",
     form_loading: "Sending...",
     form_sent: "Sent!",
+
+
+
+  modal_fullstack_title: "Full Stack Development",
+    modal_fullstack_subtitle: "Complete solutions from front-end to back-end with modern, performant and precise interfaces.",
+    modal_tech_title: "Main Technologies",
+    modal_tech_web_title: "Web",
+    modal_tech_web_badge: "Front-end",
+    modal_tech_web_desc: "Responsive applications with HTML5, CSS3, JavaScript, PHP, TypeScript, SCSS and modern frameworks like Bootstrap, PrimeNG and Angular.",
+    modal_tech_performance_title: "Performance",
+    modal_tech_performance_badge: "Back-end",
+    modal_tech_performance_desc: "Technical SEO, user experience, scalable APIs and use of databases for storage, queries and information organization.",
+    modal_strategy_title: "My Strategy",
+    
+    // Process steps
+    modal_step_1_title: "Technical Analysis",
+    modal_step_1_badge: "Planning",
+    modal_step_1_desc: "Definition of the best technological approach for each project, considering requirements, scalability and maintainability.",
+    modal_step_1_tag1: "Requirements",
+    modal_step_1_tag2: "Architecture",
+    modal_step_1_tag3: "MVP",
+    
+    modal_step_2_title: "Development",
+    modal_step_2_badge: "Implementation",
+    modal_step_2_desc: "Clean, organized and design-faithful coding, following market best practices.",
+    modal_step_2_tag1: "Clean Code",
+    modal_step_2_tag2: "Testing",
+    modal_step_2_tag3: "Versioning",
+    
+    modal_step_3_title: "Integration",
+    modal_step_3_badge: "Connectivity",
+    modal_step_3_desc: "Connection with APIs and external services to make the application functional on all platforms and devices.",
+    modal_step_3_tag1: "REST APIs",
+    modal_step_3_tag2: "Microservices",
+    
+    modal_step_4_title: "Optimization",
+    modal_step_4_badge: "Finalization",
+    modal_step_4_desc: "Final performance, accessibility and technical SEO adjustments, ensuring the best experience for the end user.",
+    modal_step_4_tag1: "Performance",
+    modal_step_4_tag2: "SEO",
+    modal_step_4_tag3: "UX/UI",
+  
+
     }
   };
 
@@ -563,31 +665,8 @@
       this.translateCertificatesContent();
       
       // Services
-      const serviceTitles = document.querySelectorAll('.service-content h3');
-      const serviceTexts = document.querySelectorAll('.service-content p');
-      const serviceButtons = document.querySelectorAll('.service-link span');
-      
-      if (serviceTitles.length >= 6) {
-        serviceTitles[0].textContent = translations[this.currentLang]['service_1_title'];
-        serviceTitles[1].textContent = translations[this.currentLang]['service_2_title'];
-        serviceTitles[2].textContent = translations[this.currentLang]['service_3_title'];
-        serviceTitles[3].textContent = translations[this.currentLang]['service_4_title'];
-        serviceTitles[4].textContent = translations[this.currentLang]['service_5_title'];
-        serviceTitles[5].textContent = translations[this.currentLang]['service_6_title'];
-      }
-      
-      if (serviceTexts.length >= 6) {
-        serviceTexts[0].textContent = translations[this.currentLang]['service_1_text'];
-        serviceTexts[1].textContent = translations[this.currentLang]['service_2_text'];
-        serviceTexts[2].textContent = translations[this.currentLang]['service_3_text'];
-        serviceTexts[3].textContent = translations[this.currentLang]['service_4_text'];
-        serviceTexts[4].textContent = translations[this.currentLang]['service_5_text'];
-        serviceTexts[5].textContent = translations[this.currentLang]['service_6_text'];
-      }
-      
-      serviceButtons.forEach(btn => {
-        btn.textContent = translations[this.currentLang]['see_button'];
-      });
+        this.updateText('#services .section-title h2', 'services_title');
+
       
       // Soft Skills
       const skillSpans = document.querySelectorAll('.softskills span');
@@ -977,8 +1056,8 @@ const projectMap = [
           .navmenu a,
           .navmenu a:focus {
             color: var(--nav-color);
-            padding: 18px 15px;
-            font-size: 16px;
+            padding: 15px 12px;
+            font-size: 14px;
             font-family: var(--nav-font);
             font-weight: 600;
             display: flex;
@@ -1696,6 +1775,613 @@ const projectMap = [
             padding: 2.5rem 1.5rem;
           }
         }
+
+        /* ===================== RESPONSIVIDADE DO MODAL ===================== */
+
+/* Para telas grandes (acima de 1200px) */
+@media (min-width: 1200px) {
+  .service-modal .modal-dialog {
+    max-width: 1100px;
+  }
+}
+
+/* Para tablets grandes e desktops pequenos (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .service-modal .modal-dialog {
+    max-width: 95%;
+    margin: 20px auto;
+  }
+  
+  .modal-grid {
+    gap: 1.5rem;
+  }
+  
+  .tech-card {
+    padding: 1.4rem;
+  }
+  
+  .step-content-passo {
+    padding: 1rem;
+  }
+}
+
+/* Para tablets (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .service-modal .modal-dialog {
+    max-width: 95%;
+    margin: 15px auto;
+  }
+  
+  .service-modal .modal-header {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .modal-header-content {
+    width: 100%;
+  }
+  
+  .btn-close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .modal-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .modal-column {
+    gap: 1.5rem;
+  }
+  
+  .modal-section {
+    padding: 1.5rem;
+  }
+  
+  .tech-cards {
+    gap: 1.5rem;
+  }
+  
+  .tech-card {
+    padding: 1.4rem;
+  }
+  
+  .tech-card-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tech-header-left {
+    flex-wrap: wrap;
+  }
+  
+  .process-timeline {
+    padding-left: 35px;
+  }
+  
+  .step-indicator {
+    left: -35px;
+  }
+  
+  .step-number-passo {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  
+  .step-line {
+    top: 35px;
+    height: calc(100% + 1.5rem);
+  }
+  
+  .step-content-passo {
+    margin-left: 0.8rem;
+  }
+}
+
+/* Para celulares grandes e tablets pequenos (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .service-modal .modal-dialog {
+    max-width: 95%;
+    margin: 10px auto;
+  }
+  
+  .service-modal .modal-content {
+    border-radius: 20px;
+  }
+  
+  .service-modal .modal-header {
+    padding: 1.25rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .modal-header-content {
+    width: 100%;
+    padding-right: 40px; /* Espaço para o botão fechar */
+  }
+  
+  .service-modal .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  .modal-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .btn-close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .modal-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  
+  .modal-column {
+    gap: 1.25rem;
+  }
+  
+  .modal-section {
+    padding: 1.25rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .section-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .section-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .section-icon i {
+    font-size: 1.1rem;
+  }
+  
+  /* Tecnologias - Responsividade */
+  .tech-section .section-title {
+    font-size: 1rem;
+  }
+  
+  .tech-cards {
+    gap: 1rem;
+  }
+  
+  .tech-card {
+    padding: 1.2rem;
+  }
+  
+  .tech-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .tech-header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .tech-card-body h5 {
+    font-size: 1.1rem;
+  }
+  
+  .tech-card-body p {
+    font-size: 0.85rem;
+  }
+  
+  .tech-stack {
+    gap: 0.4rem;
+  }
+  
+  .stack-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  /* Processo - Responsividade */
+  .process-timeline {
+    padding-left: 30px;
+  }
+  
+  .step-indicator {
+    left: -30px;
+  }
+  
+  .step-number-passo {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+  
+  .step-line {
+    top: 30px;
+    height: calc(100% + 1rem);
+  }
+  
+  .step-content-passo {
+    margin-left: 0.6rem;
+    padding: 0.9rem;
+  }
+  
+  .step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-header h4 {
+    font-size: 1rem;
+  }
+  
+  .step-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+  
+  .step-content-passo p {
+    font-size: 0.85rem;
+  }
+  
+  .step-tags {
+    gap: 0.4rem;
+  }
+  
+  .step-tags .tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
+
+/* Para celulares pequenos (abaixo de 576px) */
+@media (max-width: 575px) {
+  .service-modal .modal-dialog {
+    margin: 5px;
+    max-width: calc(100% - 10px);
+  }
+  
+  .service-modal .modal-content {
+    border-radius: 16px;
+  }
+  
+  .service-modal .modal-header {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .modal-header-content {
+    width: 100%;
+    padding-right: 35px;
+  }
+  
+  .service-modal .modal-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .modal-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .btn-close-modal {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .modal-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0rem;
+  }
+  
+  .modal-column {
+    gap: 1rem;
+  }
+  
+  .modal-section {
+    padding: 1rem;
+  }
+  
+  .section-header {
+    margin-bottom: 1rem;
+  }
+  
+  .section-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .section-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .section-icon i {
+    font-size: 1rem;
+  }
+  
+  /* Tecnologias - Responsividade Mobile */
+  .tech-section .section-title {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-cards {
+    gap: 0.8rem;
+  }
+  
+  .tech-card {
+    padding: 1rem;
+  }
+  
+  .tech-card-header {
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .tech-header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .tech-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .tech-header-left h5 {
+    font-size: 1rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+  
+  .tech-card-body h5 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .tech-card-body p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0.6rem 0;
+  }
+  
+  .stack-tag {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  /* Processo - Responsividade Mobile */
+  .process-timeline {
+    padding-left: 25px;
+  }
+  
+  .process-timeline::before {
+    left: 12px;
+  }
+  
+  .process-step {
+    margin-bottom: 0.8rem;
+  }
+  
+  .step-indicator {
+    left: -25px;
+  }
+  
+  .step-number-passo {
+    width: 25px;
+    height: 25px;
+    font-size: 0.7rem;
+  }
+  
+  .step-line {
+    top: 25px;
+    left: 12.5px;
+    height: calc(100% + 0.8rem);
+  }
+  
+  .step-content-passo {
+    margin-left: 0.4rem;
+    padding: 0.8rem;
+    border-top-width: 1px;
+  }
+  
+  .step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .step-header h4 {
+    font-size: 0.95rem;
+  }
+  
+  .step-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+  
+  .step-content-passo p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tags {
+    gap: 0.3rem;
+  }
+  
+  .step-tags .tag {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+  
+  /* Efeitos de hover removidos em mobile para melhor experiência touch */
+  @media (hover: none) and (pointer: coarse) {
+    .tech-card:hover,
+    .process-step:hover .step-content-passo {
+      transform: none;
+    }
+    
+    .tech-card:active,
+    .process-step:active .step-content-passo {
+      border-color: var(--accent-color);
+      transform: scale(0.98);
+    }
+  }
+}
+
+/* Para telas muito pequenas (abaixo de 360px) */
+@media (max-width: 360px) {
+  .service-modal .modal-dialog {
+    margin: 2px;
+    max-width: calc(100% - 4px);
+  }
+  
+  .service-modal .modal-header {
+    padding: 0.8rem 1rem;
+  }
+  
+  .service-modal .modal-title {
+    font-size: 1.2rem;
+  }
+  
+  .modal-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .modal-grid {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+  
+  .modal-section {
+    padding: 0.8rem;
+  }
+  
+  .section-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .tech-card,
+  .step-content-passo {
+    padding: 0.8rem;
+  }
+  
+  .stack-tag,
+  .step-tags .tag {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
+
+/* Ajustes para orientação paisagem em celulares */
+@media (max-height: 600px) and (orientation: landscape) {
+  .service-modal .modal-dialog {
+    max-height: 90vh;
+  }
+  
+  .service-modal .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modal-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .modal-section {
+    padding: 1rem;
+  }
+  
+  .tech-cards,
+  .process-timeline {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  /* Scrollbar personalizada */
+  .tech-cards::-webkit-scrollbar,
+  .process-timeline::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .tech-cards::-webkit-scrollbar-track,
+  .process-timeline::-webkit-scrollbar-track {
+    background: color-mix(in srgb, var(--default-color), transparent 90%);
+    border-radius: 2px;
+  }
+  
+  .tech-cards::-webkit-scrollbar-thumb,
+  .process-timeline::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 2px;
+  }
+}
+
+/* Melhorias de acessibilidade para foco */
+.service-modal .btn-close-modal:focus,
+.tech-card:focus,
+.step-content-passo:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Transições suaves para mudanças de layout */
+.modal-grid,
+.modal-section,
+.tech-card,
+.step-content-passo {
+  transition: all 0.3s ease;
+}
+
+/* Otimização para telas com preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .service-modal .modal-dialog,
+  .modal-grid,
+  .modal-section,
+  .tech-card,
+  .step-content-passo,
+  .btn-close-modal {
+    transition: none;
+    animation: none;
+  }
+}
       `;
       
       this.styles.textContent = css;
@@ -1874,6 +2560,9 @@ const projectMap = [
     }
     
   });
+
+
+  
   
 })();
 
@@ -1949,4 +2638,26 @@ function initPortfolioFilters() {
     });
   }
 }
+
+function closeModal() {
+  const modal = bootstrap.Modal.getInstance(document.getElementById('fullstackModal'));
+  if (modal) {
+    modal.hide();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const budgetBtn = document.querySelector('.btn-modal-primary');
+  if (budgetBtn) {
+    budgetBtn.addEventListener('click', function(e) {
+      if (!this.getAttribute('href').startsWith('#')) {
+        this.innerHTML = '<i class="bi bi-hourglass-split"></i> Processando...';
+        this.classList.add('loading');
+        setTimeout(() => {
+          closeModal();
+        }, 1500);
+      }
+    });
+  }
+});
 

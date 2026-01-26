@@ -34,6 +34,8 @@
 
 
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.4/dist/lenis.min.js"></script>
+
   <link href="css/main.css" rel="stylesheet">
 </head>
 
@@ -448,44 +450,27 @@
 <section id="services" class="services section">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Serviços</h2>
+    <h2 data-translate="services_title">Serviços</h2>
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center g-5">
 
-      <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="bi bi-code-slash"></i>
-          </div>
-          <div class="service-content">
-            <h3>Desenvolvimento Front-End</h3>
-            <p>Crio interfaces funcionais com HTML, CSS, JavaScript, TypeScript, Angular, e frameworks como Bootstrap e PrimeNG.</p>
-            <a href="#portfolio" class="service-link">
-              <span>Veja</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="bi bi-server"></i>
-          </div>
-          <div class="service-content">
-            <h3>Desenvolvimento Back-End</h3>
-            <p>Desenvolvo sistemas robustos usando Java Spring, PHP e MySQL, garantindo segurança na manipulação de dados.</p>
-            <a href="#portfolio" class="service-link">
-              <span>Veja</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div><!-- End Service Item -->
-
+<div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+  <div class="service-item">
+    <div class="service-icon">
+      <i class="bi bi-code-slash"></i>
+    </div>
+    <div class="service-content">
+      <h3 data-translate="service_1_title">Desenvolvimento full stack</h3>
+      <p data-translate="service_1_text">Crio interfaces funcionais com HTML, CSS, JavaScript, TypeScript, Angular, e frameworks como Bootstrap e PrimeNG.</p>
+      <a href="#" class="service-link" data-bs-toggle="modal" data-bs-target="#fullstackModal">
+        <span data-translate="see_button">Saiba Mais</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
 
       <div class="col-md-6" data-aos="fade-right" data-aos-delay="300">
         <div class="service-item">
@@ -493,10 +478,10 @@
             <i class="bi bi-palette2"></i>
           </div>
           <div class="service-content">
-            <h3>UI/UX Design e Protótipos</h3>
-            <p>Crio layouts funcionais e intuitivos para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.</p>
+            <h3 data-translate="service_3_title">UI/UX Design e Protótipos</h3>
+            <p data-translate="service_3_text">Crio layouts funcionais e intuitivos para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.</p>
               <a href="https://matheusabib.github.io/Tela-de-links-Figma/" target="_blank" class="service-link">
-              <span>Veja</span>
+              <span data-translate="see_button">Saiba Mais</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>
@@ -509,20 +494,8 @@
             <i class="bi bi-card-checklist"></i>
           </div>
           <div class="service-content">
-            <h3>Controle de Qualidade e Testes</h3>
-            <p>Realizo testes contínuos e avaliações para garantir que os sistemas funcionem conforme especificações e atendam aos padrões de qualidade.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6" data-aos="fade-right" data-aos-delay="500">
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="bi bi-journal-text"></i>
-          </div>
-          <div class="service-content">
-            <h3>Análise de Requisitos</h3>
-            <p>Transformo necessidades do cliente em especificações técnicas claras, garantindo que o desenvolvimento siga objetivos estratégicos.</p>
+            <h3 data-translate="service_4_title">Engenharia de Software</h3>
+            <p data-translate="service_4_text">Realizo testes contínuos e avaliações para garantir que os sistemas funcionem conforme especificações e atendam aos padrões de qualidade.</p>
           </div>
         </div>
       </div>
@@ -533,10 +506,10 @@
             <i class="bi bi-bar-chart-line"></i>
           </div>
           <div class="service-content">
-            <h3>Power BI e Análise de Dados</h3>
-            <p>Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.</p>
+            <h3 data-translate="service_6_title">Power BI e Análise de Dados</h3>
+            <p data-translate="service_6_text">Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.</p>
              <a href="https://matheusabib.github.io/Tela-de-Links-PowerBI/" target="_blank" class="service-link">
-              <span>Veja</span>
+              <span data-translate="see_button">Saiba Mais</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>
@@ -1556,6 +1529,176 @@
 </section>
   </main>
 
+<div class="service-modal modal fade" id="fullstackModal" tabindex="-1" aria-labelledby="fullstackModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-content">
+          <h2 class="modal-title" id="fullstackModalLabel" data-translate="modal_fullstack_title">Desenvolvimento Full Stack</h2>
+          <p class="modal-subtitle" data-translate="modal_fullstack_subtitle">Soluções completas do <strong>front-end ao back-end com interfaces modernas, performáticas e precisas</strong></p>
+        </div>
+        <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-grid">
+          
+          <!-- Coluna Esquerda - Tecnologias -->
+          <div class="modal-column">
+            <div class="modal-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-stars"></i>
+                </div>
+                <h3 data-translate="modal_tech_title">Principais Tecnologias</h3>
+              </div>
+              
+              <div class="tech-section">
+                <div class="tech-cards">
+                  
+                  <div class="tech-card">
+                    <div class="tech-card-header">
+                      <div class="tech-header-left">
+                        <div class="tech-icon web">
+                          <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h5 data-translate="modal_tech_web_title">Web</h5>
+                      </div>
+                      <div class="tech-badge" data-translate="modal_tech_web_badge">Front-end</div>
+                    </div>
+                    <div class="tech-card-body">
+                      <p data-translate="modal_tech_web_desc">Aplicações responsivas com HTML5, CSS3, JavaScript, PHP, TypeScript, SCSS e frameworks modernos como Bootstrap, PrimeNG e Angular</p>
+                    </div>
+                      <div class="tech-stack">
+                        <span class="stack-tag bootstrap">Bootstrap</span>
+                        <span class="stack-tag primeng">PrimeNG</span>
+                        <span class="stack-tag angular">Angular</span>
+                      </div>
+                  </div>
+                  
+                  <div class="tech-card">
+                    <div class="tech-card-header">
+                      <div class="tech-header-left">
+                        <div class="tech-icon performance">
+                          <i class="bi bi-speedometer2"></i>
+                        </div>
+                        <h5 data-translate="modal_tech_performance_title">Performance</h5>
+                      </div>
+                      <div class="tech-badge" data-translate="modal_tech_performance_badge">Back-end</div>
+                    </div>
+                    <div class="tech-card-body">
+                      <p data-translate="modal_tech_performance_desc">SEO técnico, experiência do usuário, APIs escaláveis e uso de banco de dados para armazenamento, consultas e organização das informações</p>
+                    </div>
+                        <div class="tech-stack">
+                          <span class="stack-tag mysql">MySQL</span>
+                          <span class="stack-tag java">Java</span>
+                          <span class="stack-tag spring">SpringBoot</span>
+                        </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Coluna Direita - Processo -->
+          <div class="modal-column" style="border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);">
+            <div class="modal-section process-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 data-translate="modal_strategy_title">Minha estratégia</h3>
+              </div>
+              
+              <div class="process-timeline">
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">01</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_step_1_title">Análise Técnica</h4>
+                      <div class="step-badge" data-translate="modal_step_1_badge">Planejamento</div>
+                    </div>
+                    <p data-translate="modal_step_1_desc">Definição da melhor abordagem tecnológica para cada projeto, considerando requisitos, escalabilidade e manutenibilidade.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_step_1_tag1">Requisitos</span>
+                      <span class="tag" data-translate="modal_step_1_tag2">Arquitetura</span>
+                      <span class="tag" data-translate="modal_step_1_tag3">MVP</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">02</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_step_2_title">Desenvolvimento</h4>
+                      <div class="step-badge" data-translate="modal_step_2_badge">Implementação</div>
+                    </div>
+                    <p data-translate="modal_step_2_desc">Codificação limpa, organizada e fiel ao design, seguindo as melhores práticas do mercado.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_step_2_tag1">Clean Code</span>
+                      <span class="tag" data-translate="modal_step_2_tag2">Testes</span>
+                      <span class="tag" data-translate="modal_step_2_tag3">Versionamento</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">03</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_step_3_title">Integração</h4>
+                      <div class="step-badge" data-translate="modal_step_3_badge">Conectividade</div>
+                    </div>
+                    <p data-translate="modal_step_3_desc">Conexão com APIs e serviços externos para tornar a aplicação funcional em todas as plataformas e dispositivos.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_step_3_tag1">APIs REST</span>
+                      <span class="tag" data-translate="modal_step_3_tag2">Microservices</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">04</span>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_step_4_title">Otimização</h4>
+                      <div class="step-badge" data-translate="modal_step_4_badge">Finalização</div>
+                    </div>
+                    <p data-translate="modal_step_4_desc">Ajustes finais de performance, acessibilidade e SEO técnico, garantindo a melhor experiência para o usuário final.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_step_4_tag1">Performance</span>
+                      <span class="tag" data-translate="modal_step_4_tag2">SEO</span>
+                      <span class="tag" data-translate="modal_step_4_tag3">UX/UI</span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer id="footer" class="footer light-background">
   <div class="container footer-top">
     <div class="row gy-4">
@@ -1669,6 +1812,9 @@
   <script src="js/main.js"></script>
 
 <script src="js/netlify-form.js"></script>
+
+
+
 
 </body>
 </html>
