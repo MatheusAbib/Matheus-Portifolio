@@ -1413,9 +1413,6 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Contato</h2>
-    <p>
-    Clique no meu e-mail abaixo para enviar uma mensagem!
-    </p>
     <br>
   </div><!-- End Section Title -->
 
@@ -1466,7 +1463,6 @@
 <section id="form-section" class="contact-form-section section">
   <div class="container section-title" data-aos="fade-up">
     <h2 data-translate="contact_form_title">Envie uma mensagem</h2>
-    <p data-translate="contact_form_subtitle">Preencha o formulário abaixo para entrar em contato comigo</p>
   </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1488,52 +1484,68 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="name">
-              <i class="fas fa-user me-2"></i>Seu Nome
+              <i class="fas fa-user me-2"></i>
+              <span class="label-text" data-translate="form_name">Seu Nome</span>
             </label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Digite seu nome completo" required>
+            <input type="text" id="name" name="name" class="form-control" 
+                   data-translate-placeholder="form_placeholder_name" 
+                   placeholder="Digite seu nome completo" required>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label for="userEmail">
-              <i class="fas fa-envelope me-2"></i>Seu Email
+              <i class="fas fa-envelope me-2"></i>
+              <span class="label-text" data-translate="form_email">Seu Email</span>
             </label>
-            <input type="email" id="userEmail" name="email" class="form-control" placeholder="seu.email@exemplo.com" required>
+            <input type="email" id="userEmail" name="email" class="form-control" 
+                   data-translate-placeholder="form_placeholder_email" 
+                   placeholder="seu.email@exemplo.com" required>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label for="subject">
-              <i class="fas fa-tag me-2"></i>Assunto
+              <i class="fas fa-tag me-2"></i>
+              <span class="label-text" data-translate="form_subject">Assunto</span>
             </label>
-            <input type="text" id="subject" name="subject" class="form-control" placeholder="Sobre o que gostaria de conversar?" required>
+            <input type="text" id="subject" name="subject" class="form-control" 
+                   data-translate-placeholder="form_placeholder_subject" 
+                   placeholder="Sobre o que gostaria de conversar?" required>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label for="phone">
-              <i class="fas fa-phone me-2"></i>Telefone (opcional)
+              <i class="fas fa-phone me-2"></i>
+              <span class="label-text" data-translate="form_phone">Telefone (opcional)</span>
             </label>
-            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999">
+            <input type="tel" id="phone" name="phone" class="form-control" 
+                   data-translate-placeholder="form_placeholder_phone" 
+                   placeholder="(11) 99999-9999">
           </div>
         </div>
 
         <div class="col-12">
           <div class="form-group">
             <label for="message">
-              <i class="fas fa-comment-dots me-2"></i>Sua Mensagem
+              <i class="fas fa-comment-dots me-2"></i>
+              <span class="label-text" data-translate="form_message">Sua Mensagem</span>
             </label>
-            <textarea id="message" name="message" class="form-control" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
+            <textarea id="message" name="message" class="form-control" rows="6" 
+                      data-translate-placeholder="form_placeholder_message" 
+                      placeholder="Escreva sua mensagem aqui..." required></textarea>
           </div>
         </div>
 
         <div class="col-12">
           <div class="form-group">
             <button type="submit" class="btn-submit">
-              <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+              <i class="fas fa-paper-plane me-2"></i>
+              <span data-translate="form_submit">Enviar Mensagem</span>
             </button>
             <div id="formResponse" class="response-message mt-3" style="display: none;"></div>
           </div>

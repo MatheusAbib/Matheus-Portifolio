@@ -232,8 +232,35 @@
       project_websites: "Web Sites",
       copyright: "© Copyright",
       rights: "Todos os direitos reservados",
-      designed_by: "Designed by Matheus Abib"
+      designed_by: "Designed by Matheus Abib",
+
+
+      // Contact Form
+      contact_form_title: "Envie uma mensagem",
+      form_name: "Seu Nome",
+      form_email: "Seu Email",
+      form_subject: "Assunto",
+      form_phone: "Telefone (opcional)",
+      form_message: "Sua Mensagem",
+      form_submit: "Enviar Mensagem",
+      form_note: "Sua mensagem será enviada diretamente para mim e responderei o mais breve possível.",
+      form_placeholder_name: "Digite seu nome completo",
+      form_placeholder_email: "seu.email@exemplo.com",
+      form_placeholder_subject: "Sobre o que gostaria de conversar?",
+      form_placeholder_phone: "(11) 99999-9999",
+      form_placeholder_message: "Escreva sua mensagem aqui...",
+      form_validation_name: "Por favor, preencha seu nome",
+      form_validation_email: "Por favor, insira um email válido",
+      form_validation_subject: "Por favor, insira o assunto",
+      form_validation_message: "Por favor, escreva sua mensagem",
+      form_success: " Mensagem enviada com sucesso! Entrarei em contato em breve.",
+      form_error: " Ocorreu um erro ao enviar a mensagem. Tente novamente.",
+      form_loading: "Enviando...",
+      form_sent: "Enviado!",
+
     },
+
+
     
     en: {
       // Menu
@@ -389,7 +416,32 @@
       project_websites: "Websites",
       copyright: "© Copyright",
       rights: "All rights reserved",
-      designed_by: "Designed by Matheus Abib"
+      designed_by: "Designed by Matheus Abib",
+
+
+
+          // Contact Form
+    contact_form_title: "Send me a message",
+    form_name: "Your Name",
+    form_email: "Your Email",
+    form_subject: "Subject",
+    form_phone: "Phone (optional)",
+    form_message: "Your Message",
+    form_submit: "Send Message",
+    form_note: "Your message will be sent directly to me and I'll respond as soon as possible.",
+    form_placeholder_name: "Enter your full name",
+    form_placeholder_email: "your.email@example.com",
+    form_placeholder_subject: "What would you like to talk about?",
+    form_placeholder_phone: "(11) 99999-9999",
+    form_placeholder_message: "Write your message here...",
+    form_validation_name: "Please fill in your name",
+    form_validation_email: "Please enter a valid email",
+    form_validation_subject: "Please enter the subject",
+    form_validation_message: "Please write your message",
+    form_success: " Message sent successfully! I'll contact you soon.",
+    form_error: " An error occurred while sending the message. Please try again.",
+    form_loading: "Sending...",
+    form_sent: "Sent!",
     }
   };
 
@@ -568,7 +620,7 @@
       this.updateText('.info-card:nth-child(3) h3', 'availability_title');
       this.updateText('.info-card:nth-child(1) p', 'location_text');
       
-      // Contato - informações específicas
+      
       const contactInfo = document.querySelector('.info-card:nth-child(2) p');
       if (contactInfo) {
         const phoneText = translations[this.currentLang]['contact_phone'];
@@ -579,6 +631,35 @@
       this.updateText('.info-card:nth-child(3) p', 'availability_text');
       
       this.translateFooterExtra();
+
+
+
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('userEmail');
+const subjectInput = document.getElementById('subject');
+const phoneInput = document.getElementById('phone');
+const messageInput = document.getElementById('message');
+const submitBtn = document.querySelector('.btn-submit');
+
+if (nameInput) nameInput.placeholder = translations[this.currentLang]['form_placeholder_name'];
+if (emailInput) emailInput.placeholder = translations[this.currentLang]['form_placeholder_email'];
+if (subjectInput) subjectInput.placeholder = translations[this.currentLang]['form_placeholder_subject'];
+if (phoneInput) phoneInput.placeholder = translations[this.currentLang]['form_placeholder_phone'];
+if (messageInput) messageInput.placeholder = translations[this.currentLang]['form_placeholder_message'];
+
+if (submitBtn) {
+  const icon = submitBtn.querySelector('i');
+  const span = document.createElement('span');
+  if (submitBtn.querySelector('span')) {
+    submitBtn.querySelector('span').textContent = translations[this.currentLang]['form_submit'];
+  } else {
+    span.textContent = translations[this.currentLang]['form_submit'];
+    submitBtn.innerHTML = '';
+    if (icon) submitBtn.appendChild(icon.cloneNode(true));
+    submitBtn.appendChild(span);
+  }
+}
+      
     }
     
     translateCertificatesContent() {

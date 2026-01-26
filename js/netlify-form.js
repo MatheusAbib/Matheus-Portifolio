@@ -1,11 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
     const emailForm = document.getElementById('emailForm');
-    const formResponse = document.getElementById('formResponse');
-    const submitBtn = emailForm.querySelector('.btn-submit');
-    
     if (!emailForm) return;
     
+    const formResponse = document.getElementById('formResponse');
+    const submitBtn = emailForm.querySelector('.btn-submit');
+    const submitText = submitBtn.querySelector('span');
     const originalBtnText = submitBtn.innerHTML;
+    
+    const translations = {
+        pt: {
+            validation_name: "Por favor, preencha seu nome",
+            validation_email: "Por favor, insira um email válido",
+            validation_subject: "Por favor, insira o assunto",
+            validation_message: "Por favor, escreva sua mensagem",
+            success: "✅ Mensagem enviada com sucesso! Entrarei em contato em breve.",
+            error: "❌ Ocorreu um erro ao enviar a mensagem. Tente novamente.",
+            loading: "Enviando...",
+            sent: "Enviado!",
+            required_fields: "Por favor, preencha todos os campos obrigatórios."
+        },
+        en: {
+            validation_name: "Please fill in your name",
+            validation_email: "Please enter a valid email",
+            validation_subject: "Please enter the subject",
+            validation_message: "Please write your message",
+            success: " Message sent successfully! I'll contact you soon.",
+            error: " An error occurred while sending the message. Please try again.",
+            loading: "Sending...",
+            sent: "Sent!",
+            required_fields: "Please fill in all required fields."
+        }
+    };
+    
+    function getCurrentLang() {
+        return localStorage.getItem('portfolio_lang') || 'pt';
+    }
+    
+    function getTranslation(key) {
+        const lang = getCurrentLang();
+        return translations[lang]?.[key] || key;
+    }
     
     emailForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -15,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
+        submitText.textContent = getTranslation('loading');
+        submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin me-2"></i>${submitText.outerHTML}`;
         
         const formData = new FormData(emailForm);
         
@@ -30,24 +65,27 @@ document.addEventListener('DOMContentLoaded', function() {
             throw new Error('Network response was not ok.');
         })
         .then(() => {
-            showResponse('Mensagem enviada com sucesso! Entrarei em contato em breve.', 'success');
+            showResponse(getTranslation('success'), 'success');
             emailForm.reset();
             
-            submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Enviado!';
+            submitText.textContent = getTranslation('sent');
+            submitBtn.innerHTML = `<i class="fas fa-check me-2"></i>${submitText.outerHTML}`;
             submitBtn.classList.add('btn-success');
             
             setTimeout(() => {
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.classList.remove('btn-success');
                 submitBtn.disabled = false;
+                submitText.textContent = getTranslation('form_submit');
             }, 3000);
         })
         .catch(error => {
             console.error('Erro:', error);
-            showResponse('❌ Ocorreu um erro ao enviar a mensagem. Tente novamente.', 'error');
+            showResponse(getTranslation('error'), 'error');
             
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
+            submitText.textContent = getTranslation('form_submit');
         });
     });
     
@@ -58,20 +96,52 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = document.getElementById('message').value.trim();
         
         if (!name || !email || !subject || !message) {
-            showResponse('Por favor, preencha todos os campos obrigatórios.', 'error');
+            showResponse(getTranslation('required_fields'), 'error');
+            highlightEmptyFields();
             return false;
         }
         
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            showResponse('Por favor, insira um email válido.', 'error');
+            showResponse(getTranslation('validation_email'), 'error');
+            document.getElementById('userEmail').classList.add('is-invalid');
             return false;
+        }
+        
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput && phoneInput.value.trim()) {
+            const phone = phoneInput.value.trim();
+            const phoneRegex = /^[\d\s\(\)\-+]+$/;
+            const digitsOnly = phone.replace(/\D/g, '');
+            
+            if (!phoneRegex.test(phone) || digitsOnly.length < 10) {
+                showResponse('Por favor, insira um telefone válido (mínimo 10 dígitos).', 'error');
+                phoneInput.classList.add('is-invalid');
+                return false;
+            }
         }
         
         return true;
     }
     
+    function highlightEmptyFields() {
+        const requiredFields = ['name', 'userEmail', 'subject', 'message'];
+        requiredFields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field && !field.value.trim()) {
+                field.classList.add('is-invalid');
+                field.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.classList.remove('is-invalid');
+                    }
+                }, { once: true });
+            }
+        });
+    }
+    
     function showResponse(message, type) {
+        if (!formResponse) return;
+        
         formResponse.textContent = message;
         formResponse.className = `response-message ${type}`;
         formResponse.style.display = 'block';
@@ -85,85 +155,24 @@ document.addEventListener('DOMContentLoaded', function() {
         formResponse.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
     
-    const style = document.createElement('style');
-    style.textContent = `
-        .btn-success {
-            background: linear-gradient(135deg, #28a745, #20c997) !important;
-            transform: scale(1.05);
-            transition: all 0.3s ease;
-        }
+    const observer = new MutationObserver(function() {
+        updateFormTranslations();
+    });
+    
+    observer.observe(document.body, { 
+        attributes: true, 
+        attributeFilter: ['data-lang'] 
+    });
+    
+    function updateFormTranslations() {
+        const lang = getCurrentLang();
         
-        .btn-success:hover {
-            transform: scale(1.05) translateY(-3px) !important;
+        const submitText = document.querySelector('.btn-submit span[data-translate="form_submit"]');
+        if (submitText) {
+            const key = submitText.getAttribute('data-translate');
+            submitText.textContent = translations[lang]?.['form_submit'] || submitText.textContent;
         }
-        
-        #formResponse.success {
-            background: linear-gradient(135deg, #d4edda, #c3e6cb);
-            color: #155724;
-            border: 2px solid #28a745;
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-top: 1.5rem;
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            animation: slideInUp 0.5s ease;
-        }
-        
-        #formResponse.success::before {
-            content: '✓';
-            margin-right: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        #formResponse.error {
-            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-            color: #721c24;
-            border: 2px solid #dc3545;
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-top: 1.5rem;
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            animation: slideInUp 0.5s ease;
-        }
-        
-        #formResponse.error::before {
-            content: '✗';
-            margin-right: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .fa-spinner {
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    `;
-    document.head.appendChild(style);
+    }
+    
+    updateFormTranslations();
 });
