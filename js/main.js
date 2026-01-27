@@ -294,6 +294,8 @@ requestAnimationFrame(raf);
       service_webdev: "Desenvolvimento web",
       service_datamgmt: "Gerenciamento de dados",
       service_support: "Suporte",
+      service_quality: "Controle de Qualidade",
+      service_engineer: "Engenheiro de Software",
       footer_tools: "Ferramentas",
       footer_projects: "Projetos",
       project_figma: "Designe UI/UX - Figma",
@@ -504,8 +506,11 @@ requestAnimationFrame(raf);
       modal_access_projects_figma: "Acessar Projetos Figma",
       modal_access_projects_dashboards: "Acessar Projetos Power BI",
 
-    },
 
+      footer_contact: "Contato Rápido",
+      contact_footer_text: "Entre em contato para projetos ou oportunidades.",
+      availability_footer: "Disponível de Seg a Dom",
+    },
 
     
     en: {
@@ -651,6 +656,8 @@ requestAnimationFrame(raf);
       service_webdev: "Web Development",
       service_datamgmt: "Data Management",
       service_support: "Support",
+      service_quality: "Quality Control",
+      service_engineer: "Software Engineer",
       footer_tools: "Tools",
       footer_projects: "Projects",
       project_figma: "UI/UX Design - Figma",
@@ -858,9 +865,14 @@ modal_powerbi_dashboard_desc: "Development of interactive dashboards with dynami
     modal_powerbi_tools_spreadsheets: "<strong>Spreadsheets:</strong> Advanced Excel",
     modal_powerbi_tools_visualization: "<strong>Visualization:</strong> Interactive charts, maps",
 
-    // Shared string
-        modal_access_projects_figma: "Open Figma projects",
-        modal_access_projects_dashboards: "Open Power BI projects",
+    modal_access_projects_figma: "Open Figma projects",
+    modal_access_projects_dashboards: "Open Power BI projects",
+
+
+    footer_contact: "Quick Contact",
+    contact_footer_text: "Get in touch for projects or opportunities.",
+    availability_footer: "Available from Mon to Sun",
+
     }
   };
 
@@ -2864,7 +2876,8 @@ const projectMap = [
         }
       });
     }
-    
+      setupSmoothScrollAnchors();
+
   });
 
 
@@ -2967,3 +2980,35 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// ===================== SMOOTH SCROLL PARA LINKS ÂNCORA =====================
+// Função para lidar com cliques em links âncora
+function setupSmoothScrollAnchors() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Se for apenas "#", não faz nada
+      if (href === '#') return;
+      
+      // Verifica se é um link interno
+      if (href.startsWith('#') && href.length > 1) {
+        e.preventDefault();
+        
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement && window.lenisInstance) {
+          // Usa o Lenis para scroll suave
+          window.lenisInstance.scrollTo(targetElement, {
+            offset: -98, // Ajuste para o header fixo
+            duration: 1.5,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+          });
+          
+          // Atualiza a URL sem recarregar a página
+          history.pushState(null, null, href);
+        }
+      }
+    });
+  });
+}
