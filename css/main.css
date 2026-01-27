@@ -2373,7 +2373,7 @@ background: rgb(255 255 255 / 95%);
 .contact-form{
     background-color: #ffffffb8;
     padding: 5rem 4rem 5rem;
-    border-radius: 14px;
+    border-radius: 26px;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     border: 2px solid
  color-mix(in srgb, var(--accent-color), transparent 85%);
