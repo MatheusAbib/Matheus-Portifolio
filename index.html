@@ -37,6 +37,7 @@
   <script src="https://unpkg.com/lenis@1.1.4/dist/lenis.min.js"></script>
 
   <link href="css/main.css" rel="stylesheet">
+
 </head>
 
 <body class="index-page">
@@ -480,41 +481,45 @@
           <div class="service-content">
             <h3 data-translate="service_3_title">UI/UX Design e Protótipos</h3>
             <p data-translate="service_3_text">Crio layouts funcionais e intuitivos para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.</p>
-              <a href="https://matheusabib.github.io/Tela-de-links-Figma/" target="_blank" class="service-link">
-              <span data-translate="see_button">Saiba Mais</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
+                <a href="#" class="service-link" data-bs-toggle="modal" data-bs-target="#uiuxModal">
+                <span data-translate="see_button">Saiba Mais</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="bi bi-card-checklist"></i>
-          </div>
-          <div class="service-content">
-            <h3 data-translate="service_4_title">Engenharia de Software</h3>
-            <p data-translate="service_4_text">Realizo testes contínuos e avaliações para garantir que os sistemas funcionem conforme especificações e atendam aos padrões de qualidade.</p>
-          </div>
+    <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
+      <div class="service-item">
+        <div class="service-icon">
+          <i class="bi bi-card-checklist"></i>
+        </div>
+        <div class="service-content">
+          <h3 data-translate="service_4_title">Engenharia de Software</h3>
+          <p data-translate="service_4_text">Análise de requisitos, metodologias ágeis, controle de qualidade e documentação para sistemas robustos e alinhados ao negócio.</p>
+          <a href="#" class="service-link" data-bs-toggle="modal" data-bs-target="#softwareEngineeringModal">
+            <span data-translate="see_button">Saiba Mais</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-6" data-aos="fade-left" data-aos-delay="600">
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="bi bi-bar-chart-line"></i>
-          </div>
-          <div class="service-content">
-            <h3 data-translate="service_6_title">Power BI e Análise de Dados</h3>
-            <p data-translate="service_6_text">Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.</p>
-             <a href="https://matheusabib.github.io/Tela-de-Links-PowerBI/" target="_blank" class="service-link">
-              <span data-translate="see_button">Saiba Mais</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+<div class="col-md-6" data-aos="fade-left" data-aos-delay="600">
+  <div class="service-item">
+    <div class="service-icon">
+      <i class="bi bi-bar-chart-line"></i>
+    </div>
+    <div class="service-content">
+      <h3 data-translate="service_6_title">Power BI e Análise de Dados</h3>
+      <p data-translate="service_6_text">Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.</p>
+      <a href="#" class="service-link" data-bs-toggle="modal" data-bs-target="#powerbiModal">
+        <span data-translate="see_button">Saiba Mais</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
@@ -1529,13 +1534,13 @@
 </section>
   </main>
 
+<!-- Full Stack Modal (já estava quase completo) -->
 <div class="service-modal modal fade" id="fullstackModal" tabindex="-1" aria-labelledby="fullstackModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-header-content">
           <h2 class="modal-title" id="fullstackModalLabel" data-translate="modal_fullstack_title">Desenvolvimento Full Stack</h2>
-          <p class="modal-subtitle" data-translate="modal_fullstack_subtitle">Soluções completas do <strong>front-end ao back-end com interfaces modernas, performáticas e precisas</strong></p>
         </div>
         <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close">
           <i class="bi bi-x-lg"></i>
@@ -1595,9 +1600,22 @@
                           <span class="stack-tag mysql">MySQL</span>
                           <span class="stack-tag java">Java</span>
                           <span class="stack-tag spring">SpringBoot</span>
+                          <span class="stack-tag php">PHP</span>
                         </div>
                   </div>
-                  
+                  <div class="mt-4 pt-4 border-top border-bottom">
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                      <div class="flex-shrink-0">
+                        <i class="bi bi-lightbulb-fill text-warning" style="font-size: 1.5rem;"></i>
+                      </div>
+                      <div>
+                        <h5 class="mb-2" style="font-size: 1.15rem !important;" data-translate="modal_fullstack_experience_title">Experiência Prática</h5>
+                        <p class="mb-2" style="font-size: 0.95rem !important;" data-translate="modal_fullstack_experience_desc">
+                          Atuo como <strong>Desenvolvedor de Software</strong> em projetos institucionais para a Prefeitura de Mogi das Cruzes, contribuindo para o desenvolvimento de soluções digitais.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1699,7 +1717,573 @@
   </div>
 </div>
 
+<!-- UI/UX Modal com data-translate -->
+<div class="service-modal modal fade" id="uiuxModal" tabindex="-1" aria-labelledby="uiuxModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-content">
+          <h2 class="modal-title" id="uiuxModalLabel" data-translate="modal_uiux_title">UI/UX Design e Protótipos</h2>
+                              <a href="https://matheusabib.github.io/Tela-de-links-Figma/" target="_blank" class="btn-submit" style="width: auto; font-size: 1.05rem;">
+                      <i class="bi bi-eye me-2"></i>
+                      <span data-translate="modal_access_projects_dashboards">Acessar Projetos</span>
+                    </a>
+        </div>
+        <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-grid">
+          
+          <!-- Coluna Esquerda - Especialidades -->
+          <div class="modal-column">
+            <div class="modal-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-palette2"></i>
+                </div>
+                <h3 data-translate="modal_uiux_specialties_title">Minhas Especialidades</h3>
+              </div>
+              
+              <div class="tech-section">
+                <div class="tech-cards">
+                  
+                  <div class="tech-card">
+                    <div class="tech-card-header">
+                      <div class="tech-header-left">
+                        <div class="tech-icon performance">
+                          <i class="bi bi-layers"></i>
+                        </div>
+                        <h5 data-translate="modal_uiux_prototyping_title">Prototipagem</h5>
+                      </div>
+                      <div class="tech-badge" data-translate="modal_uiux_prototyping_badge">Validação</div>
+                    </div>
+                    <div class="tech-card-body">
+                      <p data-translate="modal_uiux_prototyping_desc">Criação de protótipos interativos para testar fluxos e validar experiências antes do desenvolvimento, garantindo usabilidade e eficiência.</p>
+                    </div>
+                    <div class="tech-stack">
+                      <span class="stack-tag mysql">Figma</span>
+                      <span class="stack-tag java">Canva</span>
+                      <span class="stack-tag spring">Interatividade</span>
+                      <span class="stack-tag angular">Arquitetura da Informação</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <div class="mt-4 pt-4 border-top border-bottom">
+                  <div class="d-flex align-items-start gap-3 mb-3">
+                    <div class="flex-shrink-0">
+                      <i class="bi bi-lightbulb-fill text-warning" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                      <h5 class="mb-2" style="font-size: 1.15rem !important;" data-translate="modal_uiux_experience_title">Experiência Prática</h5>
+                      <p class="mb-2" style="font-size: 0.95rem !important;" data-translate="modal_uiux_experience_desc">
+                        Atuei com <strong data-translate="modal_uiux_experience_strong">UX/UI Design</strong>, criando wireframes e protótipos interativos focados em interfaces claras e visualmente atrativas, com atenção à consistência e usabilidade.
+                      </p>
+                      <p class="mb-0" style="font-size: 0.95rem !important;" data-translate="modal_uiux_experience_highlights"><strong>Destaques:</strong> Sistemas de componentes reutilizáveis, controle de qualidade e validação com stakeholders.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Coluna Direita - Processo -->
+          <div class="modal-column" style="border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);">
+            <div class="modal-section process-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 data-translate="modal_uiux_process_title">Meu Processo</h3>
+              </div>
+              
+              <div class="process-timeline">
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">01</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_uiux_step1_title">Imersão & Pesquisa</h4>
+                      <div class="step-badge" data-translate="modal_uiux_step1_badge">Fundação</div>
+                    </div>
+                    <p data-translate="modal_uiux_step1_desc">Análise do negócio e público-alvo. Definição de personas e mapeamento de necessidades para direcionar o design.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_uiux_step1_tag1">Pesquisa de Usuário</span>
+                      <span class="tag" data-translate="modal_uiux_step1_tag2">Definição de Personas</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">02</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_uiux_step2_title">Wireframing</h4>
+                      <div class="step-badge" data-translate="modal_uiux_step2_badge">Estrutura</div>
+                    </div>
+                    <p data-translate="modal_uiux_step2_desc">Criação de wireframes detalhados que definem a arquitetura da informação, hierarquia visual e fluxos de navegação essenciais.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_uiux_step2_tag1">Fluxos de Usuário</span>
+                      <span class="tag" data-translate="modal_uiux_step2_tag2">Wireframes</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">03</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_uiux_step3_title">Design Visual</h4>
+                      <div class="step-badge" data-translate="modal_uiux_step3_badge">Estética</div>
+                    </div>
+                    <p data-translate="modal_uiux_step3_desc">Desenvolvimento da interface visual final com atenção à acessibilidade, responsividade e princípios de UI.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_uiux_step3_tag1">UI Design</span>
+                      <span class="tag" data-translate="modal_uiux_step3_tag2">Identidade Visual</span>
+                      <span class="tag" data-translate="modal_uiux_step3_tag3">Responsividade</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">04</span>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_uiux_step4_title">Prototipagem & Testes</h4>
+                      <div class="step-badge" data-translate="modal_uiux_step4_badge">Validação</div>
+                    </div>
+                    <p data-translate="modal_uiux_step4_desc">Criação de protótipos interativos para testes de usabilidade, validação de fluxos e refinamento antes da implementação final.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_uiux_step4_tag1">Testes de Usabilidade</span>
+                      <span class="tag" data-translate="modal_uiux_step4_tag2">Validação</span>
+                      <span class="tag" data-translate="modal_uiux_step4_tag3">Iteração</span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Engenharia de Software Modal com data-translate -->
+<div class="service-modal modal fade" id="softwareEngineeringModal" tabindex="-1" aria-labelledby="softwareEngineeringModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-content">
+          <h2 class="modal-title" id="softwareEngineeringModalLabel" data-translate="modal_software_title">Engenharia de Software</h2>
+        </div>
+        <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-grid">
+          
+          <!-- Coluna Esquerda - Especialidades -->
+          <div class="modal-column">
+            <div class="modal-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-gear"></i>
+                </div>
+                <h3 data-translate="modal_software_specialties_title">Minhas Especialidades</h3>
+              </div>
+              
+              <div class="tech-section">
+                <div class="tech-cards">
+                  
+                  
+                  <div class="tech-card">
+                    <div class="tech-card-header">
+                      <div class="tech-header-left">
+                        <div class="tech-icon performance">
+                          <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h5 data-translate="modal_software_agile_title">Metodologias Ágeis</h5>
+                      </div>
+                      <div class="tech-badge" data-translate="modal_software_agile_badge">Processo</div>
+                    </div>
+                    <div class="tech-card-body">
+                      <p data-translate="modal_software_agile_desc">Scrum, Kanban, DevOps. Planejamento iterativo, sprints, daily meetings e retrospectivas para entrega contínua de valor.</p>
+                    </div>
+                    <div class="tech-stack">
+                      <span class="stack-tag mysql">Scrum</span>
+                      <span class="stack-tag java">Kanban</span>
+                      <span class="stack-tag php">Trello</span>
+                      <span class="stack-tag spring">DevOps</span>
+                    </div>
+                  </div>
+
+                  <div class="tech-card">
+                    <div class="tech-card-header">
+                      <div class="tech-header-left">
+                        <div class="tech-icon web">
+                          <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h5 data-translate="modal_software_quality_title">Controle de Qualidade</h5>
+                      </div>
+                      <div class="tech-badge" data-translate="modal_software_quality_badge">Testes</div>
+                    </div>
+                    <div class="tech-card-body">
+                      <p data-translate="modal_software_quality_desc">Testes unitários, integração, sistema e aceitação. Garantia de qualidade através de revisões de código, análise estática e métricas.</p>
+                    </div>
+                    <div class="tech-stack">
+                      <span class="stack-tag bootstrap">Testes Unitários</span>
+                      <span class="stack-tag primeng">QA</span>
+                      <span class="stack-tag angular">Code Review</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <div class="mt-4 pt-4 border-top border-bottom">
+                  <div class="d-flex align-items-start gap-3 mb-3">
+                    <div class="flex-shrink-0">
+                      <i class="bi bi-mortarboard-fill text-primary" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                      <h5 class="mb-2" style="font-size: 1.15rem !important;" data-translate="modal_software_education_title">Formação Acadêmica</h5>
+                      <p class="mb-2" style="font-size: 0.95rem !important;" data-translate="modal_software_education_desc">
+                        <strong data-translate="modal_software_education_strong1">Análise e Desenvolvimento de Sistemas</strong> na Faculdade de Tecnologia de Mogi das Cruzes e <strong data-translate="modal_software_education_strong2">Engenharia de Software</strong> na Universidade de Mogi das Cruzes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Coluna Direita - Processo -->
+          <div class="modal-column" style="border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);">
+            <div class="modal-section process-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 data-translate="modal_software_methodology_title">Metodologia de Trabalho</h3>
+              </div>
+              
+              <div class="process-timeline">
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">01</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_software_step1_title">Levantamento de Requisitos</h4>
+                      <div class="step-badge" data-translate="modal_software_step1_badge">Entendimento</div>
+                    </div>
+                    <p data-translate="modal_software_step1_desc">Análise detalhada das necessidades do cliente, definição de escopo, regras de negócio e documentação técnica inicial.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_software_step1_tag1">Regras de Negócio</span>
+                      <span class="tag" data-translate="modal_software_step1_tag2">Documentação</span>
+                      <span class="tag" data-translate="modal_software_step1_tag3">Casos de Uso</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">02</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_software_step2_title">Modelagem & Planejamento</h4>
+                      <div class="step-badge" data-translate="modal_software_step2_badge">Estrutura</div>
+                    </div>
+                    <p data-translate="modal_software_step2_desc">UML, diagramas de caso de uso, classes, sequência. Definição de arquitetura, backlog do produto e planejamento de sprints.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_software_step2_tag1">UML</span>
+                      <span class="tag" data-translate="modal_software_step2_tag2">Arquitetura</span>
+                      <span class="tag" data-translate="modal_software_step2_tag3">Backlog</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">03</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_software_step3_title">Desenvolvimento Iterativo</h4>
+                      <div class="step-badge" data-translate="modal_software_step3_badge">Implementação</div>
+                    </div>
+                    <p data-translate="modal_software_step3_desc">Codificação com práticas ágeis, versionamento (Git), pair programming quando aplicável e integração contínua.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_software_step3_tag1">SCRUM</span>
+                      <span class="tag" data-translate="modal_software_step3_tag2">Git</span>
+                      <span class="tag" data-translate="modal_software_step3_tag3">CI/CD</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">04</span>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_software_step4_title">Qualidade & Entrega</h4>
+                      <div class="step-badge" data-translate="modal_software_step4_badge">Validação</div>
+                    </div>
+                    <p data-translate="modal_software_step4_desc">Testes rigorosos, revisões de código, garantia de qualidade, documentação final e deploy controlado.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_software_step4_tag1">Testes Automatizados</span>
+                      <span class="tag" data-translate="modal_software_step4_tag2">Code Review</span>
+                      <span class="tag" data-translate="modal_software_step4_tag3">Deploy</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- <div class="mt-4 pt-4 border-top">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="flex-shrink-0">
+                      <i class="bi bi-tools text-success" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                      <h5 class="mb-2" style="font-size: 1.15rem !important;" data-translate="modal_software_tools_title">Ferramentas e Práticas</h5>
+                      <p class="mb-2" style="font-size: 0.95rem !important;" data-translate="modal_software_tools_doc"><strong>Documentação:</strong> Notion, Draw.io (UML)</p>
+                      <p class="mb-2" style="font-size: 0.95rem !important;" data-translate="modal_software_tools_management"><strong>Gestão:</strong> Trello</p>
+                      <p class="mb-2" style="font-size: 0.95rem !important;" data-translate="modal_software_tools_quality"><strong>Qualidade:</strong> Cypress, Selenium, Postman</p>
+                      <p class="mb-0" style="font-size: 0.95rem !important;" data-translate="modal_software_tools_version"><strong>Versionamento:</strong> Git, GitHub</p>
+                    </div>
+                  </div>
+                </div> -->
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Power BI Modal com data-translate -->
+<div class="service-modal modal fade" id="powerbiModal" tabindex="-1" aria-labelledby="powerbiModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-content">
+          <h2 class="modal-title" id="powerbiModalLabel" data-translate="modal_powerbi_title">Power BI & Análise de Dados</h2>
+              <a href="https://matheusabib.github.io/Tela-de-Links-PowerBI/" target="_blank" class="btn-submit" style="width: auto; font-size: 1.05rem;">
+                  <i class="bi bi-eye me-2"></i>
+                    <span data-translate="modal_access_projects_figma">Acessar Projetos</span>
+                </a>
+        </div>
+        <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-grid">
+          
+          <!-- Coluna Esquerda - Especialidades -->
+          <div class="modal-column">
+            <div class="modal-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-bar-chart-line"></i>
+                </div>
+                <h3 data-translate="modal_powerbi_specialties_title">Minhas Especialidades</h3>
+              </div>
+              
+              <div class="tech-section">
+                <div class="tech-cards">
+                  
+                  <div class="tech-card">
+                    <div class="tech-card-header">
+                      <div class="tech-header-left">
+                        <div class="tech-icon web">
+                          <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h5 data-translate="modal_powerbi_dashboard_title">Dashboard & Visualizações</h5>
+                      </div>
+                      <div class="tech-badge" data-translate="modal_powerbi_dashboard_badge">Análise</div>
+                    </div>
+                    <div class="tech-card-body">
+                      <p data-translate="modal_powerbi_dashboard_desc">Criação de dashboards interativos com gráficos dinâmicos e visualizações que contam histórias com os dados.</p>
+                    </div>
+                    <div class="tech-stack">
+                      <span class="stack-tag bootstrap">Dashboards</span>
+                      <span class="stack-tag mysql">Gráficos</span>
+                      <span class="stack-tag mysql">Oracle</span>
+                      <span class="stack-tag java">SQL Server</span>
+                      <span class="stack-tag spring">Excel</span>
+                    </div>
+                  </div>
+                
+
+                  <div class="tech-card">
+                    <div class="tech-card-header">
+                      <div class="tech-header-left">
+                        <div class="tech-icon web">
+                          <i class="bi bi-file-earmark-spreadsheet"></i>
+                        </div>
+                        <h5 data-translate="modal_powerbi_excel_title">Excel Avançado</h5>
+                      </div>
+                      <div class="tech-badge" data-translate="modal_powerbi_excel_badge">Análise</div>
+                    </div>
+                    <div class="tech-card-body">
+                      <p data-translate="modal_powerbi_excel_desc">Fórmulas complexas, tabelas dinâmicas, Power Query, macros e integração entre Excel e Power BI para análises robustas.</p>
+                    </div>
+                    <div class="tech-stack">
+                      <span class="stack-tag bootstrap">Power Query</span>
+                      <span class="stack-tag primeng">Tabelas Dinâmicas</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <div class="mt-4 pt-4 border-top border-bottom">
+                  <div class="d-flex align-items-start gap-3 mb-3">
+                    <div class="flex-shrink-0">
+                      <i class="bi bi-award-fill text-warning" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                      <h5 class="mb-2" style="font-size: 1.15rem !important;" data-translate="modal_powerbi_certification_title">Certificação Power BI</h5>
+                      <p class="mb-2" style="font-size: 0.95rem !important;" data-translate="modal_powerbi_certification_desc">
+                        Concluí o curso <strong data-translate="modal_powerbi_certification_strong">Microsoft Power BI Para Business Intelligence e Data Science</strong>, adquirindo conhecimento em:
+                      </p>
+                      <ul class="mb-0" style="font-size: 0.9rem !important;">
+                        <li data-translate="modal_powerbi_certification_item1">DAX (Data Analysis Expressions)</li>
+                        <li data-translate="modal_powerbi_certification_item2">Power Query para ETL</li>
+                        <li data-translate="modal_powerbi_certification_item3">Modelagem de dados relacionais</li>
+                        <li data-translate="modal_powerbi_certification_item4">Visualizações interativas</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Coluna Direita - Processo -->
+          <div class="modal-column" style="border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);">
+            <div class="modal-section process-section">
+              <div class="section-header">
+                <div class="section-icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 data-translate="modal_powerbi_process_title">Meu Processo de Análise</h3>
+              </div>
+              
+              <div class="process-timeline">
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">01</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_powerbi_step1_title">Coleta & Preparação</h4>
+                      <div class="step-badge" data-translate="modal_powerbi_step1_badge">ETL</div>
+                    </div>
+                    <p data-translate="modal_powerbi_step1_desc">Conecto múltiplas fontes de dados (Excel, Oracle, SQL), realizo limpeza e transformação usando Power Query para garantir qualidade.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_powerbi_step1_tag1">Power Query</span>
+                      <span class="tag" data-translate="modal_powerbi_step1_tag2">Limpeza de Dados</span>
+                      <span class="tag" data-translate="modal_powerbi_step1_tag3">Oracle</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">02</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_powerbi_step2_title">Modelagem & Relacionamentos</h4>
+                      <div class="step-badge" data-translate="modal_powerbi_step2_badge">Estrutura</div>
+                    </div>
+                    <p data-translate="modal_powerbi_step2_desc">Crio modelos de dados relacionais, estabeleço conexões entre tabelas e aplico DAX para medidas e cálculos personalizados.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_powerbi_step2_tag1">Modelagem</span>
+                      <span class="tag" data-translate="modal_powerbi_step2_tag2">DAX</span>
+                      <span class="tag" data-translate="modal_powerbi_step2_tag3">Relacionamentos</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">03</span>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_powerbi_step3_title">Visualização</h4>
+                      <div class="step-badge" data-translate="modal_powerbi_step3_badge">Design</div>
+                    </div>
+                    <p data-translate="modal_powerbi_step3_desc">Desenvolvo dashboards intuitivos com gráficos interativos que contam histórias claras sobre os dados para diferentes públicos.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_powerbi_step3_tag1">Dashboard</span>
+                      <span class="tag" data-translate="modal_powerbi_step3_tag2">Storytelling</span>
+                      <span class="tag" data-translate="modal_powerbi_step3_tag3">UX de Dados</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="process-step">
+                  <div class="step-indicator">
+                    <span class="step-number-passo">04</span>
+                  </div>
+                  <div class="step-content-passo">
+                    <div class="step-header">
+                      <h4 data-translate="modal_powerbi_step4_title">Análise & Insights</h4>
+                      <div class="step-badge" data-translate="modal_powerbi_step4_badge">Valor</div>
+                    </div>
+                    <p data-translate="modal_powerbi_step4_desc">Identifico padrões, tendências e oportunidades nos dados, gerando insights acionáveis para decisões estratégicas.</p>
+                    <div class="step-tags">
+                      <span class="tag" data-translate="modal_powerbi_step4_tag1">Insights</span>
+                      <span class="tag" data-translate="modal_powerbi_step4_tag2">Tendências</span>
+                      <span class="tag" data-translate="modal_powerbi_step4_tag3">Decisão</span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer id="footer" class="footer light-background">
   <div class="container footer-top">
@@ -1814,8 +2398,6 @@
   <script src="js/main.js"></script>
 
 <script src="js/netlify-form.js"></script>
-
-
 
 
 </body>

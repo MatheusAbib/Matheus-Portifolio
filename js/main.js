@@ -6,23 +6,71 @@
   
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   
-  const lenis = new Lenis({
-    duration: isTouchDevice ? 1.0 : 1.2, 
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    smoothWheel: true,
-    smoothTouch: true, 
-    wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
-    touchMultiplier: isTouchDevice ? 1.8 : 1,
-    infinite: false
+window.lenisInstance = new Lenis({
+  duration: isTouchDevice ? 1.0 : 1.2, 
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  orientation: 'vertical',
+  smoothWheel: true,
+  smoothTouch: true, 
+  wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
+  touchMultiplier: isTouchDevice ? 1.8 : 1,
+  infinite: false
+});
+
+
+const modals = document.querySelectorAll('.service-modal');
+let modalScrollPosition = 0;
+
+modals.forEach(modal => {
+  modal.addEventListener('show.bs.modal', function() {
+    modalScrollPosition = window.pageYOffset;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${modalScrollPosition}px`;
+    document.body.style.width = '100%';
+    
+    // Desativa temporariamente o Lenis
+    if (window.lenisInstance) {
+      window.lenisInstance.destroy();
+    }
   });
   
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
+  modal.addEventListener('hidden.bs.modal', function() {
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, modalScrollPosition);
+    
+    // Reativa o Lenis após um breve delay
+    setTimeout(() => {
+      if (!window.lenisInstance) {
+        window.lenisInstance = new Lenis({
+          duration: isTouchDevice ? 1.0 : 1.2, 
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: 'vertical',
+          smoothWheel: true,
+          smoothTouch: true, 
+          wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
+          touchMultiplier: isTouchDevice ? 1.8 : 1,
+          infinite: false
+        });
+        
+        function raf(time) {
+          window.lenisInstance.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+    }, 100);
+  });
+});
   
+function raf(time) {
+  window.lenisInstance.raf(time);
   requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
   
   console.log('Lenis Smooth Scroll ativado! Dispositivo:', isTouchDevice ? 'Touch/Mobile' : 'Desktop');
 
@@ -177,7 +225,7 @@
       service_3_title: "UI/UX Design e Protótipos",
       service_3_text: "Crio layouts funcionais e intuitivos para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.",
       service_4_title: "Engenharia de Software",
-      service_4_text: "Realizo testes contínuos e avaliações para garantir que os sistemas funcionem conforme especificações e atendam aos padrões de qualidade.",
+      service_4_text: "Análise de requisitos, metodologias ágeis, controle de qualidade e documentação para sistemas robustos e alinhados ao negócio.",
       service_5_text: "Transformo necessidades do cliente em especificações técnicas claras, garantindo que o desenvolvimento siga objetivos estratégicos.",
       service_6_title: "Power BI e Análise de Dados",
       service_6_text: "Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.",
@@ -280,11 +328,10 @@
       form_sent: "Enviado!",
 
       modal_fullstack_title: "Desenvolvimento Full Stack",
-      modal_fullstack_subtitle: "Soluções completas do front-end ao back-end com interfaces modernas, performáticas e precisas.",
       modal_tech_title: "Principais Tecnologias",
       modal_tech_web_title: "Web",
       modal_tech_web_badge: "Front-end",
-      modal_tech_web_desc: "Aplicações responsivas com HTML5, CSS3, JavaScript, PHP, TypeScript, SCSS e frameworks modernos como Bootstrap, PrimeNG e Angular.",
+      modal_tech_web_desc: "Aplicações responsivas com HTML5, CSS3, JavaScript, TypeScript, SCSS e frameworks modernos como Bootstrap, PrimeNG e Angular.",
       modal_tech_performance_title: "Performance",
       modal_tech_performance_badge: "Back-end",
       modal_tech_performance_desc: "SEO técnico, experiência do usuário, APIs escaláveis e uso de banco de dados para armazenamento, consultas e organização das informações.",
@@ -317,6 +364,146 @@
       modal_step_4_tag1: "Performance",
       modal_step_4_tag2: "SEO",
       modal_step_4_tag3: "UX/UI",
+
+      modal_fullstack_experience_title: "Experiência Prática",
+      modal_fullstack_experience_desc: "Atuo como <strong>Desenvolvedor de Software</strong> em projetos institucionais para a Prefeitura de Mogi das Cruzes, contribuindo para o desenvolvimento de soluções digitais.",
+
+      // UI/UX Modal
+      modal_uiux_title: "UI/UX Design e Protótipos",
+      modal_uiux_specialties_title: "Minhas Especialidades",
+      modal_uiux_prototyping_title: "Prototipagem",
+      modal_uiux_prototyping_badge: "Validação",
+      modal_uiux_prototyping_desc: "Criação de protótipos interativos para testar fluxos e validar experiências antes do desenvolvimento, garantindo usabilidade e eficiência.",
+      modal_uiux_experience_title: "Experiência Prática",
+      modal_uiux_experience_desc: "Atuei com <strong>UX/UI Design</strong>, criando wireframes e protótipos interativos focados em interfaces claras e visualmente atrativas, com atenção à consistência e usabilidade.",
+      modal_uiux_experience_strong: "UX/UI Design",
+      modal_uiux_experience_highlights: "<strong>Destaques:</strong> Sistemas de componentes reutilizáveis, controle de qualidade e validação com stakeholders.",
+      modal_uiux_view_projects: "Ver meus Figmas:",
+      modal_uiux_process_title: "Meu Processo",
+      modal_uiux_step1_title: "Imersão & Pesquisa",
+      modal_uiux_step1_badge: "Fundação",
+      modal_uiux_step1_desc: "Análise do negócio e público-alvo. Definição de personas e mapeamento de necessidades para direcionar o design.",
+      modal_uiux_step1_tag1: "Pesquisa de Usuário",
+      modal_uiux_step1_tag2: "Definição de Personas",
+      modal_uiux_step2_title: "Wireframing",
+      modal_uiux_step2_badge: "Estrutura",
+      modal_uiux_step2_desc: "Criação de wireframes detalhados que definem a arquitetura da informação, hierarquia visual e fluxos de navegação essenciais.",
+      modal_uiux_step2_tag1: "Fluxos de Usuário",
+      modal_uiux_step2_tag2: "Wireframes",
+      modal_uiux_step3_title: "Design Visual",
+      modal_uiux_step3_badge: "Estética",
+      modal_uiux_step3_desc: "Desenvolvimento da interface visual final com atenção à acessibilidade, responsividade e princípios de UI.",
+      modal_uiux_step3_tag1: "UI Design",
+      modal_uiux_step3_tag2: "Identidade Visual",
+      modal_uiux_step3_tag3: "Responsividade",
+      modal_uiux_step4_title: "Prototipagem & Testes",
+      modal_uiux_step4_badge: "Validação",
+      modal_uiux_step4_desc: "Criação de protótipos interativos para testes de usabilidade, validação de fluxos e refinamento antes da implementação final.",
+      modal_uiux_step4_tag1: "Testes de Usabilidade",
+      modal_uiux_step4_tag2: "Validação",
+      modal_uiux_step4_tag3: "Iteração",
+
+      // Engenharia de Software Modal
+      modal_software_title: "Engenharia de Software",
+      modal_software_specialties_title: "Minhas Especialidades",
+      modal_software_requirements_title: "Engenharia de Requisitos",
+      modal_software_requirements_badge: "Análise",
+      modal_software_requirements_desc: "Elicitação, análise, especificação e validação de requisitos funcionais e não funcionais, garantindo alinhamento com objetivos de negócio.",
+      modal_software_agile_title: "Metodologias Ágeis",
+      modal_software_agile_badge: "Processo",
+      modal_software_agile_desc: "Scrum, Kanban, DevOps. Planejamento iterativo, sprints, daily meetings e retrospectivas para entrega contínua de valor.",
+      modal_software_quality_title: "Controle de Qualidade",
+      modal_software_quality_badge: "Testes",
+      modal_software_quality_desc: "Testes unitários, integração, sistema e aceitação. Garantia de qualidade através de revisões de código, análise estática e métricas.",
+      modal_software_education_title: "Formação Acadêmica",
+      modal_software_education_desc: "<strong>Análise e Desenvolvimento de Sistemas</strong> na Faculdade de Tecnologia de Mogi das Cruzes e <strong>Engenharia de Software</strong> na Universidade de Mogi das Cruzes.",
+      modal_software_education_strong1: "Análise e Desenvolvimento de Sistemas",
+      modal_software_education_strong2: "Engenharia de Software",
+      modal_software_methodology_title: "Metodologia de Trabalho",
+      modal_software_step1_title: "Levantamento de Requisitos",
+      modal_software_step1_badge: "Entendimento",
+      modal_software_step1_desc: "Análise detalhada das necessidades do cliente, definição de escopo, regras de negócio e documentação técnica inicial.",
+      modal_software_step1_tag1: "Regras de Negócio",
+      modal_software_step1_tag2: "Documentação",
+      modal_software_step1_tag3: "Caso de uso",
+      modal_software_step2_title: "Modelagem & Planejamento",
+      modal_software_step2_badge: "Estrutura",
+      modal_software_step2_desc: "UML, diagramas de caso de uso, classes, sequência. Definição de arquitetura, backlog do produto e planejamento de sprints.",
+      modal_software_step2_tag1: "UML",
+      modal_software_step2_tag2: "Arquitetura",
+      modal_software_step2_tag3: "Backlog",
+      modal_software_step3_title: "Desenvolvimento Iterativo",
+      modal_software_step3_badge: "Implementação",
+      modal_software_step3_desc: "Codificação com práticas ágeis, versionamento (Git), pair programming quando aplicável e integração contínua.",
+      modal_software_step3_tag1: "SCRUM",
+      modal_software_step3_tag2: "Git",
+      modal_software_step3_tag3: "CI/CD",
+      modal_software_step4_title: "Qualidade & Entrega",
+      modal_software_step4_badge: "Validação",
+      modal_software_step4_desc: "Testes rigorosos, revisões de código, garantia de qualidade, documentação final e deploy controlado.",
+      modal_software_step4_tag1: "Testes Automatizados",
+      modal_software_step4_tag2: "Code Review",
+      modal_software_step4_tag3: "Deploy",
+      modal_software_tools_title: "Ferramentas e Práticas",
+      modal_software_tools_doc: "<strong>Documentação:</strong> Notion, Draw.io (UML)",
+      modal_software_tools_management: "<strong>Gestão:</strong> Trello",
+      modal_software_tools_quality: "<strong>Qualidade:</strong> Cypress, Selenium, Postman",
+      modal_software_tools_version: "<strong>Versionamento:</strong> Git, GitHub",
+
+      // Power BI Modal
+      modal_powerbi_title: "Power BI & Análise de Dados",
+      modal_powerbi_specialties_title: "Minhas Especialidades",
+      modal_powerbi_dashboard_title: "Dashboard & Dados",
+      modal_powerbi_dashboard_badge: "Análise",
+      modal_powerbi_dashboard_desc: "Criação de dashboards interativos com gráficos dinâmicos e conexão com diversas fontes de dados: Excel, SQL Server, Oracle e APIs.",
+      modal_powerbi_integration_title: "Integração de Dados",
+      modal_powerbi_integration_badge: "ETL",
+      modal_powerbi_integration_desc: "Conexão com diversas fontes: Excel, SQL Server, Oracle, APIs. Limpeza, transformação e modelagem de dados para análise.",
+      modal_powerbi_excel_title: "Excel Avançado",
+      modal_powerbi_excel_badge: "Análise",
+      modal_powerbi_excel_desc: "Fórmulas complexas, tabelas dinâmicas, Power Query, macros e integração entre Excel e Power BI para análises robustas.",
+      modal_powerbi_certification_title: "Certificação Power BI",
+      modal_powerbi_certification_desc: "Concluí o curso <strong>Microsoft Power BI Para Business Intelligence e Data Science</strong>, adquirindo conhecimento em:",
+      modal_powerbi_certification_strong: "Microsoft Power BI Para Business Intelligence e Data Science",
+      modal_powerbi_certification_item1: "DAX (Data Analysis Expressions)",
+      modal_powerbi_certification_item2: "Power Query para ETL",
+      modal_powerbi_certification_item3: "Modelagem de dados relacionais",
+      modal_powerbi_certification_item4: "Visualizações interativas",
+      modal_powerbi_view_dashboards: "Ver meus Dashboards:",
+      modal_powerbi_process_title: "Meu Processo de Análise",
+      modal_powerbi_step1_title: "Coleta & Preparação",
+      modal_powerbi_step1_badge: "ETL",
+      modal_powerbi_step1_desc: "Conecto múltiplas fontes de dados (Excel, Oracle, SQL), realizo limpeza e transformação usando Power Query para garantir qualidade.",
+      modal_powerbi_step1_tag1: "Power Query",
+      modal_powerbi_step1_tag2: "Limpeza de Dados",
+      modal_powerbi_step1_tag3: "Oracle",
+      modal_powerbi_step2_title: "Modelagem & Relacionamentos",
+      modal_powerbi_step2_badge: "Estrutura",
+      modal_powerbi_step2_desc: "Crio modelos de dados relacionais, estabeleço conexões entre tabelas e aplico DAX para medidas e cálculos personalizados.",
+      modal_powerbi_step2_tag1: "Modelagem",
+      modal_powerbi_step2_tag2: "DAX",
+      modal_powerbi_step2_tag3: "Relacionamentos",
+      modal_powerbi_step3_title: "Visualização",
+      modal_powerbi_step3_badge: "Design",
+      modal_powerbi_step3_desc: "Desenvolvo dashboards intuitivos com gráficos interativos que contam histórias claras sobre os dados para diferentes públicos.",
+      modal_powerbi_step3_tag1: "Dashboard",
+      modal_powerbi_step3_tag2: "Storytelling",
+      modal_powerbi_step3_tag3: "UX de Dados",
+      modal_powerbi_step4_title: "Análise & Insights",
+      modal_powerbi_step4_badge: "Valor",
+      modal_powerbi_step4_desc: "Identifico padrões, tendências e oportunidades nos dados, gerando insights acionáveis para decisões estratégicas.",
+      modal_powerbi_step4_tag1: "Insights",
+      modal_powerbi_step4_tag2: "Tendências",
+      modal_powerbi_step4_tag3: "Decisão",
+      modal_powerbi_tools_title: "Tecnologias & Ferramentas",
+      modal_powerbi_tools_bi: "<strong>BI:</strong> Microsoft Power BI, Power Query, DAX",
+      modal_powerbi_tools_databases: "<strong>Bancos:</strong> Oracle Database, SQL Server, MySQL",
+      modal_powerbi_tools_spreadsheets: "<strong>Planilhas:</strong> Excel Avançado",
+      modal_powerbi_tools_visualization: "<strong>Visualização:</strong> Gráficos interativos, mapas",
+
+      modal_access_projects_figma: "Acessar Projetos Figma",
+      modal_access_projects_dashboards: "Acessar Projetos Power BI",
+
     },
 
 
@@ -389,17 +576,17 @@
       cert_java_skills: "Java · Spring Boot · API Rest · Database · Lombok",
       
       // Services
-  services_title: "Services",
-  service_1_title: "Full Stack Development",
-  service_1_text: "I create modern, high-performance, and precise web interfaces for users.",
-  service_3_title: "UI/UX Design and Prototypes",
-  service_3_text: "I create functional and intuitive layouts for users, using Figma, Canva and good UI/UX design practices.",
-  service_4_title: "Software Engineering", // CORRIGIDO: era service_4_text
-  service_4_text: "I perform continuous testing and evaluations to ensure systems function according to specifications and meet quality standards.",
-  service_6_title: "Power BI and Data Analysis",
-  service_6_text: "I structure complex information in interactive dashboards, facilitating analysis and strategic decision making.",
-  see_button: "Learn More",
-      
+      services_title: "Services",
+      service_1_title: "Full Stack Development",
+      service_1_text: "I create modern, high-performance, and precise web interfaces for users.",
+      service_3_title: "UI/UX Design and Prototypes",
+      service_3_text: "I create functional and intuitive layouts for users, using Figma, Canva and good UI/UX design practices.",
+      service_4_title: "Software Engineering", // CORRIGIDO: era service_4_text
+      service_4_text: "I perform continuous testing and evaluations to ensure systems function according to specifications and meet quality standards.",
+      service_6_title: "Power BI and Data Analysis",
+      service_6_text: "I structure complex information in interactive dashboards, facilitating analysis and strategic decision making.",
+      see_button: "Learn More",
+          
       // Soft Skills
       softskills_title: "Soft Skills",
       skill_1: "Proactivity",
@@ -420,27 +607,27 @@
       filter_fun: "Fun",
 
       // Portfolio Projects
-    project_floricultura: "Floriculture Website",
-    project_receitas: "Recipe Journal",
-    project_dashboard: "Sales Dashboard",
-    project_calendario: "Calendar",
-    project_forca: "Hangman Game",
-    project_crud: "CRUD - Registration Form",
-    project_dashboards: "My Power BI Dashboards",
-    project_tarefas: "Task Manager",
-    project_uno: "UNO Card Game",
-    project_editor: "Image Editor",
-    project_todolist: "To Do List",
-    project_sucos: "Dona Sucos - Juice Store",
-    project_musica: "Music Player",
-    project_livros: "E-Commerce - Online Books",
-    project_notas: "Notepad",
-    project_personagens: "Characters Diary",
-    project_figma_links: "My Figma Projects",
-    project_conversor: "Currency Converter",
-    project_lamen: "Yummy Lamen - Ramen Restaurant",
-    project_tarot: "Destiny Cards - Online Tarot",
-    project_login: "Login Page",
+      project_floricultura: "Floriculture Website",
+      project_receitas: "Recipe Journal",
+      project_dashboard: "Sales Dashboard",
+      project_calendario: "Calendar",
+      project_forca: "Hangman Game",
+      project_crud: "CRUD - Registration Form",
+      project_dashboards: "My Power BI Dashboards",
+      project_tarefas: "Task Manager",
+      project_uno: "UNO Card Game",
+      project_editor: "Image Editor",
+      project_todolist: "To Do List",
+      project_sucos: "Dona Sucos - Juice Store",
+      project_musica: "Music Player",
+      project_livros: "E-Commerce - Online Books",
+      project_notas: "Notepad",
+      project_personagens: "Characters Diary",
+      project_figma_links: "My Figma Projects",
+      project_conversor: "Currency Converter",
+      project_lamen: "Yummy Lamen - Ramen Restaurant",
+      project_tarot: "Destiny Cards - Online Tarot",
+      project_login: "Login Page",
     
           
       // Technologies
@@ -473,35 +660,31 @@
       rights: "All rights reserved",
       designed_by: "Designed by Matheus Abib",
 
-
-
           // Contact Form
-    contact_form_title: "Send me a message",
-    form_name: "Your Name",
-    form_email: "Your Email",
-    form_subject: "Subject",
-    form_phone: "Phone (optional)",
-    form_message: "Your Message",
-    form_submit: "Send Message",
-    form_note: "Your message will be sent directly to me and I'll respond as soon as possible.",
-    form_placeholder_name: "Enter your full name",
-    form_placeholder_email: "your.email@example.com",
-    form_placeholder_subject: "What would you like to talk about?",
-    form_placeholder_phone: "(11) 99999-9999",
-    form_placeholder_message: "Write your message here...",
-    form_validation_name: "Please fill in your name",
-    form_validation_email: "Please enter a valid email",
-    form_validation_subject: "Please enter the subject",
-    form_validation_message: "Please write your message",
-    form_success: " Message sent successfully! I'll contact you soon.",
-    form_error: " An error occurred while sending the message. Please try again.",
-    form_loading: "Sending...",
-    form_sent: "Sent!",
+      contact_form_title: "Send me a message",
+      form_name: "Your Name",
+      form_email: "Your Email",
+      form_subject: "Subject",
+      form_phone: "Phone (optional)",
+      form_message: "Your Message",
+      form_submit: "Send Message",
+      form_note: "Your message will be sent directly to me and I'll respond as soon as possible.",
+      form_placeholder_name: "Enter your full name",
+      form_placeholder_email: "your.email@example.com",
+      form_placeholder_subject: "What would you like to talk about?",
+      form_placeholder_phone: "(11) 99999-9999",
+      form_placeholder_message: "Write your message here...",
+      form_validation_name: "Please fill in your name",
+      form_validation_email: "Please enter a valid email",
+      form_validation_subject: "Please enter the subject",
+      form_validation_message: "Please write your message",
+      form_success: " Message sent successfully! I'll contact you soon.",
+      form_error: " An error occurred while sending the message. Please try again.",
+      form_loading: "Sending...",
+      form_sent: "Sent!",
 
 
-
-  modal_fullstack_title: "Full Stack Development",
-    modal_fullstack_subtitle: "Complete solutions from front-end to back-end with modern, performant and precise interfaces.",
+    modal_fullstack_title: "Full Stack Development",
     modal_tech_title: "Main Technologies",
     modal_tech_web_title: "Web",
     modal_tech_web_badge: "Front-end",
@@ -538,8 +721,146 @@
     modal_step_4_tag1: "Performance",
     modal_step_4_tag2: "SEO",
     modal_step_4_tag3: "UX/UI",
-  
 
+    modal_fullstack_experience_title: "Practical Experience",
+    modal_fullstack_experience_desc: "I work as a <strong>Software Developer</strong> on institutional projects for the City Hall of Mogi das Cruzes, contributing to the development of digital solutions.",
+
+    // UI/UX Modal (English)
+    modal_uiux_title: "UI/UX Design and Prototypes",
+    modal_uiux_specialties_title: "My Specialties",
+    modal_uiux_prototyping_title: "Prototyping",
+    modal_uiux_prototyping_badge: "Validation",
+    modal_uiux_prototyping_desc: "Creation of interactive prototypes to test flows and validate experiences before development, ensuring usability and efficiency.",
+    modal_uiux_experience_title: "Practical Experience",
+    modal_uiux_experience_desc: "I worked with <strong>UX/UI Design</strong>, creating wireframes and interactive prototypes focused on clear and visually attractive interfaces, with attention to consistency and usability.",
+    modal_uiux_experience_strong: "UX/UI Design",
+    modal_uiux_experience_highlights: "<strong>Highlights:</strong> Reusable component systems, quality control and validation with stakeholders.",
+    modal_uiux_view_projects: "View my Figmas:",
+    modal_uiux_process_title: "My Process",
+    modal_uiux_step1_title: "Immersion & Research",
+    modal_uiux_step1_badge: "Foundation",
+    modal_uiux_step1_desc: "Analysis of business and target audience. Definition of personas and mapping of needs to guide design.",
+    modal_uiux_step1_tag1: "User Research",
+    modal_uiux_step1_tag2: "Persona Definition",
+    modal_uiux_step2_title: "Wireframing",
+    modal_uiux_step2_badge: "Structure",
+    modal_uiux_step2_desc: "Creation of detailed wireframes that define information architecture, visual hierarchy and essential navigation flows.",
+    modal_uiux_step2_tag1: "User Flows",
+    modal_uiux_step2_tag2: "Wireframes",
+    modal_uiux_step3_title: "Visual Design",
+    modal_uiux_step3_badge: "Aesthetics",
+    modal_uiux_step3_desc: "Development of the final visual interface with attention to accessibility, responsiveness and UI principles.",
+    modal_uiux_step3_tag1: "UI Design",
+    modal_uiux_step3_tag2: "Visual Identity",
+    modal_uiux_step3_tag3: "Responsiveness",
+    modal_uiux_step4_title: "Prototyping & Testing",
+    modal_uiux_step4_badge: "Validation",
+    modal_uiux_step4_desc: "Creation of interactive prototypes for usability tests, flow validation and refinement before final implementation.",
+    modal_uiux_step4_tag1: "Usability Testing",
+    modal_uiux_step4_tag2: "Validation",
+    modal_uiux_step4_tag3: "Iteration",
+
+    // Software Engineering Modal (English)
+    modal_software_title: "Software Engineering",
+    modal_software_specialties_title: "My Specialties",
+    modal_software_requirements_title: "Requirements Engineering",
+    modal_software_requirements_badge: "Analysis",
+    modal_software_requirements_desc: "Elicitation, analysis, specification and validation of functional and non-functional requirements, ensuring alignment with business objectives.",
+    modal_software_agile_title: "Agile Methodologies",
+    modal_software_agile_badge: "Process",
+    modal_software_agile_desc: "Scrum, Kanban, DevOps. Iterative planning, sprints, daily meetings and retrospectives for continuous value delivery.",
+    modal_software_quality_title: "Quality Control",
+    modal_software_quality_badge: "Testing",
+    modal_software_quality_desc: "Unit, integration, system and acceptance tests. Quality assurance through code reviews, static analysis and metrics.",
+    modal_software_education_title: "Academic Education",
+    modal_software_education_desc: "<strong>Systems Analysis and Development</strong> at Mogi das Cruzes Technology College and <strong>Software Engineering</strong> at University of Mogi das Cruzes.",
+    modal_software_education_strong1: "Systems Analysis and Development",
+    modal_software_education_strong2: "Software Engineering",
+    modal_software_methodology_title: "Work Methodology",
+    modal_software_step1_title: "Requirements Gathering",
+    modal_software_step1_badge: "Understanding",
+    modal_software_step1_desc: "Detailed analysis of client needs, scope definition, business rules and initial technical documentation.",
+    modal_software_step1_tag1: "Business Rules",
+    modal_software_step1_tag2: "Documentation",
+    modal_software_step1_tag3: "Use Case",
+    modal_software_step2_title: "Modeling & Planning",
+    modal_software_step2_badge: "Structure",
+    modal_software_step2_desc: "UML, use case diagrams, classes, sequence. Architecture definition, product backlog and sprint planning.",
+    modal_software_step2_tag1: "UML",
+    modal_software_step2_tag2: "Architecture",
+    modal_software_step2_tag3: "Backlog",
+    modal_software_step3_title: "Iterative Development",
+    modal_software_step3_badge: "Implementation",
+    modal_software_step3_desc: "Coding with agile practices, versioning (Git), pair programming when applicable and continuous integration.",
+    modal_software_step3_tag1: "SCRUM",
+    modal_software_step3_tag2: "Git",
+    modal_software_step3_tag3: "CI/CD",
+    modal_software_step4_title: "Quality & Delivery",
+    modal_software_step4_badge: "Validation",
+    modal_software_step4_desc: "Rigorous testing, code reviews, quality assurance, final documentation and controlled deployment.",
+    modal_software_step4_tag1: "Automated Tests",
+    modal_software_step4_tag2: "Code Review",
+    modal_software_step4_tag3: "Deploy",
+    modal_software_tools_title: "Tools and Practices",
+    modal_software_tools_doc: "<strong>Documentation:</strong> Notion, Draw.io (UML)",
+    modal_software_tools_management: "<strong>Management:</strong> Trello",
+    modal_software_tools_quality: "<strong>Quality:</strong> Cypress, Selenium, Postman",
+    modal_software_tools_version: "<strong>Versioning:</strong> Git, GitHub",
+
+    // Power BI Modal (English)
+    modal_powerbi_title: "Power BI & Data Analysis",
+    modal_powerbi_specialties_title: "My Specialties",
+    modal_powerbi_dashboard_title: "Dashboard & Data",
+    modal_powerbi_dashboard_badge: "Analysis",
+modal_powerbi_dashboard_desc: "Development of interactive dashboards with dynamic charts, integrated with multiple data sources such as Excel, SQL Server, Oracle, and APIs, focusing on data cleaning, processing, and analysis.",
+    modal_powerbi_integration_title: "Data Integration",
+    modal_powerbi_integration_badge: "ETL",
+    modal_powerbi_integration_desc: "Connection with various sources: Excel, SQL Server, Oracle, APIs. Data cleaning, transformation and modeling for analysis.",
+    modal_powerbi_excel_title: "Advanced Excel",
+    modal_powerbi_excel_badge: "Analysis",
+    modal_powerbi_excel_desc: "Complex formulas, pivot tables, Power Query, macros and integration between Excel and Power BI for robust analysis.",
+    modal_powerbi_certification_title: "Power BI Certification",
+    modal_powerbi_certification_desc: "Completed the course <strong>Microsoft Power BI Para Business Intelligence e Data Science</strong>, acquiring knowledge in:",
+    modal_powerbi_certification_strong: "Microsoft Power BI Para Business Intelligence e Data Science",
+    modal_powerbi_certification_item1: "DAX (Data Analysis Expressions)",
+    modal_powerbi_certification_item2: "Power Query for ETL",
+    modal_powerbi_certification_item3: "Relational data modeling",
+    modal_powerbi_certification_item4: "Interactive visualizations",
+    modal_powerbi_view_dashboards: "View my Dashboards:",
+    modal_powerbi_process_title: "My Analysis Process",
+    modal_powerbi_step1_title: "Collection & Preparation",
+    modal_powerbi_step1_badge: "ETL",
+    modal_powerbi_step1_desc: "I connect multiple data sources (Excel, Oracle, SQL), perform cleaning and transformation using Power Query to ensure quality.",
+    modal_powerbi_step1_tag1: "Power Query",
+    modal_powerbi_step1_tag2: "Data Cleaning",
+    modal_powerbi_step1_tag3: "Oracle",
+    modal_powerbi_step2_title: "Modeling & Relationships",
+    modal_powerbi_step2_badge: "Structure",
+    modal_powerbi_step2_desc: "I create relational data models, establish connections between tables and apply DAX for custom measures and calculations.",
+    modal_powerbi_step2_tag1: "Modeling",
+    modal_powerbi_step2_tag2: "DAX",
+    modal_powerbi_step2_tag3: "Relationships",
+    modal_powerbi_step3_title: "Visualization",
+    modal_powerbi_step3_badge: "Design",
+    modal_powerbi_step3_desc: "I develop intuitive dashboards with interactive charts that tell clear stories about data for different audiences.",
+    modal_powerbi_step3_tag1: "Dashboard",
+    modal_powerbi_step3_tag2: "Storytelling",
+    modal_powerbi_step3_tag3: "Data UX",
+    modal_powerbi_step4_title: "Analysis & Insights",
+    modal_powerbi_step4_badge: "Value",
+    modal_powerbi_step4_desc: "I identify patterns, trends and opportunities in data, generating actionable insights for strategic decisions.",
+    modal_powerbi_step4_tag1: "Insights",
+    modal_powerbi_step4_tag2: "Trends",
+    modal_powerbi_step4_tag3: "Decision",
+    modal_powerbi_tools_title: "Technologies & Tools",
+    modal_powerbi_tools_bi: "<strong>BI:</strong> Microsoft Power BI, Power Query, DAX",
+    modal_powerbi_tools_databases: "<strong>Databases:</strong> Oracle Database, SQL Server, MySQL",
+    modal_powerbi_tools_spreadsheets: "<strong>Spreadsheets:</strong> Advanced Excel",
+    modal_powerbi_tools_visualization: "<strong>Visualization:</strong> Interactive charts, maps",
+
+    // Shared string
+        modal_access_projects_figma: "Open Figma projects",
+        modal_access_projects_dashboards: "Open Power BI projects",
     }
   };
 
@@ -591,24 +912,24 @@
       this.translatePage();
     }
     
-    translatePage() {
-      document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[this.currentLang][key]) {
-          if (element.tagName === 'A' || element.tagName === 'SPAN' || element.tagName === 'LI' || element.tagName === 'H4') {
-            element.textContent = translations[this.currentLang][key];
-          } else if (element.hasAttribute('data-html')) {
-            element.innerHTML = translations[this.currentLang][key];
-          } else {
-            element.textContent = translations[this.currentLang][key];
-          }
-        }
-      });
+translatePage() {
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    if (translations[this.currentLang][key]) {
+      const translation = translations[this.currentLang][key];
+      const hasHtml = /<\/?[a-z][\s\S]*>/i.test(translation);
       
-      this.translateBySelectors();
-      
-      this.updateMetaTags();
+      if (hasHtml) {
+        element.innerHTML = translation;
+      } else {
+        element.textContent = translation;
+      }
     }
+  });
+  
+  this.translateBySelectors();
+  this.updateMetaTags();
+}
     
     translateBySelectors() {
       console.log(`Traduzindo para: ${this.currentLang}`);
@@ -1907,10 +2228,6 @@ const projectMap = [
     font-size: 1.5rem;
   }
   
-  .modal-subtitle {
-    font-size: 0.85rem;
-  }
-  
   .btn-close-modal {
     position: absolute;
     top: 15px;
@@ -2079,10 +2396,6 @@ const projectMap = [
     margin-bottom: 0.3rem;
   }
   
-  .modal-subtitle {
-    font-size: 0.75rem;
-  }
-  
   .btn-close-modal {
     position: absolute;
     top: 12px;
@@ -2100,10 +2413,11 @@ const projectMap = [
   
   .modal-column {
     gap: 1rem;
+    border-left: none !important;
   }
   
   .modal-section {
-    padding: 1rem;
+    padding: 0rem;
   }
   
   .section-header {
@@ -2273,10 +2587,6 @@ const projectMap = [
   
   .service-modal .modal-title {
     font-size: 1.2rem;
-  }
-  
-  .modal-subtitle {
-    font-size: 0.75rem;
   }
   
   .modal-grid {
