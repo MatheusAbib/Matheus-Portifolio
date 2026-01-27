@@ -1,26 +1,22 @@
     
 (function() {
   "use strict";
-
-
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
   
-  // Remove scroll-behavior smooth do CSS se existir
-  document.documentElement.style.scrollBehavior = 'auto';
+ document.documentElement.style.scrollBehavior = 'auto';
   
-  // Inicializa Lenis
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
   const lenis = new Lenis({
-    duration: 1.2,
+    duration: isTouchDevice ? 1.0 : 1.2, 
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: 'vertical',
     smoothWheel: true,
-    smoothTouch: false,
-    wheelMultiplier: 0.8,
-    touchMultiplier: 1,
+    smoothTouch: true, 
+    wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
+    touchMultiplier: isTouchDevice ? 1.8 : 1,
     infinite: false
   });
   
-  // Atualiza a cada frame
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -28,7 +24,7 @@
   
   requestAnimationFrame(raf);
   
-  console.log('Lenis Smooth Scroll ativado!');
+  console.log('Lenis Smooth Scroll ativado! Dispositivo:', isTouchDevice ? 'Touch/Mobile' : 'Desktop');
 
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
