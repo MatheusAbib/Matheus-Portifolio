@@ -127,10 +127,9 @@ h6 {
 
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: rgba(93, 87, 244, 0.1);
   font-size: 14px;
-  margin-top:3%;
-  margin-bottom: -30px;
+  margin-bottom: -6%;
   position: relative;
 }
 
@@ -317,7 +316,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 6% 0 30px;
+  padding: 5% 0 6%;
   scroll-margin-top: 98px;
   overflow: clip;
 }
@@ -1033,8 +1032,6 @@ background: linear-gradient(
 }
 
 .testimonials .testimonial-card {
-    background: linear-gradient(145deg,
- color-mix(in srgb, var(--accent-color), transparent 95%), var(--surface-color));
     border: 2px solid
    color-mix(in srgb, var(--accent-color), transparent 85%);  border-radius: 15px;
   overflow: hidden;
@@ -1143,8 +1140,6 @@ background: linear-gradient(
 .contact .info-card {
 padding: 1.6rem;
     border-radius: 14px;
-    background: linear-gradient(145deg,
- color-mix(in srgb, var(--accent-color), transparent 95%), var(--surface-color));
     border: 2px solid
  color-mix(in srgb, var(--accent-color), transparent 85%);
     height: 100%;
@@ -2371,10 +2366,22 @@ background: rgb(255 255 255 / 95%);
 .contact-form-section {
   position: relative;
   overflow: hidden;
-  padding: 3% 0 0;
+  padding: 3% 0 3%;
+  background-color: 
+ color-mix(in srgb, var(--accent-color), transparent 97%);
 
 }
 
+
+#contact{
+  background-color: 
+ color-mix(in srgb, var(--accent-color), transparent 97%);
+}
+
+#services-alt{
+    background-color: 
+ color-mix(in srgb, var(--accent-color), transparent 97%);
+}
 
 .contact-form-section .container {
   position: relative;

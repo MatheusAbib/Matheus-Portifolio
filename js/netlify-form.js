@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
             validation_email: "Por favor, insira um email válido",
             validation_subject: "Por favor, insira o assunto",
             validation_message: "Por favor, escreva sua mensagem",
-            success: "✅ Mensagem enviada com sucesso! Entrarei em contato em breve.",
-            error: "❌ Ocorreu um erro ao enviar a mensagem. Tente novamente.",
+            success: "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+            error: "Ocorreu um erro ao enviar a mensagem. Tente novamente.",
             loading: "Enviando...",
             sent: "Enviado!",
             required_fields: "Por favor, preencha todos os campos obrigatórios."

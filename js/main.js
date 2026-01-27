@@ -324,7 +324,7 @@ requestAnimationFrame(raf);
       form_validation_email: "Por favor, insira um email válido",
       form_validation_subject: "Por favor, insira o assunto",
       form_validation_message: "Por favor, escreva sua mensagem",
-      form_success: " Mensagem enviada com sucesso! Entrarei em contato em breve.",
+      form_success: "Mensagem enviada com sucesso! Entrarei em contato em breve.",
       form_error: " Ocorreu um erro ao enviar a mensagem. Tente novamente.",
       form_loading: "Enviando...",
       form_sent: "Enviado!",
