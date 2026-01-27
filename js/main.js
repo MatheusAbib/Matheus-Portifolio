@@ -315,7 +315,7 @@ requestAnimationFrame(raf);
       form_message: "Sua Mensagem",
       form_submit: "Enviar Mensagem",
       form_note: "Sua mensagem será enviada diretamente para mim e responderei o mais breve possível.",
-      form_placeholder_name: "Digite seu nome completo",
+      form_placeholder_name: "Digite seu nome",
       form_placeholder_email: "seu.email@exemplo.com",
       form_placeholder_subject: "Sobre o que gostaria de conversar?",
       form_placeholder_phone: "(11) 99999-9999",
@@ -676,7 +676,7 @@ requestAnimationFrame(raf);
       form_message: "Your Message",
       form_submit: "Send Message",
       form_note: "Your message will be sent directly to me and I'll respond as soon as possible.",
-      form_placeholder_name: "Enter your full name",
+      form_placeholder_name: "Enter your name",
       form_placeholder_email: "your.email@example.com",
       form_placeholder_subject: "What would you like to talk about?",
       form_placeholder_phone: "(11) 99999-9999",
@@ -1385,7 +1385,7 @@ const projectMap = [
           .navmenu a,
           .navmenu a:focus {
             color: var(--nav-color);
-            padding: 15px 12px;
+            padding: 15px 16px;
             font-size: 14px;
             font-family: var(--nav-font);
             font-weight: 600;
@@ -1616,6 +1616,18 @@ const projectMap = [
           [data-aos-delay] {
             transition-delay: 0 !important;
           }
+            .footer{
+            margin-bottom: -11%;
+            }
+
+          .section-title h2{
+          font-size: 34px
+          }
+
+          .portfolio .portfolio-filters{
+          gap: 15px;
+
+          }
 
             .tech-tags {
             gap: 4px;
@@ -1633,7 +1645,7 @@ const projectMap = [
 
           section,
           .section {
-            padding: 18% 0 0;
+            padding: 18% 0 10%;
        
           }
 
@@ -1658,9 +1670,9 @@ const projectMap = [
         }
         
         .hero-highlight .social-icon {
-          width: 44px;
-          height: 44px;
-          font-size: 1.1rem;
+          width: 40px;
+          height: 40px;
+          font-size: 1rem;
         }
         }
         
@@ -1718,38 +1730,18 @@ const projectMap = [
           }
           .how-we-work .process-item .content {
             border-width: 1px;
+            background: linear-gradient(145deg,
+ color-mix(in srgb, var(--accent-color), transparent 95%), var(--surface-color));
+    border: 2px solid
+ color-mix(in srgb, var(--accent-color), transparent 85%);
           }
 
           .how-we-work::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cpath id='wavePattern' fill='%235d57f4' fill-opacity='0.6' d='M0,150 Q250,100 500,150 T1000,150 L1000,300 L0,300 Z'/%3E%3C/defs%3E%3Cuse href='%23wavePattern' x='0'/%3E%3Cuse href='%23wavePattern' x='1000'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: bottom;
-            background-size: 650px 105%;
-            z-index: 0;
-            opacity: 0.8;
-            animation: seamlessWave 30s linear infinite;
+            display: none;
           }
 
           .how-we-work::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cpath id='wavePattern2' fill='%235d57f4' fill-opacity='0.25' d='M0,180 Q125,130 250,180 Q375,230 500,180 Q625,130 750,180 Q875,230 1000,180 L1000,300 L0,300 Z'/%3E%3C/defs%3E%3Cuse href='%23wavePattern2' x='0'/%3E%3Cuse href='%23wavePattern2' x='1000'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: bottom;
-            background-size: 650px 105%;
-            z-index: -1;
-            opacity: 0.8;
-            animation: seamlessWaveReverse 30s linear infinite;
+            display: none;
           }
 
           .how-we-work .process-item .content:hover {
@@ -1770,6 +1762,7 @@ const projectMap = [
             align-items: center;
             text-align: center;
             gap: 1rem;
+            
           }
           .how-we-work .process-item .step-icon {
             width: 60px;
@@ -1854,7 +1847,7 @@ const projectMap = [
           }
           
           .hero-highlight .hero-title {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
           }
           
           .hero-highlight .hero-description {
@@ -1900,7 +1893,7 @@ const projectMap = [
           }
           
           .hero-highlight .hero-title {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
           }
           
           .hero-highlight .hero-description {

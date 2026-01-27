@@ -83,6 +83,7 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  letter-spacing: 0.05em;
 }
 
 .header {
@@ -104,8 +105,8 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 24px;
-  letter-spacing: 1px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
@@ -113,7 +114,7 @@ h6 {
 
 .header .logo span {
   color: var(--accent-color);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
 }
 
@@ -327,10 +328,12 @@ section,
 }
 
 .section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 20px;
   padding-bottom: 20px;
+      font-size: 2.8rem;
+    letter-spacing: -0.01em;
+
   position: relative;
 }
 
@@ -338,9 +341,9 @@ section,
   content: "";
   position: absolute;
   display: block;
-  width: 160px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
+  width: 45%;
+  height: 1.5px;
+  background: color-mix(in srgb, var(--default-color), transparent 70%);
   left: 0;
   right: 0;
   bottom: 1px;
@@ -351,7 +354,7 @@ section,
   content: "";
   position: absolute;
   display: block;
-  width: 60px;
+  width: 10%;
   height: 3px;
   background: var(--accent-color);
   left: 0;
@@ -630,6 +633,7 @@ background: linear-gradient(
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .how-we-work .process-item .step-content p {
@@ -741,6 +745,7 @@ background: linear-gradient(
 
 .services .service-link span {
   margin-right: 0.5rem;
+  letter-spacing: 0.06em;
 }
 
 .services .service-link i {
@@ -1608,7 +1613,7 @@ padding: 1.6rem;
   background: linear-gradient(145deg, color-mix(in srgb, var(--surface-color), transparent 5%), var(--surface-color));
   padding: 15px 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 4%);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2092,7 +2097,6 @@ background: rgb(255 255 255 / 95%);
 }
 
 .hero-highlight .hero-title {
-  font-size: 2.6rem;
   background: linear-gradient(
     135deg,
     var(--heading-color) 0%,
@@ -2101,6 +2105,8 @@ background: rgb(255 255 255 / 95%);
   );  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.01em;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -2318,7 +2324,7 @@ background: rgb(255 255 255 / 95%);
   background-position: bottom;
   background-size: 1400px 115%;
   z-index: 0;
-  opacity: 0.8;
+  opacity: 0.75;
   animation: seamlessWave 25s linear infinite;
 }
 
@@ -2334,7 +2340,7 @@ background: rgb(255 255 255 / 95%);
   background-position: bottom;
   background-size: 1000px 100%;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 0.75;
   animation: seamlessWaveReverse 25s linear infinite;
 }
 
@@ -2363,24 +2369,40 @@ background: rgb(255 255 255 / 95%);
 }
 
 /* ===================== FORM SECTION STYLES ===================== */
+
+.contact-form{
+    background-color: #ffffffb8;
+    padding: 3rem;
+    border-radius: 14px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form:hover{
+    transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(93, 87, 244, 0.15);
+
+}
+
+
 .contact-form-section {
   position: relative;
   overflow: hidden;
-  padding: 3% 0 3%;
+  padding: 0 0 3%;
   background-color: 
- color-mix(in srgb, var(--accent-color), transparent 97%);
+ color-mix(in srgb, var(--accent-color), transparent 97.5%);
 
 }
 
 
 #contact{
   background-color: 
- color-mix(in srgb, var(--accent-color), transparent 97%);
+ color-mix(in srgb, var(--accent-color), transparent 97.5%);
 }
 
 #services-alt{
     background-color: 
- color-mix(in srgb, var(--accent-color), transparent 97%);
+ color-mix(in srgb, var(--accent-color), transparent 97.5%);
 }
 
 .contact-form-section .container {
@@ -2414,12 +2436,13 @@ background: rgb(255 255 255 / 95%);
 
 .contact-form .form-control {
   width: 100%;
-  padding: 0.875rem 1rem;
+  padding: 0.8rem 0.5rem;
+  border: none;
+  border-bottom: 1px solid #1d1d1d3d;
   font-size: 1rem;
   color: var(--default-color);
   background-color: var(--background-color);
-  border: 2px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  border-radius: 8px;
+  border-radius: 0;
   transition: all 0.3s ease;
   font-family: var(--default-font);
 }
@@ -2429,6 +2452,7 @@ background: rgb(255 255 255 / 95%);
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 85%);
   background-color: var(--surface-color);
+  border-radius: 10px;
 }
 
 .contact-form .form-control::placeholder {
@@ -2437,7 +2461,7 @@ background: rgb(255 255 255 / 95%);
 
 .contact-form textarea.form-control {
   resize: vertical;
-  min-height: 120px;
+  min-height: 100px;
   line-height: 1.5;
 }
 
@@ -2447,14 +2471,13 @@ background: rgb(255 255 255 / 95%);
   border: none;
   padding: 1rem 2rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   font-family: var(--heading-font);
   letter-spacing: 0.5px;
 }
