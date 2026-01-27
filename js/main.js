@@ -172,11 +172,11 @@ requestAnimationFrame(raf);
       cv_english: "Inglês",
       
       // Features
-      feature_1_title: "Entusiasta de Tecnologia",
+      feature_1_title: "Entusiasta",
       feature_1_text: "Pronto para aplicar meus conhecimentos e colaborar para o crescimento da empresa.",
       feature_2_title: "Excelência Técnica",
       feature_2_text: "Foco em interfaces intuitivas, design responsivo e atenção aos detalhes para melhor experiência do usuário.",
-      feature_3_title: "Comunicação em Equipe",
+      feature_3_title: "Comunicação",
       feature_3_text: "Habilidade em trabalhar em equipe, ouvir ativamente e contribuir de forma produtiva.",
       
       // Metodologias
@@ -535,11 +535,11 @@ requestAnimationFrame(raf);
       cv_english: "English",
       
       // Features
-      feature_1_title: "Technology Enthusiast",
+      feature_1_title: "Enthusiast",
       feature_1_text: "Ready to apply my knowledge and collaborate for the company's growth.",
       feature_2_title: "Technical Excellence",
       feature_2_text: "Focus on intuitive interfaces, responsive design, and attention to detail for better user experience.",
-      feature_3_title: "Team Communication",
+      feature_3_title: "Communication",
       feature_3_text: "Ability to work in teams, listen actively, and contribute productively.",
       
       // Metodologias
@@ -2806,7 +2806,7 @@ const projectMap = [
               top: section.offsetTop - parseInt(scrollMarginTop),
               behavior: 'smooth'
             });
-          }, 100);
+          }, 50);
         }
       }
     });

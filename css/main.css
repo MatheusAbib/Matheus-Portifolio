@@ -83,7 +83,7 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .header {
