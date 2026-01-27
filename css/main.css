@@ -330,7 +330,7 @@ section,
 .section-title h2 {
   font-weight: 900;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 35px;
       font-size: 2.8rem;
     letter-spacing: -0.01em;
 
@@ -1145,6 +1145,7 @@ background: linear-gradient(
 .contact .info-card {
 padding: 1.6rem;
     border-radius: 14px;
+    margin-top: -25px !important;
     border: 2px solid
  color-mix(in srgb, var(--accent-color), transparent 85%);
     height: 100%;
@@ -2404,7 +2405,7 @@ background: rgb(255 255 255 / 95%);
 
 #services-alt{
     background-color: 
- color-mix(in srgb, var(--accent-color), transparent 97.5%);
+ color-mix(in srgb, var(--accent-color), transparent 98%);
 }
 
 .contact-form-section .container {
