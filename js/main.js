@@ -1810,7 +1810,6 @@ const projectMap = [
         @media (max-width: 575.98px) {
           .services .service-item {
             flex-direction: column;
-            text-align: center;
           }
           .services .service-item::before {
             width: 100%;
