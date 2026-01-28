@@ -1252,9 +1252,10 @@ background: linear-gradient(
         rgba(255, 255, 255, 0.85)
     );
     backdrop-filter: blur(25px);
-    border-radius: 32px;
-    padding: 4rem;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 26px;
+    padding: 1rem 3rem 3rem;;
+    border: 2px solid
+ color-mix(in srgb, var(--accent-color), transparent 85%);
     box-shadow: 
         0 30px 60px -12px rgba(93, 87, 244, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.8),
@@ -1267,10 +1268,10 @@ background: linear-gradient(
 .contact-form-modern::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
     background: conic-gradient(
         from 0deg,
         transparent 0deg,
@@ -1279,7 +1280,6 @@ background: linear-gradient(
         color-mix(in srgb, #667eea, transparent 10%) 270deg,
         transparent 360deg
     );
-    animation: rotate 20s linear infinite;
     z-index: -1;
     opacity: 0.1;
 }
@@ -1295,24 +1295,12 @@ background: linear-gradient(
     position: relative;
 }
 
-.form-header::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, 
-        var(--accent-color),
-        color-mix(in srgb, var(--accent-color), #667eea)
-    );
-    border-radius: 2px;
-    margin: 1.5rem auto 0;
-}
 
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .form-group {
@@ -1357,10 +1345,10 @@ background: linear-gradient(
 
 .form-input {
     width: 100%;
-    padding: 1.2rem 1.5rem 1.2rem 4rem;
+    padding: 1rem 1.5rem 1rem 4rem;
     background: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: 12px;
+border: 2px solid
+ color-mix(in srgb, var(--accent-color), transparent 85%);    border-radius: 12px;
     font-size: 1rem;
     color: var(--default-color);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1375,9 +1363,6 @@ background: linear-gradient(
     outline: none;
     border-color: var(--accent-color);
     background: rgba(255, 255, 255, 1);
-    box-shadow: 
-        0 10px 30px color-mix(in srgb, var(--accent-color), transparent 70%),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
     transform: translateY(-2px);
     padding-left: 4.5rem;
 }
