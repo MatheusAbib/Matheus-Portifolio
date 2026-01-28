@@ -189,31 +189,46 @@ requestAnimationFrame(raf);
       method_4_text: "Priorizo comunicação clara, escuta ativa e colaboração, mesmo remotamente, sempre agindo com ética e responsabilidade.",
       
       // Certificados
-      certificates_title: "Certificados",
-      cert_powerbi: "Power BI",
-      cert_webdev: "Web Development",
-      cert_database: "Banco de Dados",
-      cert_logic: "Lógica de Programação",
-      cert_ai: "Inteligência Artificial",
-      cert_java: "Java",
-      competencias: "Competências",
-      sobre_curso: "Sobre o curso",
-      
-      // Conteúdo específico dos certificados (não traduzir nomes de cursos)
-      cert_powerbi_desc: "Microsoft Power BI Para Business Intelligence e Data Science",
-      cert_webdev_desc: "HTML, CSS and Javascript for web Developers - Coursera",
-      cert_database_desc: "Banco de Dados - Plataforma Mundi - IFSul",
-      cert_logic_desc: "GFT start #6 - Lógica de programação - DIO",
-      cert_ai_desc: "Imersão inteligencia artificial 2° edição - Alura",
-      cert_java_desc: "Especialização em Minicurso de Java",
-      
-      // Skills dos certificados
-      cert_powerbi_skills: "Microsoft Power BI · Microsoft Excel · Dashboards · Análise de dados · Gerenciamento de planilhas",
-      cert_webdev_skills: "CSS · Bootstrap · JavaScript · HTML5 · AJAX",
-      cert_database_skills: "Banco de dados · SQL · Gerenciamento de planilhas · Analise de dados",
-      cert_logic_skills: "Java script · Git · GitHub · lógica",
-      cert_ai_skills: "Fundamentos de Inteligência Artificial · Aprendizado Supervisionado e Não Supervisionado · Pré-processamento de Dados · Desenvolvimento com Python",
-      cert_java_skills: "Java · Spring Boot · API Rest · Database · Lombok",
+          menu_certificates: "Certificados",
+    
+    // Certificates Section
+    webdev_tab_title: "Web Development",
+    powerbi_tab_title: "Power BI",
+    database_tab_title: "Banco de Dados",
+    logic_tab_title: "Lógica de Programação",
+    ai_tab_title: "Inteligência Artificial",
+    java_tab_title: "Java",
+    
+    certificate_webdev_title: "HTML, CSS & JavaScript",
+    certificate_webdev_desc: "Curso especializado em desenvolvimento web front-end, abordando as tecnologias fundamentais para construção de interfaces modernas e responsivas.",
+    
+    certificate_powerbi_title: "Microsoft Power BI",
+    certificate_powerbi_desc: "Curso completo de Microsoft Power BI para Business Intelligence e Data Science, abordando desde conceitos básicos até técnicas avançadas de análise e visualização de dados.",
+    
+    certificate_database_title: "Banco de Dados SQL",
+    certificate_database_desc: "Curso completo de banco de dados relacional, abordando desde conceitos fundamentais até consultas avançadas em SQL, modelagem de dados e otimização de queries.",
+    
+    certificate_logic_title: "Lógica de Programação",
+    certificate_logic_desc: "Curso introdutório à lógica de programação através do programa GFT Start #6, focado em fundamentos de algoritmos e estruturas de dados utilizando JavaScript.",
+    
+    certificate_ai_title: "Inteligência Artificial",
+    certificate_ai_desc: "Imersão em Inteligência Artificial 2ª edição, abordando desde conceitos fundamentais até técnicas avançadas de machine learning e deep learning com Python.",
+    
+    certificate_java_title: "Java & Spring Boot",
+    certificate_java_desc: "Minicurso especializado em Java moderno e Spring Boot, abordando desde fundamentos da linguagem até desenvolvimento de APIs RESTful com boas práticas e padrões de projeto.",
+    
+    certificate_skills_developed: "Competências Desenvolvidas",
+    certificate_category_programming: "Programação",
+    
+    // Skills
+    skill_dashboards: "Dashboards",
+    skill_data_analysis: "Análise de Dados",
+    skill_spreadsheet_management: "Gerenciamento de Planilhas",
+    skill_database: "Banco de Dados",
+    skill_logic: "Lógica",
+    skill_ai_fundamentals: "Fundamentos de IA",
+    skill_supervised_learning: "Aprendizado Supervisionado",
+    skill_data_preprocessing: "Pré-processamento de Dados",
       
       // Services
       services_title: "Serviços",
@@ -565,31 +580,46 @@ requestAnimationFrame(raf);
       method_4_text: "I prioritize clear communication, active listening, and collaboration, even remotely, always acting with ethics and responsibility.",
       
       // Certificados
-      certificates_title: "Certificates",
-      cert_powerbi: "Power BI",
-      cert_webdev: "Web Development",
-      cert_database: "Database",
-      cert_logic: "Programming Logic",
-      cert_ai: "Artificial Intelligence",
-      cert_java: "Java",
-      competencias: "Skills",
-      sobre_curso: "About the course",
-      
-      // Conteúdo específico dos certificados (não traduzir nomes de cursos)
-      cert_powerbi_desc: "Microsoft Power BI Para Business Intelligence e Data Science",
-      cert_webdev_desc: "HTML, CSS and Javascript for web Developers - Coursera",
-      cert_database_desc: "Banco de Dados - Plataforma Mundi - IFSul",
-      cert_logic_desc: "GFT start #6 - Lógica de programação - DIO",
-      cert_ai_desc: "Imersão inteligencia artificial 2° edição - Alura",
-      cert_java_desc: "Especialização em Minicurso de Java",
-      
-      // Skills dos certificados
-      cert_powerbi_skills: "Microsoft Power BI · Microsoft Excel · Dashboards · Data Analysis · Spreadsheet Management",
-      cert_webdev_skills: "CSS · Bootstrap · JavaScript · HTML5 · AJAX",
-      cert_database_skills: "Database · SQL · Spreadsheet Management · Data Analysis",
-      cert_logic_skills: "Java script · Git · GitHub · Logic",
-      cert_ai_skills: "Artificial Intelligence Fundamentals · Supervised and Unsupervised Learning · Data Preprocessing · Python Development",
-      cert_java_skills: "Java · Spring Boot · API Rest · Database · Lombok",
+      menu_certificates: "Certificates",
+    
+    // Certificates Section
+    webdev_tab_title: "Web Development",
+    powerbi_tab_title: "Power BI",
+    database_tab_title: "Database",
+    logic_tab_title: "Programming Logic",
+    ai_tab_title: "Artificial Intelligence",
+    java_tab_title: "Java",
+    
+    certificate_webdev_title: "HTML, CSS & JavaScript",
+    certificate_webdev_desc: "Specialized course in front-end web development, covering fundamental technologies for building modern and responsive interfaces.",
+    
+    certificate_powerbi_title: "Microsoft Power BI",
+    certificate_powerbi_desc: "Complete Microsoft Power BI course for Business Intelligence and Data Science, covering from basic concepts to advanced data analysis and visualization techniques.",
+    
+    certificate_database_title: "SQL Database",
+    certificate_database_desc: "Complete relational database course, covering from fundamental concepts to advanced SQL queries, data modeling and query optimization.",
+    
+    certificate_logic_title: "Programming Logic",
+    certificate_logic_desc: "Introductory course to programming logic through the GFT Start #6 program, focused on algorithm fundamentals and data structures using JavaScript.",
+    
+    certificate_ai_title: "Artificial Intelligence",
+    certificate_ai_desc: "Artificial Intelligence Immersion 2nd edition, covering from fundamental concepts to advanced machine learning and deep learning techniques with Python.",
+    
+    certificate_java_title: "Java & Spring Boot",
+    certificate_java_desc: "Specialized mini-course in modern Java and Spring Boot, covering from language fundamentals to RESTful API development with best practices and design patterns.",
+    
+    certificate_skills_developed: "Developed Skills",
+    certificate_category_programming: "Programming",
+    
+    // Skills
+    skill_dashboards: "Dashboards",
+    skill_data_analysis: "Data Analysis",
+    skill_spreadsheet_management: "Spreadsheet Management",
+    skill_database: "Database",
+    skill_logic: "Logic",
+    skill_ai_fundamentals: "AI Fundamentals",
+    skill_supervised_learning: "Supervised Learning",
+    skill_data_preprocessing: "Data Preprocessing",
       
       // Services
       services_title: "Services",
