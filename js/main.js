@@ -1,67 +1,75 @@
-    
+     
 (function() {
   "use strict";
   
  document.documentElement.style.scrollBehavior = 'auto';
   
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 window.lenisInstance = new Lenis({
-  duration: isTouchDevice ? 1.0 : 1.2, 
+  duration: isTouchDevice ? 1.0 : 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   orientation: 'vertical',
   smoothWheel: true,
-  smoothTouch: true, 
+  smoothTouch: true,
   wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
   touchMultiplier: isTouchDevice ? 1.8 : 1,
-  infinite: false
+  infinite: false,
+  wrapper: window,
+  content: document.documentElement,
 });
 
-
-const modals = document.querySelectorAll('.service-modal');
-let modalScrollPosition = 0;
-
-modals.forEach(modal => {
-  modal.addEventListener('show.bs.modal', function() {
-    modalScrollPosition = window.pageYOffset;
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${modalScrollPosition}px`;
-    document.body.style.width = '100%';
+function setupPortfolioScroll() {
+  const portfolioContainer = document.querySelector('.portfolio-scroll-container');
+  
+  if (!portfolioContainer) return;
+  
+  let isOverPortfolio = false;
+  let portfolioScrollTimeout;
+  
+  portfolioContainer.addEventListener('mouseenter', function() {
+    isOverPortfolio = true;
     
     if (window.lenisInstance) {
-      window.lenisInstance.destroy();
+      window.lenisInstance.stop();
     }
   });
   
-  modal.addEventListener('hidden.bs.modal', function() {
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    window.scrollTo(0, modalScrollPosition);
+  portfolioContainer.addEventListener('mouseleave', function() {
+    isOverPortfolio = false;
     
-    setTimeout(() => {
-      if (!window.lenisInstance) {
-        window.lenisInstance = new Lenis({
-          duration: isTouchDevice ? 1.0 : 1.2, 
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          orientation: 'vertical',
-          smoothWheel: true,
-          smoothTouch: true, 
-          wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
-          touchMultiplier: isTouchDevice ? 1.8 : 1,
-          infinite: false
-        });
-        
-        function raf(time) {
-          window.lenisInstance.raf(time);
-          requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
+    clearTimeout(portfolioScrollTimeout);
+    portfolioScrollTimeout = setTimeout(() => {
+      if (window.lenisInstance && !isOverPortfolio) {
+        window.lenisInstance.start();
       }
-    }, 100);
+    }, 50);
   });
+  
+  portfolioContainer.addEventListener('wheel', function(e) {
+    e.stopPropagation();
+    
+    const currentScroll = this.scrollTop;
+    const maxScroll = this.scrollHeight - this.clientHeight;
+    
+    if ((currentScroll <= 0 && e.deltaY < 0) || (currentScroll >= maxScroll && e.deltaY > 0)) {
+      if (window.lenisInstance) {
+        window.lenisInstance.start();
+      }
+    }
+  }, { passive: false });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setupPortfolioScroll();
+  
+  function raf(time) {
+    if (window.lenisInstance) {
+      window.lenisInstance.raf(time);
+    }
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
 });
   
 function raf(time) {
@@ -3037,16 +3045,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===================== SMOOTH SCROLL PARA LINKS ÂNCORA =====================
-// Função para lidar com cliques em links âncora
 function setupSmoothScrollAnchors() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       
-      // Se for apenas "#", não faz nada
       if (href === '#') return;
       
-      // Verifica se é um link interno
       if (href.startsWith('#') && href.length > 1) {
         e.preventDefault();
         
@@ -3054,27 +3059,24 @@ function setupSmoothScrollAnchors() {
         const targetElement = document.getElementById(targetId);
         
         if (targetElement && window.lenisInstance) {
-          // Usa o Lenis para scroll suave
           window.lenisInstance.scrollTo(targetElement, {
-            offset: -98, // Ajuste para o header fixo
+            offset: -98, 
             duration: 1.5,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
           });
           
-          // Atualiza a URL sem recarregar a página
           history.pushState(null, null, href);
         }
       }
     });
   });
-}// Adicione este script após seus outros scripts
+}//
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('emailForm');
     const submitBtn = form.querySelector('.form-submit');
     const submitText = submitBtn.querySelector('.submit-text');
     const submitLoader = submitBtn.querySelector('.submit-loader');
     
-    // Validação em tempo real
     const inputs = form.querySelectorAll('.form-input');
     inputs.forEach(input => {
         input.addEventListener('blur', function() {
@@ -3086,7 +3088,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Funções de validação
     function validateField(field) {
         const value = field.value.trim();
         const feedback = field.closest('.form-group').querySelector('.form-feedback');
@@ -3136,11 +3137,9 @@ document.addEventListener('DOMContentLoaded', function() {
         feedback.style.display = 'none';
     }
     
-    // Envio do formulário
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Validar todos os campos
         let isValid = true;
         inputs.forEach(input => {
             if (!validateField(input)) {
@@ -3153,17 +3152,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Mostrar loading
         submitBtn.classList.add('form-loading');
         
         try {
-            // Enviar formulário via Netlify
             const formData = new FormData(form);
             
-            // Simular delay para demonstração
             await new Promise(resolve => setTimeout(resolve, 1500));
             
-            // Enviar para Netlify
             const response = await fetch('/', {
                 method: 'POST',
                 body: new FormData(form),

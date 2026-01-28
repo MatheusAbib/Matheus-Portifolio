@@ -1000,9 +1000,8 @@ background: linear-gradient(
   line-height: 1.6;
 }
 
-/* Container dos projetos com scroll interno */
 .portfolio-scroll-container {
-  max-height: 70vh; /* Ajuste conforme necessário */
+  max-height: 70vh; 
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-color) transparent;
@@ -1027,7 +1026,6 @@ background: linear-gradient(
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-/* Para mobile */
 @media (max-width: 768px) {
   .portfolio-scroll-container {
     max-height: 60vh;
@@ -1227,8 +1225,6 @@ background: linear-gradient(
 
 
 /* ===================== MODERN CONTACT FORM ===================== */
-
-
 #form-section {
     background: linear-gradient(135deg, 
         color-mix(in srgb, var(--background-color), transparent 100%) 0%,
@@ -2463,30 +2459,6 @@ display: none;
         font-size: 1.3rem;
     }
 }
-
-/* Estilo para modo escuro */
-.dark-background .softskill-card {
-    background: linear-gradient(145deg, 
-        rgba(37, 37, 37, 0.9),
-        rgba(45, 45, 45, 0.8)
-    );
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-background .skill-title {
-    color: var(--contrast-color);
-}
-
-.dark-background .skill-description,
-.dark-background .skill-features li {
-    color: color-mix(in srgb, var(--contrast-color), transparent 20%);
-}
-
-.dark-background .progress-bar {
-    background: color-mix(in srgb, var(--contrast-color), transparent 92%);
-}
-
-
 
 #imageSkills{
   border-radius: 10px;
