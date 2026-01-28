@@ -1004,8 +1004,9 @@ background: linear-gradient(
   max-height: 70vh; 
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-color) transparent;
+  scrollbar-color: rgba(93, 87, 244, 0.6) transparent;
 }
+
 
 .portfolio-scroll-container::-webkit-scrollbar {
   width: 6px;
@@ -1017,14 +1018,11 @@ background: linear-gradient(
 }
 
 .portfolio-scroll-container::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
   border-radius: 10px;
-  transition: background 0.3s ease;
 }
 
-.portfolio-scroll-container::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
+
 
 @media (max-width: 768px) {
   .portfolio-scroll-container {
