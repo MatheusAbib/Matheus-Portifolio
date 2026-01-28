@@ -29,7 +29,6 @@ modals.forEach(modal => {
     document.body.style.top = `-${modalScrollPosition}px`;
     document.body.style.width = '100%';
     
-    // Desativa temporariamente o Lenis
     if (window.lenisInstance) {
       window.lenisInstance.destroy();
     }
@@ -42,7 +41,6 @@ modals.forEach(modal => {
     document.body.style.width = '';
     window.scrollTo(0, modalScrollPosition);
     
-    // Reativa o Lenis após um breve delay
     setTimeout(() => {
       if (!window.lenisInstance) {
         window.lenisInstance = new Lenis({
@@ -233,14 +231,26 @@ requestAnimationFrame(raf);
       
       // Soft Skills
       softskills_title: "Soft Skills",
-      skill_1: "Proatividade",
-      skill_2: "Resolução ágil de problemas",
-      skill_3: "Atendimento ao cliente",
-      skill_4: "Aprendizado contínuo",
-      skill_5: "Trabalho em equipe",
-      skill_6: "Adaptabilidade",
-      skill_7: "Raciocínio lógico",
-      skill_8: "Organização e gestão do tempo",
+      softskill_level: "Nível de experiência",
+
+      softskill_proactivity_title: "Proatividade",
+      softskill_proactivity_desc: "Antecipo necessidades e busco soluções antes que se tornem problemas, sempre pensando à frente para otimizar processos.",
+      softskill_proactivity_item1: "Iniciativa em novos projetos",
+      softskill_proactivity_item2: "Solução antecipada de problemas",
+      softskill_proactivity_item3: "Melhoria contínua de processos",
+
+      softskill_learning_title: "Aprendizado Contínuo",
+      softskill_learning_desc: "Busco constantemente atualização em tecnologias e metodologias, mantendo-me à frente das tendências do mercado.",
+      softskill_learning_item1: "Curiosidade intelectual",
+      softskill_learning_item2: "Adaptação a novas tecnologias",
+      softskill_learning_item3: "Compartilhamento de conhecimento",
+
+      softskill_adaptability_title: "Adaptabilidade",
+      softskill_adaptability_desc: "Ajusto-me rapidamente a mudanças, ambientes dinâmicos e novas exigências, mantendo a qualidade do trabalho.",
+      softskill_adaptability_item1: "Flexibilidade em diferentes cenários",
+      softskill_adaptability_item2: "Resiliência frente a mudanças",
+      softskill_adaptability_item3: "Capacidade de pivotar quando necessário",
+
       
       // Portfolio
       portfolio_title: "Meus Projetos",
@@ -274,7 +284,7 @@ requestAnimationFrame(raf);
     project_login: "Página de Login",
           
       // Technologies
-      tech_title: "Tecnologias que domino",
+      tech_title: "Stack Tecnológica",
       
       // Contact
       contact_title: "Contato",
@@ -307,7 +317,7 @@ requestAnimationFrame(raf);
 
 
       // Contact Form
-      contact_form_title: "Envie uma mensagem",
+      contact_form_title: "Envie sua mensagem",
       form_name: "Seu Nome",
       form_email: "Seu Email",
       form_subject: "Assunto",
@@ -320,6 +330,7 @@ requestAnimationFrame(raf);
       form_placeholder_subject: "Sobre o que gostaria de conversar?",
       form_placeholder_phone: "(11) 99999-9999",
       form_placeholder_message: "Escreva sua mensagem aqui...",
+      form_alternative: "Entre em contato também por",
       form_validation_name: "Por favor, preencha seu nome",
       form_validation_email: "Por favor, insira um email válido",
       form_validation_subject: "Por favor, insira o assunto",
@@ -593,16 +604,27 @@ requestAnimationFrame(raf);
       see_button: "Learn More",
           
       // Soft Skills
-      softskills_title: "Soft Skills",
-      skill_1: "Proactivity",
-      skill_2: "Agile problem solving",
-      skill_3: "Customer service",
-      skill_4: "Continuous learning",
-      skill_5: "Teamwork",
-      skill_6: "Adaptability",
-      skill_7: "Logical reasoning",
-      skill_8: "Organization and time management",
-      
+        softskills_title: "Soft Skills",
+        softskill_level: "Experience level",
+
+        softskill_proactivity_title: "Proactivity",
+        softskill_proactivity_desc: "I anticipate needs and seek solutions before they become problems, always thinking ahead to optimize processes.",
+        softskill_proactivity_item1: "Initiative in new projects",
+        softskill_proactivity_item2: "Early problem solving",
+        softskill_proactivity_item3: "Continuous process improvement",
+
+        softskill_learning_title: "Continuous Learning",
+        softskill_learning_desc: "I constantly seek updates in technologies and methodologies, staying ahead of market trends.",
+        softskill_learning_item1: "Intellectual curiosity",
+        softskill_learning_item2: "Adaptation to new technologies",
+        softskill_learning_item3: "Knowledge sharing",
+
+        softskill_adaptability_title: "Adaptability",
+        softskill_adaptability_desc: "I quickly adapt to changes, dynamic environments and new requirements while maintaining work quality.",
+        softskill_adaptability_item1: "Flexibility in different scenarios",
+        softskill_adaptability_item2: "Resilience to change",
+        softskill_adaptability_item3: "Ability to pivot when necessary",
+
       // Portfolio
       portfolio_title: "My Projects",
       filter_all: "All",
@@ -673,6 +695,7 @@ requestAnimationFrame(raf);
       form_email: "Your Email",
       form_subject: "Subject",
       form_phone: "Phone (optional)",
+      form_alternative: "You can also contact me via",
       form_message: "Your Message",
       form_submit: "Send Message",
       form_note: "Your message will be sent directly to me and I'll respond as soon as possible.",
@@ -1811,12 +1834,7 @@ const projectMap = [
           .services .service-item {
             flex-direction: column;
           }
-          .services .service-item::before {
-            width: 100%;
-            height: 4px;
-            transform: scaleX(0);
-            transform-origin: left;
-          }
+
           .services .service-item:hover::before {
             transform: scaleX(1);
           }
@@ -2781,18 +2799,34 @@ const projectMap = [
       });
     });
     
-    function initSwiper() {
-      document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-        let config = JSON.parse(
-          swiperElement.querySelector(".swiper-config").innerHTML.trim()
-        );
-        
-        if (swiperElement.classList.contains("swiper-tab")) {
-        } else {
-          new Swiper(swiperElement, config);
+function initSwiper() {
+  $('.slick-slider').slick({
+    infinite: true,
+    speed: 5000,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: 'linear',
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2
         }
-      });
-    }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+}
+    
     window.addEventListener("load", initSwiper);
     
     window.addEventListener('load', function(e) {
@@ -3003,4 +3037,192 @@ function setupSmoothScrollAnchors() {
       }
     });
   });
-}
+}// Adicione este script após seus outros scripts
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('emailForm');
+    const submitBtn = form.querySelector('.form-submit');
+    const submitText = submitBtn.querySelector('.submit-text');
+    const submitLoader = submitBtn.querySelector('.submit-loader');
+    
+    // Validação em tempo real
+    const inputs = form.querySelectorAll('.form-input');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            clearFieldError(this);
+        });
+    });
+    
+    // Funções de validação
+    function validateField(field) {
+        const value = field.value.trim();
+        const feedback = field.closest('.form-group').querySelector('.form-feedback');
+        
+        feedback.style.display = 'none';
+        field.classList.remove('error', 'success');
+        
+        if (field.hasAttribute('required') && !value) {
+            showError(field, feedback, 'Este campo é obrigatório');
+            return false;
+        }
+        
+        if (field.type === 'email' && value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                showError(field, feedback, 'Por favor, insira um email válido');
+                return false;
+            }
+        }
+        
+        if (field.id === 'phone' && value) {
+            const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+            if (!phoneRegex.test(value)) {
+                showError(field, feedback, 'Por favor, insira um telefone válido');
+                return false;
+            }
+        }
+        
+        if (value) {
+            field.classList.add('success');
+            feedback.style.display = 'none';
+        }
+        
+        return true;
+    }
+    
+    function showError(field, feedback, message) {
+        field.classList.add('error');
+        feedback.textContent = message;
+        feedback.classList.add('error');
+        feedback.style.display = 'block';
+    }
+    
+    function clearFieldError(field) {
+        field.classList.remove('error');
+        const feedback = field.closest('.form-group').querySelector('.form-feedback');
+        feedback.style.display = 'none';
+    }
+    
+    // Envio do formulário
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Validar todos os campos
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!validateField(input)) {
+                isValid = false;
+            }
+        });
+        
+        if (!isValid) {
+            showMessage('Por favor, corrija os erros no formulário.', 'error');
+            return;
+        }
+        
+        // Mostrar loading
+        submitBtn.classList.add('form-loading');
+        
+        try {
+            // Enviar formulário via Netlify
+            const formData = new FormData(form);
+            
+            // Simular delay para demonstração
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // Enviar para Netlify
+            const response = await fetch('/', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showMessage('Mensagem enviada com sucesso! Entrarei em contato em breve.', 'success');
+                form.classList.add('form-success');
+                form.reset();
+                
+                inputs.forEach(input => {
+                    input.classList.remove('success');
+                });
+            } else {
+                throw new Error('Erro ao enviar formulário');
+            }
+        } catch (error) {
+            showMessage('Ocorreu um erro ao enviar sua mensagem. Tente novamente ou entre em contato diretamente.', 'error');
+        } finally {
+            submitBtn.classList.remove('form-loading');
+        }
+    });
+    
+    function showMessage(message, type) {
+        const responseDiv = document.getElementById('formResponse');
+        responseDiv.textContent = message;
+        responseDiv.className = `form-feedback mt-3 text-center ${type}`;
+        responseDiv.style.display = 'block';
+        
+        responseDiv.style.marginTop = '1.5rem';
+        responseDiv.style.padding = '1rem 1.5rem';
+        responseDiv.style.borderRadius = '10px';
+        responseDiv.style.fontWeight = '500';
+        
+        if (type === 'success') {
+            responseDiv.style.background = 'rgba(46, 213, 115, 0.1)';
+            responseDiv.style.border = '1px solid rgba(46, 213, 115, 0.3)';
+            responseDiv.style.color = '#2ed573';
+        } else {
+            responseDiv.style.background = 'rgba(255, 71, 87, 0.1)';
+            responseDiv.style.border = '1px solid rgba(255, 71, 87, 0.3)';
+            responseDiv.style.color = '#ff4757';
+        }
+        
+        responseDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        setTimeout(() => {
+            responseDiv.style.display = 'none';
+        }, 5000);
+    }
+    
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 11) value = value.substring(0, 11);
+            
+            if (value.length > 10) {
+                value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+            } else if (value.length > 6) {
+                value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+            } else if (value.length > 2) {
+                value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+            } else if (value.length > 0) {
+                value = value.replace(/^(\d*)/, '($1');
+            }
+            
+            e.target.value = value;
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tabBtns = document.querySelectorAll('.certificate-tab-btn');
+    const tabs = document.querySelectorAll('.certificate-tab');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+        });
+    });
+});
