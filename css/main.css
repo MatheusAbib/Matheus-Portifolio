@@ -1234,7 +1234,7 @@ background: linear-gradient(
     );
     position: relative;
     overflow: hidden;
-    padding: 6% 0;
+    padding: 15% 0;
 }
 
 
@@ -1645,9 +1645,10 @@ textarea.form-input ~ .input-icon {
     }
     
     .form-submit {
-        padding: 1rem 2rem;
+        padding: 0.8rem 1rem;
         min-width: 200px;
-        font-size: 1rem;
+        font-size: 0.8rem;
+        margin-bottom: 15px;
     }
     
     .contact-info-tags {
