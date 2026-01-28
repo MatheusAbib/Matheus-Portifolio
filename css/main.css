@@ -1136,57 +1136,6 @@ background: linear-gradient(
   font-weight: 500;
 }
 
-/* .testimonials .swiper-pagination {
-  margin-top: 40px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 60%);
-  opacity: 1;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-  width: 25px;
-  border-radius: 5px;
-}
-#testimonials .swiper-pagination .swiper-pagination-bullet {
-  display: none;
-}
-
-
-#testimonials .swiper {
-  overflow: hidden;
-}
-
-#testimonials .swiper-wrapper {
-  transition-timing-function: linear !important;
-}
-
-#testimonials .swiper-slide {
-  transition: none !important;
-  opacity: 0.8;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#testimonials .swiper-slide.swiper-slide-active {
-  opacity: 1;
-  transform: scale(1);
-} */
-
-/* Garantir movimento contínuo
-.swiper-autoheight .swiper-wrapper {
-  align-items: stretch;
-}
-
-
-
- */
-
 
 .tech-slider-container {
   width: 100%;
@@ -1411,7 +1360,7 @@ background: linear-gradient(
     padding: 1.2rem 1.5rem 1.2rem 4rem;
     background: rgba(255, 255, 255, 0.9);
     border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: 16px;
+    border-radius: 12px;
     font-size: 1rem;
     color: var(--default-color);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1460,7 +1409,6 @@ textarea.form-input ~ .input-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 3rem;
     padding-top: 2rem;
     border-top: 2px solid rgba(255, 255, 255, 0.6);
     position: relative;
@@ -1469,7 +1417,6 @@ textarea.form-input ~ .input-icon {
 }
 
 
-/* Botão de Submit no canto direito */
 .submit-container {
     display: flex;
     justify-content: flex-end;
@@ -1501,7 +1448,6 @@ textarea.form-input ~ .input-icon {
     margin: 0;
 }
 
-/* Form Footer no canto esquerdo */
 .form-footer {
     text-align: left;
     margin: 0;
@@ -1623,7 +1569,6 @@ textarea.form-input ~ .input-icon {
     100% { background-position: 200% 0; }
 }
 
-/* Form States */
 .form-input.error {
     border-color: #ff4757;
     background: rgba(255, 71, 87, 0.05);
@@ -1635,8 +1580,6 @@ textarea.form-input ~ .input-icon {
 }
 
 .form-feedback {
-    position: absolute;
-    left: 0;
     font-size: 0.8rem;
     padding: 0.2rem 0.4rem;
     display: none;
@@ -1654,7 +1597,6 @@ textarea.form-input ~ .input-icon {
     background: rgba(46, 213, 115, 0.1);
 }
 
-/* Loading Animation */
 .submit-loader {
     display: none;
     width: 20px;
@@ -1677,7 +1619,6 @@ textarea.form-input ~ .input-icon {
     display: none;
 }
 
-/* Success Animation */
 .form-success {
     animation: formSuccess 0.6s ease;
 }
@@ -1688,7 +1629,6 @@ textarea.form-input ~ .input-icon {
     100% { transform: scale(1); }
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .contact-form-modern {
         padding: 2.5rem 2rem;
@@ -2259,48 +2199,6 @@ display: none;
     
 }
 
-/* Modo escuro */
-.dark-background .certificates-tabs-modern {
-    background: linear-gradient(145deg, 
-        rgba(37, 37, 37, 0.95),
-        rgba(45, 45, 45, 0.85)
-    );
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-background .certificate-tab-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--contrast-color);
-}
-
-.dark-background .certificate-tab-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.dark-background .certificate-card {
-    background: linear-gradient(145deg, 
-        rgba(37, 37, 37, 0.95),
-        rgba(45, 45, 45, 0.85)
-    );
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-background .certificate-title {
-    background: linear-gradient(135deg, 
-        var(--contrast-color) 0%,
-        color-mix(in srgb, var(--contrast-color), transparent 30%) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.dark-background .skill-tag {
-    background: linear-gradient(135deg, 
-        rgba(93, 87, 244, 0.1),
-        rgba(93, 87, 244, 0.15)
-    );
-}
-
 
 
 /* ===================== SOFT SKILLS SECTION - MODERNO ===================== */
@@ -2328,8 +2226,6 @@ display: none;
     opacity: 0.1;
     z-index: 0;
 }
-
-
 
 
 .softskills-container {
@@ -3338,8 +3234,6 @@ background: rgb(255 255 255 / 95%);
 /* ===================== FORM SECTION STYLES ===================== */
 
 
-
-
 #contact{
   background-color: 
  color-mix(in srgb, var(--accent-color), transparent 97.5%);
@@ -3487,14 +3381,12 @@ background-color: color-mix(
   }
 }
 
-/* Colunas */
 .modal-column {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-/* Seções */
 .modal-section {
   background: linear-gradient(145deg, 
     color-mix(in srgb, var(--surface-color), transparent 5%),

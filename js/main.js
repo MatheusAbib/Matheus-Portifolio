@@ -330,7 +330,7 @@ requestAnimationFrame(raf);
       form_placeholder_subject: "Sobre o que gostaria de conversar?",
       form_placeholder_phone: "(11) 99999-9999",
       form_placeholder_message: "Escreva sua mensagem aqui...",
-      form_alternative: "Entre em contato também por",
+      form_alternative: "Entre em contato também por: ",
       form_validation_name: "Por favor, preencha seu nome",
       form_validation_email: "Por favor, insira um email válido",
       form_validation_subject: "Por favor, insira o assunto",
