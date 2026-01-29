@@ -289,7 +289,7 @@
     certificate_ai_desc: "Imersão em Inteligência Artificial 2ª edição, abordando desde conceitos fundamentais até técnicas avançadas de machine learning e deep learning com Python.",
     
     certificate_java_title: "Java & Spring Boot",
-    certificate_java_desc: "Minicurso especializado em Java moderno e Spring Boot, abordando desde fundamentos da linguagem até desenvolvimento de APIs RESTful com boas práticas e padrões de projeto.",
+    certificate_java_desc: "Minicurso especializado em Java e Spring Boot, abordando desde fundamentos da linguagem até desenvolvimento de APIs RESTful com boas práticas e padrões de projeto.",
     
     certificate_skills_developed: "Competências Desenvolvidas",
     certificate_category_programming: "Programação",
@@ -692,7 +692,7 @@
     certificate_ai_desc: "Artificial Intelligence Immersion 2nd edition, covering from fundamental concepts to advanced machine learning and deep learning techniques with Python.",
     
     certificate_java_title: "Java & Spring Boot",
-    certificate_java_desc: "Specialized mini-course in modern Java and Spring Boot, covering from language fundamentals to RESTful API development with best practices and design patterns.",
+    certificate_java_desc: "Specialized mini-course in Java and Spring Boot, covering from language fundamentals to RESTful API development with best practices and design patterns.",
     
     certificate_skills_developed: "Developed Skills",
     certificate_category_programming: "Programming",
