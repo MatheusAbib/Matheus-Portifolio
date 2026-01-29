@@ -2,81 +2,153 @@
 (function() {
   "use strict";
   
- document.documentElement.style.scrollBehavior = 'auto';
+  document.documentElement.style.scrollBehavior = 'auto';
   
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-window.lenisInstance = new Lenis({
-  duration: isTouchDevice ? 1.0 : 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  orientation: 'vertical',
-  smoothWheel: true,
-  smoothTouch: true,
-  wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
-  touchMultiplier: isTouchDevice ? 1.8 : 1,
-  infinite: false,
-  wrapper: window,
-  content: document.documentElement,
-});
+  window.lenisInstance = new Lenis({
+    duration: isTouchDevice ? 1.0 : 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    smoothWheel: true,
+    smoothTouch: true,
+    wheelMultiplier: isTouchDevice ? 1.2 : 0.8,
+    touchMultiplier: isTouchDevice ? 1.8 : 1,
+    infinite: false,
+    wrapper: window,
+    content: document.documentElement,
+  });
 
-function setupPortfolioScroll() {
-  const portfolioContainer = document.querySelector('.portfolio-scroll-container');
-  
-  if (!portfolioContainer) return;
-  
-  let isOverPortfolio = false;
-  let portfolioScrollTimeout;
-  
-  portfolioContainer.addEventListener('mouseenter', function() {
-    isOverPortfolio = true;
+  let isProgrammaticNavigation = false;
+  let navigationTimeout;
+
+  function setupPortfolioScroll() {
+    const portfolioContainer = document.querySelector('.portfolio-scroll-container');
     
-    if (window.lenisInstance) {
-      window.lenisInstance.stop();
-    }
-  });
-  
-  portfolioContainer.addEventListener('mouseleave', function() {
-    isOverPortfolio = false;
+    if (!portfolioContainer) return;
     
-    clearTimeout(portfolioScrollTimeout);
-    portfolioScrollTimeout = setTimeout(() => {
-      if (window.lenisInstance && !isOverPortfolio) {
-        window.lenisInstance.start();
-      }
-    }, 50);
-  });
-  
-  portfolioContainer.addEventListener('wheel', function(e) {
-    e.stopPropagation();
+    let isOverPortfolio = false;
+    let portfolioScrollTimeout;
     
-    const currentScroll = this.scrollTop;
-    const maxScroll = this.scrollHeight - this.clientHeight;
-    
-    if ((currentScroll <= 0 && e.deltaY < 0) || (currentScroll >= maxScroll && e.deltaY > 0)) {
+    portfolioContainer.addEventListener('mouseenter', function() {
+      if (isProgrammaticNavigation) return;
+      
+      isOverPortfolio = true;
+      
       if (window.lenisInstance) {
-        window.lenisInstance.start();
+        window.lenisInstance.stop();
+      }
+    });
+    
+    portfolioContainer.addEventListener('mouseleave', function() {
+      isOverPortfolio = false;
+      
+      clearTimeout(portfolioScrollTimeout);
+      portfolioScrollTimeout = setTimeout(() => {
+        if (window.lenisInstance && !isOverPortfolio && !isProgrammaticNavigation) {
+          window.lenisInstance.start();
+        }
+      }, 50);
+    });
+    
+    portfolioContainer.addEventListener('wheel', function(e) {
+      e.stopPropagation();
+      
+      const currentScroll = this.scrollTop;
+      const maxScroll = this.scrollHeight - this.clientHeight;
+      
+      if ((currentScroll <= 0 && e.deltaY < 0) || (currentScroll >= maxScroll && e.deltaY > 0)) {
+        if (window.lenisInstance) {
+          window.lenisInstance.start();
+        }
+      }
+    }, { passive: false });
+  }
+
+  function setupNavigationLinks() {
+    const navLinks = document.querySelectorAll('.navmenu a[href^="#"]');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '') return;
+        
+        isProgrammaticNavigation = true;
+        clearTimeout(navigationTimeout);
+        
+        navigationTimeout = setTimeout(() => {
+          isProgrammaticNavigation = false;
+        }, 1500);
+        
+        window.addEventListener('scroll', function onScroll() {
+          clearTimeout(navigationTimeout);
+          navigationTimeout = setTimeout(() => {
+            isProgrammaticNavigation = false;
+            window.removeEventListener('scroll', onScroll);
+          }, 500);
+        }, { once: true });
+      });
+    });
+  }
+
+  function setupFooterNavigation() {
+    const footerLinks = document.querySelectorAll('.footer-links a[href^="#"], .footer-nav a[href^="#"]');
+    
+    footerLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '') return;
+        
+        isProgrammaticNavigation = true;
+        clearTimeout(navigationTimeout);
+        
+        navigationTimeout = setTimeout(() => {
+          isProgrammaticNavigation = false;
+        }, 1500);
+        
+        window.addEventListener('scroll', function onScroll() {
+          clearTimeout(navigationTimeout);
+          navigationTimeout = setTimeout(() => {
+            isProgrammaticNavigation = false;
+            window.removeEventListener('scroll', onScroll);
+          }, 500);
+        }, { once: true });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    setupPortfolioScroll();
+    setupNavigationLinks();
+    setupFooterNavigation();
+    
+    function raf(time) {
+      if (window.lenisInstance) {
+        window.lenisInstance.raf(time);
+      }
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    
+    function checkAndRestartLenis() {
+      if (window.lenisInstance && isProgrammaticNavigation) {
+        setTimeout(() => {
+          if (window.lenisInstance && isProgrammaticNavigation) {
+            window.lenisInstance.start();
+            isProgrammaticNavigation = false;
+          }
+        }, 800);
       }
     }
-  }, { passive: false });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  setupPortfolioScroll();
+    
+    setInterval(checkAndRestartLenis, 1000);
+  });
   
   function raf(time) {
-    if (window.lenisInstance) {
-      window.lenisInstance.raf(time);
-    }
+    window.lenisInstance.raf(time);
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
-});
-  
-function raf(time) {
-  window.lenisInstance.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
   
   console.log('Lenis Smooth Scroll ativado! Dispositivo:', isTouchDevice ? 'Touch/Mobile' : 'Desktop');
 
@@ -87,7 +159,6 @@ requestAnimationFrame(raf);
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
     const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
@@ -95,7 +166,6 @@ requestAnimationFrame(raf);
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
 
-  
   function toggleMobileDropdown(e) {
     e.preventDefault();
     this.parentNode.classList.toggle('active');
@@ -103,14 +173,12 @@ requestAnimationFrame(raf);
     e.stopImmediatePropagation();
   }
 
-
   function removePreloader() {
     const preloader = document.querySelector('#preloader');
     if (preloader) {
       preloader.remove();
     }
   }
-
 
   function toggleScrollTop() {
     const scrollTop = document.querySelector('.scroll-top');
@@ -127,7 +195,6 @@ requestAnimationFrame(raf);
     });
   }
 
-
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -136,7 +203,6 @@ requestAnimationFrame(raf);
       mirror: false
     });
   }
-
 
   function navmenuScrollspy() {
     const navmenulinks = document.querySelectorAll('.navmenu a');
@@ -321,22 +387,34 @@ requestAnimationFrame(raf);
       availability_text: "Segunda - Domingo: 8:00 - 20:00",
       
       // Footer
-      footer_links: "Links",
-      footer_services: "Meus Serviços",
-      service_webdesign: "Web Design",
-      service_webdev: "Desenvolvimento web",
-      service_datamgmt: "Gerenciamento de dados",
-      service_support: "Suporte",
-      service_quality: "Controle de Qualidade",
-      service_engineer: "Engenheiro de Software",
-      footer_tools: "Ferramentas",
-      footer_projects: "Projetos",
-      project_figma: "Designe UI/UX - Figma",
-      project_powerbi: "Dashboards - Power BI",
-      project_websites: "Web Sites",
-      copyright: "© Copyright",
-      rights: "Todos os direitos reservados",
-      designed_by: "Designed by Matheus Abib",
+      footer_bio: "Desenvolvedor Full Stack & Engenheiro de Software.",
+
+      footer_location: "Mogi das Cruzes, São Paulo",
+      footer_fullname: "Matheus Bilitardo Abib",
+
+      footer_quick_links_title: "Links Rápidos",
+      footer_link_about: "Sobre mim",
+      footer_link_methodologies: "Metodologias",
+      footer_link_certificates: "Certificados",
+      footer_link_services: "Serviços",
+      footer_link_projects: "Projetos",
+      footer_link_contact: "Contato",
+
+      footer_specialties_title: "Especialidades",
+      footer_specialty_fullstack: "Desenvolvimento Full Stack",
+      footer_specialty_uiux: "UI/UX Design",
+      footer_specialty_software: "Engenharia de Software",
+      footer_specialty_powerbi: "Power BI & Análise de Dados",
+
+      footer_talk_title: "Vamos Conversar",
+      footer_newsletter_text: "Interessado em trabalhar juntos ou tem um projeto em mente?",
+
+      footer_cta_title: "Entre em contato",
+      footer_cta_text: "Estou disponível para discutir novas oportunidades",
+      footer_cta_button: "Enviar Mensagem",
+
+      footer_copyright: "© 2024 Matheus Abib. Todos os direitos reservados.",
+
 
 
       // Contact Form
@@ -350,9 +428,9 @@ requestAnimationFrame(raf);
       form_note: "Sua mensagem será enviada diretamente para mim e responderei o mais breve possível.",
       form_placeholder_name: "Digite seu nome",
       form_placeholder_email: "seu.email@exemplo.com",
-      form_placeholder_subject: "Sobre o que gostaria de conversar?",
+      form_placeholder_subject: "Qual o assunto da mensagem?",
       form_placeholder_phone: "(11) 99999-9999",
-      form_placeholder_message: "Escreva sua mensagem aqui...",
+      form_placeholder_message: "Escreva sua mensagem...",
       form_alternative: "Entre em contato também por: ",
       form_validation_name: "Por favor, preencha seu nome",
       form_validation_email: "Por favor, insira um email válido",
@@ -709,23 +787,35 @@ requestAnimationFrame(raf);
       availability_title: "Availability",
       availability_text: "Monday - Sunday: 8:00 AM - 8:00 PM",
       
-      // Footer
-      footer_links: "Links",
-      footer_services: "My Services",
-      service_webdesign: "Web Design",
-      service_webdev: "Web Development",
-      service_datamgmt: "Data Management",
-      service_support: "Support",
-      service_quality: "Quality Control",
-      service_engineer: "Software Engineer",
-      footer_tools: "Tools",
-      footer_projects: "Projects",
-      project_figma: "UI/UX Design - Figma",
-      project_powerbi: "Dashboards - Power BI",
-      project_websites: "Websites",
-      copyright: "© Copyright",
-      rights: "All rights reserved",
-      designed_by: "Designed by Matheus Abib",
+      // Footer - EN
+      footer_bio: "Full Stack Developer & Software Engineer.",
+
+      footer_location: "Mogi das Cruzes, São Paulo",
+      footer_fullname: "Matheus Bilitardo Abib",
+
+      footer_quick_links_title: "Quick Links",
+      footer_link_about: "About Me",
+      footer_link_methodologies: "Methodologies",
+      footer_link_certificates: "Certificates",
+      footer_link_services: "Services",
+      footer_link_projects: "Projects",
+      footer_link_contact: "Contact",
+
+      footer_specialties_title: "Specialties",
+      footer_specialty_fullstack: "Full Stack Development",
+      footer_specialty_uiux: "UI/UX Design",
+      footer_specialty_software: "Software Engineering",
+      footer_specialty_powerbi: "Power BI & Data Analysis",
+
+      footer_talk_title: "Let's Talk",
+      footer_newsletter_text: "Interested in working together or have a project in mind?",
+
+      footer_cta_title: "Get in touch",
+      footer_cta_text: "I'm available to discuss new opportunities",
+      footer_cta_button: "Send Message",
+
+      footer_copyright: "© 2024 Matheus Abib. All rights reserved.",
+
 
           // Contact Form
       contact_form_title: "Send me a message",

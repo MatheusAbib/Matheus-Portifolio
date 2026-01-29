@@ -2454,90 +2454,160 @@
   </div>
 </div>
 
-<footer id="footer" class="footer light-background">
+<footer id="footer" class="footer">
   <div class="container footer-top">
-    <div class="row gy-4">
+    <div class="row gy-5">
+
       <!-- Coluna Sobre -->
       <div class="col-lg-4 col-md-6 footer-about">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <span class="sitename">Matheus Abib</span><span>.</span>
-        </a>
-        <div class="footer-contact pt-3">
-          <p class="mb-2"><i class="bi bi-person-circle me-2"></i>Matheus Bilitardo Abib</p>
-          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Mogi das Cruzes, São Paulo</p>
-          <p class="mb-3"><i class="bi bi-envelope me-2"></i>matheus.abib.ma@gmail.com</p>
+        <div class="footer-logo-wrapper mb-4">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename" data-translate="footer_name">Matheus Abib</span>
+            <span class="logo-dot">.</span>
+          </a>
+          <div class="logo-glow"></div>
         </div>
-        <div class="social-links d-flex mt-3">
-          <a href="https://wa.me/11975072008" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-          <a href="https://github.com/MatheusAbib" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+
+        <div class="footer-bio mb-4">
+          <p data-translate="footer_bio">Desenvolvedor Full Stack & Engenheiro de Software.</p>
+        </div>
+
+        <div class="footer-contact">
+          <div class="contact-item d-flex align-items-center mb-3">
+            <div class="contact-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <div class="contact-info">
+              <span data-translate="footer_location">Mogi das Cruzes, São Paulo</span>
+            </div>
+          </div>
+
+          <div class="contact-item d-flex align-items-center mb-3">
+            <div class="contact-icon">
+              <i class="bi bi-envelope"></i>
+            </div>
+            <div class="contact-info">
+              <a href="mailto:matheus.abib.ma@gmail.com" data-translate="footer_email">
+                matheus.abib.ma@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item d-flex align-items-center">
+            <div class="contact-icon">
+              <i class="bi bi-person-circle"></i>
+            </div>
+            <div class="contact-info">
+              <span data-translate="footer_fullname">Matheus Bilitardo Abib</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links d-flex mt-4">
+          <a href="https://wa.me/11975072008" target="_blank" class="social-btn whatsapp" title="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="https://github.com/MatheusAbib" target="_blank" class="social-btn github" title="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" class="social-btn linkedin" title="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
         </div>
       </div>
 
-      <!-- Coluna Navegação -->
+      <!-- Coluna Links Rápidos -->
       <div class="col-lg-2 col-md-3 footer-links">
-        <h4 data-translate="footer_links">Links</h4>
+        <div class="footer-section-header">
+          <h4 data-translate="footer_quick_links_title">Links Rápidos</h4>
+          <div class="header-line"></div>
+        </div>
         <ul>
-          <li><a href="#hero" data-translate="menu_about"><i class="bi bi-chevron-right me-1"></i>Sobre mim</a></li>
-          <li><a href="#metodologias" data-translate="menu_methodologies"><i class="bi bi-chevron-right me-1"></i>Metodologias</a></li>
-          <li><a href="#service-details" data-translate="menu_certificates"><i class="bi bi-chevron-right me-1"></i>Certificados</a></li>
-          <li><a href="#services" data-translate="menu_services"><i class="bi bi-chevron-right me-1"></i>Serviços</a></li>
-          <li><a href="#portfolio" data-translate="menu_projects"><i class="bi bi-chevron-right me-1"></i>Projetos</a></li>
-          <li><a href="#contact" data-translate="menu_contact"><i class="bi bi-chevron-right me-1"></i>Contato</a></li>
+          <li><a href="#hero"><i class="bi bi-chevron-right me-2"></i><span data-translate="menu_about">Sobre mim</span></a></li>
+          <li><a href="#metodologias"><i class="bi bi-chevron-right me-2"></i><span data-translate="menu_methodologies">Metodologias</span></a></li>
+          <li><a href="#service-details"><i class="bi bi-chevron-right me-2"></i><span data-translate="menu_certificates">Certificados</span></a></li>
+          <li><a href="#services"><i class="bi bi-chevron-right me-2"></i><span data-translate="menu_services">Serviços</span></a></li>
+          <li><a href="#portfolio"><i class="bi bi-chevron-right me-2"></i><span data-translate="menu_projects">Projetos</span></a></li>
+          <li><a href="#form-section"><i class="bi bi-chevron-right me-2"></i><span data-translate="menu_contact">Contato</span></a></li>
         </ul>
       </div>
 
       <!-- Coluna Serviços -->
-      <div class="col-lg-3 col-md-3 footer-links">
-        <h4 data-translate="footer_services">Meus Serviços</h4>
+      <div class="col-lg-3 col-md-3 footer-services">
+        <div class="footer-section-header">
+          <h4 data-translate="footer_specialties_title">Especialidades</h4>
+          <div class="header-line"></div>
+        </div>
         <ul>
-          <li><i class="bi bi-code-slash me-2"></i><span data-translate="service_webdesign">Desenvolvimento Front-End</span></li>
-          <li><i class="bi bi-server me-2"></i><span data-translate="service_webdev">Desenvolvimento Back-End</span></li>
-          <li><i class="bi bi-palette2 me-2"></i><span data-translate="service_datamgmt">UI/UX Design</span></li>
-          <li><i class="bi bi-bar-chart-line me-2"></i><span data-translate="service_support">Análise de Dados Power BI</span></li>
-          <li><i class="bi bi-card-checklist me-2"></i><span data-translate="service_quality">Controle de Qualidade</span></li>
-          <li><i class="bi bi-journal-text me-2"></i><span data-translate="service_engineer">Engenheiro de Software</span></li>
+          <li>
+            <div class="service-icon"><i class="bi bi-code-slash"></i></div>
+            <span data-translate="footer_specialty_fullstack">Desenvolvimento Full Stack</span>
+          </li>
+          <li>
+            <div class="service-icon"><i class="bi bi-palette2"></i></div>
+            <span data-translate="footer_specialty_uiux">UI/UX Design</span>
+          </li>
+          <li>
+            <div class="service-icon"><i class="bi bi-gear"></i></div>
+            <span data-translate="footer_specialty_software">Engenharia de Software</span>
+          </li>
+          <li>
+            <div class="service-icon"><i class="bi bi-bar-chart-line"></i></div>
+            <span data-translate="footer_specialty_powerbi">Power BI & Análise de Dados</span>
+          </li>
         </ul>
       </div>
 
-      <!-- Coluna Contato Rápido -->
-      <div class="col-lg-3 col-md-6 footer-contact">
-        <h4 data-translate="footer_contact">Contato Rápido</h4>
-        <p class="mb-4" data-translate="contact_footer_text">Entre em contato para projetos ou oportunidades.</p>
-        <div class="contact-info">
-          <p class="d-flex align-items-center mb-3">
-            <i class="bi bi-whatsapp me-3"></i>
-            <a href="https://wa.me/11975072008" target="_blank">WhatsApp</a>
-          </p>
-          <p class="d-flex align-items-center">
-            <i class="bi bi-clock me-3"></i>
-            <span data-translate="availability_footer">Disponível de Seg a Dom</span>
+      <!-- Coluna Newsletter -->
+      <div class="col-lg-3 col-md-6 footer-newsletter">
+        <div class="footer-section-header">
+          <h4 data-translate="footer_talk_title">Vamos Conversar</h4>
+          <div class="header-line"></div>
+        </div>
+
+        <p class="newsletter-text" data-translate="footer_newsletter_text">
+          Interessado em trabalhar juntos ou tem um projeto em mente?
+        </p>
+
+        <div class="cta-card">
+          <div class="cta-icon">
+            <i class="bi bi-chat-dots"></i>
+          </div>
+
+          <h5 data-translate="footer_cta_title">Entre em contato</h5>
+          <p data-translate="footer_cta_text">Estou disponível para discutir novas oportunidades</p>
+
+          <a href="#form-section" class="cta-button">
+            <span data-translate="footer_cta_button">Enviar Mensagem</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <div class="copyright-text">
+          <p>
+            <span data-translate="footer_copyright">
+              © 2024 <strong class="highlight">Matheus Abib</strong>. Todos os direitos reservados.
+            </span>
           </p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container copyright text-center mt-4">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <p class="mb-3 mb-md-0">
-        <span data-translate="copyright">© 2024 Copyright</span> 
-        <strong class="px-1 sitename">Matheus Abib</strong>
-        <span data-translate="rights">Todos os direitos reservados</span>
-      </p>
-      <div class="credits">
-        <span data-translate="developed_by">Desenvolvido</span> 
-        <span data-translate="by_me">por Matheus Abib</span>
-      </div>
-      <div class="scroll-top-small mt-3 mt-md-0">
-        <a href="#" class="text-muted text-decoration-none">
-          <i class="bi bi-arrow-up-circle me-1"></i>
-          <span data-translate="back_to_top">Voltar ao topo</span>
-        </a>
-      </div>
-    </div>
+  <div class="footer-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
   </div>
 </footer>
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
