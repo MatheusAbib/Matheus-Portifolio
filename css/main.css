@@ -15,6 +15,40 @@
   --nav-dropdown-background-color: #ffffff; /* Usada como cor de fundo para itens dropdown que aparecem ao passar o mouse sobre itens de navegação primários */
   --nav-dropdown-color: #3a3939; /* Usada para links de navegação dos itens dropdown no menu */
   --nav-dropdown-hover-color: #5d57f4; /* Similar à --nav-hover-color, esta cor é aplicada aos links dropdown quando passam o mouse */
+
+
+
+
+    --bg: #f9fafb;
+    --primary: #1e40af;
+    --primary-light: #3b82f6;
+    --accent: #10b981;
+    --accent-light: #34d399;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --card-bg: #ffffffb0;
+    --card-border: #e5e7eb;
+    --weekend: #f3f4f6;
+    --today: #dbeafe;
+    --event-list-bg: #f8fafc;
+    --holiday-color: #ef4444;
+    --personal-event: #10b981;
+    --work-event: #3b82f6;
+    --health-event: #f59e0b;
+    --leisure-event: #8b5cf6;
+    --facultative-color: #f59e0b;
+    --religious-color: #6366f1;
+    --local-color: #ec4899;
+    --spring: #10b981;
+    --summer: #f59e0b;
+    --autumn: #ef4444;
+    --winter: #3b82f6;
+    --season-bg: rgba(16, 185, 129, 0.08);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+  
 }
 
 .light-background {
@@ -54,9 +88,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
   
 }
-
-
-
 
 
 body > *:last-child:not(.footer) {
@@ -542,6 +573,22 @@ background: linear-gradient(
   opacity: 0.7;
 }
 
+#portfolio{
+    background-color: 
+ color-mix(in srgb, var(--accent-color), transparent 97%);
+
+    background-image: linear-gradient(to right, 
+color-mix(in srgb, var(--primary) 4%, transparent) 1px, transparent 1px), linear-gradient(to bottom, 
+color-mix(in srgb, var(--primary) 4%, transparent) 1px, transparent 1px), linear-gradient(to right, 
+color-mix(in srgb, var(--accent) 3.5%, transparent) 1px, transparent 2px), linear-gradient(to bottom, 
+color-mix(in srgb, var(--accent) 3.5%, transparent) 1px, transparent 2px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100px 100px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
 .services .service-item {
   display: flex;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));  border-radius: 12px;
@@ -763,7 +810,7 @@ background: linear-gradient(
   padding: 8px 20px;
   cursor: pointer;
   border-radius: 4px;
-  background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
+  background-color: color-mix(in srgb, var(--surface-color), transparent 5%);
   color: var(--default-color);
   transition: all 0.3s ease-in-out;
   
@@ -3739,7 +3786,8 @@ background-color: color-mix(
 /* ===================== FOOTER - ESTILO DO SITE ===================== */
 .footer {
     color: var(--default-color);
-    background-color: #fefdff;
+    background-color: 
+     color-mix(in srgb, var(--accent-color), transparent 94%);    
     font-size: 14px;
     margin-bottom: -6%;
     position: relative;
@@ -4075,30 +4123,6 @@ background-color: color-mix(
     overflow: hidden;
 }
 
-.cta-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        color-mix(in srgb, var(--accent-color), transparent 10%) 90deg,
-        transparent 180deg,
-        color-mix(in srgb, #667eea, transparent 10%) 270deg,
-        transparent 360deg
-    );
-    z-index: 0;
-    opacity: 0.1;
-    animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 
 .cta-card > * {
     position: relative;
@@ -4216,40 +4240,6 @@ background-color: color-mix(
     font-weight: 700;
 }
 
-
-
-.footer-decoration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.1;
-}
-
-.decoration-circle {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(40px);
-}
-
-.circle-1 {
-    width: 300px;
-    height: 300px;
-    background: var(--accent-color);
-    top: 8%;
-    right: -70px;
-}
-
-.circle-2 {
-    width: 200px;
-    height: 200px;
-    background: color-mix(in srgb, var(--accent-color), #667eea);
-    bottom: -100px;
-    left: -50px;
-}
 
 @media (max-width: 992px) {
     .footer {
