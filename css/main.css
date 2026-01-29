@@ -1130,7 +1130,6 @@ background: linear-gradient(
   font-weight: 500;
 }
 
-
 .tech-slider-container {
   width: 100%;
   overflow: hidden;
@@ -1145,7 +1144,7 @@ background: linear-gradient(
 
 .tech-slide {
   flex: 0 0 auto;
-  width: 250px;
+  width: 190px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 20px;
@@ -1341,7 +1340,8 @@ background: linear-gradient(
     background: rgba(255, 255, 255, 0.9);
 border: 2px solid
  color-mix(in srgb, var(--accent-color), transparent 85%);    border-radius: 12px;
-    font-size: 1rem;
+    font-size: 16px !important; 
+    min-height: 44px; 
     color: var(--default-color);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--default-font);
@@ -1439,6 +1439,27 @@ textarea.form-input ~ .input-icon {
     font-size: 0.9rem;
     margin-bottom: 0.75rem;
     font-weight: 500;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .contact-form-modern input,
+    .contact-form-modern textarea,
+    .contact-form-modern select {
+        font-size: 16px !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    /* Previne zoom no foco no iOS Safari */
+    @supports (-webkit-overflow-scrolling: touch) {
+        .form-input {
+            font-size: 16px !important;
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -1913,7 +1934,6 @@ display: none;
         rgba(255, 255, 255, 0.95),
         rgba(255, 255, 255, 0.85)
     );
-    border-radius: 24px;
     overflow: hidden;
     display: flex;
     gap: 2.5rem;
@@ -1959,7 +1979,7 @@ display: none;
     position: relative;
     overflow: hidden;
     height: 0%;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
