@@ -220,7 +220,6 @@
     });
   }
 
-  // ===================== SISTEMA DE TRADUÇÃO =====================
   const translations = {
     pt: {
       // Menu
@@ -713,7 +712,7 @@
       service_1_text: "I create modern, high-performance, and precise web interfaces for users.",
       service_3_title: "UI/UX Design and Prototypes",
       service_3_text: "I create functional and intuitive layouts for users, using Figma, Canva and good UI/UX design practices.",
-      service_4_title: "Software Engineering", // CORRIGIDO: era service_4_text
+      service_4_title: "Software Engineering",
       service_4_text: "I perform continuous testing and evaluations to ensure systems function according to specifications and meet quality standards.",
       service_6_title: "Power BI and Data Analysis",
       service_6_text: "I structure complex information in interactive dashboards, facilitating analysis and strategic decision making.",
@@ -883,7 +882,7 @@
     modal_fullstack_experience_title: "Practical Experience",
     modal_fullstack_experience_desc: "I work as a <strong>Software Developer</strong> on institutional projects for the City Hall of Mogi das Cruzes, contributing to the development of digital solutions.",
 
-    // UI/UX Modal (English)
+    // UI/UX Modal 
     modal_uiux_title: "UI/UX Design and Prototypes",
     modal_uiux_specialties_title: "My Specialties",
     modal_uiux_prototyping_title: "Prototyping",
@@ -1378,7 +1377,6 @@ const projectMap = [
     }
   }
 
-  // ===================== MODAL PARA IMAGENS DOS CERTIFICADOS =====================
   function setupCertificateModal() {
     const modal = document.createElement('div');
     modal.style.cssText = `
@@ -1451,7 +1449,6 @@ const projectMap = [
     };
   }
 
-  // ===================== SISTEMA DE MEDIA QUERIES DINÂMICAS =====================
   class DynamicMediaQueries {
     constructor() {
       this.styles = document.createElement('style');
@@ -3134,7 +3131,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// ===================== SMOOTH SCROLL PARA LINKS ÂNCORA =====================
 function setupSmoothScrollAnchors() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
