@@ -1,0 +1,65 @@
+// App.js
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import Home from './pages/Home';
+import ScrollTop from './components/ScrollTop'; // Importe aqui
+import { TranslationProvider } from './hooks/useTranslation';
+import { LenisProvider } from './hooks/useLenis';
+import MediaQueriesManager from './components/MediaQueriesManager'; 
+
+import './styles/main.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    const handleAnchorClick = (e) => {
+      const target = e.target.closest('a[href^="#"]');
+      if (target && target.hash && target.hash !== '#') {
+        e.preventDefault();
+        const id = target.hash.substring(1);
+        const element = document.getElementById(id);
+        
+        if (element) {
+          const headerHeight = document.querySelector('#header')?.offsetHeight || 100;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          
+          window.history.pushState(null, '', target.hash);
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+    };
+  }, []);
+
+  return (
+    <TranslationProvider>
+      <LenisProvider> 
+        <MediaQueriesManager /> 
+        <div className="App">
+          <Home />
+          <ScrollTop />
+        </div>
+      </LenisProvider>
+    </TranslationProvider>
+  );
+}
+
+export default App;
