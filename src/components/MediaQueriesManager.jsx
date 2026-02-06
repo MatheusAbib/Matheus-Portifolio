@@ -736,6 +736,8 @@ const MediaQueriesManager = () => {
           margin-top: 50px;
         }
       }
+
+      
       
       /* === Desktop médio (max-width: 1200px) === */
       @media (max-width: 1200px) {
