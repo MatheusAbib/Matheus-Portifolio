@@ -36,7 +36,7 @@ const Certificates = () => {
       id: 'webdev',
       title_key: 'certificate_webdev_title',
       institution: 'Coursera - Johns Hopkins University',
-      image: '/assets/img/services/Web-Development.jpg',
+      image: 'assets/img/services/Web-Development.jpg',
       description_key: 'certificate_webdev_desc',
       skills: ['CSS', 'Bootstrap', 'JavaScript', 'HTML5', 'AJAX']
     },
@@ -44,7 +44,7 @@ const Certificates = () => {
       id: 'powerbi',
       title_key: 'certificate_powerbi_title',
       institution: 'Data Science Academy',
-      image: '/assets/img/services/Power-BI.jpg',
+      image: 'assets/img/services/Power-BI.jpg',
       description_key: 'certificate_powerbi_desc',
       skills: ['Microsoft Power BI', 'Microsoft Excel', 'Dashboards', 'Data Analysis', 'Spreadsheet Management']
     },
@@ -52,7 +52,7 @@ const Certificates = () => {
       id: 'database',
       title_key: 'certificate_database_title',
       institution: 'IFSul - Plataforma Mundi',
-      image: '/assets/img/services/Banco-de-Dados.jpg',
+      image: 'assets/img/services/Banco-de-Dados.jpg',
       description_key: 'certificate_database_desc',
       skills: ['Database', 'SQL', 'Spreadsheet Management', 'Data Analysis']
     },
@@ -60,7 +60,7 @@ const Certificates = () => {
       id: 'logic',
       title_key: 'certificate_logic_title',
       institution: 'DIO - Digital Innovation One',
-      image: '/assets/img/services/Logica-de-Programacao.jpg',
+      image: 'assets/img/services/Logica-de-Programacao.jpg',
       description_key: 'certificate_logic_desc',
       skills: ['JavaScript', 'Git', 'GitHub', 'Logic']
     },
@@ -68,7 +68,7 @@ const Certificates = () => {
       id: 'ai',
       title_key: 'certificate_ai_title',
       institution: 'Alura - Imersão IA',
-      image: '/assets/img/services/IA.jpg',
+      image: 'assets/img/services/IA.jpg',
       description_key: 'certificate_ai_desc',
       skills: ['AI Fundamentals', 'Supervised Learning', 'Data Preprocessing', 'Python']
     },
@@ -76,7 +76,7 @@ const Certificates = () => {
       id: 'java',
       title_key: 'certificate_java_title',
       institution: 'Rocketseat',
-      image: '/assets/img/services/Java.png',
+      image: 'assets/img/services/Java.png',
       description_key: 'certificate_java_desc',
       skills: ['Java', 'Spring Boot', 'API Rest', 'Database', 'Lombok']
     }
@@ -92,6 +92,10 @@ const Certificates = () => {
   ];
 
   const activeCertificate = certificates.find(cert => cert.id === activeTab);
+
+  console.log('Active certificate:', activeCertificate);
+  console.log('Image path:', activeCertificate?.image);
+  console.log('All certificates:', certificates);
 
   return (
     <section id="service-details" className="service-details section">
@@ -122,7 +126,15 @@ const Certificates = () => {
                 <div className="certificate-tab active" id={`${activeTab}-tab`}>
                   <div className="certificate-card">
                     <div className="certificate-image">
-                      <img src={activeCertificate.image} alt={`Certificado ${activeCertificate.title_key}`} />
+<img 
+  src={activeCertificate.image} 
+  alt={`Certificado ${activeCertificate.title_key}`}
+  onError={(e) => {
+    console.error('Image failed to load:', e.target.src);
+    console.error('Error event:', e);
+  }}
+  onLoad={() => console.log('Image loaded successfully:', activeCertificate.image)}
+/>
                       <div className="certificate-badge">
                         <i className="bi bi-award-fill"></i>
                       </div>

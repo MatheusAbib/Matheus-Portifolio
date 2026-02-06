@@ -1894,7 +1894,8 @@ textarea.form-input ~ .input-icon {
     flex: 0 0 45%;
     position: relative;
     overflow: hidden;
-    height: 0%;
+    height: auto;  
+    min-height: 300px;
     border-radius: 5px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
