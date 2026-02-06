@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build"
+  command = "CI=false npx react-scripts build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "18.20.8"
+  CI = "false"
