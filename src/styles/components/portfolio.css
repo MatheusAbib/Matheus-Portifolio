@@ -1,0 +1,391 @@
+#portfolio {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  background-image: linear-gradient(to right, 
+  color-mix(in srgb, var(--primary) 4%, transparent) 1px, transparent 1px), 
+  linear-gradient(to bottom, 
+  color-mix(in srgb, var(--primary) 4%, transparent) 1px, transparent 1px), 
+  linear-gradient(to right, 
+  color-mix(in srgb, var(--accent) 3.5%, transparent) 1px, transparent 2px), 
+  linear-gradient(to bottom, 
+  color-mix(in srgb, var(--accent) 3.5%, transparent) 1px, transparent 2px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100px 100px;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+}
+
+.portfolio .portfolio-filters-container {
+  margin-bottom: 40px;
+}
+
+.portfolio .portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.portfolio .portfolio-filters {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portfolio .portfolio-filters li {
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: color-mix(in srgb, var(--surface-color), transparent 1%);
+  color: var(--default-color);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.portfolio .portfolio-filters li:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.portfolio .portfolio-filters li.filter-active {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.portfolio .portfolio-card {
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-card .portfolio-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 18/10;
+}
+
+.portfolio .portfolio-card .portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease-in-out;
+}
+
+.portfolio .portfolio-card .portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  opacity: 1; 
+  visibility: visible;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  z-index: 1;
+}
+
+.portfolio .portfolio-card .portfolio-overlay .portfolio-actions {
+  transform: translateY(0);
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.portfolio .portfolio-card .portfolio-overlay .portfolio-actions a {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  background: rgb(255 255 255 / 95%);
+  color: var(--default-color) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.github-link:hover {
+  background: #24292e;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(36, 41, 46, 0.3);
+}
+
+.portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.details-link:hover {
+  background: var(--accent-color);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+.portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.preview-link:hover {
+  background: #4CAF50;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.portfolio .portfolio-card .portfolio-content {
+  padding: 20px;
+}
+
+.portfolio .portfolio-card .portfolio-content .category {
+  font-size: 14px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.portfolio .portfolio-card .portfolio-content h3 {
+  font-size: 22px;
+  margin: 0 0 20px;
+  font-weight: 700;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+  background: linear-gradient(135deg, var(--heading-color) 0%,
+   color-mix(in srgb, var(--heading-color), transparent 30%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio .portfolio-card .portfolio-content h3:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-card .portfolio-content p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.portfolio-content .github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--default-color);
+  color: var(--contrast-color);
+  margin-top: 8px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.portfolio-content .github-link:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: scale(1.1);
+}
+
+.stack-indicator {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stack-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.stack-badge.fullstack {
+  background: linear-gradient(135deg, #667eea94 0%, #764ba294 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.stack-badge.frontend-only {
+  background: linear-gradient(135deg, #f093fb94 0%, #f5576c94 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(240, 147, 251, 0.3);
+}
+
+.stack-badge.backend-only {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(79, 172, 254, 0.3);
+}
+
+.stack-badge.angular-badge {
+  background: linear-gradient(135deg, #dd0031 0%, #c3002f 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(221, 0, 49, 0.3);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 12px;
+}
+
+.tech-tags .tag {
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.tech-tags .tag:hover {
+  transform: translateY(-2px);
+}
+
+.tag.angular-tag {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.tag.java-tag {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ffe0b2;
+}
+
+.tag.typescript-tag {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.tag.html-tag {
+  background-color: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ffe0b2;
+}
+
+.tag.css-tag {
+  background-color: #e3f2fd;
+  color: #0277bd;
+  border: 1px solid #bbdefb;
+}
+
+.tag.js-tag {
+  background-color: #fffde7;
+  color: #f9a825;
+  border: 1px solid #fff9c4;
+}
+
+.tag.mysql-tag {
+  background-color: #f3e5f5;
+  color: #5d4037;
+  border: 1px solid #e1bee7;
+}
+
+.tag.php-tag {
+  background-color: #f3e5f5;
+  color: #777bb3;
+  border: 1px solid #e1bee7;
+}
+
+.tag.docker-tag {
+  background-color: #e3f2fd;
+  color: #2496ed;
+  border: 1px solid #bbdefb;
+}
+
+.tag.api-tag {
+  background-color: #fff3e0;
+  color: #ff9800;
+  border: 1px solid #ffe0b2;
+}
+
+.tag.canvas-tag {
+  background-color: #e8f5e9;
+  color: #4caf50;
+  border: 1px solid #c8e6c9;
+}
+
+.tag.chart-tag {
+  background-color: #fff3e0;
+  color: #ff9800;
+  border: 1px solid #ffe0b2;
+}
+
+.tag.date-tag {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+  border: 1px solid #e1bee7;
+}
+
+.tag.audio-tag {
+  background-color: #e3f2fd;
+  color: #0277bd;
+  border: 1px solid #bbdefb;
+}
+
+.tag.auth-tag {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+.portfolio .portfolio-content > p:first-of-type {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.portfolio-scroll-container {
+  max-height: 70vh; 
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(93, 87, 244, 0.6) transparent;
+}
+
+.portfolio-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.portfolio-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.portfolio-scroll-container::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-radius: 10px;
+}
+
+.custom-box {
+  display: flex;
+  justify-content: end;
+  width: 75%;
+  margin-left: 23%;
+}

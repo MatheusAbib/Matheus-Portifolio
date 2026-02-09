@@ -1,0 +1,424 @@
+/* Modals Component Styles */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal.fade .modal-dialog {
+  animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.service-modal .modal-dialog {
+  max-width: 1200px;
+}
+
+.service-modal .modal-content {
+  background: var(--surface-color);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(93, 87, 244, 0.25);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.service-modal .modal-header {
+  background-color: color-mix(in srgb, var(--accent-color) 5%, transparent);
+  border-bottom: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);
+  padding: 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-header-content {
+  flex: 1;
+}
+
+.service-modal .modal-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--heading-color);
+  background: linear-gradient(135deg, var(--heading-color) 0%, 
+    color-mix(in srgb, var(--accent-color), transparent 40%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-subtitle {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.btn-close-modal {
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-close-modal:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotate(90deg);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.modal-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modal-section {
+  background: linear-gradient(145deg, 
+    color-mix(in srgb, var(--surface-color), transparent 5%),
+    var(--surface-color)
+  );
+  padding: 0.5rem 1rem 1rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+}
+
+.section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #667eea));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-icon i {
+  font-size: 1.2rem;
+  color: var(--contrast-color);
+}
+
+.section-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.tech-section .section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.tech-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tech-card {
+  background: linear-gradient(145deg, 
+    color-mix(in srgb, var(--surface-color), transparent 5%),
+    color-mix(in srgb, var(--accent-color), transparent 98%)
+  );
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-radius: 16px;
+  padding: 1.6rem;
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  border-color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tech-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tech-header-left h5 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.tech-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.tech-icon.web {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.tech-icon.mobile {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+}
+
+.tech-icon.performance {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+}
+
+.tech-badge {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tech-card-body h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.tech-card-body p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 1rem 0 1rem 0;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stack-tag {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.stack-tag.bootstrap {
+  color: #7952b3;
+  border-color: rgba(121, 82, 179, 0.35);
+  background: rgba(121, 82, 179, 0.12);
+}
+
+.stack-tag.primeng {
+  color: #a90408;
+  border-color: rgba(221, 0, 49, 0.35);
+  background: rgba(221, 0, 49, 0.12);
+}
+
+.stack-tag.angular {
+  color: #e23237;
+  border-color: rgb(221 0 49 / 70%);
+  background: rgba(226, 50, 55, 0.12);
+}
+
+.stack-tag.php {
+  background-color: #f3e5f5;
+  color: #777bb3;
+  border-color: #e1bee7;
+}
+
+.stack-tag.mysql {
+  color: #00758f;
+  border-color: rgba(0, 117, 143, 0.35);
+  background: rgba(0, 117, 143, 0.12);
+}
+
+.stack-tag.java {
+  color: #f89820;
+  border-color: rgba(248, 152, 32, 0.35);
+  background: rgba(248, 152, 32, 0.12);
+}
+
+.stack-tag.spring {
+  color: #6db33f;
+  border-color: rgba(109, 179, 63, 0.35);
+  background: rgba(109, 179, 63, 0.12);
+}
+
+.stack-tag:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  transition: all 0.2s ease;
+}
+
+.process-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 19px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    var(--accent-color) 0%, 
+    color-mix(in srgb, var(--accent-color), transparent 70%) 100%
+  );
+}
+
+.process-step {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-indicator {
+  position: absolute;
+  left: -40px;
+  top: 0;
+}
+
+.step-number-passo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #667eea));
+  color: var(--contrast-color);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.875rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-line {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 2px;
+  height: calc(100% + 2rem);
+  background: var(--accent-color);
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+.process-step:last-child .step-line {
+  display: none;
+}
+
+.step-content-passo {
+  background: linear-gradient(145deg, 
+    color-mix(in srgb, var(--surface-color), transparent 5%),
+    var(--surface-color)
+  );
+  border-top: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);
+  padding: 1rem 1rem 0.5rem 1rem;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.process-step:hover .step-content-passo {
+  border-color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.step-header h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.step-badge {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.step-content-passo p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0 0 0.75rem 0;
+}
+
+.step-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.step-tags .tag {
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--accent-color), transparent 95%),
+    color-mix(in srgb, var(--accent-color), transparent 98%)
+  );
+  color: var(--accent-color);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}

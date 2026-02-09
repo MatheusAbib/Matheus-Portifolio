@@ -30,6 +30,23 @@ const MediaQueriesManager = () => {
     
 
         @media screen and (max-width: 768px) {
+        
+          .modal-column{
+            border-left: none !important;
+          }
+          .modal-section{
+            padding: 0;
+            }
+            .service-modal .modal-header{
+            padding: 1rem;
+            }
+            .service-modal .modal-title{
+              font-size: 1.6rem
+            }
+              .modal-body{
+                  padding: 1rem 1rem 3rem;
+              }
+
             .contact-form-modern input,
             .contact-form-modern textarea,
             .contact-form-modern select {
@@ -75,7 +92,7 @@ const MediaQueriesManager = () => {
         font-size: 1.3rem;
     }
         .certificates-nav {
-        padding: 1rem;
+        padding: 1.5rem;
         gap: 10px;
     }
     
@@ -175,7 +192,7 @@ const MediaQueriesManager = () => {
           }
 
         .section-title h2{
-        font-size: 34px
+        font-size: 32px
         }
 
         .portfolio .portfolio-filters{
@@ -377,7 +394,6 @@ const MediaQueriesManager = () => {
         .modal-grid {
             grid-template-columns: 1fr;
             gap: 2rem;
-            padding: 2rem;
         }
         
         .softskill-card {
@@ -497,7 +513,7 @@ const MediaQueriesManager = () => {
       @media (max-width: 576px) {
 
           .contact-form-modern {
-        padding: 1rem 1rem;
+        padding: 2rem 1rem;
     }
     
     .form-header h2 {

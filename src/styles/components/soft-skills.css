@@ -1,0 +1,205 @@
+#services-alt {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 97.5%);
+}
+
+.softskills-container {
+  position: relative;
+  z-index: 1;
+}
+
+.softskills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.softskill-card {
+  background: linear-gradient(145deg, rgb(255 255 255 / 25%), rgb(255 255 255 / 81%));
+  border-radius: 22px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 
+    0 10px 30px rgba(93, 87, 244, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardReveal 0.8s ease forwards;
+}
+
+.softskill-card:nth-child(1) { animation-delay: 0.1s; }
+.softskill-card:nth-child(2) { animation-delay: 0.2s; }
+.softskill-card:nth-child(3) { animation-delay: 0.3s; }
+.softskill-card:nth-child(4) { animation-delay: 0.4s; }
+.softskill-card:nth-child(5) { animation-delay: 0.5s; }
+.softskill-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.softskill-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 25px 50px -12px rgba(93, 87, 244, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, 
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), #667eea)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.softskill-card:hover .skill-icon {
+  transform: rotate(15deg) scale(1.1);
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+.skill-icon i {
+  font-size: 2rem;
+  color: var(--contrast-color);
+  position: relative;
+  z-index: 1;
+}
+
+.skill-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+
+.skill-content {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-description {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.skill-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.skill-features li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.softskill-card:hover .skill-features li::before {
+  transform: scale(1.5);
+  background: color-mix(in srgb, var(--accent-color), #667eea);
+}
+
+.skill-progress {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.progress-bar {
+  height: 8px;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), #667eea)
+  );
+  border-radius: 4px;
+  position: relative;
+  transform: translateX(-100%);
+  transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.softskill-card:hover .progress-fill {
+  transform: translateX(0);
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

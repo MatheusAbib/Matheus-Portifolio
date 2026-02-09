@@ -91,12 +91,6 @@ const Certificates = () => {
     { id: 'java', label_key: 'java_tab_title' }
   ];
 
-  const activeCertificate = certificates.find(cert => cert.id === activeTab);
-
-  console.log('Active certificate:', activeCertificate);
-  console.log('Image path:', activeCertificate?.image);
-  console.log('All certificates:', certificates);
-
   return (
     <section id="service-details" className="service-details section">
       <div className="container section-title" data-aos="fade-up">
@@ -122,19 +116,23 @@ const Certificates = () => {
             </div>
             
             <div className="certificates-content">
-              {activeCertificate && (
-                <div className="certificate-tab active" id={`${activeTab}-tab`}>
+              {certificates.map(cert => (
+                <div 
+                  key={cert.id}
+                  className={`certificate-tab ${activeTab === cert.id ? 'active' : ''}`}
+                  id={`${cert.id}-tab`}
+                >
                   <div className="certificate-card">
                     <div className="certificate-image">
-<img 
-  src={activeCertificate.image} 
-  alt={`Certificado ${activeCertificate.title_key}`}
-  onError={(e) => {
-    console.error('Image failed to load:', e.target.src);
-    console.error('Error event:', e);
-  }}
-  onLoad={() => console.log('Image loaded successfully:', activeCertificate.image)}
-/>
+                      <img 
+                        src={cert.image} 
+                        alt={`Certificado ${cert.title_key}`}
+                        onError={(e) => {
+                          console.error('Image failed to load:', e.target.src);
+                          console.error('Error event:', e);
+                        }}
+                        onLoad={() => console.log('Image loaded successfully:', cert.image)}
+                      />
                       <div className="certificate-badge">
                         <i className="bi bi-award-fill"></i>
                       </div>
@@ -142,11 +140,11 @@ const Certificates = () => {
                     
                     <div className="certificate-details">
                       <div className="certificate-header">
-                        <h3 className="certificate-title" data-translate={activeCertificate.title_key}>
-                          {t(activeCertificate.title_key)}
+                        <h3 className="certificate-title" data-translate={cert.title_key}>
+                          {t(cert.title_key)}
                         </h3>
                         <p className="certificate-institution">
-                          {activeCertificate.institution}
+                          {cert.institution}
                         </p>
                       </div>
                       
@@ -158,7 +156,7 @@ const Certificates = () => {
                           </span>
                         </div>
                         <div className="skills-tags">
-                          {activeCertificate.skills.map((skill, index) => {
+                          {cert.skills.map((skill, index) => {
                             const skillClass = skillClasses[skill] || skill.toLowerCase().replace(/\s+/g, '-');
                             const translationKey = `skill_${skill.toLowerCase().replace(/\s+/g, '_')}`;
                             
@@ -173,13 +171,13 @@ const Certificates = () => {
                       
                       <div className="certificate-description">
                         <p>
-                          {t(activeCertificate.description_key)}
+                          {t(cert.description_key)}
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
+              ))}
             </div>
           </div>
         </div>

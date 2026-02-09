@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 
 const SobreMim = () => {
