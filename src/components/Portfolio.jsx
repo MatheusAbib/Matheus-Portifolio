@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { usePortfolioScroll } from '../hooks/usePortfolioScroll';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('*');
+  const [visibleProjects, setVisibleProjects] = useState([]);
   const { portfolioRef } = usePortfolioScroll();
+  const animationTimeoutRef = useRef(null);
 
   const projects = [
     {
@@ -19,21 +21,9 @@ const Portfolio = () => {
       live: "https://matheusabib.github.io/Floricultura-Web/",
       tags: ["HTML", "CSS", "JavaScript"]
     },
+
     {
       id: 2,
-      title: "Jornal de Receitas",
-      title_key: "project_receitas",
-      description_key: "project_receitas_desc",
-      category: "Website",
-      filter: "web",
-      stack: "fullstack",
-      image: "/assets/img/portfolio/Jornal-de-Receitas.png",
-      github: "https://github.com/MatheusAbib/Jornal-de-Receitas",
-      live: "https://jornal-de-receitas-b6ti.onrender.com",
-      tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"]
-    },
-    {
-      id: 3,
       title: "Dashboard de Vendas",
       title_key: "project_dashboard",
       description_key: "project_dashboard_desc",
@@ -44,6 +34,19 @@ const Portfolio = () => {
       github: "https://github.com/MatheusAbib/Dashboard-Vendas",
       live: "https://dashboard-vendas.cleverapps.io/",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL", "Charts"]
+    },
+        {
+      id: 3,
+      title: "Jornal de Receitas",
+      title_key: "project_receitas",
+      description_key: "project_receitas_desc",
+      category: "Website",
+      filter: "web",
+      stack: "fullstack",
+      image: "/assets/img/portfolio/Jornal-de-Receitas.png",
+      github: "https://github.com/MatheusAbib/Jornal-de-Receitas",
+      live: "https://jornal-de-receitas-b6ti.onrender.com",
+      tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"]
     },
     {
       id: 4,
@@ -281,7 +284,7 @@ const Portfolio = () => {
     }
   ];
 
-    const filters = [
+  const filters = [
     { key: '*', label: 'filter_all' },
     { key: 'web', label: 'filter_websites' },
     { key: 'links', label: 'filter_links' },
@@ -292,6 +295,26 @@ const Portfolio = () => {
   const filteredProjects = activeFilter === '*' 
     ? projects 
     : projects.filter(project => project.filter === activeFilter);
+
+const handleFilterClick = (filterKey) => {
+  if (filterKey === activeFilter) return;
+  
+  setVisibleProjects([]);
+  
+  setTimeout(() => {
+    setActiveFilter(filterKey);
+  }, 200);
+};
+
+useEffect(() => {
+  if (visibleProjects.length === 0) {
+    const timeoutId = setTimeout(() => {
+      setVisibleProjects(filteredProjects.map(p => p.id));
+    }, 300);
+    
+    return () => clearTimeout(timeoutId);
+  }
+}, [activeFilter, filteredProjects]);
 
   const getStackBadgeClass = (stack) => {
     if (stack.includes('angular-badge')) return 'stack-badge angular-badge';
@@ -334,7 +357,7 @@ const Portfolio = () => {
               <li
                 key={filter.key}
                 className={activeFilter === filter.key ? 'filter-active' : ''}
-                onClick={() => setActiveFilter(filter.key)}
+                onClick={() => handleFilterClick(filter.key)}
               >
                 <span data-translate={filter.label}>
                   {filter.key === '*' ? 'Todos' : 
@@ -353,8 +376,12 @@ const Portfolio = () => {
           data-aos="fade-up" 
           data-aos-delay="300"
         >
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="col-lg-6 col-md-6">
+      {filteredProjects.map((project, index) => (
+        <div 
+          key={project.id} 
+          className={`col-lg-6 col-md-6 portfolio-item ${visibleProjects.includes(project.id) ? 'show' : ''}`}
+          style={{ transitionDelay: visibleProjects.includes(project.id) ? `${index * 50}ms` : '0ms' }}
+        >
               <div className="portfolio-card">
                 <div className="portfolio-image">
                   <img 

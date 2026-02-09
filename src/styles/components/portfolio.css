@@ -389,3 +389,14 @@
   width: 75%;
   margin-left: 23%;
 }
+
+.portfolio-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.portfolio-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}

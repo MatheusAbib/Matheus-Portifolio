@@ -11,6 +11,40 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
   const [responseType, setResponseType] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const validateField = (name, value) => {
+    let error = '';
+    
+    switch (name) {
+      case 'name':
+        if (!value.trim()) error = 'Nome é obrigatório';
+        break;
+      case 'email':
+        if (!value.trim()) {
+          error = 'Email é obrigatório';
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+          error = 'Email inválido';
+        }
+        break;
+      case 'subject':
+        if (!value.trim()) error = 'Assunto é obrigatório';
+        break;
+      case 'message':
+        if (!value.trim()) error = 'Mensagem é obrigatória';
+        break;
+      default:
+        break;
+    }
+    
+    return error;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,7 +52,41 @@ const ContactForm = () => {
       ...prev,
       [name]: value
     }));
+    
+    if (fieldErrors[name]) {
+      const error = validateField(name, value);
+      setFieldErrors(prev => ({
+        ...prev,
+        [name]: error
+      }));
+    }
+    
+    checkFormValidity({ ...formData, [name]: value });
   };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setFieldErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
+  };
+
+const checkFormValidity = (data) => {
+  const requiredFields = ['name', 'email', 'subject', 'message'];
+  const isValid = requiredFields.every(field => {
+    const value = data[field];
+    if (!value || !value.trim()) return false;
+    
+    if (field === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+      return false;
+    }
+    
+    return true;
+  });
+  setIsFormValid(isValid);
+};
 
   const handlePhoneInput = (e) => {
     let value = e.target.value.replace(/\D/g, '');
@@ -42,35 +110,26 @@ const ContactForm = () => {
   };
 
   const validateForm = () => {
-    const errors = [];
+    const errors = {};
+    let hasErrors = false;
     
-    if (!formData.name.trim()) {
-      errors.push('Por favor, preencha seu nome');
-    }
+    Object.keys(fieldErrors).forEach(field => {
+      const error = validateField(field, formData[field]);
+      if (error) {
+        errors[field] = error;
+        hasErrors = true;
+      }
+    });
     
-    if (!formData.email.trim()) {
-      errors.push('Por favor, preencha seu email');
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.push('Por favor, insira um email válido');
-    }
-    
-    if (!formData.subject.trim()) {
-      errors.push('Por favor, preencha o assunto');
-    }
-    
-    if (!formData.message.trim()) {
-      errors.push('Por favor, preencha a mensagem');
-    }
-    
-    return errors;
+    setFieldErrors(errors);
+    return !hasErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const errors = validateForm();
-    if (errors.length > 0) {
-      setResponseMessage(errors.join(', '));
+    if (!validateForm()) {
+      setResponseMessage('Por favor, corrija os erros no formulário.');
       setResponseType('error');
       return;
     }
@@ -79,17 +138,22 @@ const ContactForm = () => {
     setResponseMessage('');
     setResponseType('');
     
+    const minLoadingTime = new Promise(resolve => setTimeout(resolve, 1500));
+    
     try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...formData
-        }).toString()
-      });
+      const [_, response] = await Promise.all([
+        minLoadingTime,
+        fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+            'form-name': 'contact',
+            ...formData
+          }).toString()
+        })
+      ]);
       
       if (response.ok) {
         setResponseMessage('Mensagem enviada com sucesso! Entrarei em contato em breve.');
@@ -101,6 +165,13 @@ const ContactForm = () => {
           phone: '',
           message: ''
         });
+        setFieldErrors({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setIsFormValid(false);
       } else {
         throw new Error('Erro ao enviar formulário');
       }
@@ -146,14 +217,21 @@ const ContactForm = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="form-input"
+                  className={`form-input ${fieldErrors.name ? 'error' : ''}`}
                   value={formData.name}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   data-translate-placeholder="form_placeholder_name"
                   placeholder="Digite seu nome completo"
                   required
                 />
               </div>
+              {fieldErrors.name && (
+                <div className="field-error-message">
+                  <i className="fas fa-exclamation-circle"></i>
+                  {fieldErrors.name}
+                </div>
+              )}
             </div>
 
             <div className="form-group">
@@ -167,14 +245,21 @@ const ContactForm = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="form-input"
+                  className={`form-input ${fieldErrors.email ? 'error' : ''}`}
                   value={formData.email}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   data-translate-placeholder="form_placeholder_email"
                   placeholder="seu.email@exemplo.com"
                   required
                 />
               </div>
+              {fieldErrors.email && (
+                <div className="field-error-message">
+                  <i className="fas fa-exclamation-circle"></i>
+                  {fieldErrors.email}
+                </div>
+              )}
             </div>
 
             <div className="form-group">
@@ -188,14 +273,21 @@ const ContactForm = () => {
                   type="text"
                   id="subject"
                   name="subject"
-                  className="form-input"
+                  className={`form-input ${fieldErrors.subject ? 'error' : ''}`}
                   value={formData.subject}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   data-translate-placeholder="form_placeholder_subject"
                   placeholder="Sobre o que gostaria de conversar?"
                   required
                 />
               </div>
+              {fieldErrors.subject && (
+                <div className="field-error-message">
+                  <i className="fas fa-exclamation-circle"></i>
+                  {fieldErrors.subject}
+                </div>
+              )}
             </div>
 
             <div className="form-group">
@@ -227,15 +319,22 @@ const ContactForm = () => {
                 <textarea
                   id="message"
                   name="message"
-                  className="form-input"
+                  className={`form-input ${fieldErrors.message ? 'error' : ''}`}
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   data-translate-placeholder="form_placeholder_message"
                   placeholder="Escreva sua mensagem aqui..."
                   required
                 ></textarea>
               </div>
+              {fieldErrors.message && (
+                <div className="field-error-message">
+                  <i className="fas fa-exclamation-circle"></i>
+                  {fieldErrors.message}
+                </div>
+              )}
             </div>
           </div>
 
@@ -278,12 +377,12 @@ const ContactForm = () => {
             <div className="submit-container">
               <button 
                 type="submit" 
-                className="form-submit"
-                disabled={isSubmitting}
+                className={`form-submit ${isSubmitting ? 'form-loading' : ''}`}
+                disabled={isSubmitting || !isFormValid}
               >
                 {isSubmitting ? (
                   <>
-                    <div className="submit-loader"></div>
+                    <div className="spinner"></div>
                     <span className="submit-text" data-translate="form_loading">Enviando...</span>
                   </>
                 ) : (

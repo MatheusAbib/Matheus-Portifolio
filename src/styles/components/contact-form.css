@@ -416,3 +416,106 @@ textarea.form-input ~ .input-icon {
 .contact .form-wrapper button:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+.field-error-message {
+  color: #ff4757;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slideIn 0.3s ease;
+}
+
+.field-error-message i {
+  font-size: 0.9rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+.form-loading .spinner {
+  display: block;
+}
+
+.form-loading .fa-paper-plane {
+  display: none;
+}
+
+.form-submit:disabled:not(.form-loading) {
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--accent-color), transparent 50%),
+    color-mix(in srgb, var(--accent-color), #667eea 50%)
+  );
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+  opacity: 0.7;
+}
+
+.form-loading .submit-text {
+  margin-left: 10px;
+}
+
+.form-input.error {
+  border-color: #ff4757 !important;
+  background: rgba(255, 71, 87, 0.05) !important;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.form-submit.form-loading {
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--accent-color), #000 20%),
+    color-mix(in srgb, var(--accent-color), #667eea 80%)
+  );
+  cursor: wait;
+}
+
+@media (max-width: 768px) {
+  .field-error-message {
+    font-size: 0.8rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-footer {
+    min-width: 100%;
+  }
+  
+  .contact-info-tags {
+    justify-content: center;
+  }
+}
