@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Modals = () => {
+  useEffect(() => {
+    const handleModalShow = (event) => {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '0';
+    };
+
+    const handleModalHide = () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+
+    const modals = document.querySelectorAll('.service-modal');
+    
+    modals.forEach(modal => {
+      modal.addEventListener('shown.bs.modal', handleModalShow);
+      modal.addEventListener('hidden.bs.modal', handleModalHide);
+    });
+
+    return () => {
+      modals.forEach(modal => {
+        modal.removeEventListener('shown.bs.modal', handleModalShow);
+        modal.removeEventListener('hidden.bs.modal', handleModalHide);
+      });
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+  }, []);
+
   return (
     <>
-      {/* ===================== FULL STACK MODAL ===================== */}
       <div className="service-modal modal fade" id="fullstackModal" tabIndex="-1" aria-labelledby="fullstackModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
@@ -18,7 +45,6 @@ const Modals = () => {
             
             <div className="modal-body">
               <div className="modal-grid">
-                {/* Coluna Esquerda - Tecnologias */}
                 <div className="modal-column">
                   <div className="modal-section">
                     <div className="section-header">
@@ -89,7 +115,6 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                {/* Coluna Direita - Processo */}
                 <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
                   <div className="modal-section process-section">
                     <div className="section-header">
@@ -182,7 +207,6 @@ const Modals = () => {
         </div>
       </div>
 
-      {/* ===================== UI/UX MODAL ===================== */}
       <div className="service-modal modal fade" id="uiuxModal" tabIndex="-1" aria-labelledby="uiuxModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
@@ -201,7 +225,6 @@ const Modals = () => {
             
             <div className="modal-body">
               <div className="modal-grid">
-                {/* Coluna Esquerda - Especialidades */}
                 <div className="modal-column">
                   <div className="modal-section">
                     <div className="section-header">
@@ -255,7 +278,6 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                {/* Coluna Direita - Processo */}
                 <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
                   <div className="modal-section process-section">
                     <div className="section-header">
@@ -347,7 +369,6 @@ const Modals = () => {
         </div>
       </div>
 
-      {/* ===================== ENGENHARIA DE SOFTWARE MODAL ===================== */}
       <div className="service-modal modal fade" id="softwareEngineeringModal" tabIndex="-1" aria-labelledby="softwareEngineeringModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
@@ -362,7 +383,6 @@ const Modals = () => {
             
             <div className="modal-body">
               <div className="modal-grid">
-                {/* Coluna Esquerda - Especialidades */}
                 <div className="modal-column">
                   <div className="modal-section">
                     <div className="section-header">
@@ -433,7 +453,6 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                {/* Coluna Direita - Processo */}
                 <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
                   <div className="modal-section process-section">
                     <div className="section-header">
@@ -527,7 +546,6 @@ const Modals = () => {
         </div>
       </div>
 
-      {/* ===================== POWER BI MODAL ===================== */}
       <div className="service-modal modal fade" id="powerbiModal" tabIndex="-1" aria-labelledby="powerbiModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
@@ -546,7 +564,6 @@ const Modals = () => {
             
             <div className="modal-body">
               <div className="modal-grid">
-                {/* Coluna Esquerda - Especialidades */}
                 <div className="modal-column">
                   <div className="modal-section">
                     <div className="section-header">
@@ -623,7 +640,6 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                {/* Coluna Direita - Processo */}
                 <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
                   <div className="modal-section process-section">
                     <div className="section-header">

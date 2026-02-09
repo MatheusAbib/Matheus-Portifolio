@@ -266,26 +266,27 @@ const MediaQueriesManager = () => {
         #header.header .logo span{
         font-size: 24px;
         }
+        
       
         .services .service-item {
-          padding: 1.5rem;
+          padding: 1rem;
           margin-bottom: 1rem;
         }
         .services .service-icon {
-          width: 60px;
-          height: 60px;
+          width: 50px;
+          height: 50px;
           margin-right: 1rem;
         }
         .services .service-icon i {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
         }
         .services .service-content h3 {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           margin-bottom: 0.75rem;
         }
         .services .service-content p {
           margin-bottom: 1rem;
-          font-size: 0.95rem;
+          font-size: 0.9rem;
         }
         .how-we-work .process-container {
           padding: 1rem 0;
