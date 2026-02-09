@@ -16,7 +16,7 @@
 .softskill-card {
   background: linear-gradient(145deg, rgb(255 255 255 / 25%), rgb(255 255 255 / 81%));
   border-radius: 22px;
-  padding: 2.5rem;
+  padding: 2rem;
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -55,15 +55,15 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
 }
 
 .skill-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
   background: linear-gradient(135deg, 
     var(--accent-color),
     color-mix(in srgb, var(--accent-color), #667eea)
@@ -83,7 +83,7 @@
 }
 
 .skill-icon i {
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: var(--contrast-color);
   position: relative;
   z-index: 1;
@@ -106,7 +106,7 @@
 
 .skill-description {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
   position: relative;
@@ -122,7 +122,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
   font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   position: relative;
@@ -145,7 +145,7 @@
 }
 
 .skill-progress {
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   padding-top: 1.5rem;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }

@@ -13,7 +13,6 @@ const Modals = () => {
     };
 
     const modals = document.querySelectorAll('.service-modal');
-    
     modals.forEach(modal => {
       modal.addEventListener('shown.bs.modal', handleModalShow);
       modal.addEventListener('hidden.bs.modal', handleModalHide);
