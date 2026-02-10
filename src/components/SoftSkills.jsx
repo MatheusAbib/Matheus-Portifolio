@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 const SoftSkills = () => {
-  const progressRefs = useRef([]);
 
   const softSkills = [
     {
@@ -40,13 +39,34 @@ const SoftSkills = () => {
   ];
 
   useEffect(() => {
-    progressRefs.current.forEach((ref, index) => {
-      if (ref) {
-        setTimeout(() => {
-          ref.style.transform = 'translateX(0)';
-        }, 300 + (index * 200));
+    const handleMouseEnter = (e) => {
+      const card = e.currentTarget;
+      const progressFill = card.querySelector('.progress-fill');
+      if (progressFill) {
+        progressFill.style.transform = 'translateX(0)';
       }
+    };
+
+    const handleMouseLeave = (e) => {
+      const card = e.currentTarget;
+      const progressFill = card.querySelector('.progress-fill');
+      if (progressFill) {
+        progressFill.style.transform = 'translateX(-100%)';
+      }
+    };
+
+    const cards = document.querySelectorAll('.softskill-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', handleMouseEnter);
+      card.addEventListener('mouseleave', handleMouseLeave);
     });
+
+    return () => {
+      cards.forEach(card => {
+        card.removeEventListener('mouseenter', handleMouseEnter);
+        card.removeEventListener('mouseleave', handleMouseLeave);
+      });
+    };
   }, []);
 
   return (
@@ -103,14 +123,12 @@ const SoftSkills = () => {
                             <span>{skill.percentage}%</span>
                           </div>
                           <div className="progress-bar">
-                            <div 
-                              className="progress-fill" 
-                              ref={el => progressRefs.current[index] = el}
-                              style={{ 
-                                width: `${skill.percentage}%`,
-                                transform: 'translateX(-100%)'
-                              }}
-                            ></div>
+                          <div 
+                            className="progress-fill" 
+                            style={{ 
+                              width: `${skill.percentage}%`
+                            }}
+                          ></div>
                           </div>
                         </div>
                       </div>

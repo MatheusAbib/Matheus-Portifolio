@@ -413,7 +413,7 @@
 }
 
 .certificate-description p {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin-top: 2rem;
   font-family: var(--heading-font);

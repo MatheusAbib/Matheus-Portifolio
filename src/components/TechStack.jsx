@@ -29,13 +29,15 @@ const TechStack = () => {
 
   const technologies = [
     { icon: "fab fa-js-square", name: "JavaScript", color: "#F7DF1E" },
+    { icon: "devicon-typescript-plain", name: "TypeScript", color: "#3178C6" },
     { icon: "fab fa-html5", name: "HTML", color: "#E34F26" },
     { icon: "fab fa-php", name: "PHP", color: "#777BB3" },
     { icon: "fab fa-react", name: "React", color: "#61DAFB" },
     { icon: "", name: "MySQL", isIconify: true, iconifyIcon: "logos:mysql" },
     { icon: "fab fa-java", name: "Java", color: "#000000ff" }, 
     { icon: "fab fa-angular", name: "Angular", color: "#DD0031" },
-    { icon: "fab fa-css3-alt", name: "CSS", color: "#1572B6" }
+    { icon: "fab fa-css3-alt", name: "CSS", color: "#1572B6" },
+    { name: "SCSS", isIconify: true, iconifyIcon: "logos:sass" }
   ];
 
   return (
@@ -50,7 +52,6 @@ const TechStack = () => {
             className={`tech-slider-track ${isVisible ? 'animate' : ''}`}
             style={isVisible ? { animation: 'scroll 90s linear infinite' } : {}}
           >
-            {/* Primeira cópia */}
             {technologies.map((tech, index) => (
               <div key={`first-${index}`} className="tech-slide">
                 {tech.isIconify ? (
@@ -62,7 +63,6 @@ const TechStack = () => {
               </div>
             ))}
             
-            {/* Segunda cópia (para loop infinito) */}
             {technologies.map((tech, index) => (
               <div key={`second-${index}`} className="tech-slide">
                 {tech.isIconify ? (

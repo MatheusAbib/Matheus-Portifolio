@@ -132,7 +132,7 @@
 }
 
 .hero .feature-boxes .feature-box .feature-content .feature-text {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
 }
 

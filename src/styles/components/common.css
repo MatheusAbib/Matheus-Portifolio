@@ -38,7 +38,6 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
-  letter-spacing: 0.02em;
 }
 
 section,

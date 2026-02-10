@@ -125,7 +125,7 @@
 
 .how-we-work .process-item .step-content p {
   color: color-mix(in srgb, var(--default-color), transparent 5%);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
 }

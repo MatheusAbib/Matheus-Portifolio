@@ -102,17 +102,17 @@
 
 .services .service-content h3 {
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   font-weight: 700;
   color: var(--heading-color);
 }
 
 .services .service-content p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   font-family: var(--heading-font);
   font-weight: 400;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   position: relative;
 }
 

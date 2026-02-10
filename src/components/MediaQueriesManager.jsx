@@ -72,11 +72,11 @@ const MediaQueriesManager = () => {
     }
 
         section, .section {
-        padding: 10% 0 10%;
+        padding: 10% 0 10% !important;
     } 
 
     .hero{
-      padding: 18% 0 10%;
+      padding: 18% 0 10% !important;
     }
 
     .skill-icon {

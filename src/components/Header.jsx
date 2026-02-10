@@ -4,6 +4,7 @@ import { useTranslation } from '../hooks/useTranslation';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileNavActive, setMobileNavActive] = useState(false);
+  const [mobileNavClosing, setMobileNavClosing] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [clickedItem, setClickedItem] = useState(null);
   const { t, toggleLanguage } = useTranslation();
@@ -72,19 +73,31 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [navItems]);
 
+  const closeMobileNav = () => {
+    setMobileNavClosing(true);
+    setTimeout(() => {
+      setMobileNavActive(false);
+      setMobileNavClosing(false);
+    }, 300);
+  };
+
   const handleNavClick = (sectionId) => {
     setClickedItem(sectionId);
     setTimeout(() => setClickedItem(null), 300);
     
     if (mobileNavActive) {
-      setMobileNavActive(false);
+      closeMobileNav();
     }
     
     setActiveSection(sectionId);
   };
 
   const toggleMobileNav = () => {
-    setMobileNavActive(prev => !prev);
+    if (mobileNavActive) {
+      closeMobileNav();
+    } else {
+      setMobileNavActive(true);
+    }
   };
 
   const scrollToSection = (id) => {
@@ -120,7 +133,7 @@ const Header = () => {
             <h1 className="sitename">Matheus Abib</h1><span>.</span>
           </div>
 
-          <nav id="navmenu" className={`navmenu ${mobileNavActive ? 'mobile-nav-active' : ''}`}>
+          <nav id="navmenu" className={`navmenu ${mobileNavActive ? 'mobile-nav-active' : ''} ${mobileNavClosing ? 'mobile-nav-closing' : ''}`}>
             <ul>
               {navItems.map((item) => (
                 <li key={item.id}>
@@ -153,6 +166,11 @@ const Header = () => {
                 </button>
               </li>
             </ul>
+            <i 
+              className="mobile-nav-close bi bi-x d-xl-none"
+              onClick={closeMobileNav}
+              aria-label="Close navigation"
+            ></i>
           </nav>
 
           <div className="d-none d-xl-block">
@@ -178,10 +196,7 @@ const Header = () => {
       {mobileNavActive && (
         <div 
           className="mobile-nav-overlay"
-          onClick={() => {
-            setMobileNavActive(false);
-            handleNavClick(activeSection);
-          }}
+          onClick={closeMobileNav}
         ></div>
       )}
     </>

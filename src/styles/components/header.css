@@ -125,6 +125,51 @@ body.mobile-nav-active .footer {
   transition: filter 0.3s ease;
 }
 
+
+.mobile-nav-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: var(--heading-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  z-index: 1001;
+}
+
+.mobile-nav-close:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotate(90deg);
+}
+
+.navmenu:not(.mobile-nav-active) .mobile-nav-close {
+  display: none;
+}
+
+.navmenu.mobile-nav-active {
+  transform: translateX(0);
+  animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navmenu.mobile-nav-closing {
+  animation: slideOutRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+
+
 .navmenu.mobile-nav-active {
   position: fixed;
   top: 0;
