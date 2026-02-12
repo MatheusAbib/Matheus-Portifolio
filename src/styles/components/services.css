@@ -109,9 +109,10 @@
 
 .services .service-content p {
   font-size: 0.95rem;
-  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-family: var(--heading-font);
   font-weight: 400;
+  text-align: justify;
   letter-spacing: 0.02em;
   position: relative;
 }

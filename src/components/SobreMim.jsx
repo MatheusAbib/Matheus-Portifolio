@@ -44,7 +44,7 @@ const SobreMim = () => {
                 </p>
 
                 <p data-translate="hero_desc_3">
-                  Possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade e engenharia de software</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.
+                  Também possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade e engenharia de software</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.
                 </p>
               </div>
 
@@ -102,7 +102,7 @@ const SobreMim = () => {
         <div className="row feature-boxes">
           <div className="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div className="feature-box">
-              <div className="feature-icon me-sm-4 mb-3 mb-sm-0">
+              <div className="feature-icon me-sm-3 mb-3 mb-sm-0">
                 <i className="bi bi-lightning-charge"></i>
               </div>
               <div className="feature-content">
@@ -116,7 +116,7 @@ const SobreMim = () => {
 
           <div className="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div className="feature-box">
-              <div className="feature-icon me-sm-4 mb-3 mb-sm-0">
+              <div className="feature-icon me-sm-3 mb-3 mb-sm-0">
                 <i className="bi bi-award"></i>
               </div>
               <div className="feature-content">
@@ -130,7 +130,7 @@ const SobreMim = () => {
 
           <div className="col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div className="feature-box">
-              <div className="feature-icon me-sm-4 mb-3 mb-sm-0">
+              <div className="feature-icon me-sm-3 mb-3 mb-sm-0">
                 <i className="bi bi-people"></i>
               </div>
               <div className="feature-content">

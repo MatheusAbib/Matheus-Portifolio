@@ -96,14 +96,14 @@ const Modals = () => {
                           </div>
                         </div>
                         
-                        <div className="mt-4 pt-3 border-top border-bottom">
+                        <div className="mt-3 pt-3 border-top border-bottom">
                           <div className="d-flex align-items-start gap-3 mb-3">
                             <div className="flex-shrink-0">
                               <i className="bi bi-lightbulb-fill text-warning" style={{ fontSize: '1.5rem' }}></i>
                             </div>
-                            <div>
-                              <h5 className="mb-2" style={{ fontSize: '1.15rem' }} data-translate="modal_fullstack_experience_title">Experiência Prática</h5>
-                              <p className="mb-2" style={{ fontSize: '0.95rem' }} data-translate="modal_fullstack_experience_desc">
+                            <div className='Descricao-modal'>
+                              <h5 className="mb-3" data-translate="modal_fullstack_experience_title">Experiência Prática</h5>
+                              <p className="mb-2" data-translate="modal_fullstack_experience_desc">
                                 Atuo como <strong>Desenvolvedor de Software</strong> em projetos institucionais para a Prefeitura de Mogi das Cruzes, contribuindo para o desenvolvimento de soluções digitais.
                               </p>
                             </div>
@@ -257,13 +257,13 @@ const Modals = () => {
                         </div>
                       </div>
                       
-                      <div className="mt-4 pt-3 border-top border-bottom">
+                      <div className="mt-3 pt-3 border-top border-bottom">
                         <div className="d-flex align-items-start gap-3 mb-3">
                           <div className="flex-shrink-0">
                             <i className="bi bi-lightbulb-fill text-warning" style={{ fontSize: '1.5rem' }}></i>
                           </div>
-                          <div>
-                            <h5 className="mb-2" style={{ fontSize: '1.15rem' }} data-translate="modal_uiux_experience_title">Experiência Prática</h5>
+                          <div className='Descricao-modal' >
+                            <h5 className="mb-3" style={{ fontSize: '1.15rem' }} data-translate="modal_uiux_experience_title">Experiência Prática</h5>
                             <p className="mb-2" style={{ fontSize: '0.95rem' }} data-translate="modal_uiux_experience_desc">
                               Atuei com <strong data-translate="modal_uiux_experience_strong">UX/UI Design</strong>, criando wireframes e protótipos interativos focados em interfaces claras e visualmente atrativas, com atenção à consistência e usabilidade.
                             </p>
@@ -435,13 +435,13 @@ const Modals = () => {
                         </div>
                       </div>
                       
-                      <div className="mt-4 pt-3 border-top border-bottom">
+                      <div className="mt-3 pt-3 border-top border-bottom">
                         <div className="d-flex align-items-start gap-3 mb-3">
                           <div className="flex-shrink-0">
                             <i className="bi bi-mortarboard-fill text-primary" style={{ fontSize: '1.5rem' }}></i>
                           </div>
-                          <div>
-                            <h5 className="mb-2" style={{ fontSize: '1.15rem' }} data-translate="modal_software_education_title">Formação Acadêmica</h5>
+                          <div className='Descricao-modal'>
+                            <h5 className="mb-3" style={{ fontSize: '1.15rem' }} data-translate="modal_software_education_title">Formação Acadêmica</h5>
                             <p className="mb-2" style={{ fontSize: '0.95rem' }} data-translate="modal_software_education_desc">
                               <strong data-translate="modal_software_education_strong1">Análise e Desenvolvimento de Sistemas</strong> na Faculdade de Tecnologia de Mogi das Cruzes e <strong data-translate="modal_software_education_strong2">Engenharia de Software</strong> na Universidade de Mogi das Cruzes.
                             </p>
@@ -616,13 +616,13 @@ const Modals = () => {
                         </div>
                       </div>
                       
-                      <div className="mt-4 pt-3 border-top border-bottom">
+                      <div className="mt-3 pt-3 border-top border-bottom">
                         <div className="d-flex align-items-start gap-3 mb-3">
                           <div className="flex-shrink-0">
                             <i className="bi bi-award-fill text-warning" style={{ fontSize: '1.5rem' }}></i>
                           </div>
-                          <div>
-                            <h5 className="mb-2" style={{ fontSize: '1.15rem' }} data-translate="modal_powerbi_certification_title">Certificação Power BI</h5>
+                          <div className='Descricao-modal'>
+                            <h5 className="mb-3" style={{ fontSize: '1.15rem' }} data-translate="modal_powerbi_certification_title">Certificação Power BI</h5>
                             <p className="mb-2" style={{ fontSize: '0.95rem' }} data-translate="modal_powerbi_certification_desc">
                               Concluí o curso <strong data-translate="modal_powerbi_certification_strong">Microsoft Power BI Para Business Intelligence e Data Science</strong>, adquirindo conhecimento em:
                             </p>

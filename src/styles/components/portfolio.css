@@ -162,7 +162,7 @@
 
 .portfolio .portfolio-card .portfolio-content h3 {
   font-size: 22px;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   font-weight: 700;
   color: var(--heading-color);
   transition: color 0.3s ease;
@@ -178,9 +178,12 @@
 }
 
 .portfolio .portfolio-card .portfolio-content p {
-  font-size: 15px;
+  font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 0;
+  font-family: var(--heading-font);
+  letter-spacing: 0.02em;
+  text-align: justify;
   line-height: 1.6;
 }
 

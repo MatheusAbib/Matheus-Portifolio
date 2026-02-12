@@ -33,8 +33,8 @@
 }
 
 .hero .hero-title {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.3rem;
+  font-weight: 900;
   line-height: 1.2;
   color: var(--heading-color);
   margin-bottom: 1.5rem;
@@ -133,7 +133,9 @@
 
 .hero .feature-boxes .feature-box .feature-content .feature-text {
   font-size: 0.95rem;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+      text-align: justify;
+
 }
 
 .hero .content .read-more {
@@ -454,24 +456,23 @@
 }
 
 .hero-highlight .hero-title {
-  background: linear-gradient(
-    135deg,
-    var(--heading-color) 0%,
-    color-mix(in srgb, var(--heading-color), transparent 20%) 50%,
-    var(--heading-color) 100%
-  );
+  background: linear-gradient(135deg, var(--heading-color) 0%,
+  color-mix(in srgb, #101010, transparent 30%) 50%, var(--heading-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.01em;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
 .hero-highlight .hero-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
+    font-family: var(--heading-font);
+  letter-spacing: 0.02em;
+  text-align: justify;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 2.5rem;
   position: relative;
   animation: paragraphReveal 1s 0.5s both;

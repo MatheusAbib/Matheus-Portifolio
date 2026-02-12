@@ -223,11 +223,36 @@
   margin: 0 0 0.5rem 0;
 }
 
+.Descricao-modal p{
+  font-size: 0.9rem;
+  font-family: var(--heading-font);
+  font-weight: 400;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.Descricao-modal ul{
+  font-family: var(--heading-font);
+  font-weight: 400;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.Descricao-modal h5{
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
 .tech-card-body p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 1rem 0 1rem 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 0.8rem;
+  line-height: 1.8;
+  font-family: var(--heading-font);
+  letter-spacing: 0.02em;
+  margin: 0.8rem 0 0.8rem 0;
 }
 
 .tech-stack {
@@ -398,10 +423,12 @@
 }
 
 .step-content-passo p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  margin: 0 0 0.75rem 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 0.8rem;
+  line-height: 1.8;
+    font-family: var(--heading-font);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.7rem 0;
 }
 
 .step-tags {

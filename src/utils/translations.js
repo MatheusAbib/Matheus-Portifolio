@@ -13,9 +13,9 @@ const translations = {
       // Hero Section
       hero_badge: "Inovação & Tecnologia",
       hero_title: "Bem-vindo!",
-      hero_desc_1: "Sou <strong>desenvolvedor web</strong> atuando com <strong>tecnologias front-end e back-end</strong>, focado em melhorar a experiência do usuário e a funcionalidade dos sistemas.",
+      hero_desc_1: "Sou um <strong>desenvolvedor de software</strong> atuando com <strong>tecnologias front-end e back-end</strong>, focado em melhorar a experiência do usuário e a funcionalidade dos sistemas.",
       hero_desc_2: "Atualmente estou no último semestre de Análise e Desenvolvimento de Sistemas na Faculdade de Tecnologia de Mogi das Cruzes e no primeiro semestre de Engenharia de Software na Universidade de Mogi das Cruzes.",
-      hero_desc_3: "Possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade e engenharia de software</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.",
+      hero_desc_3: "Também possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade e engenharia de software</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.",
       cv_button: "Download CV",
       photo_overlay: "Esse sou eu!",
       cv_portuguese: "Português",
