@@ -81,6 +81,11 @@ const translations = {
       certificate_java_desc: "Minicurso especializado em Java e Spring Boot, abordando desde fundamentos da linguagem até desenvolvimento de APIs RESTful com boas práticas e padrões de projeto.",
 
       
+
+      certificate_skills_developed: "Habilidades desenvolvidas",
+      certificate_category_programming: "Programming",
+    
+
       // Services
       services_title: "Serviços",
       service_1_title: "Desenvolvimento Full Stack",
