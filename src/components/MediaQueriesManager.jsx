@@ -92,12 +92,12 @@ const MediaQueriesManager = () => {
         font-size: 1.3rem;
     }
         .certificates-nav {
-        padding: 1.5rem;
+        padding: 1.2rem;
         gap: 10px;
     }
     
     .certificate-tab-btn {
-        padding: 0.9rem 1rem;
+        padding: 0.8rem 1rem;
         font-size: 0.85rem;
     }
     
@@ -235,9 +235,9 @@ const MediaQueriesManager = () => {
       }
       
       .hero-highlight .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
       }
       }
       
@@ -410,7 +410,7 @@ const MediaQueriesManager = () => {
         }
         
         .certificates-content {
-            padding: 2rem;
+            padding: 1.5rem;
         }
         
         .certificate-title {
@@ -532,9 +532,9 @@ const MediaQueriesManager = () => {
     }
     
     .form-submit {
-        padding: 0.8rem 1rem;
+        padding: 0.8rem 2rem;
         min-width: 200px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         margin-bottom: 15px;
     }
     
@@ -574,7 +574,7 @@ const MediaQueriesManager = () => {
         }
         
         .hero-highlight .hero-title {
-          font-size: 1.6rem;
+          font-size: 1.75rem;
         }
         
         .hero-highlight .hero-description {
