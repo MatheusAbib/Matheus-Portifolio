@@ -46,33 +46,21 @@ const translations = {
       menu_certificates: "Certificados",
     
     // Certificates Section
-    webdev_tab_title: "Web Development",
-    powerbi_tab_title: "Power BI",
-    database_tab_title: "Banco de Dados",
-    logic_tab_title: "Lógica de Programação",
-    ai_tab_title: "Inteligência Artificial",
-    java_tab_title: "Java",
+      webdev_tab_title: "Web Development",
+      powerbi_tab_title: "Power BI",
+      react_tab_title: "React",
+      database_tab_title: "Banco de Dados",
+      logic_tab_title: "Lógica de Programação",
+      ai_tab_title: "Inteligência Artificial",
+      java_tab_title: "Java",
     
-    certificate_webdev_title: "HTML, CSS & JavaScript",
-    certificate_webdev_desc: "Curso especializado em desenvolvimento web front-end, abordando as tecnologias fundamentais para construção de interfaces modernas e responsivas.",
-    
-    certificate_powerbi_title: "Microsoft Power BI",
-    certificate_powerbi_desc: "Curso completo de Microsoft Power BI para Business Intelligence e Data Science, abordando desde conceitos básicos até técnicas avançadas de análise e visualização de dados.",
-    
-    certificate_database_title: "Banco de Dados SQL",
-    certificate_database_desc: "Curso completo de banco de dados relacional, abordando desde conceitos fundamentais até consultas avançadas em SQL, modelagem de dados e otimização de queries.",
-    
-    certificate_logic_title: "Lógica de Programação",
-    certificate_logic_desc: "Curso introdutório à lógica de programação através do programa GFT Start #6, focado em fundamentos de algoritmos e estruturas de dados utilizando JavaScript.",
-    
-    certificate_ai_title: "Inteligência Artificial",
-    certificate_ai_desc: "Imersão em Inteligência Artificial 2ª edição, abordando desde conceitos fundamentais até técnicas avançadas de machine learning e deep learning com Python.",
-    
-    certificate_java_title: "Java & Spring Boot",
-    certificate_java_desc: "Minicurso especializado em Java e Spring Boot, abordando desde fundamentos da linguagem até desenvolvimento de APIs RESTful com boas práticas e padrões de projeto.",
-    
-    certificate_skills_developed: "Competências Desenvolvidas",
-    certificate_category_programming: "Programação",
+     certificate_webdev_title: "Desenvolvimento Web",
+      certificate_powerbi_title: "Microsoft Power BI",
+      certificate_react_title: "React com JavaScript",
+      certificate_database_title: "Banco de Dados SQL",
+      certificate_logic_title: "Lógica de Programação",
+      certificate_ai_title: "Inteligência Artificial",
+      certificate_java_title: "Java & Spring Boot",
     
     // Skills
     skill_dashboards: "Dashboards",
@@ -83,6 +71,15 @@ const translations = {
     skill_ai_fundamentals: "Fundamentos de IA",
     skill_supervised_learning: "Aprendizado Supervisionado",
     skill_data_preprocessing: "Pré-processamento de Dados",
+
+      certificate_webdev_desc: "Curso especializado em desenvolvimento web front-end, abordando as tecnologias fundamentais para construção de interfaces modernas e responsivas.",
+      certificate_powerbi_desc: "Curso completo de Microsoft Power BI para Business Intelligence e Data Science, abordando desde conceitos básicos até técnicas avançadas de análise e visualização de dados.",
+      certificate_react_desc: "Curso focado no desenvolvimento de aplicações web dinâmicas com a biblioteca React e JavaScript moderno.",
+      certificate_database_desc: "Curso completo de banco de dados relacional, abordando desde conceitos fundamentais até consultas avançadas em SQL, modelagem de dados e otimização de queries.",
+      certificate_logic_desc: "Curso introdutório à lógica de programação através do programa GFT Start #6, focado em fundamentos de algoritmos e estruturas de dados utilizando JavaScript.",
+      certificate_ai_desc: "Imersão em Inteligência Artificial 2ª edição, abordando desde conceitos fundamentais até técnicas avançadas de machine learning e deep learning com Python.",
+      certificate_java_desc: "Minicurso especializado em Java e Spring Boot, abordando desde fundamentos da linguagem até desenvolvimento de APIs RESTful com boas práticas e padrões de projeto.",
+
       
       // Services
       services_title: "Serviços",
@@ -463,33 +460,32 @@ const translations = {
       menu_certificates: "Certificates",
     
     // Certificates Section
-    webdev_tab_title: "Web Development",
-    powerbi_tab_title: "Power BI",
-    database_tab_title: "Database",
-    logic_tab_title: "Programming Logic",
-    ai_tab_title: "Artificial Intelligence",
-    java_tab_title: "Java",
+      webdev_tab_title: "Web Development",
+      powerbi_tab_title: "Power BI",
+      react_tab_title: "React",
+      database_tab_title: "Database",
+      logic_tab_title: "Programming Logic",
+      ai_tab_title: "Artificial Intelligence",
+      java_tab_title: "Java",
     
-    certificate_webdev_title: "HTML, CSS & JavaScript",
-    certificate_webdev_desc: "Specialized course in front-end web development, covering fundamental technologies for building modern and responsive interfaces.",
-    
-    certificate_powerbi_title: "Microsoft Power BI",
-    certificate_powerbi_desc: "Complete Microsoft Power BI course for Business Intelligence and Data Science, covering from basic concepts to advanced data analysis and visualization techniques.",
-    
-    certificate_database_title: "SQL Database",
-    certificate_database_desc: "Complete relational database course, covering from fundamental concepts to advanced SQL queries, data modeling and query optimization.",
-    
-    certificate_logic_title: "Programming Logic",
-    certificate_logic_desc: "Introductory course to programming logic through the GFT Start #6 program, focused on algorithm fundamentals and data structures using JavaScript.",
-    
-    certificate_ai_title: "Artificial Intelligence",
-    certificate_ai_desc: "Artificial Intelligence Immersion 2nd edition, covering from fundamental concepts to advanced machine learning and deep learning techniques with Python.",
-    
-    certificate_java_title: "Java & Spring Boot",
-    certificate_java_desc: "Specialized mini-course in Java and Spring Boot, covering from language fundamentals to RESTful API development with best practices and design patterns.",
-    
-    certificate_skills_developed: "Developed Skills",
-    certificate_category_programming: "Programming",
+      certificate_webdev_title: "Web Development",
+      certificate_powerbi_title: "Microsoft Power BI",
+      certificate_react_title: "React with JavaScript",
+      certificate_database_title: "SQL Database",
+      certificate_logic_title: "Programming Logic",
+      certificate_ai_title: "Artificial Intelligence",
+      certificate_java_title: "Java & Spring Boot",
+
+            certificate_webdev_desc: "Specialized course in front-end web development, covering fundamental technologies for building modern and responsive interfaces.",
+      certificate_powerbi_desc: "Complete Microsoft Power BI course for Business Intelligence and Data Science, covering from basic concepts to advanced data analysis and visualization techniques.",
+      certificate_react_desc: "Course focused on developing dynamic web applications with the React library and modern JavaScript.",
+      certificate_database_desc: "Complete relational database course, covering from fundamental concepts to advanced SQL queries, data modeling and query optimization.",
+      certificate_logic_desc: "Introductory course to programming logic through the GFT Start #6 program, focused on algorithm fundamentals and data structures using JavaScript.",
+      certificate_ai_desc: "Artificial Intelligence Immersion 2nd edition, covering from fundamental concepts to advanced machine learning and deep learning techniques with Python.",
+      certificate_java_desc: "Specialized mini-course in Java and Spring Boot, covering from language fundamentals to RESTful API development with best practices and design patterns.",
+
+      certificate_skills_developed: "Developed Skills",
+      certificate_category_programming: "Programming",
     
     // Skills
     skill_dashboards: "Dashboards",

@@ -11,6 +11,7 @@ const Certificates = () => {
     'JavaScript': 'javascript',
     'HTML5': 'html',
     'AJAX': 'ajax',
+    'React' : 'ajax',
     'Microsoft Power BI': 'angular',
     'Microsoft Excel': 'spreadsheet-management',
     'Dashboards': 'dashboards',
@@ -48,6 +49,7 @@ const Certificates = () => {
       description_key: 'certificate_powerbi_desc',
       skills: ['Microsoft Power BI', 'Microsoft Excel', 'Dashboards', 'Data Analysis', 'Spreadsheet Management']
     },
+
     {
       id: 'database',
       title_key: 'certificate_database_title',
@@ -73,6 +75,14 @@ const Certificates = () => {
       skills: ['AI Fundamentals', 'Supervised Learning', 'Data Preprocessing', 'Python']
     },
     {
+      id: 'react',
+      title_key: 'certificate_react_title',
+      institution: 'Cursa',
+      image: 'assets/img/services/react.png',
+      description_key: 'certificate_react_desc',
+      skills: ['React', 'API Rest', 'JavaScript']
+    },
+    {
       id: 'java',
       title_key: 'certificate_java_title',
       institution: 'Rocketseat',
@@ -88,6 +98,7 @@ const Certificates = () => {
     { id: 'database', label_key: 'database_tab_title' },
     { id: 'logic', label_key: 'logic_tab_title' },
     { id: 'ai', label_key: 'ai_tab_title' },
+    { id: 'react', label_key: 'react_tab_title' },
     { id: 'java', label_key: 'java_tab_title' }
   ];
 
