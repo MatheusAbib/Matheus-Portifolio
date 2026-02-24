@@ -85,7 +85,7 @@ const SobreMim = () => {
             </div>
 
             <div className="col-lg-5 col-md-5">
-              <div className="light-background d-flex justify-content-center justify-content-md-end custom-box">
+              <div className="light-background d-flex justify-content-center custom-box">
                 <div className="team-card">
                   <div className="team-image">
                     <img src="/assets/img/Eu.jpg" className="img-fluid" alt="Matheus Abib" />

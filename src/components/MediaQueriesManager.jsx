@@ -573,6 +573,8 @@ const MediaQueriesManager = () => {
           .contact-form-modern {
         padding: 2rem 1rem;
     }
+
+    
     
     .form-header h2 {
         font-size: 1.6rem;
@@ -623,6 +625,7 @@ const MediaQueriesManager = () => {
         .hero .content .translate-and-download {
           flex-direction: row-reverse;
           justify-content: flex-end;
+          margin-bottom: 1.35rem;
         }
 
           .hero-highlight {
@@ -631,12 +634,13 @@ const MediaQueriesManager = () => {
         }
         
         .hero-highlight .hero-title {
-          font-size: 1.75rem;
+          font-size: 1.55rem;
         }
         
         .hero-highlight .hero-description {
-          font-size: 1rem;
+          font-size: 0.95rem;
           line-height: 1.7;
+          margin-right: 0;
         }
         
         .hero-highlight .translate-and-download {
@@ -731,6 +735,7 @@ const MediaQueriesManager = () => {
         }
         .hero-social {
           gap: 9px;
+          margin-right: 0;
         }
         .social-icon {
           width: 36px;
