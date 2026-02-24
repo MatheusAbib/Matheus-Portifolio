@@ -149,7 +149,7 @@
 
 .team-card {
   border-radius: 8px;
-  max-width: 330px;
+  max-width: 340px;
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 75%);
   overflow: hidden;
   position: relative;
