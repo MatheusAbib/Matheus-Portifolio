@@ -117,7 +117,9 @@
 .hero .feature-boxes .feature-box .feature-content .feature-text {
   font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  text-align: justify;
+     line-height: 1.6;
+    margin: 0;
+    letter-spacing: 0.02em;
 }
 
 .hero .content .read-more {

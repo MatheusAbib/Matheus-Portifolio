@@ -264,10 +264,10 @@ const Modals = () => {
                           </div>
                           <div className='Descricao-modal' >
                             <h5 className="mb-3" style={{ fontSize: '1.15rem' }} data-translate="modal_uiux_experience_title">Experiência Prática</h5>
-                            <p className="mb-2" style={{ fontSize: '0.95rem' }} data-translate="modal_uiux_experience_desc">
+                            <p className="mb-2" style={{ fontSize: '0.9rem' }} data-translate="modal_uiux_experience_desc">
                               Atuei com <strong data-translate="modal_uiux_experience_strong">UX/UI Design</strong>, criando wireframes e protótipos interativos focados em interfaces claras e visualmente atrativas, com atenção à consistência e usabilidade.
                             </p>
-                            <p className="mb-0" style={{ fontSize: '0.95rem' }} data-translate="modal_uiux_experience_highlights">
+                            <p className="mb-0" style={{ fontSize: '0.9rem' }} data-translate="modal_uiux_experience_highlights">
                               <strong>Destaques:</strong> Sistemas de componentes reutilizáveis, controle de qualidade e validação com stakeholders.
                             </p>
                           </div>
@@ -442,7 +442,7 @@ const Modals = () => {
                           </div>
                           <div className='Descricao-modal'>
                             <h5 className="mb-3" style={{ fontSize: '1.15rem' }} data-translate="modal_software_education_title">Formação Acadêmica</h5>
-                            <p className="mb-2" style={{ fontSize: '0.95rem' }} data-translate="modal_software_education_desc">
+                            <p className="mb-2" style={{ fontSize: '0.9rem' }} data-translate="modal_software_education_desc">
                               <strong data-translate="modal_software_education_strong1">Análise e Desenvolvimento de Sistemas</strong> na Faculdade de Tecnologia de Mogi das Cruzes e <strong data-translate="modal_software_education_strong2">Engenharia de Software</strong> na Universidade de Mogi das Cruzes.
                             </p>
                           </div>
@@ -623,7 +623,7 @@ const Modals = () => {
                           </div>
                           <div className='Descricao-modal'>
                             <h5 className="mb-3" style={{ fontSize: '1.15rem' }} data-translate="modal_powerbi_certification_title">Certificação Power BI</h5>
-                            <p className="mb-2" style={{ fontSize: '0.95rem' }} data-translate="modal_powerbi_certification_desc">
+                            <p className="mb-2" style={{ fontSize: '0.9rem' }} data-translate="modal_powerbi_certification_desc">
                               Concluí o curso <strong data-translate="modal_powerbi_certification_strong">Microsoft Power BI Para Business Intelligence e Data Science</strong>, adquirindo conhecimento em:
                             </p>
                             <ul className="mb-0" style={{ fontSize: '0.9rem' }}>

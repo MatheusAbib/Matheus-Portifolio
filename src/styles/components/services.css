@@ -88,8 +88,8 @@
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-family: var(--heading-font);
   font-weight: 400;
-  text-align: justify;
   letter-spacing: 0.02em;
+  line-height: 1.6;
   position: relative;
 }
 

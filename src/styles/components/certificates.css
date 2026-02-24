@@ -359,9 +359,8 @@
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-top: 2rem;
   font-family: var(--heading-font);
-  font-weight: 400;
   letter-spacing: 0.02em;
-  text-align: justify;
+  line-height: 1.6;
   padding-left: 0.5rem;
   border-left: 3px solid color-mix(in srgb, var(--accent-color), transparent 70%);
   position: relative;

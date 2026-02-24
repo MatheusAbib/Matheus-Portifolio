@@ -215,7 +215,7 @@
   font-size: 0.9rem;
   font-family: var(--heading-font);
   font-weight: 400;
-  text-align: justify;
+  line-height: 1.6;
   letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
@@ -401,11 +401,11 @@
 
 .step-content-passo p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 1.8;
   font-family: var(--heading-font);
   letter-spacing: 0.02em;
-  margin: 0 0 0.7rem 0;
+  margin: 0 0 0.65rem 0;
 }
 
 .step-tags {

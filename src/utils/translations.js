@@ -91,11 +91,11 @@ const translations = {
       service_1_title: "Desenvolvimento Full Stack",
       service_1_text: "Eu crio interfaces web modernas, performáticas e precisas para usuários.",
       service_3_title: "UI/UX Design e Protótipos",
-      service_3_text: "Crio layouts funcionais e intuitivos para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.",
+      service_3_text: "Crio layouts funcionais para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.",
       service_4_title: "Engenharia de Software",
-      service_4_text: "Análise de requisitos, metodologias ágeis, controle de qualidade e documentação para sistemas alinhados ao negócio.",
+      service_4_text: "Análise de requisitos, metodologias ágeis, controle de qualidade e documentação para sistemas.",
       service_6_title: "Power BI e Análise de Dados",
-      service_6_text: "Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.",
+      service_6_text: "Estruturo informações em dashboards interativos, facilitando análise e tomada de decisões estratégicas.",
       see_button: "Saiba mais",
       
       // Soft Skills
@@ -103,19 +103,19 @@ const translations = {
       softskill_level: "Nível de experiência",
 
       softskill_proactivity_title: "Proatividade",
-      softskill_proactivity_desc: "Antecipo necessidades e busco soluções antes que se tornem problemas, sempre pensando à frente para otimizar processos.",
+      softskill_proactivity_desc: "Busco soluções antes que se tornem problemas, sempre pensando à frente para otimizar processos.",
       softskill_proactivity_item1: "Iniciativa em novos projetos",
       softskill_proactivity_item2: "Solução antecipada de problemas",
       softskill_proactivity_item3: "Melhoria contínua de processos",
 
       softskill_learning_title: "Aprendizado Contínuo",
-      softskill_learning_desc: "Busco constantemente atualização em tecnologias e metodologias, mantendo-me à frente das tendências do mercado.",
+      softskill_learning_desc: "Estudo constantemente atualização em tecnologias e metodologias do mercado atual.",
       softskill_learning_item1: "Curiosidade intelectual",
       softskill_learning_item2: "Adaptação a novas tecnologias",
       softskill_learning_item3: "Compartilhamento de conhecimento",
 
       softskill_adaptability_title: "Adaptabilidade",
-      softskill_adaptability_desc: "Ajusto-me rapidamente a mudanças, ambientes dinâmicos e novas exigências, mantendo a qualidade do trabalho.",
+      softskill_adaptability_desc: "Me ajusto rapidamente a mudanças e ambientes, mantendo a qualidade do trabalho.",
       softskill_adaptability_item1: "Flexibilidade em diferentes cenários",
       softskill_adaptability_item2: "Resiliência frente a mudanças",
       softskill_adaptability_item3: "Capacidade de pivotar quando necessário",
