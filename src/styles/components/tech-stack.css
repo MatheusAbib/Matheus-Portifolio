@@ -20,10 +20,6 @@
   cursor: pointer;
 }
 
-.tech-slide:hover {
-  transform: translateY(-10px);
-}
-
 .tech-slide i,
 .tech-slide iconify-icon {
   display: flex;
@@ -46,5 +42,11 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .tech-slide:hover {
+    transform: translateY(-10px);
   }
 }

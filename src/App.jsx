@@ -11,12 +11,16 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
   useEffect(() => {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    const isMobile = window.innerWidth <= 768;
+    
+    if (!isMobile) {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
 
     const handleAnchorClick = (e) => {
       const target = e.target.closest('a[href^="#"]');
@@ -42,8 +46,18 @@ function App() {
 
     document.addEventListener('click', handleAnchorClick);
 
+    const handleResize = () => {
+      const isMobileNow = window.innerWidth <= 768;
+      if (isMobileNow) {
+        AOS.refreshHard();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
       document.removeEventListener('click', handleAnchorClick);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 

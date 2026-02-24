@@ -71,11 +71,11 @@ const SoftSkills = () => {
 
   return (
     <section id="services-alt" className="services-alt section">
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
+      <div className="container">
         <div className="row">
-          <div className="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+          <div className="col-lg-12">
             <div className="content-block">
-              <div className="container section-title" data-aos="fade-up">
+              <div className="container section-title">
                 <h2 data-translate="softskills_title">Soft Skills</h2>
               </div>
 

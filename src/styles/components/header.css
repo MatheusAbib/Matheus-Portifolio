@@ -83,10 +83,6 @@
   position: relative;
 }
 
-.navmenu ul li a:hover {
-  color: var(--accent-color);
-}
-
 .navmenu ul li a.active {
   color: var(--accent-color) !important;
 }
@@ -95,7 +91,6 @@
   margin-left: 10px;
 }
 
-/* Mobile Navigation */
 .mobile-nav-overlay {
   position: fixed;
   top: 0;
@@ -125,7 +120,6 @@ body.mobile-nav-active .footer {
   transition: filter 0.3s ease;
 }
 
-
 .mobile-nav-close {
   position: absolute;
   top: 20px;
@@ -142,12 +136,6 @@ body.mobile-nav-active .footer {
   border-radius: 8px;
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
   z-index: 1001;
-}
-
-.mobile-nav-close:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  transform: rotate(90deg);
 }
 
 .navmenu:not(.mobile-nav-active) .mobile-nav-close {
@@ -167,8 +155,6 @@ body.mobile-nav-active .footer {
   from { transform: translateX(0); }
   to { transform: translateX(100%); }
 }
-
-
 
 .navmenu.mobile-nav-active {
   position: fixed;
@@ -229,14 +215,6 @@ body.mobile-nav-active .footer {
   width: 100%;
 }
 
-.navmenu.mobile-nav-active ul li a:hover,
-.navmenu.mobile-nav-active ul li a:focus {
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  border-color: var(--accent-color);
-  transform: translateX(-5px);
-  color: var(--accent-color) !important;
-}
-
 .navmenu.mobile-nav-active ul li a i {
   font-size: 1.3rem;
   margin-right: 15px;
@@ -244,11 +222,6 @@ body.mobile-nav-active .footer {
   text-align: center;
   color: var(--accent-color);
   transition: all 0.3s ease;
-}
-
-.navmenu.mobile-nav-active ul li a:hover i {
-  transform: scale(1.2);
-  color: var(--accent-color);
 }
 
 .navmenu.mobile-nav-active .btn-translate {
@@ -270,15 +243,6 @@ body.mobile-nav-active .footer {
   width: 100%;
 }
 
-.navmenu.mobile-nav-active .btn-translate:hover {
-  background: linear-gradient(135deg, 
-    color-mix(in srgb, var(--accent-color), #000 10%),
-    color-mix(in srgb, var(--accent-color), #667eea 90%)
-  );
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 40%);
-}
-
 .navmenu.mobile-nav-active::-webkit-scrollbar {
   width: 6px;
 }
@@ -290,10 +254,6 @@ body.mobile-nav-active .footer {
 .navmenu.mobile-nav-active::-webkit-scrollbar-thumb {
   background: color-mix(in srgb, var(--accent-color), transparent 50%);
   border-radius: 10px;
-}
-
-.navmenu.mobile-nav-active::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
 }
 
 .mobile-nav-toggle {
@@ -310,12 +270,6 @@ body.mobile-nav-active .footer {
   justify-content: center;
   border-radius: 8px;
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
-}
-
-.mobile-nav-toggle:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  transform: rotate(90deg);
 }
 
 body.mobile-nav-active .mobile-nav-toggle {
@@ -337,12 +291,56 @@ body.mobile-nav-active .mobile-nav-toggle {
   gap: 8px;
 }
 
-.btn-translate:hover {
-  background: rgba(93, 87, 244, 0.2);
-  border-color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
 .btn-translate i {
   font-size: 16px;
+}
+
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .navmenu ul li a:hover {
+    color: var(--accent-color);
+  }
+
+  .mobile-nav-close:hover {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(90deg);
+  }
+
+  .navmenu.mobile-nav-active ul li a:hover,
+  .navmenu.mobile-nav-active ul li a:focus {
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
+    border-color: var(--accent-color);
+    transform: translateX(-5px);
+    color: var(--accent-color) !important;
+  }
+
+  .navmenu.mobile-nav-active ul li a:hover i {
+    transform: scale(1.2);
+    color: var(--accent-color);
+  }
+
+  .navmenu.mobile-nav-active .btn-translate:hover {
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--accent-color), #000 10%),
+      color-mix(in srgb, var(--accent-color), #667eea 90%)
+    );
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 40%);
+  }
+
+  .navmenu.mobile-nav-active::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+  }
+
+  .mobile-nav-toggle:hover {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(90deg);
+  }
+
+  .btn-translate:hover {
+    background: rgba(93, 87, 244, 0.2);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+  }
 }

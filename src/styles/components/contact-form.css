@@ -211,14 +211,6 @@ textarea.form-input ~ .input-icon {
   margin: 0;
 }
 
-.form-submit:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, 
-    color-mix(in srgb, var(--accent-color), #000 10%),
-    color-mix(in srgb, var(--accent-color), #667eea 90%)
-  );
-}
-
 .form-submit:active {
   transform: translateY(-1px);
 }
@@ -233,10 +225,6 @@ textarea.form-input ~ .input-icon {
 .form-submit i {
   font-size: 1.2rem;
   transition: transform 0.3s ease;
-}
-
-.form-submit:hover i {
-  transform: translateX(5px);
 }
 
 .submit-loader {
@@ -311,21 +299,6 @@ textarea.form-input ~ .input-icon {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.contact-tag:hover {
-  background: linear-gradient(135deg, 
-    var(--accent-color),
-    color-mix(in srgb, var(--accent-color), #667eea)
-  );
-  color: var(--contrast-color) !important;
-  transform: translateY(-5px);
-  border-color: none;
-}
-
-.contact-tag:hover i {
-  color: var(--contrast-color);
-  transform: scale(1.2);
 }
 
 .contact-tag i {
@@ -411,10 +384,6 @@ textarea.form-input ~ .input-icon {
   transition: 0.3s;
   font-size: 16px;
   font-weight: 500;
-}
-
-.contact .form-wrapper button:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 .field-error-message {
@@ -517,5 +486,38 @@ textarea.form-input ~ .input-icon {
   
   .contact-info-tags {
     justify-content: center;
+  }
+}
+
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .form-submit:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--accent-color), #000 10%),
+      color-mix(in srgb, var(--accent-color), #667eea 90%)
+    );
+  }
+
+  .form-submit:hover i {
+    transform: translateX(5px);
+  }
+
+  .contact-tag:hover {
+    background: linear-gradient(135deg, 
+      var(--accent-color),
+      color-mix(in srgb, var(--accent-color), #667eea)
+    );
+    color: var(--contrast-color) !important;
+    transform: translateY(-5px);
+    border-color: none;
+  }
+
+  .contact-tag:hover i {
+    color: var(--contrast-color);
+    transform: scale(1.2);
+  }
+
+  .contact .form-wrapper button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
   }
 }

@@ -346,12 +346,12 @@ useEffect(() => {
 
   return (
     <section id="portfolio" className="portfolio section">
-      <div className="container section-title" data-aos="fade-up">
+      <div className="container section-title">
         <h2 data-translate="portfolio_title">Meus Projetos</h2>
       </div>
 
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
-        <div className="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
+      <div className="container">
+        <div className="portfolio-filters-container">
           <ul className="portfolio-filters">
             {filters.map((filter) => (
               <li
@@ -373,8 +373,6 @@ useEffect(() => {
         <div 
           ref={portfolioRef} 
           className="row g-4 portfolio-scroll-container lenis-ignore" 
-          data-aos="fade-up" 
-          data-aos-delay="300"
         >
       {filteredProjects.map((project, index) => (
         <div 

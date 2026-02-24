@@ -12,7 +12,6 @@ const MediaQueriesManager = () => {
 
     applyAllMediaQueries();
 
-
   }, []);
 
   const applyAllMediaQueries = () => {
@@ -26,8 +25,6 @@ const MediaQueriesManager = () => {
         --bs-gutter-x: 2rem;
         }
     }
-
-    
 
         @media screen and (max-width: 768px) {
         
@@ -64,7 +61,6 @@ const MediaQueriesManager = () => {
         }
 
       
-      /* === Ajuste de delay mobile (max-width: 768px) === */
       @media (max-width: 768px) {
           .softskills-grid {
         grid-template-columns: 1fr;
@@ -160,7 +156,6 @@ const MediaQueriesManager = () => {
         justify-content: center;  
 }
 
-
           .form-actions {
             gap: 1rem;
             margin-top: 0;
@@ -239,16 +234,46 @@ const MediaQueriesManager = () => {
         height: 40px;
         font-size: 0.95rem;
       }
+
+      .certificate-tab-btn:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .certificate-card:hover {
+        transform: none;
+      }
+
+      .skill-tag:hover {
+        transform: none;
+      }
+
+      [class*="hover"] {
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .service-item:hover,
+      .portfolio-card:hover,
+      .softskill-card:hover,
+      .tech-item:hover {
+        transform: none !important;
+      }
+
+      .btn:hover,
+      .social-icon:hover,
+      .certificate-tab-btn:hover {
+        transform: none !important;
+        box-shadow: none !important;
+      }
       }
       
-      /* === Hero Title (max-width: 991.98px) === */
       @media (max-width: 991.98px) {
         .hero .hero-title {
           font-size: 2rem;
         }
       }
       
-      /* === Feature Boxes (min-width: 576px) === */
       @media (min-width: 576px) {
         .hero .feature-boxes .feature-box {
           flex-direction: row;
@@ -257,7 +282,6 @@ const MediaQueriesManager = () => {
         }
       }
       
-      /* === Services & How We Work (max-width: 767.98px) === */
       @media (max-width: 767.98px) {
 
         #header.header .logo h1{
@@ -372,7 +396,6 @@ const MediaQueriesManager = () => {
         }
       }
       
-      /* === Services Mobile (max-width: 575.98px) === */
       @media (max-width: 575.98px) {
         .services .service-item {
           flex-direction: column;
@@ -390,7 +413,6 @@ const MediaQueriesManager = () => {
         }
       }
       
-      /* === Services Alt (max-width: 992px) === */
       @media (max-width: 992px) {
         .modal-grid {
             grid-template-columns: 1fr;
@@ -464,7 +486,6 @@ const MediaQueriesManager = () => {
         }
       }
       
-      /* === Altura curta (max-height: 480px) === */
       @media (max-height: 480px) {
         .portfolio-scroll-container {
           max-height: 60vh;
@@ -502,15 +523,51 @@ const MediaQueriesManager = () => {
         }
         }
 
-    
-      /* === Dispositivos touch === */
       @media (hover: none) and (pointer: coarse) {
         .portfolio-scroll-container {
           overscroll-behavior: auto;
         }
+
+        [class*="hover"] {
+          transform: none !important;
+          transition: none !important;
+        }
+
+        .certificate-tab-btn:hover,
+        .certificate-card:hover,
+        .skill-tag:hover,
+        .service-item:hover,
+        .portfolio-card:hover,
+        .softskill-card:hover,
+        .tech-item:hover,
+        .btn:hover,
+        .social-icon:hover {
+          transform: none !important;
+          box-shadow: none !important;
+          background: none !important;
+        }
+
+        .certificate-card:hover::after {
+          display: none;
+        }
+
+        .certificate-tab-btn.active:hover {
+          background: linear-gradient(135deg, 
+            var(--accent-color),
+            color-mix(in srgb, var(--accent-color), #667eea));
+        }
+
+        .skill-tag:hover {
+          background: inherit;
+        }
+
+        [data-aos] {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
       }
       
-      /* === Mobile pequeno (max-width: 576px) === */
       @media (max-width: 576px) {
 
           .contact-form-modern {
@@ -597,7 +654,7 @@ const MediaQueriesManager = () => {
       }
     }
 
-      @media (min-width: 992px) {
+      @media (min-width: 992px) and (hover: hover) and (pointer: fine) {
       .dropdown-curriculo.dropend .dropdown-menu {
         top: 0;
         left: 100%;
@@ -613,7 +670,6 @@ const MediaQueriesManager = () => {
       }
     }
       
-      /* === Tablet (min-width: 769px and max-width: 991px) === */
       @media (min-width: 769px) and (max-width: 991px) {
         .custom-box {
           width: 100%;
@@ -623,7 +679,6 @@ const MediaQueriesManager = () => {
         }
       }
       
-      /* === Tablet pequeno (max-width: 767px and min-width: 530px) === */
       @media (max-width: 767px) and (min-width: 530px) {
         .custom-box {
           margin-top: 0;
@@ -640,7 +695,6 @@ const MediaQueriesManager = () => {
         }
       }
       
-      /* === Mobile geral (max-width: 767px) === */
       @media (max-width: 767px) {
         .service-details .service-testimonial .testimonial-card .client-info img {
           margin: 0 auto 20px;
@@ -740,7 +794,6 @@ const MediaQueriesManager = () => {
         }
       }
       
-      /* === Services Details (max-width: 991px) === */
       @media (max-width: 991px) {
         .service-details .service-main-content {
           margin-top: 30px;
@@ -754,9 +807,26 @@ const MediaQueriesManager = () => {
         }
       }
 
+      @media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+        .certificate-tab-btn:hover {
+          transform: translateY(-5px);
+          background: white;
+        }
+
+        .certificate-card:hover {
+          transform: translateY(-10px) scale(1.01);
+        }
+
+        .skill-tag:hover {
+          transform: translateY(-2px);
+        }
+
+        .certificate-card:hover::after {
+          opacity: 1;
+          animation: shine 1.5s;
+        }
+      }
       
-      
-      /* === Desktop médio (max-width: 1200px) === */
       @media (max-width: 1200px) {
 
         .btn-translate {

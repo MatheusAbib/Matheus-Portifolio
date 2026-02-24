@@ -53,30 +53,6 @@
   opacity: 0.1;
 }
 
-.services .service-item:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  transform: translateY(-5px);
-}
-
-.services .service-item:hover::before {
-  transform: scaleY(1);
-}
-
-.services .service-item:hover .service-icon {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: rotateY(180deg);
-}
-
-.services .service-item:hover .service-icon i {
-  transform: rotateY(180deg);
-}
-
-.services .service-item:hover .service-link i {
-  transform: translateX(5px);
-}
-
 .services .service-icon {
   flex-shrink: 0;
   width: 70px;
@@ -135,10 +111,6 @@
   transition: transform 0.3s ease;
 }
 
-.services .service-link:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
-
 .services-alt .content-block .button-wrapper .btn {
   background-color: var(--accent-color);
   color: var(--contrast-color);
@@ -146,11 +118,6 @@
   border-radius: 5px;
   transition: all 0.3s ease;
   font-weight: 500;
-}
-
-.services-alt .content-block .button-wrapper .btn:hover {
-  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
-  transform: translateY(-3px);
 }
 
 .services-alt .services-list .service-item {
@@ -161,18 +128,6 @@
 
 .services-alt .services-list .service-item:first-child {
   padding-top: 0;
-}
-
-.services-alt .services-list .service-item:hover .service-icon {
-  background-color: var(--accent-color);
-}
-
-.services-alt .services-list .service-item:hover .service-icon i {
-  color: var(--contrast-color);
-}
-
-.services-alt .services-list .service-item:hover .service-content h4 a {
-  color: var(--accent-color);
 }
 
 .services-alt .services-list .service-icon {
@@ -211,11 +166,58 @@
   transition: color 0.3s;
 }
 
-.services-alt .services-list .service-content h4 a:hover {
-  color: var(--accent-color);
-}
-
 .services-alt .services-list .service-content p {
   margin-bottom: 0.25rem;
   font-size: 0.95rem;
+}
+
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .services .service-item:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+  }
+
+  .services .service-item:hover::before {
+    transform: scaleY(1);
+  }
+
+  .services .service-item:hover .service-icon {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotateY(180deg);
+  }
+
+  .services .service-item:hover .service-icon i {
+    transform: rotateY(180deg);
+  }
+
+  .services .service-item:hover .service-link i {
+    transform: translateX(5px);
+  }
+
+  .services .service-link:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  }
+
+  .services-alt .content-block .button-wrapper .btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+    transform: translateY(-3px);
+  }
+
+  .services-alt .services-list .service-item:hover .service-icon {
+    background-color: var(--accent-color);
+  }
+
+  .services-alt .services-list .service-item:hover .service-icon i {
+    color: var(--contrast-color);
+  }
+
+  .services-alt .services-list .service-item:hover .service-content h4 a {
+    color: var(--accent-color);
+  }
+
+  .services-alt .services-list .service-content h4 a:hover {
+    color: var(--accent-color);
+  }
 }

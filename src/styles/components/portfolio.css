@@ -46,13 +46,6 @@
   border: 1px solid transparent;
 }
 
-.portfolio .portfolio-filters li:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
 .portfolio .portfolio-filters li.filter-active {
   background-color: var(--accent-color);
   color: var(--contrast-color);
@@ -66,11 +59,6 @@
   overflow: hidden;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease-in-out;
-}
-
-.portfolio .portfolio-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio .portfolio-card .portfolio-image {
@@ -125,27 +113,6 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.github-link:hover {
-  background: #24292e;
-  color: white !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(36, 41, 46, 0.3);
-}
-
-.portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.details-link:hover {
-  background: var(--accent-color);
-  color: white !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
-}
-
-.portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.preview-link:hover {
-  background: #4CAF50;
-  color: white !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
-}
-
 .portfolio .portfolio-card .portfolio-content {
   padding: 20px;
 }
@@ -173,10 +140,6 @@
   background-clip: text;
 }
 
-.portfolio .portfolio-card .portfolio-content h3:hover {
-  color: var(--accent-color);
-}
-
 .portfolio .portfolio-card .portfolio-content p {
   font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
@@ -199,12 +162,6 @@
   margin-top: 8px;
   font-size: 1.2rem;
   transition: all 0.3s ease;
-}
-
-.portfolio-content .github-link:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: scale(1.1);
 }
 
 .stack-indicator {
@@ -265,10 +222,6 @@
   transition: transform 0.2s ease;
 }
 
-.tech-tags .tag:hover {
-  transform: translateY(-2px);
-}
-
 .tag.angular-tag {
   background-color: #ffebee;
   color: #c62828;
@@ -300,9 +253,10 @@
 }
 
 .tag.js-tag {
-  background-color: #fffde7;
-  color: #f9a825;
-  border: 1px solid #fff9c4;
+  background-color: rgba(247, 223, 30, 0.18);
+  color: #917e06;
+  border: 1px solid rgba(247, 223, 30, 0.45);
+  font-weight: 500;
 }
 
 .tag.mysql-tag {
@@ -402,4 +356,57 @@
 .portfolio-item.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .portfolio .portfolio-filters li:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+  }
+
+  .portfolio .portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+  }
+
+  .portfolio .portfolio-card .portfolio-image img:hover {
+    transform: scale(1.1);
+  }
+
+  .portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.github-link:hover {
+    background: #24292e;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(36, 41, 46, 0.3);
+  }
+
+  .portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.details-link:hover {
+    background: var(--accent-color);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+  }
+
+  .portfolio .portfolio-card .portfolio-overlay .portfolio-actions a.preview-link:hover {
+    background: #4CAF50;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  }
+
+  .portfolio .portfolio-card .portfolio-content h3:hover {
+    color: var(--accent-color);
+  }
+
+  .portfolio-content .github-link:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: scale(1.1);
+  }
+
+  .tech-tags .tag:hover {
+    transform: translateY(-2px);
+  }
 }

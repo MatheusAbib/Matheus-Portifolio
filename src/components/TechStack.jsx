@@ -42,11 +42,11 @@ const TechStack = () => {
 
   return (
     <section id="testimonials" className="testimonials section">
-      <div className="container section-title" data-aos="fade-up">
+      <div className="container section-title">
         <h2 data-translate="tech_title">Stack Tecnológica</h2>
       </div>
       
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
+      <div className="container">
         <div className="tech-slider-container">
           <div 
             className={`tech-slider-track ${isVisible ? 'animate' : ''}`}

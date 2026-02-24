@@ -43,14 +43,6 @@
   }
 }
 
-.softskill-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 25px 50px -12px rgba(93, 87, 244, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
 .skill-header {
   display: flex;
   align-items: center;
@@ -75,11 +67,6 @@
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-}
-
-.softskill-card:hover .skill-icon {
-  transform: rotate(15deg) scale(1.1);
-  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 .skill-icon i {
@@ -121,7 +108,6 @@
   margin: 0;
   font-family: var(--heading-font);
   letter-spacing: 0.02em;
-
 }
 
 .skill-features li {
@@ -143,11 +129,6 @@
   border-radius: 50%;
   flex-shrink: 0;
   transition: all 0.3s ease;
-}
-
-.softskill-card:hover .skill-features li::before {
-  transform: scale(1.5);
-  background: color-mix(in srgb, var(--accent-color), #667eea);
 }
 
 .skill-progress {
@@ -204,10 +185,6 @@
   transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.softskill-card:hover .progress-fill {
-  transform: translateX(0);
-}
-
 .progress-fill::after {
   content: '';
   position: absolute;
@@ -226,4 +203,28 @@
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  .softskill-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 25px 50px -12px rgba(93, 87, 244, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .softskill-card:hover .skill-icon {
+    transform: rotate(15deg) scale(1.1);
+    box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 60%);
+  }
+
+  .softskill-card:hover .skill-features li::before {
+    transform: scale(1.5);
+    background: color-mix(in srgb, var(--accent-color), #667eea);
+  }
+
+  .softskill-card:hover .progress-fill {
+    transform: translateX(0);
+  }
 }

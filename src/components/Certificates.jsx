@@ -104,11 +104,11 @@ const Certificates = () => {
 
   return (
     <section id="service-details" className="service-details section">
-      <div className="container section-title" data-aos="fade-up">
+      <div className="container section-title">
         <h2 data-translate="menu_certificates">Certificados</h2>
       </div>
       
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
+      <div className="container">
         <div className="certificates-wrapper">
           <div className="certificates-tabs-modern">
             <div className="certificates-nav">
