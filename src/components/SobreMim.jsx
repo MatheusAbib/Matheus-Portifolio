@@ -56,13 +56,13 @@ const SobreMim = () => {
                   </button>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="/assets/CV/CV-Matheus-Abib.pdf" target="_blank" rel="noopener noreferrer">
+                      <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Curriculo.pdf" target="_blank" rel="noopener noreferrer">
                         <i className="bi bi-file-earmark-text me-2"></i>
                         <span data-translate="cv_portuguese">Português</span>
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/assets/CV/Matheus-Abib-CV.pdf" target="_blank" rel="noopener noreferrer">
+                      <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Resume.pdf" target="_blank" rel="noopener noreferrer">
                         <i className="bi bi-file-earmark-text me-2"></i>
                         <span data-translate="cv_english">English</span>
                       </a>
