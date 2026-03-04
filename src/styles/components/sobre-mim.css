@@ -473,7 +473,7 @@
   background: rgba(93, 87, 244, 0.1);
   border: 1px solid rgba(93, 87, 244, 0.3);
   color: var(--accent-color);
-  padding: 6px 18px;
+  padding: 7px 20px;
   border-radius: 50px;
   font-size: 14px;
   font-weight: 500;
@@ -582,3 +582,4 @@
     transform: translateY(-2px);
   }
 }
+

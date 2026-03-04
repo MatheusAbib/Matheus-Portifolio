@@ -566,7 +566,7 @@ const MediaQueriesManager = () => {
       
       @media (max-width: 576px) {
 
-          .contact-form-modern {
+      .contact-form-modern {
         padding: 2rem 1rem;
     }
 
@@ -828,7 +828,9 @@ const MediaQueriesManager = () => {
         .btn-translate {
           width: 100%;
           justify-content: center;
+          margin-top: 15px;
         }
+
         #header.header .logo {
           order: 1;
         }
