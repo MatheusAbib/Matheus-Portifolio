@@ -15,7 +15,7 @@ const SobreMim = () => {
                   <div className="icon-circle me-2">
                     <i className="bi bi-stars"></i>
                   </div>
-                  <span className="badge-text me-3" data-translate="hero_badge">Inovação & Tecnologia</span>
+                  <span className="badge-text me-2" data-translate="hero_badge">Inovação & Tecnologia</span>
                 </div>
               </div>
               

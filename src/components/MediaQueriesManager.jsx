@@ -235,10 +235,6 @@ const MediaQueriesManager = () => {
         font-size: 0.95rem;
       }
 
-      .certificate-tab-btn:hover {
-        transform: none;
-        background: rgba(255, 255, 255, 0.9);
-      }
 
       .certificate-card:hover {
         transform: none;
@@ -815,21 +811,16 @@ const MediaQueriesManager = () => {
       @media (min-width: 992px) and (hover: hover) and (pointer: fine) {
         .certificate-tab-btn:hover {
           transform: translateY(-5px);
-          background: white;
         }
-
-        .certificate-card:hover {
-          transform: translateY(-10px) scale(1.01);
-        }
+          .certificate-card:hover .certificate-image img {
+            transform: scale(1.02);
+          }
 
         .skill-tag:hover {
           transform: translateY(-2px);
+          transition: all 0.2s ease;
         }
 
-        .certificate-card:hover::after {
-          opacity: 1;
-          animation: shine 1.5s;
-        }
       }
       
       @media (max-width: 1200px) {

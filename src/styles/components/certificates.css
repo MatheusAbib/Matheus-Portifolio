@@ -16,7 +16,7 @@
 .certificates-tabs-modern {
   border-radius: 26px;
   box-shadow: 
-    0 25px 50px -12px rgba(93, 87, 244, 0.15),
+    0 10px 50px -12px rgba(93, 87, 244, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
   overflow: hidden;
@@ -375,29 +375,4 @@
   color: color-mix(in srgb, var(--accent-color), transparent 70%);
   font-family: Georgia, serif;
   opacity: 0.4;
-}
-
-@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
-  .certificate-tab-btn:hover {
-    transform: translateY(-5px);
-    background: white;
-  }
-
-  .certificate-card:hover {
-    transform: translateY(-10px) scale(1.01);
-  }
-
-  .certificate-card:hover::after {
-    opacity: 1;
-    animation: shine 1.5s;
-  }
-
-  .certificate-card:hover .certificate-image img {
-    transform: scale(1.02);
-  }
-
-  .skill-tag:hover {
-    transform: translateY(-2px);
-    transition: all 0.2s ease;
-  }
 }

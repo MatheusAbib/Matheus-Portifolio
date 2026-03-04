@@ -21,9 +21,6 @@
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
-  box-shadow: 
-    0 10px 30px rgba(93, 87, 244, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
   opacity: 0;
   transform: translateY(30px);
   animation: cardReveal 0.8s ease forwards;

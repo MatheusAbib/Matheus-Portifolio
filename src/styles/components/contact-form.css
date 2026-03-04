@@ -20,7 +20,7 @@
   padding: 3.5rem 3rem 3rem;
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
   box-shadow: 
-    0 30px 60px -12px rgba(93, 87, 244, 0.2),
+    0 10px 20px -12px rgba(93, 87, 244, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
     0 0 0 1px rgba(255, 255, 255, 0.3);
   position: relative;
@@ -70,13 +70,12 @@
 
 .form-group label {
   display: block;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
   color: var(--heading-color);
   font-size: 0.9rem;
   padding-left: 0.5rem;
   position: relative;
-  letter-spacing: 0.05rem;
 }
 
 .form-group label .required {

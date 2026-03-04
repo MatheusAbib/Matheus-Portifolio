@@ -424,9 +424,7 @@
   }
 
   .cta-card:hover {
-    transform: translateY(-5px);
     border-color: var(--accent-color);
-    box-shadow: 0 15px 35px rgba(93, 87, 244, 0.15);
   }
 
   .cta-button:hover {
