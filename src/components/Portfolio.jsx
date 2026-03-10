@@ -206,19 +206,6 @@ const Portfolio = () => {
     },
     {
       id: 16,
-      title: "Diário de Personagens",
-      title_key: "project_personagens",
-      description_key: "project_personagens_desc",
-      category: "FUN",
-      filter: "brand",
-      stack: "frontend-only",
-      image: "/assets/img/portfolio/Diario-de-Personagens.png",
-      github: "https://github.com/MatheusAbib/Diario-de-personagens",
-      live: "https://matheusabib.github.io/Diario-de-personagens/",
-      tags: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      id: 17,
       title: "Meus Projetos Figma",
       title_key: "project_figma_links",
       description_key: "project_figma_links_desc",
@@ -231,7 +218,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
-      id: 18,
+      id: 17,
       title: "Conversor de Moedas",
       title_key: "project_conversor",
       description_key: "project_conversor_desc",
@@ -244,7 +231,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript", "API"]
     },
     {
-      id: 19,
+      id: 18,
       title: "Yummy Lamen - Restaurante de Lamen",
       title_key: "project_lamen",
       description_key: "project_lamen_desc",
@@ -257,7 +244,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
-      id: 20,
+      id: 19,
       title: "Cartas do Destino - Tarot Online",
       title_key: "project_tarot",
       description_key: "project_tarot_desc",
@@ -270,7 +257,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript", "PHP", "Docker"]
     },
     {
-      id: 21,
+      id: 20,
       title: "Página de Login",
       title_key: "project_login",
       description_key: "project_login_desc",
