@@ -48,8 +48,21 @@ const Portfolio = () => {
       live: "https://jornal-de-receitas-b6ti.onrender.com",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"]
     },
-    {
+     {
       id: 4,
+      title: "Organizador de Arquivos",
+      title_key: "project_arquivos",
+      description_key: "project_arquivos_desc",
+      category: "Web Tool",
+      filter: "motion",
+      stack: "fullstack",
+      image: "/assets/img/portfolio/Organizador-Arquivos.png",
+      github: "https://github.com/MatheusAbib/Organizador-de-Arquivos",
+      live: "https://organizador-arquivos.cleverapps.io/",
+      tags: ["HTML", "CSS", "JavaScript", "Node.Js", "MySQL"]
+    },
+    {
+      id: 5,
       title: "E-Commerce - Livros Online",
       title_key: "project_livros",
       description_key: "project_livros_desc",
@@ -62,7 +75,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"]
     },
     {
-      id: 5,
+      id: 6,
       title: "Calendário",
       title_key: "project_calendario",
       description_key: "project_calendario_desc",
@@ -75,7 +88,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript", "Date API"]
     },
     {
-      id: 6,
+      id: 7,
       title: "Jogo da Forca",
       title_key: "project_forca",
       description_key: "project_forca_desc",
@@ -88,7 +101,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
-      id: 7,
+      id: 8,
       title: "CRUD - Formulário de Cadastro",
       title_key: "project_crud",
       description_key: "project_crud_desc",
@@ -101,7 +114,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"]
     },
     {
-      id: 8,
+      id: 9,
       title: "Meus Dashboards Power BI",
       title_key: "project_dashboards",
       description_key: "project_dashboards_desc",
@@ -111,19 +124,6 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Tela-Power-BI.png",
       github: "https://github.com/MatheusAbib/Tela-de-Links-PowerBI",
       live: "https://matheusabib.github.io/Tela-de-Links-PowerBI/",
-      tags: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      id: 9,
-      title: "Mapa de Tarefas",
-      title_key: "project_tarefas",
-      description_key: "project_tarefas_desc",
-      category: "Web Tool",
-      filter: "motion",
-      stack: "frontend-only",
-      image: "/assets/img/portfolio/Mapa-de-Tarefas.png",
-      github: "https://github.com/MatheusAbib/Mapa-de-Tarefas",
-      live: "https://matheusabib.github.io/Mapa-de-Tarefas/",
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
@@ -219,19 +219,6 @@ const Portfolio = () => {
     },
     {
       id: 17,
-      title: "Conversor de Moedas",
-      title_key: "project_conversor",
-      description_key: "project_conversor_desc",
-      category: "Web Tool",
-      filter: "motion",
-      stack: "frontend-only",
-      image: "/assets/img/portfolio/Conversor-de-Moedas.png",
-      github: "https://github.com/MatheusAbib/Conversor-de-Moedas",
-      live: "https://matheusabib.github.io/Conversor-de-Moedas/",
-      tags: ["HTML", "CSS", "JavaScript", "API"]
-    },
-    {
-      id: 18,
       title: "Yummy Lamen - Restaurante de Lamen",
       title_key: "project_lamen",
       description_key: "project_lamen_desc",
@@ -244,7 +231,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
-      id: 19,
+      id: 18,
       title: "Cartas do Destino - Tarot Online",
       title_key: "project_tarot",
       description_key: "project_tarot_desc",
@@ -257,7 +244,7 @@ const Portfolio = () => {
       tags: ["HTML", "CSS", "JavaScript", "PHP", "Docker"]
     },
     {
-      id: 20,
+      id: 19,
       title: "Página de Login",
       title_key: "project_login",
       description_key: "project_login_desc",
@@ -423,12 +410,12 @@ useEffect(() => {
                     {project.id === 1 ? 'Site responsivo para floricultura com carrinho de compras e filtros' :
                      project.id === 2 ? 'Sistema completo com cadastro de receitas, busca e categorias' :
                      project.id === 3 ? 'Dashboard interativo com gráficos e análise de dados de vendas' :
-                     project.id === 4 ? 'Loja virtual completa com carrinho, checkout e sistema de pedidos' :
-                     project.id === 5 ? 'Calendário interativo com navegação entre meses e anos' :
-                     project.id === 6 ? 'Jogo clássico da forca com múltiplas categorias de palavras' :
-                     project.id === 7 ? 'Sistema completo de cadastro com Create, Read, Update e Delete' :
-                     project.id === 8 ? 'Página de links para dashboards Power BI com visualizações de dados' :
-                     project.id === 9 ? 'Gerenciador de tarefas com drag and drop e categorias' :
+                     project.id === 4 ? 'Ferramenta para organização de arquivos com funcionalidades completas' :
+                     project.id === 5 ? 'Loja virtual completa com carrinho, checkout e sistema de pedidos' :
+                     project.id === 6 ? 'Calendário interativo com navegação entre meses e anos' :
+                     project.id === 7 ? 'Jogo clássico da forca com múltiplas categorias de palavras' :
+                     project.id === 8 ? 'Sistema completo de cadastro com Create, Read, Update e Delete' :
+                     project.id === 9 ? 'Página de links para dashboards Power BI com visualizações de dados' :
                      project.id === 10 ? 'Versão digital do clássico jogo de cartas UNO' :
                      project.id === 11 ? 'Editor de imagens no navegador com múltiplos filtros e ajustes' :
                      project.id === 12 ? 'Aplicação de notas com persistência local e formatação' :
@@ -437,9 +424,8 @@ useEffect(() => {
                      project.id === 15 ? 'Aplicação de tarefas desenvolvida com Angular e TypeScript' :
                      project.id === 16 ? 'Caderno digital para criação e organização de personagens de RPG' :
                      project.id === 17 ? 'Portfólio de designs UI/UX criados no Figma' :
-                     project.id === 18 ? 'Conversor em tempo real usando API de cotações' :
-                     project.id === 19 ? 'Site para restaurante especializado em lamen japonês' :
-                     project.id === 20 ? 'Plataforma de consultas de tarot dinâmico' :
+                     project.id === 18 ? 'Site para restaurante especializado em lamen japonês' :
+                     project.id === 19 ? 'Plataforma de consultas de tarot dinâmico' :
                      'Sistema de autenticação completo com Java Spring e TypeScript'}
                   </p>
                   <div className="stack-indicator">
