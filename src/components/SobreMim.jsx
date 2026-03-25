@@ -40,7 +40,7 @@ const SobreMim = () => {
                 </p>
 
                 <p data-translate="hero_desc_2">
-                  Atualmente estou no último semestre de Análise e Desenvolvimento de Sistemas na <strong>Faculdade de Tecnologia de Mogi das Cruzes</strong> e no primeiro semestre de Engenharia de Software na <strong>Universidade de Mogi das Cruzes</strong>.
+                  Atualmente estou no último semestre de Análise e Desenvolvimento de Sistemas na <strong>Faculdade de Tecnologia de Mogi das Cruzes</strong> e no quarto semestre de Engenharia de Software na <strong>Universidade de Mogi das Cruzes</strong>.
                 </p>
 
                 <p data-translate="hero_desc_3">
