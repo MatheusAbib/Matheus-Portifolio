@@ -32,7 +32,7 @@ const Portfolio = () => {
       stack: "fullstack",
       image: "/assets/img/portfolio/Dashboard.png",
       github: "https://github.com/MatheusAbib/Dashboard-Vendas",
-      live: "https://dashboard-vendas.cleverapps.io/",
+      live: "https://bit.ly/vendas-dashboard",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL", "Charts"]
     },
         {
