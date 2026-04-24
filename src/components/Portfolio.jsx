@@ -32,7 +32,7 @@ const Portfolio = () => {
       stack: "fullstack",
       image: "/assets/img/portfolio/Dashboard.png",
       github: "https://github.com/MatheusAbib/Dashboard-Vendas",
-      live: "https://bit.ly/vendas-dashboard",
+      live: "https://tinyurl.com/4wbpywzw",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL", "Charts"]
     },
         {
@@ -58,7 +58,7 @@ const Portfolio = () => {
       stack: "fullstack",
       image: "/assets/img/portfolio/Organizador-Arquivos.png",
       github: "https://github.com/MatheusAbib/Organizador-de-Arquivos",
-      live: "https://bit.ly/organizador-arquivos",
+      live: "https://tinyurl.com/ymcb39zh",
       tags: ["HTML", "CSS", "JavaScript", "Node.Js", "MySQL"]
     },
     {
