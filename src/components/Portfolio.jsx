@@ -58,7 +58,7 @@ const Portfolio = () => {
       stack: "fullstack",
       image: "/assets/img/portfolio/Organizador-Arquivos.png",
       github: "https://github.com/MatheusAbib/Organizador-de-Arquivos",
-      live: "https://bit.ly/48lJG5O",
+      live: "https://bit.ly/organizador-arquivos",
       tags: ["HTML", "CSS", "JavaScript", "Node.Js", "MySQL"]
     },
     {
