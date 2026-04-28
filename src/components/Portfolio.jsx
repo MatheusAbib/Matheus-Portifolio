@@ -110,7 +110,7 @@ const Portfolio = () => {
       stack: "fullstack",
       image: "/assets/img/portfolio/CRUD-Cadastro.png",
       github: "https://github.com/MatheusAbib/Formulario-Cliente",
-      preview: "/assets/img/portfolio/CRUD-Cadastro.png",
+      live: "https://tinyurl.com/crud-correios",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"]
     },
     {
