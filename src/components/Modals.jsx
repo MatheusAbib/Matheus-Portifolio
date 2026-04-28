@@ -2,29 +2,44 @@ import React, { useEffect } from 'react';
 
 const Modals = () => {
   useEffect(() => {
+    let scrollPosition = 0;
+
     const handleModalShow = (event) => {
+      scrollPosition = window.scrollY;
+      
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
       document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = '0';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.width = '100%';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      document.body.classList.add('modal-open');
     };
 
     const handleModalHide = () => {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
       document.body.style.paddingRight = '';
+      document.body.classList.remove('modal-open');
+      
+      window.scrollTo(0, scrollPosition);
     };
 
     const modals = document.querySelectorAll('.service-modal');
+    
     modals.forEach(modal => {
-      modal.addEventListener('shown.bs.modal', handleModalShow);
+      modal.addEventListener('show.bs.modal', handleModalShow);
       modal.addEventListener('hidden.bs.modal', handleModalHide);
     });
 
     return () => {
       modals.forEach(modal => {
-        modal.removeEventListener('shown.bs.modal', handleModalShow);
+        modal.removeEventListener('show.bs.modal', handleModalShow);
         modal.removeEventListener('hidden.bs.modal', handleModalHide);
       });
-      document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
     };
   }, []);
 
@@ -114,7 +129,7 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
+                <div className="modal-column">
                   <div className="modal-section process-section">
                     <div className="section-header">
                       <div className="section-icon">
@@ -127,7 +142,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">01</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -146,7 +160,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">02</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -165,7 +178,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">03</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -277,7 +289,7 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
+                <div className="modal-column">
                   <div className="modal-section process-section">
                     <div className="section-header">
                       <div className="section-icon">
@@ -290,7 +302,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">01</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -308,7 +319,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">02</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -326,7 +336,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">03</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -452,7 +461,7 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
+                <div className="modal-column">
                   <div className="modal-section process-section">
                     <div className="section-header">
                       <div className="section-icon">
@@ -465,7 +474,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">01</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -484,7 +492,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">02</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -503,7 +510,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">03</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -639,7 +645,7 @@ const Modals = () => {
                   </div>
                 </div>
                 
-                <div className="modal-column" style={{ borderLeft: '2px solid color-mix(in srgb, var(--accent-color), transparent 90%)' }}>
+                <div className="modal-column">
                   <div className="modal-section process-section">
                     <div className="section-header">
                       <div className="section-icon">
@@ -652,7 +658,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">01</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -671,7 +676,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">02</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">
@@ -690,7 +694,6 @@ const Modals = () => {
                       <div className="process-step">
                         <div className="step-indicator">
                           <span className="step-number-passo">03</span>
-                          <div className="step-line"></div>
                         </div>
                         <div className="step-content-passo">
                           <div className="step-header">

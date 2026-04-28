@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 import { usePortfolioScroll } from '../hooks/usePortfolioScroll';
 
 const Portfolio = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState('*');
   const [visibleProjects, setVisibleProjects] = useState([]);
   const { portfolioRef } = usePortfolioScroll();
@@ -21,7 +23,6 @@ const Portfolio = () => {
       live: "https://matheusabib.github.io/Floricultura-Web/",
       tags: ["HTML", "CSS", "JavaScript"]
     },
-
     {
       id: 2,
       title: "Dashboard de Vendas",
@@ -35,7 +36,7 @@ const Portfolio = () => {
       live: "https://tinyurl.com/vendas-dashboard",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL", "Charts"]
     },
-        {
+    {
       id: 3,
       title: "Jornal de Receitas",
       title_key: "project_receitas",
@@ -48,7 +49,7 @@ const Portfolio = () => {
       live: "https://jornal-de-receitas-b6ti.onrender.com",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"]
     },
-     {
+    {
       id: 4,
       title: "Organizador de Arquivos",
       title_key: "project_arquivos",
@@ -250,7 +251,7 @@ const Portfolio = () => {
       description_key: "project_login_desc",
       category: "Web Tool",
       filter: "motion",
-      stack: "fullstack angular-badge",
+      stack: "angular-badge",
       image: "/assets/img/portfolio/Pagina-de-Login.png",
       github: "https://github.com/MatheusAbib/Pagina-de-login",
       live: "https://pagina-de-login.up.railway.app/login",
@@ -270,25 +271,25 @@ const Portfolio = () => {
     ? projects 
     : projects.filter(project => project.filter === activeFilter);
 
-const handleFilterClick = (filterKey) => {
-  if (filterKey === activeFilter) return;
-  
-  setVisibleProjects([]);
-  
-  setTimeout(() => {
-    setActiveFilter(filterKey);
-  }, 200);
-};
-
-useEffect(() => {
-  if (visibleProjects.length === 0) {
-    const timeoutId = setTimeout(() => {
-      setVisibleProjects(filteredProjects.map(p => p.id));
-    }, 300);
+  const handleFilterClick = (filterKey) => {
+    if (filterKey === activeFilter) return;
     
-    return () => clearTimeout(timeoutId);
-  }
-}, [activeFilter, filteredProjects]);
+    setVisibleProjects([]);
+    
+    setTimeout(() => {
+      setActiveFilter(filterKey);
+    }, 200);
+  };
+
+  useEffect(() => {
+    if (visibleProjects.length === 0) {
+      const timeoutId = setTimeout(() => {
+        setVisibleProjects(filteredProjects.map(p => p.id));
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [activeFilter, filteredProjects]);
 
   const getStackBadgeClass = (stack) => {
     if (stack.includes('angular-badge')) return 'stack-badge angular-badge';
@@ -313,15 +314,26 @@ useEffect(() => {
       'Web Audio API': 'audio-tag',
       'Charts': 'chart-tag',
       'Authentication': 'auth-tag',
-      'H2-Database': 'mysql-tag'
+      'H2-Database': 'mysql-tag',
+      'Node.Js': 'js-tag'
     };
     return tagClasses[tag] || 'js-tag';
   };
 
   return (
     <section id="portfolio" className="portfolio section">
-      <div className="container section-title">
-        <h2 data-translate="portfolio_title">Meus Projetos</h2>
+      <div className="section-glow"></div>
+      <div className="section-waves"></div>
+      <div className="section-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
+        <div className="orb orb-3"></div>
+      </div>
+
+      <div className="container">
+        <div className="section-title" data-aos="fade-up">
+          <h2 data-translate="portfolio_title">{t('portfolio_title')}</h2>
+        </div>
       </div>
 
       <div className="container">
@@ -333,12 +345,7 @@ useEffect(() => {
                 className={activeFilter === filter.key ? 'filter-active' : ''}
                 onClick={() => handleFilterClick(filter.key)}
               >
-                <span data-translate={filter.label}>
-                  {filter.key === '*' ? 'Todos' : 
-                   filter.key === 'web' ? 'Sites' :
-                   filter.key === 'links' ? 'Tela de Links' :
-                   filter.key === 'motion' ? 'Ferramentas' : 'Diversão'}
-                </span>
+                <span data-translate={filter.label}>{t(filter.label)}</span>
               </li>
             ))}
           </ul>
@@ -346,98 +353,77 @@ useEffect(() => {
 
         <div 
           ref={portfolioRef} 
-          className="row g-4 portfolio-scroll-container lenis-ignore" 
+          className="portfolio-scroll-container lenis-ignore" 
         >
-      {filteredProjects.map((project, index) => (
-        <div 
-          key={project.id} 
-          className={`col-lg-6 col-md-6 portfolio-item ${visibleProjects.includes(project.id) ? 'show' : ''}`}
-          style={{ transitionDelay: visibleProjects.includes(project.id) ? `${index * 50}ms` : '0ms' }}
-        >
-              <div className="portfolio-card">
-                <div className="portfolio-image">
-                  <img 
-                    src={project.image} 
-                    className="img-fluid" 
-                    alt={project.title} 
-                    loading="lazy" 
-                  />
-                  <div className="portfolio-overlay">
-                    <div className="portfolio-actions">
-                      <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="github-link"
-                      >
-                        <i className="bi bi-github"></i>
-                      </a>
-                      {project.live ? (
+          <div className="portfolio-grid">
+            {filteredProjects.map((project, index) => (
+              <div 
+                key={project.id} 
+                className={`portfolio-item ${visibleProjects.includes(project.id) ? 'show' : ''}`}
+                style={{ transitionDelay: visibleProjects.includes(project.id) ? `${index * 50}ms` : '0ms' }}
+              >
+                <div className="portfolio-card">
+                  <div className="portfolio-image">
+                    <img 
+                      src={project.image} 
+                      className="img-fluid" 
+                      alt={project.title} 
+                      loading="lazy" 
+                    />
+                    <div className="portfolio-overlay">
+                      <div className="portfolio-actions">
                         <a 
-                          href={project.live} 
+                          href={project.github} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="details-link"
+                          className="github-link"
                         >
-                          <i className="bi bi-arrow-right"></i>
+                          <i className="bi bi-github"></i>
                         </a>
-                      ) : project.preview ? (
-                        <a 
-                          href={project.preview} 
-                          className="preview-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <i className="bi bi-image"></i>
-                        </a>
-                      ) : null}
+                        {project.live ? (
+                          <a 
+                            href={project.live} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="details-link"
+                          >
+                            <i className="bi bi-arrow-right"></i>
+                          </a>
+                        ) : project.preview ? (
+                          <a 
+                            href={project.preview} 
+                            className="preview-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="bi bi-image"></i>
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="portfolio-content">
+                    <span className="category">{project.category}</span>
+                    <h3 data-translate={project.title_key}>{t(project.title_key)}</h3>
+                    <div className="tech-tags">
+                      {project.tags.map((tag, idx) => (
+                        <span key={idx} className={`tag ${getTagClass(tag)}`}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <p data-translate={project.description_key}>{t(project.description_key)}</p>
+                    <div className="stack-indicator">
+                      <span className={getStackBadgeClass(project.stack)}>
+                        {project.stack.includes('angular-badge') ? 'Angular' : 
+                         project.stack.includes('fullstack') ? 'Full Stack' : 'Front-end'}
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="portfolio-content">
-                  <span className="category">{project.category}</span>
-                  <h3 data-translate={project.title_key}>
-                    {project.title}
-                  </h3>
-                  <div className="tech-tags">
-                    {project.tags.map((tag, index) => (
-                      <span key={index} className={`tag ${getTagClass(tag)}`}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <p data-translate={project.description_key}>
-                    {project.id === 1 ? 'Site responsivo para floricultura com carrinho de compras e filtros' :
-                     project.id === 2 ? 'Sistema completo com cadastro de receitas, busca e categorias' :
-                     project.id === 3 ? 'Dashboard interativo com gráficos e análise de dados de vendas' :
-                     project.id === 4 ? 'Ferramenta para organização de arquivos com funcionalidades completas' :
-                     project.id === 5 ? 'Loja virtual completa com carrinho, checkout e sistema de pedidos' :
-                     project.id === 6 ? 'Calendário interativo com navegação entre meses e anos' :
-                     project.id === 7 ? 'Jogo clássico da forca com múltiplas categorias de palavras' :
-                     project.id === 8 ? 'Sistema completo de cadastro com Create, Read, Update e Delete' :
-                     project.id === 9 ? 'Página de links para dashboards Power BI com visualizações de dados' :
-                     project.id === 10 ? 'Versão digital do clássico jogo de cartas UNO' :
-                     project.id === 11 ? 'Editor de imagens no navegador com múltiplos filtros e ajustes' :
-                     project.id === 12 ? 'Aplicação de notas com persistência local e formatação' :
-                     project.id === 13 ? 'Site para loja de sucos naturais com cardápio interativo' :
-                     project.id === 14 ? 'Player de música com controles, playlist e visualizador' :
-                     project.id === 15 ? 'Aplicação de tarefas desenvolvida com Angular e TypeScript' :
-                     project.id === 16 ? 'Caderno digital para criação e organização de personagens de RPG' :
-                     project.id === 17 ? 'Portfólio de designs UI/UX criados no Figma' :
-                     project.id === 18 ? 'Site para restaurante especializado em lamen japonês' :
-                     project.id === 19 ? 'Plataforma de consultas de tarot dinâmico' :
-                     'Sistema de autenticação completo com Java Spring e TypeScript'}
-                  </p>
-                  <div className="stack-indicator">
-                    <span className={getStackBadgeClass(project.stack)}>
-                      {project.stack.includes('angular') ? 'Angular' : 
-                       project.stack.includes('fullstack') ? 'Full Stack' : 'Front-end'}
-                    </span>
-                  </div>
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

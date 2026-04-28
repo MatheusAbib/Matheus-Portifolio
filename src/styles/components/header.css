@@ -1,15 +1,18 @@
 #header.header {
-  --background-color: rgba(255, 255, 255, 0) !important;
-  color: var(--default-color) !important;
-  background-color: var(--background-color) !important;
-  padding: 15px 0 !important;
-  transition: all 0.5s !important;
+  --background-color: color-mix(in srgb, var(--accent-color), transparent 92%) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: color-mix(in srgb, var(--accent-color), transparent 92%) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  padding: 12px 0 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   z-index: 997 !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%) !important;
 }
 
 #header.header .container {
@@ -35,6 +38,12 @@
 
 #header.header .logo {
   line-height: 1 !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#header.header .logo:hover {
+  transform: translateY(-1px);
 }
 
 #header.header .logo img {
@@ -43,22 +52,31 @@
 }
 
 #header.header .logo h1 {
-  font-size: 28px !important;
+  font-size: 26px !important;
   letter-spacing: -0.01em !important;
   margin: 0 !important;
   font-weight: 700 !important;
-  color: var(--heading-color) !important;
+  background: linear-gradient(135deg, var(--heading-color) 0%, color-mix(in srgb, var(--accent-color), var(--heading-color) 70%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 #header.header .logo span {
-  color: var(--accent-color) !important;
+  color: linear-gradient(135deg, var(--heading-color) 0%, color-mix(in srgb, var(--accent-color), var(--heading-color) 70%) 100%);
   font-size: 28px !important;
   font-weight: 700 !important;
+  background: none;
+  -webkit-text-fill-color: var(--accent-color);
 }
 
 #header.header.scrolled {
-  --background-color: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1) !important;
+  --background-color: color-mix(in srgb, var(--accent-color), transparent 95%) !important;
+  background: color-mix(in srgb, var(--accent-color), transparent 95%) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%) !important;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-color), transparent 85%) !important;
 }
 
 .navmenu ul {
@@ -71,20 +89,40 @@
 
 .navmenu ul li {
   position: relative;
-  padding: 0 10px;
+  padding: 0 12px;
 }
 
 .navmenu ul li a {
-  color: var(--default-color) !important;
+  color: color-mix(in srgb, var(--default-color), transparent 30%) !important;
   font-weight: 500;
-  font-size: 14.5px;
-  padding: 5px;
-  transition: 0.3s;
+  font-size: 14px;
+  padding: 8px 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .navmenu ul li a.active {
   color: var(--accent-color) !important;
+}
+
+.navmenu ul li a.active .active-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 1;
+}
+
+.active-dot {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navmenu ul li a.clicked {
+  transform: scale(0.95);
 }
 
 .navmenu ul li:last-child {
@@ -97,8 +135,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 800;
   opacity: 0;
   visibility: hidden;
@@ -114,18 +153,12 @@ body.mobile-nav-active {
   overflow: hidden;
 }
 
-body.mobile-nav-active main,
-body.mobile-nav-active .footer {
-  filter: blur(2px);
-  transition: filter 0.3s ease;
-}
-
 .mobile-nav-close {
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 20px;
   font-size: 24px;
-  color: var(--heading-color);
+  color: rgb(0 0 0 / 80%) !important;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 40px;
@@ -133,9 +166,17 @@ body.mobile-nav-active .footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-color), transparent 95%);
+  backdrop-filter: blur(10px);
   z-index: 1001;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.mobile-nav-close:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  transform: rotate(90deg);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 .navmenu:not(.mobile-nav-active) .mobile-nav-close {
@@ -144,11 +185,11 @@ body.mobile-nav-active .footer {
 
 .navmenu.mobile-nav-active {
   transform: translateX(0);
-  animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navmenu.mobile-nav-closing {
-  animation: slideOutRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: slideOutRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes slideOutRight {
@@ -160,18 +201,18 @@ body.mobile-nav-active .footer {
   position: fixed;
   top: 0;
   right: 0;
-  width: 300px;
+  width: 320px;
   height: 100vh;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.815);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-left: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
   z-index: 999;
-  padding: 50px 30px 20px;
+  padding: 60px 30px 30px;
   overflow-y: auto;
   transform: translateX(0);
-  animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+  animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -5px 0 30px color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 @keyframes slideInRight {
@@ -194,41 +235,47 @@ body.mobile-nav-active .footer {
   animation: fadeInUp 0.4s ease forwards;
 }
 
-.navmenu.mobile-nav-active ul li:nth-child(1) { animation-delay: 0.1s; }
-.navmenu.mobile-nav-active ul li:nth-child(2) { animation-delay: 0.15s; }
-.navmenu.mobile-nav-active ul li:nth-child(3) { animation-delay: 0.2s; }
-.navmenu.mobile-nav-active ul li:nth-child(4) { animation-delay: 0.25s; }
-.navmenu.mobile-nav-active ul li:nth-child(5) { animation-delay: 0.3s; }
-.navmenu.mobile-nav-active ul li:nth-child(6) { animation-delay: 0.35s; }
-.navmenu.mobile-nav-active ul li:nth-child(7) { animation-delay: 0.4s; }
+.navmenu.mobile-nav-active ul li:nth-child(1) { animation-delay: 0.05s; }
+.navmenu.mobile-nav-active ul li:nth-child(2) { animation-delay: 0.1s; }
+.navmenu.mobile-nav-active ul li:nth-child(3) { animation-delay: 0.15s; }
+.navmenu.mobile-nav-active ul li:nth-child(4) { animation-delay: 0.2s; }
+.navmenu.mobile-nav-active ul li:nth-child(5) { animation-delay: 0.25s; }
+.navmenu.mobile-nav-active ul li:nth-child(6) { animation-delay: 0.3s; }
+.navmenu.mobile-nav-active ul li:nth-child(7) { animation-delay: 0.35s; }
 
 .navmenu.mobile-nav-active ul li a {
   display: flex;
   align-items: center;
-  margin: 10px 0;
-  color: var(--default-color) !important;
+  justify-content: space-between;
+  margin: 8px 0;
+  padding: 12px 16px;
+  color: rgb(0 0 0 / 80%) !important;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   width: 100%;
+  background: color-mix(in srgb, var(--surface-color), transparent 98%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-.navmenu.mobile-nav-active ul li a i {
-  font-size: 1.3rem;
-  margin-right: 15px;
-  width: 24px;
-  text-align: center;
-  color: var(--accent-color);
-  transition: all 0.3s ease;
+.navmenu.mobile-nav-active ul li a.active {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color) !important;
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+.navmenu.mobile-nav-active ul li a .active-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 5px color-mix(in srgb, var(--accent-color), transparent 50%);
 }
 
 .navmenu.mobile-nav-active .btn-translate {
-  background: linear-gradient(135deg, 
-    var(--accent-color),
-    color-mix(in srgb, var(--accent-color), #667eea)
-  );
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #8b5cf6));
   color: var(--contrast-color) !important;
   border: none;
   padding: 14px 24px;
@@ -243,33 +290,50 @@ body.mobile-nav-active .footer {
   width: 100%;
 }
 
+.navmenu.mobile-nav-active .btn-translate:hover {
+  transform: translateY(-2px);
+}
+
 .navmenu.mobile-nav-active::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .navmenu.mobile-nav-active::-webkit-scrollbar-track {
-  background: transparent;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 4px;
 }
 
 .navmenu.mobile-nav-active::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--accent-color), transparent 50%);
-  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent-color), transparent 40%);
+  border-radius: 4px;
+}
+
+.navmenu.mobile-nav-active::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 .mobile-nav-toggle {
   position: relative;
   z-index: 1000;
   font-size: 28px;
-  color: var(--heading-color);
+  color: color-mix(in srgb, var(--accent-color), transparent 70%);
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-color), transparent 95%);
+  backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.mobile-nav-toggle:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  transform: rotate(90deg);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 body.mobile-nav-active .mobile-nav-toggle {
@@ -277,70 +341,89 @@ body.mobile-nav-active .mobile-nav-toggle {
 }
 
 .btn-translate {
-  background: rgba(93, 87, 244, 0.1);
-  border: 1px solid rgba(93, 87, 244, 0.3);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
   color: var(--accent-color);
-  padding: 6px 18px;
-  border-radius: 50px;
+  padding: 8px 20px;
+  border-radius: 40px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  backdrop-filter: blur(10px);
 }
 
 .btn-translate i {
   font-size: 16px;
 }
 
+.btn-translate:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  transform: translateY(-2px);
+  color: color-mix(in srgb, var(--accent-color), #c084fc);
+}
+
 @media (min-width: 992px) and (hover: hover) and (pointer: fine) {
   .navmenu ul li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color) !important;
+    transform: translateY(-1px);
+  }
+
+  .navmenu ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #c084fc));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .navmenu ul li a:hover::before,
+  .navmenu ul li a.active::before {
+    width: 60%;
   }
 
   .mobile-nav-close:hover {
-    background: var(--accent-color);
-    color: var(--contrast-color);
+    background: color-mix(in srgb, var(--accent-color), transparent 80%);
     transform: rotate(90deg);
   }
 
-  .navmenu.mobile-nav-active ul li a:hover,
-  .navmenu.mobile-nav-active ul li a:focus {
-    background: color-mix(in srgb, var(--accent-color), transparent 90%);
-    border-color: var(--accent-color);
-    transform: translateX(-5px);
-    color: var(--accent-color) !important;
+  .navmenu.mobile-nav-active ul li a:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 85%);
+    transform: translateX(5px);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+  }
+}
+
+@media (max-width: 768px) {
+  #header.header {
+    padding: 10px 0 !important;
   }
 
-  .navmenu.mobile-nav-active ul li a:hover i {
-    transform: scale(1.2);
-    color: var(--accent-color);
+  #header.header .logo h1 {
+    font-size: 22px !important;
   }
 
-  .navmenu.mobile-nav-active .btn-translate:hover {
-    background: linear-gradient(135deg, 
-      color-mix(in srgb, var(--accent-color), #000 10%),
-      color-mix(in srgb, var(--accent-color), #667eea 90%)
-    );
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 40%);
+  .navmenu.mobile-nav-active {
+    width: 280px;
+    padding: 50px 20px 20px;
   }
+}
 
-  .navmenu.mobile-nav-active::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .mobile-nav-toggle:hover {
-    background: var(--accent-color);
-    color: var(--contrast-color);
-    transform: rotate(90deg);
-  }
-
-  .btn-translate:hover {
-    background: rgba(93, 87, 244, 0.2);
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

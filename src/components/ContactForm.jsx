@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -73,20 +75,20 @@ const ContactForm = () => {
     }));
   };
 
-const checkFormValidity = (data) => {
-  const requiredFields = ['name', 'email', 'subject', 'message'];
-  const isValid = requiredFields.every(field => {
-    const value = data[field];
-    if (!value || !value.trim()) return false;
-    
-    if (field === 'email' && !/\S+@\S+\.\S+/.test(value)) {
-      return false;
-    }
-    
-    return true;
-  });
-  setIsFormValid(isValid);
-};
+  const checkFormValidity = (data) => {
+    const requiredFields = ['name', 'email', 'subject', 'message'];
+    const isValid = requiredFields.every(field => {
+      const value = data[field];
+      if (!value || !value.trim()) return false;
+      
+      if (field === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+        return false;
+      }
+      
+      return true;
+    });
+    setIsFormValid(isValid);
+  };
 
   const handlePhoneInput = (e) => {
     let value = e.target.value.replace(/\D/g, '');
@@ -184,217 +186,230 @@ const checkFormValidity = (data) => {
   };
 
   return (
-    <section id="form-section" className="contact-form-section section">
-      <div className="container section-title" data-aos="fade-up">
-        <h2 data-translate="contact_form_title">Vamos Conversar!</h2>
+    <section id="form-section" className="contact-section section">
+      <div className="section-glow"></div>
+      <div className="section-waves"></div>
+      <div className="section-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
+        <div className="orb orb-3"></div>
       </div>
 
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
-        <form 
-          id="emailForm" 
-          className="contact-form-modern"
-          name="contact"
-          method="POST"
-          onSubmit={handleSubmit}
-          netlify
-          data-netlify="true"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          
-          <p className="d-none">
-            <label>Não preencha este campo se for humano: <input name="bot-field" /></label>
-          </p>
-          
-          <div className="form-grid">
-            <div className="form-group">
-              <label htmlFor="name">
-                <span data-translate="form_name">Seu Nome</span>
-                <span className="required">*</span>
-              </label>
-              <div className="input-wrapper">
-                <i className="input-icon fas fa-user"></i>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className={`form-input ${fieldErrors.name ? 'error' : ''}`}
-                  value={formData.name}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  data-translate-placeholder="form_placeholder_name"
-                  placeholder="Digite seu nome completo"
-                  required
-                />
-              </div>
-              {fieldErrors.name && (
-                <div className="field-error-message">
-                  <i className="fas fa-exclamation-circle"></i>
-                  {fieldErrors.name}
-                </div>
-              )}
-            </div>
+      <div className="container">
+        <div className="section-title" data-aos="fade-up">
+          <h2 data-translate="contact_form_title">{t('contact_form_title')}</h2>
+        </div>
+      </div>
 
-            <div className="form-group">
-              <label htmlFor="email">
-                <span data-translate="form_email">E-mail</span>
-                <span className="required">*</span>
-              </label>
-              <div className="input-wrapper">
-                <i className="input-icon fas fa-envelope"></i>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className={`form-input ${fieldErrors.email ? 'error' : ''}`}
-                  value={formData.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  data-translate-placeholder="form_placeholder_email"
-                  placeholder="seu.email@exemplo.com"
-                  required
-                />
-              </div>
-              {fieldErrors.email && (
-                <div className="field-error-message">
-                  <i className="fas fa-exclamation-circle"></i>
-                  {fieldErrors.email}
+      <div className="container">
+        <div className="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
+          <div className="contact-info">
+              <div className="contact-info-header">
+                <div className="contact-info-icon">
+                  <i className="bi bi-chat-dots-fill"></i>
                 </div>
-              )}
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject">
-                <span data-translate="form_subject">Assunto</span>
-                <span className="required">*</span>
-              </label>
-              <div className="input-wrapper">
-                <i className="input-icon fas fa-tag"></i>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className={`form-input ${fieldErrors.subject ? 'error' : ''}`}
-                  value={formData.subject}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  data-translate-placeholder="form_placeholder_subject"
-                  placeholder="Sobre o que gostaria de conversar?"
-                  required
-                />
+                <h3 data-translate="contact_info_title">{t('contact_info_title')}</h3>
+                <p data-translate="contact_info_text">{t('contact_info_text')}</p>
               </div>
-              {fieldErrors.subject && (
-                <div className="field-error-message">
-                  <i className="fas fa-exclamation-circle"></i>
-                  {fieldErrors.subject}
+            <div className="contact-info-links">
+              <a href="https://wa.me/11975072008" target="_blank" rel="noopener noreferrer" className="contact-link">
+                <i className="bi bi-whatsapp"></i>
+                <div>
+                  <span>WhatsApp</span>
+                  <strong>(11) 97507-2008</strong>
                 </div>
-              )}
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="phone">
-                <span data-translate="form_phone">Telefone</span>
-              </label>
-              <div className="input-wrapper">
-                <i className="input-icon fas fa-phone"></i>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="form-input"
-                  value={formData.phone}
-                  onChange={handlePhoneInput}
-                  data-translate-placeholder="form_placeholder_phone"
-                  placeholder="(11) 99999-9999"
-                />
-              </div>
-            </div>
-
-            <div className="form-group full-width">
-              <label htmlFor="message">
-                <span data-translate="form_message">Sua Mensagem</span>
-                <span className="required">*</span>
-              </label>
-              <div className="input-wrapper">
-                <i className="input-icon fas fa-comment-dots" style={{ top: '2.1rem' }}></i>
-                <textarea
-                  id="message"
-                  name="message"
-                  className={`form-input ${fieldErrors.message ? 'error' : ''}`}
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  data-translate-placeholder="form_placeholder_message"
-                  placeholder="Escreva sua mensagem aqui..."
-                  required
-                ></textarea>
-              </div>
-              {fieldErrors.message && (
-                <div className="field-error-message">
-                  <i className="fas fa-exclamation-circle"></i>
-                  {fieldErrors.message}
+              </a>
+              <a href="mailto:matheus.abib.ma@gmail.com" className="contact-link">
+                <i className="bi bi-envelope-fill"></i>
+                <div>
+                  <span>Email</span>
+                  <strong>matheus.abib.ma@gmail.com</strong>
                 </div>
-              )}
+              </a>
+              <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" rel="noopener noreferrer" className="contact-link">
+                <i className="bi bi-linkedin"></i>
+                <div>
+                  <span>LinkedIn</span>
+                  <strong>/in/matheusabib</strong>
+                </div>
+              </a>
+              <a href="https://github.com/MatheusAbib" target="_blank" rel="noopener noreferrer" className="contact-link">
+                <i className="bi bi-github"></i>
+                <div>
+                  <span>GitHub</span>
+                  <strong>/MatheusAbib</strong>
+                </div>
+              </a>
             </div>
           </div>
 
-          {responseMessage && (
-            <div 
-              id="formResponse" 
-              className={`form-feedback mt-3 text-center ${responseType}`}
-              style={{
-                marginTop: '1.5rem',
-                padding: '1rem 1.5rem',
-                borderRadius: '10px',
-                fontWeight: '500',
-                backgroundColor: responseType === 'success' ? 'rgba(46, 213, 115, 0.1)' : 'rgba(255, 71, 87, 0.1)',
-                border: responseType === 'success' ? '1px solid rgba(46, 213, 115, 0.3)' : '1px solid rgba(255, 71, 87, 0.3)',
-                color: responseType === 'success' ? '#2ed573' : '#ff4757'
-              }}
+          <div className="contact-form-container">
+            <form 
+              id="emailForm" 
+              className="contact-form"
+              name="contact"
+              method="POST"
+              onSubmit={handleSubmit}
+              netlify
+              data-netlify="true"
             >
-              {responseMessage}
-            </div>
-          )}
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="d-none">
+                <label>Não preencha este campo se for humano: <input name="bot-field" /></label>
+              </p>
+              
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="name">
+                    <span data-translate="form_name">{t('form_name')}</span>
+                    <span className="required">*</span>
+                  </label>
+                  <div className="input-wrapper">
+                    <i className="input-icon bi bi-person-fill"></i>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className={`form-input ${fieldErrors.name ? 'error' : ''}`}
+                      value={formData.name}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder={t('form_placeholder_name')}
+                    />
+                  </div>
+                  {fieldErrors.name && (
+                    <div className="field-error">
+                      <i className="bi bi-exclamation-triangle-fill"></i>
+                      {fieldErrors.name}
+                    </div>
+                  )}
+                </div>
 
-          <div className="form-actions">
-            <div className="form-footer">
-              <div className="contact-info-tags">
-                <a href="https://wa.me/11975072008" target="_blank" rel="noopener noreferrer" className="contact-tag">
-                  <i className="fab fa-whatsapp"></i>
-                  <span>WhatsApp</span>
-                </a>
-                <a href="mailto:matheus.abib.ma@gmail.com" className="contact-tag">
-                  <i className="fas fa-envelope"></i>
-                  <span>Email</span>
-                </a>
-                <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" rel="noopener noreferrer" className="contact-tag">
-                  <i className="fab fa-linkedin"></i>
-                  <span>LinkedIn</span>
-                </a>
+                <div className="form-group">
+                  <label htmlFor="email">
+                    <span data-translate="form_email">{t('form_email')}</span>
+                    <span className="required">*</span>
+                  </label>
+                  <div className="input-wrapper">
+                    <i className="input-icon bi bi-envelope-fill"></i>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className={`form-input ${fieldErrors.email ? 'error' : ''}`}
+                      value={formData.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder={t('form_placeholder_email')}
+                    />
+                  </div>
+                  {fieldErrors.email && (
+                    <div className="field-error">
+                      <i className="bi bi-exclamation-triangle-fill"></i>
+                      {fieldErrors.email}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
 
-            <div className="submit-container">
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="subject">
+                    <span data-translate="form_subject">{t('form_subject')}</span>
+                    <span className="required">*</span>
+                  </label>
+                  <div className="input-wrapper">
+                    <i className="input-icon bi bi-tag-fill"></i>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      className={`form-input ${fieldErrors.subject ? 'error' : ''}`}
+                      value={formData.subject}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder={t('form_placeholder_subject')}
+                    />
+                  </div>
+                  {fieldErrors.subject && (
+                    <div className="field-error">
+                      <i className="bi bi-exclamation-triangle-fill"></i>
+                      {fieldErrors.subject}
+                    </div>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phone">
+                    <span data-translate="form_phone">{t('form_phone')}</span>
+                  </label>
+                  <div className="input-wrapper">
+                    <i className="input-icon bi bi-telephone-fill"></i>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      className="form-input"
+                      value={formData.phone}
+                      onChange={handlePhoneInput}
+                      placeholder={t('form_placeholder_phone')}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group full-width">
+                <label htmlFor="message">
+                  <span data-translate="form_message">{t('form_message')}</span>
+                  <span className="required">*</span>
+                </label>
+                <div className="input-wrapper">
+                  <i className="input-icon bi bi-chat-dots-fill"></i>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className={`form-input ${fieldErrors.message ? 'error' : ''}`}
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder={t('form_placeholder_message')}
+                  ></textarea>
+                </div>
+                {fieldErrors.message && (
+                  <div className="field-error">
+                    <i className="bi bi-exclamation-triangle-fill"></i>
+                    {fieldErrors.message}
+                  </div>
+                )}
+              </div>
+
+              {responseMessage && (
+                <div className={`form-response ${responseType}`}>
+                  {responseMessage}
+                </div>
+              )}
+
               <button 
                 type="submit" 
-                className={`form-submit ${isSubmitting ? 'form-loading' : ''}`}
+                className={`submit-btn ${isSubmitting ? 'loading' : ''}`}
                 disabled={isSubmitting || !isFormValid}
               >
                 {isSubmitting ? (
                   <>
                     <div className="spinner"></div>
-                    <span className="submit-text" data-translate="form_loading">Enviando...</span>
+                    <span data-translate="form_loading">{t('form_loading')}</span>
                   </>
                 ) : (
                   <>
-                    <span className="submit-text" data-translate="form_submit">Enviar Mensagem</span>
-                    <i className="fas fa-paper-plane"></i>
+                    <span data-translate="form_submit">{t('form_submit')}</span>
+                    <i className="bi bi-send-fill"></i>
                   </>
                 )}
               </button>
-            </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );

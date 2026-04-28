@@ -1,39 +1,107 @@
+#testimonials {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+#testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent-color), transparent 85%) 0%, transparent 60%);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .tech-slider-container {
   width: 100%;
   overflow: hidden;
   position: relative;
+  z-index: 2;
+}
+
+.tech-slider-container::before,
+.tech-slider-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tech-slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, color-mix(in srgb, var(--surface-color), transparent 90%), transparent);
+}
+
+.tech-slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, color-mix(in srgb, var(--surface-color), transparent 90%), transparent);
 }
 
 .tech-slider-track {
   display: flex;
-  animation: scroll 90s linear infinite;
   width: max-content;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.tech-slider-track.animate {
+  animation: scroll 90s linear infinite;
 }
 
 .tech-slide {
   flex: 0 0 auto;
-  width: 185px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 20px;
-  margin: 0 3px;
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--surface-color), transparent 97%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  min-width: 130px;
   cursor: pointer;
 }
 
-.tech-slide i,
-.tech-slide iconify-icon {
+.tech-slide:hover {
+  transform: translateY(-10px);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+  background: color-mix(in srgb, var(--surface-color), transparent 95%);
+}
+
+.tech-icon-wrapper {
   display: flex;
   justify-content: center;
-  font-size: 55px !important;
-  margin: 0 auto 15px;
-  font-size: 50px !important;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tech-icon-wrapper i,
+.tech-icon-wrapper iconify-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  transition: all 0.3s ease;
+}
+
+.tech-slide:hover .tech-icon-wrapper i,
+.tech-slide:hover .tech-icon-wrapper iconify-icon {
+  transform: scale(1.1);
 }
 
 .tech-slide h3 {
-  font-size: 17px;
+  font-size: 0.9rem;
   margin: 0;
   color: var(--heading-color);
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 @keyframes scroll {
@@ -45,8 +113,59 @@
   }
 }
 
-@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
-  .tech-slide:hover {
-    transform: translateY(-10px);
+@media (max-width: 992px) {
+  #testimonials {
+    padding: 60px 0;
+  }
+
+  .tech-slide {
+    padding: 1rem;
+    min-width: 110px;
+  }
+
+  .tech-icon-wrapper i,
+  .tech-icon-wrapper iconify-icon {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .tech-slide h3 {
+    font-size: 0.8rem;
+  }
+
+  .tech-slider-track {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #testimonials {
+    padding: 40px 0;
+  }
+
+  .tech-slide {
+    padding: 0.75rem;
+    min-width: 90px;
+  }
+
+  .tech-icon-wrapper i,
+  .tech-icon-wrapper iconify-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .tech-slide h3 {
+    font-size: 0.7rem;
+  }
+
+  .tech-slider-track {
+    gap: 0.75rem;
+  }
+
+  .tech-slider-container::before,
+  .tech-slider-container::after {
+    width: 40px;
   }
 }

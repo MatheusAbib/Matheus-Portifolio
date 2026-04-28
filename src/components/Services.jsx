@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Services = () => {
+  const { t } = useTranslation();
+  const sectionRef = useRef(null);
+
   const services = [
     {
       icon: "bi-code-slash",
@@ -28,48 +32,76 @@ const Services = () => {
     }
   ];
 
+  useEffect(() => {
+    const handleModalHidden = () => {
+      if (sectionRef.current) {
+        const yOffset = -100;
+        const element = sectionRef.current;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    };
+
+    const modals = document.querySelectorAll('.service-modal');
+    modals.forEach(modal => {
+      modal.addEventListener('hidden.bs.modal', handleModalHidden);
+    });
+
+    return () => {
+      modals.forEach(modal => {
+        modal.removeEventListener('hidden.bs.modal', handleModalHidden);
+      });
+    };
+  }, []);
+
+  const handleOpenModal = (e, modalId) => {
+    e.preventDefault();
+    const modalElement = document.getElementById(modalId);
+    if (modalElement && window.bootstrap) {
+      const bootstrapModal = new window.bootstrap.Modal(modalElement);
+      bootstrapModal.show();
+    }
+  };
+
   return (
-    <section id="services" className="services section">
-      <div className="container section-title" data-aos="fade-up">
-        <h2 data-translate="services_title">Serviços</h2>
+    <section id="services" className="services section" ref={sectionRef}>
+      <div className="section-glow"></div>
+      <div className="section-waves"></div>
+      <div className="section-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
+        <div className="orb orb-3"></div>
+      </div>
+
+      <div className="container">
+        <div className="section-title" data-aos="fade-up">
+          <h2 data-translate="services_title">{t('services_title')}</h2>
+        </div>
       </div>
 
       <div className="container" data-aos="fade-up" data-aos-delay="100">
-        <div className="row justify-content-center g-5">
+        <div className="services-grid">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="col-md-6" 
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-              data-aos-delay={100 + (index * 200)}
+              className="service-item"
+              data-aos="fade-up"
+              data-aos-delay={150 + (index * 100)}
             >
-              <div className="service-item">
-                <div className="service-icon">
-                  <i className={`bi ${service.icon}`}></i>
-                </div>
-                <div className="service-content">
-                  <h3 data-translate={service.title_key}>
-                    {service.title_key === 'service_1_title' ? 'Desenvolvimento Full Stack' :
-                     service.title_key === 'service_3_title' ? 'UI/UX Design e Protótipos' :
-                     service.title_key === 'service_4_title' ? 'Engenharia de Software' :
-                     'Power BI e Análise de Dados'}
-                  </h3>
-                  <p data-translate={service.description_key}>
-                    {service.description_key === 'service_1_text' ? 'Eu crio interfaces web modernas, performáticas e precisas para usuários.' :
-                     service.description_key === 'service_3_text' ? 'Crio layouts funcionais e intuitivos para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.' :
-                     service.description_key === 'service_4_text' ? 'Análise de requisitos, metodologias ágeis, controle de qualidade e documentação para sistemas robustos e alinhados ao negócio.' :
-                     'Estruturo informações complexas em dashboards interativos, facilitando análise e tomada de decisões estratégicas.'}
-                  </p>
-                  <a 
-                    href="#" 
-                    className="service-link" 
-                    data-bs-toggle="modal" 
-                    data-bs-target={`#${service.modalId}`}
-                  >
-                    <span data-translate="see_button">Saiba Mais</span>
-                    <i className="bi bi-arrow-right"></i>
-                  </a>
-                </div>
+              <div className="service-icon">
+                <i className={`bi ${service.icon}`}></i>
+              </div>
+              <div className="service-content">
+                <h3 data-translate={service.title_key}>{t(service.title_key)}</h3>
+                <p data-translate={service.description_key}>{t(service.description_key)}</p>
+                <a 
+                  href="#"
+                  className="service-link"
+                  onClick={(e) => handleOpenModal(e, service.modalId)}
+                >
+                  <span data-translate="see_button">{t('see_button')}</span>
+                  <i className="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
           ))}

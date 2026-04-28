@@ -11,25 +11,25 @@ const Certificates = () => {
     'JavaScript': 'javascript',
     'HTML5': 'html',
     'AJAX': 'ajax',
-    'React' : 'ajax',
-    'Microsoft Power BI': 'angular',
-    'Microsoft Excel': 'spreadsheet-management',
+    'React' : 'react',
+    'Microsoft Power BI': 'powerbi',
+    'Microsoft Excel': 'excel',
     'Dashboards': 'dashboards',
     'Data Analysis': 'data-analysis',
     'Spreadsheet Management': 'spreadsheet-management',
-    'Database': 'ajax',
-    'SQL': 'mysql',
+    'Database': 'database',
+    'SQL': 'sql',
     'Git': 'git',
     'GitHub': 'github',
-    'Logic': 'data-analysis',
+    'Logic': 'logic',
     'AI Fundamentals': 'ai',
-    'Supervised Learning': 'angular',
-    'Data Preprocessing': 'ajax',
+    'Supervised Learning': 'ai',
+    'Data Preprocessing': 'data-analysis',
     'Python': 'python',
     'Java': 'java',
     'Spring Boot': 'spring',
-    'API Rest': 'php',
-    'Lombok': 'angular'
+    'API Rest': 'api',
+    'Lombok': 'java'
   };
 
   const certificates = [
@@ -49,7 +49,6 @@ const Certificates = () => {
       description_key: 'certificate_powerbi_desc',
       skills: ['Microsoft Power BI', 'Microsoft Excel', 'Dashboards', 'Data Analysis', 'Spreadsheet Management']
     },
-
     {
       id: 'database',
       title_key: 'certificate_database_title',
@@ -104,8 +103,18 @@ const Certificates = () => {
 
   return (
     <section id="service-details" className="service-details section">
-      <div className="container section-title">
-        <h2 data-translate="menu_certificates">Certificados</h2>
+      <div className="section-glow"></div>
+      <div className="section-waves"></div>
+      <div className="section-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
+        <div className="orb orb-3"></div>
+      </div>
+
+      <div className="container">
+        <div className="section-title" data-aos="fade-up">
+          <h2 data-translate="menu_certificates">Certificados</h2>
+        </div>
       </div>
       
       <div className="container">
@@ -138,11 +147,6 @@ const Certificates = () => {
                       <img 
                         src={cert.image} 
                         alt={`Certificado ${cert.title_key}`}
-                        onError={(e) => {
-                          console.error('Image failed to load:', e.target.src);
-                          console.error('Error event:', e);
-                        }}
-                        onLoad={() => console.log('Image loaded successfully:', cert.image)}
                       />
                       <div className="certificate-badge">
                         <i className="bi bi-award-fill"></i>

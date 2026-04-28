@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Methodologies = () => {
+  const { t } = useTranslation();
+
   const methodologies = [
     {
       number: "01",
@@ -30,8 +33,18 @@ const Methodologies = () => {
 
   return (
     <section id="metodologias" className="how-we-work section">
-      <div className="container section-title" data-aos="fade-up">
-        <h2 data-translate="methodologies_title">Como eu trabalho</h2>
+      <div className="section-glow"></div>
+      <div className="section-waves-enhanced"></div>
+      <div className="section-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
+        <div className="orb orb-3"></div>
+      </div>
+
+      <div className="container">
+        <div className="section-title" data-aos="fade-up">
+          <h2 data-translate="methodologies_title">{t('methodologies_title')}</h2>
+        </div>
       </div>
 
       <div className="container" data-aos="fade-up" data-aos-delay="100">
@@ -51,10 +64,8 @@ const Methodologies = () => {
                       <i className={`bi ${method.icon}`}></i>
                     </div>
                     <div className="step-content">
-                      <h3 data-translate={method.title_key}>Engenharia de Software</h3>
-                      <p data-translate={method.description_key}>
-                        Planejo e organizo cada etapa do projeto utilizando modelagem UML, metodologias ágeis, Kanban, controle de versões com Git e testes contínuos.
-                      </p>
+                      <h3 data-translate={method.title_key}>{t(method.title_key)}</h3>
+                      <p data-translate={method.description_key}>{t(method.description_key)}</p>
                     </div>
                   </div>
                 </div>

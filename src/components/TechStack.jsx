@@ -34,7 +34,7 @@ const TechStack = () => {
     { icon: "fab fa-php", name: "PHP", color: "#777BB3" },
     { icon: "fab fa-react", name: "React", color: "#61DAFB" },
     { icon: "", name: "MySQL", isIconify: true, iconifyIcon: "logos:mysql" },
-    { icon: "fab fa-java", name: "Java", color: "#000000ff" }, 
+    { icon: "fab fa-java", name: "Java", color: "#f89820" }, 
     { icon: "fab fa-angular", name: "Angular", color: "#DD0031" },
     { icon: "fab fa-css3-alt", name: "CSS", color: "#1572B6" },
     { name: "SCSS", isIconify: true, iconifyIcon: "logos:sass" }
@@ -42,55 +42,53 @@ const TechStack = () => {
 
   return (
     <section id="testimonials" className="testimonials section">
-      <div className="container section-title">
-        <h2 data-translate="tech_title">Stack Tecnológica</h2>
+      <div className="section-glow"></div>
+      <div className="section-waves"></div>
+      <div className="section-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
+        <div className="orb orb-3"></div>
+      </div>
+
+      <div className="container">
+        <div className="section-title" data-aos="fade-up">
+          <h2 data-translate="tech_title">Stack Tecnológica</h2>
+        </div>
       </div>
       
       <div className="container">
         <div className="tech-slider-container">
           <div 
             className={`tech-slider-track ${isVisible ? 'animate' : ''}`}
-            style={isVisible ? { animation: 'scroll 90s linear infinite' } : {}}
           >
             {technologies.map((tech, index) => (
               <div key={`first-${index}`} className="tech-slide">
-                {tech.isIconify ? (
-                  <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
-                ) : (
-                  <i className={tech.icon} style={{ color: tech.color, fontSize: '48px' }}></i>
-                )}
+                <div className="tech-icon-wrapper">
+                  {tech.isIconify ? (
+                    <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
+                  ) : (
+                    <i className={tech.icon} style={{ color: tech.color }}></i>
+                  )}
+                </div>
                 <h3>{tech.name}</h3>
               </div>
             ))}
             
             {technologies.map((tech, index) => (
               <div key={`second-${index}`} className="tech-slide">
-                {tech.isIconify ? (
-                  <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
-                ) : (
-                  <i className={tech.icon} style={{ color: tech.color, fontSize: '48px' }}></i>
-                )}
+                <div className="tech-icon-wrapper">
+                  {tech.isIconify ? (
+                    <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
+                  ) : (
+                    <i className={tech.icon} style={{ color: tech.color }}></i>
+                  )}
+                </div>
                 <h3>{tech.name}</h3>
               </div>
             ))}
           </div>
         </div>
       </div>
-      
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        .tech-slider-track.animate {
-          animation: scroll 90s linear infinite;
-        }
-      `}</style>
     </section>
   );
 };

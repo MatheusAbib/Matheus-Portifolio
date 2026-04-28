@@ -1,16 +1,144 @@
-#services {
-  border-top: 2px solid color-mix(in srgb, var(--accent-color), transparent 95%);
+.services {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
+  border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  position: relative;
+  z-index: 2;
+}
+
+.service-item {
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: color-mix(in srgb, var(--surface-color), transparent 97%);
+  backdrop-filter: blur(10px);
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: -3%;
+  left: -55%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(from 0deg, transparent 0deg,
+    color-mix(in srgb, var(--accent-color), transparent 90%) 90deg, transparent 180deg,
+    color-mix(in srgb, #667eea, transparent 90%) 270deg, transparent 360deg);
+  z-index: -1;
+  opacity: 0.08;
+  transition: all 0.4s ease;
+}
+
+.service-item:hover::before {
+  opacity: 0.15;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+  background: color-mix(in srgb, var(--surface-color), transparent 95%);
+}
+
+.service-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item:hover .service-icon {
+  background-color: var(--accent-color);
+  transform: rotateY(180deg);
+}
+
+.service-icon i {
+  font-size: 2rem;
+  transition: transform 0.4s ease;
+}
+
+.service-item:hover .service-icon i {
+  transform: rotateY(180deg);
+  color: var(--contrast-color);
+}
+
+.service-content {
+  flex-grow: 1;
+}
+
+.service-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.service-content p {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-family: var(--heading-font);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.service-link:focus {
+  outline: none;
+}
+.service-link span {
+  margin-right: 0;
+}
+
+.service-link i {
+  transition: transform 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.service-item:hover .service-link i {
+  transform: translateX(5px);
+}
+
+.service-link:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
 #services-alt {
-  background: linear-gradient(135deg, 
-    color-mix(in srgb, var(--accent-color), transparent 98%) 0%,
-    color-mix(in srgb, var(--accent-color), transparent 96%) 50%,
-    color-mix(in srgb, var(--accent-color), transparent 98%) 100%
-  );
   position: relative;
   overflow: hidden;
-  padding: 6% 0;
+  padding: 80px 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 #services-alt::before {
@@ -21,130 +149,73 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--accent-color), transparent 15%) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, color-mix(in srgb, #667eea, transparent 20%) 0%, transparent 50%);
-  opacity: 0.1;
+    radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--accent-color), transparent 85%) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, color-mix(in srgb, #667eea, transparent 85%) 0%, transparent 50%);
+  opacity: 0.15;
   z-index: 0;
-}
-
-.services .service-item {
-  display: flex;
-  border-radius: 12px;
-  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);  
-  padding: 2rem;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.services .service-item::before {
-  content: '';
-  position: absolute;
-  top: -3%;
-  left: -55%;
-  width: 220%;
-  height: 220%;
-  background: conic-gradient(from 0deg, transparent 0deg,
-   color-mix(in srgb, var(--accent-color), transparent 10%) 90deg, transparent 180deg,
-   color-mix(in srgb, #667eea, transparent 10%) 270deg, transparent 360deg);
-  z-index: -1;
-  opacity: 0.1;
-}
-
-.services .service-icon {
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  border-radius: 12px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1.5rem;
-  transition: all 0.5s ease;
-}
-
-.services .service-icon i {
-  font-size: 2rem;
-  transition: transform 0.5s ease;
-}
-
-.services .service-content {
-  flex-grow: 1;
-}
-
-.services .service-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.7rem;
-  font-weight: 700;
-  color: var(--heading-color);
-}
-
-.services .service-content p {
-  font-size: 0.95rem;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-family: var(--heading-font);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.6;
-  position: relative;
-}
-
-.services .service-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--accent-color);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.services .service-link span {
-  margin-right: 0.5rem;
-}
-
-.services .service-link i {
-  transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
 .services-alt .content-block .button-wrapper .btn {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   padding: 0.8rem 1.8rem;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.services-alt .content-block .button-wrapper .btn:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
 }
 
 .services-alt .services-list .service-item {
   position: relative;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  padding: 2rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  display: flex;
+  align-items: flex-start;
 }
 
 .services-alt .services-list .service-item:first-child {
   padding-top: 0;
 }
 
+.services-alt .services-list .service-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .services-alt .services-list .service-icon {
-  height: 5rem;
-  width: 5rem;
+  height: 60px;
+  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--accent-color);
-  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-radius: 16px;
   margin-right: 1.5rem;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  background: color-mix(in srgb, var(--surface-color), transparent 97%);
 }
 
 .services-alt .services-list .service-icon i {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   color: var(--accent-color);
   transition: all 0.3s ease;
+}
+
+.services-alt .services-list .service-item:hover .service-icon {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.services-alt .services-list .service-item:hover .service-icon i {
+  color: var(--contrast-color);
 }
 
 .services-alt .services-list .service-content {
@@ -153,69 +224,111 @@
 }
 
 .services-alt .services-list .service-content h4 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .services-alt .services-list .service-content h4 a {
   color: var(--heading-color);
   transition: color 0.3s;
+  text-decoration: none;
+}
+
+.services-alt .services-list .service-item:hover .service-content h4 a {
+  color: var(--accent-color);
 }
 
 .services-alt .services-list .service-content p {
-  margin-bottom: 0.25rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.6;
 }
 
-@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
-  .services .service-item:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transform: translateY(-5px);
+@media (max-width: 992px) {
+  .services {
+    padding: 60px 0;
   }
 
-  .services .service-item:hover::before {
-    transform: scaleY(1);
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .services .service-item:hover .service-icon {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    transform: rotateY(180deg);
+  .service-item {
+    padding: 1.5rem;
   }
 
-  .services .service-item:hover .service-icon i {
-    transform: rotateY(180deg);
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
   }
 
-  .services .service-item:hover .service-link i {
-    transform: translateX(5px);
+  .service-icon i {
+    font-size: 1.5rem;
   }
 
-  .services .service-link:hover {
-    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  .service-content h3 {
+    font-size: 1.2rem;
   }
 
-  .services-alt .content-block .button-wrapper .btn:hover {
-    background-color: color-mix(in srgb, var(--accent-color), #000 10%);
-    transform: translateY(-3px);
+  #services-alt {
+    padding: 60px 0;
   }
 
-  .services-alt .services-list .service-item:hover .service-icon {
-    background-color: var(--accent-color);
+  .services-alt .services-list .service-item {
+    padding: 1.5rem 0;
   }
 
-  .services-alt .services-list .service-item:hover .service-icon i {
-    color: var(--contrast-color);
+  .services-alt .services-list .service-icon {
+    width: 50px;
+    height: 50px;
   }
 
-  .services-alt .services-list .service-item:hover .service-content h4 a {
-    color: var(--accent-color);
+  .services-alt .services-list .service-icon i {
+    font-size: 1.5rem;
   }
 
-  .services-alt .services-list .service-content h4 a:hover {
-    color: var(--accent-color);
+  .services-alt .services-list .service-content h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 40px 0;
+  }
+
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-icon {
+    margin: 0 auto 1rem;
+  }
+
+  .service-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-content p {
+    font-size: 0.85rem;
+  }
+
+  #services-alt {
+    padding: 40px 0;
+  }
+
+  .services-alt .services-list .service-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-alt .services-list .service-icon {
+    margin: 0 auto 1rem;
   }
 }
