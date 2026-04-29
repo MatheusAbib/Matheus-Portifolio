@@ -126,7 +126,7 @@
 }
 
 .contact-info {
-  background: color-mix(in srgb, var(--surface-color), transparent 97%);
+  background: color-mix(in srgb, var(--surface-color), transparent 55%);
   backdrop-filter: blur(10px);
   border-radius: 24px;
   padding: 2rem;

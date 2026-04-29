@@ -72,7 +72,7 @@ const SoftSkills = () => {
   }, []);
 
   return (
-    <section id="services-alt" className="services-alt section">
+    <section id="softskills" className="softskills section">
       <div className="section-glow"></div>
       <div className="section-waves"></div>
       <div className="section-orbs">
