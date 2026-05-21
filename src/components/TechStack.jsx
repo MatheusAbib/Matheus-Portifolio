@@ -1,43 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const TechStack = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('testimonials');
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, []);
-
-  const technologies = [
-    { icon: "fab fa-js-square", name: "JavaScript", color: "#F7DF1E" },
-    { icon: "devicon-typescript-plain", name: "TypeScript", color: "#3178C6" },
+  const frontend = [
     { icon: "fab fa-html5", name: "HTML", color: "#E34F26" },
-    { icon: "fab fa-php", name: "PHP", color: "#777BB3" },
-    { icon: "fab fa-react", name: "React", color: "#61DAFB" },
-    { icon: "", name: "MySQL", isIconify: true, iconifyIcon: "logos:mysql" },
-    { icon: "fab fa-java", name: "Java", color: "#f89820" }, 
-    { icon: "fab fa-angular", name: "Angular", color: "#DD0031" },
     { icon: "fab fa-css3-alt", name: "CSS", color: "#1572B6" },
-    { name: "SCSS", isIconify: true, iconifyIcon: "logos:sass" }
+    { name: "SCSS", isIconify: true, iconifyIcon: "logos:sass" },
+    { icon: "fab fa-js-square", name: "JavaScript", color: "#F7DF1E" },
+    { icon: "devicon-typescript-plain", name: "TypeScript", color: "#3178C6" }
+  ];
+
+  const frameworks = [
+    { icon: "fab fa-react", name: "React", color: "#61DAFB" },
+    { icon: "fab fa-angular", name: "Angular", color: "#DD0031" },
+    { name: "Flutter", isIconify: true, iconifyIcon: "logos:flutter" }
+  ];
+
+  const backend = [
+    { icon: "fab fa-java", name: "Java", color: "#f89820" },
+    { icon: "fab fa-node", name: "Node.js", color: "#339933" },
+    { icon: "", name: "Express.js", isIconify: true, iconifyIcon: "simple-icons:express" },
+    { icon: "fab fa-php", name: "PHP", color: "#777BB3" },
+    { icon: "", name: "MySQL", isIconify: true, iconifyIcon: "logos:mysql" }
+  ];
+
+  const tools = [
+    { icon: "fab fa-figma", name: "Figma", color: "#f2371eff" },
+    { icon: "bi-kanban", name: "Trello", color: "#0079BF" },
+    { icon: "bi-graph-up", name: "Power BI", color: "#F2C811" },
+    { icon: "fab fa-git-alt", name: "Git", color: "#F05032" },
+    { icon: "fab fa-github", name: "GitHub", color: "#181717" }
   ];
 
   return (
@@ -52,40 +43,100 @@ const TechStack = () => {
 
       <div className="container">
         <div className="section-title" data-aos="fade-up">
-          <h2 data-translate="tech_title">Stack Tecnológica</h2>
+          <h2 data-translate="tech_title">Hard Skills</h2>
         </div>
       </div>
       
       <div className="container">
-        <div className="tech-slider-container">
-          <div 
-            className={`tech-slider-track ${isVisible ? 'animate' : ''}`}
-          >
-            {technologies.map((tech, index) => (
-              <div key={`first-${index}`} className="tech-slide">
-                <div className="tech-icon-wrapper">
-                  {tech.isIconify ? (
-                    <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
-                  ) : (
-                    <i className={tech.icon} style={{ color: tech.color }}></i>
-                  )}
-                </div>
-                <h3>{tech.name}</h3>
+        <div className="tech-row">
+          <div className="tech-category">
+            <div className="category-header">
+              <div className="category-icon-wrapper">
+                <i className="bi bi-window"></i>
               </div>
-            ))}
-            
-            {technologies.map((tech, index) => (
-              <div key={`second-${index}`} className="tech-slide">
-                <div className="tech-icon-wrapper">
-                  {tech.isIconify ? (
-                    <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
-                  ) : (
-                    <i className={tech.icon} style={{ color: tech.color }}></i>
-                  )}
+              <h3 className="category-title" data-translate="frontend_title">Front-end</h3>
+            </div>
+            <div className="tech-grid">
+              {frontend.map((tech, index) => (
+                <div key={`front-${index}`} className="tech-card">
+                  <div className="tech-icon-wrapper">
+                    {tech.isIconify ? (
+                      <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
+                    ) : (
+                      <i className={tech.icon} style={{ color: tech.color }}></i>
+                    )}
+                  </div>
+                  <span className="tech-name">{tech.name}</span>
                 </div>
-                <h3>{tech.name}</h3>
+              ))}
+            </div>
+          </div>
+
+          <div className="tech-category">
+            <div className="category-header">
+              <div className="category-icon-wrapper">
+                <i className="bi bi-server"></i>
               </div>
-            ))}
+              <h3 className="category-title" data-translate="backend_title">Back-end</h3>
+            </div>
+            <div className="tech-grid">
+              {backend.map((tech, index) => (
+                <div key={`back-${index}`} className="tech-card">
+                  <div className="tech-icon-wrapper">
+                    {tech.isIconify ? (
+                      <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
+                    ) : (
+                      <i className={tech.icon} style={{ color: tech.color }}></i>
+                    )}
+                  </div>
+                  <span className="tech-name">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="tech-row">
+          <div className="tech-category">
+            <div className="category-header">
+              <div className="category-icon-wrapper">
+                <i className="bi bi-grid-3x3-gap-fill"></i>
+              </div>
+              <h3 className="category-title" data-translate="frameworks_title">Frameworks</h3>
+            </div>
+            <div className="tech-grid">
+              {frameworks.map((tech, index) => (
+                <div key={`fw-${index}`} className="tech-card">
+                  <div className="tech-icon-wrapper">
+                    {tech.isIconify ? (
+                      <iconify-icon icon={tech.iconifyIcon} width="48" height="48"></iconify-icon>
+                    ) : (
+                      <i className={tech.icon} style={{ color: tech.color }}></i>
+                    )}
+                  </div>
+                  <span className="tech-name">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="tech-category">
+            <div className="category-header">
+              <div className="category-icon-wrapper">
+                <i className="bi bi-tools"></i>
+              </div>
+              <h3 className="category-title" data-translate="tools_title">Ferramentas</h3>
+            </div>
+            <div className="tech-grid">
+              {tools.map((tech, index) => (
+                <div key={`tool-${index}`} className="tech-card">
+                  <div className="tech-icon-wrapper">
+                    <i className={tech.icon} style={{ color: tech.color }}></i>
+                  </div>
+                  <span className="tech-name">{tech.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

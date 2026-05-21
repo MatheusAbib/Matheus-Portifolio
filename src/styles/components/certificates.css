@@ -2,6 +2,8 @@
   position: relative;
   overflow: hidden;
   padding: 80px 0;
+  background-color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .certificates-wrapper {
@@ -10,21 +12,21 @@
 }
 
 .certificates-tabs-modern {
-  background: color-mix(in srgb, var(--surface-color), transparent 97%);
+  background: var(--surface-1);
   backdrop-filter: blur(10px);
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%);
-  border-radius: 24px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
 .certificates-nav {
   display: flex;
-  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background: var(--surface-2);
   padding: 1.5rem 2rem;
   gap: 0.8rem;
   overflow-x: auto;
   scrollbar-width: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .certificates-nav::-webkit-scrollbar {
@@ -35,25 +37,25 @@
   flex: 0 0 auto;
   padding: 0.7rem 1.5rem;
   border: none;
-  background: color-mix(in srgb, var(--surface-color), transparent 95%);
-  border-radius: 40px;
-  color: var(--default-color);
+  background: var(--surface-1);
+  border-radius: var(--radius-pill);
+  color: var(--fg-muted);
   font-weight: 500;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border: 1px solid var(--hairline);
 }
 
 .certificate-tab-btn:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  background: var(--surface-2);
   color: var(--accent-color);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-color: var(--green-soft);
 }
 
 .certificate-tab-btn.active {
-  background: var(--accent-color);
+  background: var(--green-soft);
   color: var(--contrast-color);
   border-color: transparent;
 }
@@ -61,6 +63,7 @@
 .certificates-content {
   padding: 2rem;
   position: relative;
+  background: var(--surface-1);
 }
 
 .certificate-tab {
@@ -81,13 +84,13 @@
 }
 
 .certificate-card {
-  background: color-mix(in srgb, var(--surface-color), transparent 98%);
-  border-radius: 20px;
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
   display: flex;
   gap: 2rem;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--hairline);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .certificate-image {
@@ -111,19 +114,19 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: var(--accent-color);
+  background: var(--green-soft);
   width: 40px;
   height: 40px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .certificate-badge i {
   font-size: 1.2rem;
-  color: var(--contrast-color);
+  color: var(--green-deep);
 }
 
 .certificate-details {
@@ -137,13 +140,13 @@
 .certificate-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--fg);
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
 .certificate-institution {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: var(--fg-muted);
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
 }
@@ -151,7 +154,7 @@
 .skills-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: var(--fg-muted);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -172,51 +175,48 @@
 
 .skill-tag {
   padding: 0.3rem 0.8rem;
-  border-radius: 20px;
+  border-radius: var(--radius-pill);
   font-size: 0.75rem;
   font-weight: 500;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background: var(--surface-1);
   color: var(--accent-color);
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border: 1px solid var(--hairline);
   transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  background: var(--surface-2);
   transform: translateY(-2px);
+  border-color: var(--green-soft);
 }
 
-.skill-tag.bootstrap { background: color-mix(in srgb, #7952b3, transparent 85%); color: #7952b3; }
-.skill-tag.javascript { background: 
- color-mix(in srgb, #ffeb4a, transparent 61%);
-    color: #7f7117;
-    border: 1px solid
- color-mix(in srgb, #f7df1e, transparent 39%); }
-.skill-tag.html { background: color-mix(in srgb, #e34f26, transparent 85%); color: #e34f26; }
-.skill-tag.css { background: color-mix(in srgb, #264de4, transparent 85%); color: #264de4; }
-.skill-tag.powerbi { background: color-mix(in srgb, #f2c800, transparent 85%); color: #f2c800; }
-.skill-tag.excel { background: color-mix(in srgb, #217346, transparent 85%); color: #217346; }
-.skill-tag.data-analysis { background: color-mix(in srgb, #4e73df, transparent 85%); color: #4e73df; }
-.skill-tag.dashboards { background: color-mix(in srgb, #17a2b8, transparent 85%); color: #17a2b8; }
-.skill-tag.database { background: color-mix(in srgb, #00bcd4, transparent 85%); color: #00bcd4; }
-.skill-tag.sql { background: color-mix(in srgb, #00758f, transparent 85%); color: #00758f; }
-.skill-tag.git { background: color-mix(in srgb, #f05032, transparent 85%); color: #f05032; }
-.skill-tag.github { background: color-mix(in srgb, #24292e, transparent 85%); color: #8b949e; }
-.skill-tag.logic { background: color-mix(in srgb, var(--accent-color), transparent 85%); color: var(--accent-color); }
-.skill-tag.ai { background: color-mix(in srgb, #9b5cff, transparent 85%); color: #9b5cff; }
-.skill-tag.python { background: color-mix(in srgb, #3776ab, transparent 85%); color: #3776ab; }
-.skill-tag.java { background: color-mix(in srgb, #f89820, transparent 85%); color: #f89820; }
-.skill-tag.spring { background: color-mix(in srgb, #6db33f, transparent 85%); color: #6db33f; }
-.skill-tag.react { background: color-mix(in srgb, #61dafb, transparent 85%); color: #61dafb; }
-.skill-tag.api { background: color-mix(in srgb, var(--accent-color), transparent 85%); color: var(--accent-color); }
+.skill-tag.bootstrap { background: rgba(121, 82, 179, 0.15); color: #a78bfa; }
+.skill-tag.javascript { background: rgba(247, 223, 30, 0.15); color: #f7df1e; }
+.skill-tag.html { background: rgba(227, 79, 38, 0.15); color: #e34f26; }
+.skill-tag.css { background: rgba(38, 77, 228, 0.15); color: #3b82f6; }
+.skill-tag.powerbi { background: rgba(242, 200, 0, 0.15); color: #f2c800; }
+.skill-tag.excel { background: rgba(33, 115, 70, 0.15); color: #34d399; }
+.skill-tag.data-analysis { background: rgba(78, 115, 223, 0.15); color: #818cf8; }
+.skill-tag.dashboards { background: rgba(23, 162, 184, 0.15); color: #22d3ee; }
+.skill-tag.database { background: rgba(0, 188, 212, 0.15); color: #67e8f9; }
+.skill-tag.sql { background: rgba(0, 117, 143, 0.15); color: #06b6d4; }
+.skill-tag.git { background: rgba(240, 80, 50, 0.15); color: #fb923c; }
+.skill-tag.github { background: rgba(36, 41, 46, 0.15); color: #9ca3af; }
+.skill-tag.logic { background: rgba(167, 170, 99, 0.15); color: var(--accent-color); }
+.skill-tag.ai { background: rgba(155, 92, 255, 0.15); color: #c084fc; }
+.skill-tag.python { background: rgba(55, 118, 171, 0.15); color: #60a5fa; }
+.skill-tag.java { background: rgba(248, 152, 32, 0.15); color: #fbbf24; }
+.skill-tag.spring { background: rgba(109, 179, 63, 0.15); color: #86efac; }
+.skill-tag.react { background: rgba(97, 218, 251, 0.15); color: #5eead4; }
+.skill-tag.api { background: rgba(167, 170, 99, 0.15); color: var(--accent-color); }
 
 .certificate-description p {
   font-size: 0.9rem;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: var(--fg-muted);
   line-height: 1.6;
   margin-top: 1rem;
   padding-left: 1rem;
-  border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-left: 2px solid var(--green-soft);
 }
 
 @media (max-width: 992px) {

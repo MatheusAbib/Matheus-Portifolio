@@ -2,8 +2,8 @@
   position: relative;
   overflow: hidden;
   padding: 80px 0;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 99%);
-  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  background-color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
 }
 
 #softskills::before {
@@ -13,10 +13,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--accent-color), transparent 85%) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, color-mix(in srgb, #667eea, transparent 85%) 0%, transparent 50%);
-  opacity: 0.15;
+  background: var(--green-soft);
+  opacity: 0.04;
   z-index: 0;
   pointer-events: none;
 }
@@ -33,20 +31,20 @@
 }
 
 .softskill-card {
-  background: color-mix(in srgb, var(--surface-color), transparent 55%);
+  background: var(--surface-1);
   backdrop-filter: blur(10px);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   padding: 2rem;
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border: 1px solid var(--hairline);
 }
 
 .softskill-card:hover {
   transform: translateY(-8px);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
-  background: color-mix(in srgb, var(--surface-color), transparent 95%);
+  border-color: var(--green-soft);
+  background: var(--surface-2);
 }
 
 .skill-header {
@@ -61,8 +59,8 @@
 .skill-icon {
   width: 56px;
   height: 56px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #667eea));
+  border-radius: var(--radius-md);
+  background: var(--green-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,19 +72,25 @@
 
 .softskill-card:hover .skill-icon {
   transform: rotate(10deg) scale(1.1);
+  background: var(--green-soft);
+}
+
+.softskill-card:hover .skill-icon i {
+  color: var(--green-deep);
 }
 
 .skill-icon i {
   font-size: 1.6rem;
-  color: var(--contrast-color);
+  color: var(--green-soft);
   position: relative;
   z-index: 1;
+  transition: color 0.4s ease;
 }
 
 .skill-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--fg);
   margin: 0;
   position: relative;
   z-index: 1;
@@ -99,7 +103,7 @@
 }
 
 .skill-description {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: var(--fg-muted);
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -121,7 +125,7 @@
   gap: 0.7rem;
   margin-bottom: 0.6rem;
   font-size: 0.85rem;
-  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  color: var(--fg-muted);
   position: relative;
   padding-left: 0.5rem;
   letter-spacing: 0.02em;
@@ -140,13 +144,13 @@
 
 .softskill-card:hover .skill-features li::before {
   transform: scale(1.5);
-  background: color-mix(in srgb, var(--accent-color), #667eea);
+  background: var(--green-soft);
 }
 
 .skill-progress {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
-  border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-top: 1px solid var(--hairline);
 }
 
 .progress-label {
@@ -156,12 +160,12 @@
   margin-bottom: 0.75rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--fg);
 }
 
 .progress-bar {
   height: 6px;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background: var(--surface-2);
   border-radius: 3px;
   overflow: hidden;
   position: relative;
@@ -169,7 +173,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #667eea));
+  background: linear-gradient(90deg, var(--green-soft), var(--green-deep));
   border-radius: 3px;
   position: relative;
   transform: translateX(-100%);

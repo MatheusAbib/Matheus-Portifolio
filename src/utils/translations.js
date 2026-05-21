@@ -1,7 +1,7 @@
 const translations = {
   pt: {
     menu_about: "Sobre mim",
-    menu_methodologies: "Metodologias",
+    menu_methodologies: "Tragetória",
     menu_certificates: "Certificados",
     menu_services: "Serviços",
     menu_skills: "Skills",
@@ -9,34 +9,38 @@ const translations = {
     menu_contact: "Contato",
     btn_translate: "PT/EN",
     
-    hero_name: "Eu sou <span class='highlight'>Matheus Abib</span>",
-    hero_badge: "Inovação & Tecnologia",
-    hero_title: "Bem-vindo!",
-    hero_desc_1: "Sou um <strong>desenvolvedor de software</strong> atuando com <strong>tecnologias front-end e back-end</strong>.",
-    hero_desc_2: "Atualmente estou no último semestre de Análise e Desenvolvimento de Sistemas na Faculdade de Tecnologia de Mogi das Cruzes e no quarto semestre de Engenharia de Software na Universidade de Mogi das Cruzes.",
-    hero_desc_3: "Também possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.",
-    cv_button: "Download CV",
-    photo_overlay: "Esse sou eu!",
-    cv_portuguese: "Português",
-    cv_english: "Inglês",
+hero_name: "Eu sou <span class='highlight'>Matheus Abib</span>",
+hero_badge: "Inovação & Tecnologia",
+hero_title: "Bem-vindo!",
+hero_desc_1: "Sou <strong>desenvolvedor de software</strong> atuando com tecnologias <strong>front-end e back-end</strong>.",
+hero_desc_2: "Atualmente estou no <strong>último semestre de Análise e Desenvolvimento de Sistemas</strong> na Fatec de Mogi das Cruzes e no <strong>quarto semestre de Engenharia de Software</strong> na Universidade de Mogi das Cruzes.",
+hero_desc_3: "Também possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.",
+
+
+cv_button: "Download CV",
+photo_overlay: "Esse sou eu!",
+cv_portuguese: "Português",
+cv_english: "Inglês",
+
+feature_1_title: "Full Stack na Prática",
+feature_1_text: "Desenvolvimento de ponta a ponta com Angular, React, Spring Boot e Node.js, criando soluções completas e funcionais.",
+
+feature_2_title: "Metodologias Ágeis & Requisitos",
+feature_2_text: "Experiência com Scrum e levantamento de requisitos diretamente com clientes para entregas alinhadas às necessidades reais.",
+
+feature_3_title: "UI/UX & Dados",
+feature_3_text: "Criação de protótipos no Figma e visualização de dados com Power BI, unindo design, qualidade e tomada de decisão.",
     
-    feature_1_title: "Atitude Prática",
-    feature_1_text: "Foco em aplicar meus conhecimentos para resolver problemas reais e agregar valor imediato.",
-    feature_2_title: "Código & Experiência",
-    feature_2_text: "Design responsivo, código limpo e atenção obsessiva aos detalhes para a melhor experiência do usuário.",
-    feature_3_title: "Colaboração Eficaz",
-    feature_3_text: "Comunicação proativa para alinhar a equipe e entregar projetos de forma eficiente e fluida.",
-    
-    methodologies_title: "Como eu trabalho",
-    method_1_title: "Engenharia de Software",
-    method_1_text: "Planejo e organizo cada etapa do projeto utilizando modelagem UML, metodologias ágeis, Kanban, controle de versões com Git e testes contínuos.",
-    method_2_title: "Análise de Dados",
-    method_2_text: "Estruturo as informações de maneira clara e organizada, utilizando ferramentas como Power BI e Excel para gerar insights estratégicos.",
-    method_3_title: "Controle de Qualidade e Gestão de Produto",
-    method_3_text: "Garanto que o produto atenda às necessidades exigidas, com testes, análise de requisitos e entrega de soluções de valor.",
-    method_4_title: "Comunicação e Colaboração",
-    method_4_text: "Priorizo comunicação clara, escuta ativa e colaboração, mesmo remotamente, sempre agindo com ética e responsabilidade.",
-    
+journey_title: "Minha Jornada Profissional",
+exp_1_title: "BootComp Tecnologia",
+exp_1_role: "Estágio em Suporte",
+exp_1_period: "2023 - 2024",
+exp_1_text: "Configurei e gerenciei chatbot corporativo para clientes, utilizando Trello para organização das tarefas. Prestei suporte remoto via AnyDesk e mantive contato direto com clientes para levantamento de requisitos e resolução de demandas.",
+exp_2_title: "Prefeitura de Mogi das Cruzes",
+exp_2_role: "Estágio em Desenvolvimento de Software",
+exp_2_period: "2025 - Presente",
+exp_2_text: "Participo de reuniões com clientes para levantamento de requisitos. Desenvolvo sistemas com Angular, TypeScript e Spring Boot seguindo a metodologia Scrum, com entregas incrementais e melhorias contínuas baseadas no feedback dos clientes.",
+
     webdev_tab_title: "Web Development",
     powerbi_tab_title: "Power BI",
     react_tab_title: "React",
@@ -65,7 +69,7 @@ const translations = {
     
     services_title: "Serviços",
     service_1_title: "Desenvolvimento Full Stack",
-    service_1_text: "Eu crio interfaces web modernas, performáticas e precisas para usuários.",
+    service_1_text: "Eu crio softwares modernas, performáticas e precisas para usuários.",
     service_3_title: "UI/UX Design e Protótipos",
     service_3_text: "Crio layouts funcionais para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.",
     service_4_title: "Engenharia de Software",
@@ -143,7 +147,15 @@ const translations = {
     project_tarot_desc: "Plataforma de consultas de tarot dinâmico",
     project_login_desc: "Sistema de autenticação completo com Java Spring e TypeScript",
     
-    tech_title: "Stack Tecnológica",
+    tech_title: "Tecnologias que utilizo",
+
+    category_site: "Site",
+    category_ferramenta: "Ferramenta",
+    category_diversao: "Diversão",
+    category_links: "Links",
+    category_fullstack: "Full Stack",
+    category_angular: "Angular",
+    category_frontend: "Front-end",
     
     footer_bio: "Desenvolvedor Full Stack & Engenheiro de Software.",
     footer_location: "Mogi das Cruzes, São Paulo",
@@ -344,7 +356,7 @@ const translations = {
 
   en: {
     menu_about: "About Me",
-    menu_methodologies: "Methodologies",
+    menu_methodologies: "Trajectory",
     menu_certificates: "Certificates",
     menu_services: "Services",
     menu_skills: "Skills",
@@ -370,15 +382,15 @@ const translations = {
     feature_3_title: "Collaboration",
     feature_3_text: "Proactive communication to align the team and deliver projects efficiently and seamlessly.",
     
-    methodologies_title: "How I Work",
-    method_1_title: "Software Engineering",
-    method_1_text: "I plan and organize each project stage using UML modeling, agile methodologies, Kanban, version control with Git, and continuous testing.",
-    method_2_title: "Data Analysis",
-    method_2_text: "I structure information clearly and organized, using tools like Power BI and Excel to generate strategic insights.",
-    method_3_title: "Quality Control and Product Management",
-    method_3_text: "I ensure the product meets required needs, with testing, requirements analysis, and delivery of valuable solutions.",
-    method_4_title: "Communication and Collaboration",
-    method_4_text: "I prioritize clear communication, active listening, and collaboration, even remotely, always acting with ethics and responsibility.",
+journey_title: "My Professional Journey",
+exp_1_title: "BootComp Tecnologia",
+exp_1_role: "Support Intern",
+exp_1_period: "2023 - 2024",
+exp_1_text: "Configured and managed corporate chatbots for clients, using Trello for task organization. Provided remote support via AnyDesk and maintained direct contact with clients for requirements gathering and issue resolution.",
+exp_2_title: "Mogi das Cruzes City Hall",
+exp_2_role: "Software Development Intern",
+exp_2_period: "2025 - Present",
+exp_2_text: "Participate in client meetings for requirements gathering. Develop systems with Angular, TypeScript and Spring Boot following Scrum methodology, with incremental deliveries and continuous improvements based on client feedback.",
     
     webdev_tab_title: "Web Development",
     powerbi_tab_title: "Power BI",
@@ -486,8 +498,22 @@ const translations = {
     project_tarot_desc: "Dynamic tarot consultation platform",
     project_login_desc: "Complete authentication system with Java Spring and TypeScript",
     
-    tech_title: "Technologies I Master",
-    
+    tech_title: "Hard Skills",
+      frontend_title: "Front-end",
+      frameworks_title: "Frameworks", 
+      backend_title: "Back-end",
+      tools_title: "Tools",
+
+      category_site: "Site",
+category_ferramenta: "Tool",
+category_diversao: "Fun",
+category_links: "Links",
+category_fullstack: "Full Stack",
+category_angular: "Angular",
+category_frontend: "Front-end",
+
+
+          
     footer_bio: "Full Stack Developer & Software Engineer.",
     footer_location: "Mogi das Cruzes, São Paulo",
     footer_fullname: "Matheus Bilitardo Abib",

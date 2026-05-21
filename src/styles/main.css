@@ -3,12 +3,216 @@
 @import './components/header.css';
 @import './components/sobre-mim.css';
 @import './components/portfolio.css';
-@import './components/services.css';
 @import './components/tech-stack.css';
 @import './components/soft-skills.css';
 @import './components/certificates.css';
-@import './components/methodologies.css';
+@import './components/tragetoria.css';
 @import './components/contact-form.css';
-@import './components/modals.css';
 @import './components/footer.css';
 
+body {
+  background-color: var(--background-color);
+  color: var(--default-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--green-deep);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+section, .section {
+  scroll-margin-top: 98px;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.section-title h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  font-size: 3rem;
+  position: relative;
+  color: var(--heading-color);
+}
+
+.section-title h2:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--fg-faint);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.container {
+  max-width: 1600px;
+  padding: 0 6%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.container-narrow {
+  max-width: 1250px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--green-deep);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: var(--surface-1);
+  backdrop-filter: blur(10px);
+  color: var(--fg);
+  border: 1px solid var(--hairline);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-2);
+  transform: translateY(-3px);
+}
+
+.glass-card {
+  background: var(--surface-1);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: var(--surface-2);
+  transform: translateY(-5px);
+}
+
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+}
+
+.scroll-top:hover {
+  background-color: var(--green-deep);
+  transform: translateY(-3px);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--green-soft);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--green-deep);
+}
+
+@media (max-width: 992px) {
+  section, .section {
+    scroll-margin-top: 80px;
+  }
+  
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+
+  .container {
+    padding: 0 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 0 5%;
+  }
+}

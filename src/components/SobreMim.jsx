@@ -40,11 +40,11 @@ const SobreMim = () => {
               />
             </h1>
 
-            <div className="hero-description">
-              <p data-translate="hero_desc_1" dangerouslySetInnerHTML={{ __html: t('hero_desc_1') }} />
-              <p data-translate="hero_desc_2" dangerouslySetInnerHTML={{ __html: t('hero_desc_2') }} />
-              <p data-translate="hero_desc_3" dangerouslySetInnerHTML={{ __html: t('hero_desc_3') }} />
-            </div>
+              <div className="hero-description">
+                <p data-translate="hero_desc_1" dangerouslySetInnerHTML={{ __html: t('hero_desc_1') }} />
+                <p data-translate="hero_desc_2" dangerouslySetInnerHTML={{ __html: t('hero_desc_2') }} />
+                <p data-translate="hero_desc_3" dangerouslySetInnerHTML={{ __html: t('hero_desc_3') }} />
+              </div>
 
             <div className="hero-actions">
               <div className="dropdown">
@@ -59,13 +59,13 @@ const SobreMim = () => {
                 {isDropdownOpen && (
                   <ul className="dropdown-menu show" style={{ position: 'absolute', display: 'block', marginTop: '0.5rem' }}>
                     <li>
-                      <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                      <a className="dropdown-item" href="/assets/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
                         <i className="bi bi-flag-br"></i>
                         <span data-translate="cv_portuguese">{t('cv_portuguese')}</span>
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                      <a className="dropdown-item" href="/assets/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
                         <i className="bi bi-flag-us"></i>
                         <span data-translate="cv_english">{t('cv_english')}</span>
                       </a>
@@ -108,29 +108,29 @@ const SobreMim = () => {
         </div>
 
         <div className="feature-grid">
-          <div className="feature-card">
-            <div className="feature-icon">
-              <i className="bi bi-lightning-charge-fill"></i>
-            </div>
-            <h3 data-translate="feature_1_title">{t('feature_1_title')}</h3>
-            <p data-translate="feature_1_text">{t('feature_1_text')}</p>
-          </div>
+         <div className="feature-card">
+  <div className="feature-icon">
+    <i className="bi bi-code-square"></i>
+  </div>
+  <h3 data-translate="feature_1_title">{t('feature_1_title')}</h3>
+  <p data-translate="feature_1_text">{t('feature_1_text')}</p>
+</div>
 
-          <div className="feature-card">
-            <div className="feature-icon">
-              <i className="bi bi-trophy-fill"></i>
-            </div>
-            <h3 data-translate="feature_2_title">{t('feature_2_title')}</h3>
-            <p data-translate="feature_2_text">{t('feature_2_text')}</p>
-          </div>
+<div className="feature-card">
+  <div className="feature-icon">
+    <i className="bi bi-kanban"></i>
+  </div>
+  <h3 data-translate="feature_2_title">{t('feature_2_title')}</h3>
+  <p data-translate="feature_2_text">{t('feature_2_text')}</p>
+</div>
 
-          <div className="feature-card">
-            <div className="feature-icon">
-              <i className="bi bi-people-fill"></i>
-            </div>
-            <h3 data-translate="feature_3_title">{t('feature_3_title')}</h3>
-            <p data-translate="feature_3_text">{t('feature_3_text')}</p>
-          </div>
+<div className="feature-card">
+  <div className="feature-icon">
+    <i className="bi bi-graph-up"></i>
+  </div>
+  <h3 data-translate="feature_3_title">{t('feature_3_title')}</h3>
+  <p data-translate="feature_3_text">{t('feature_3_text')}</p>
+</div>
         </div>
       </div>
     </section>

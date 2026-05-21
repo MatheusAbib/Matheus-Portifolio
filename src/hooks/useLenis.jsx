@@ -5,12 +5,8 @@ const LenisContext = createContext(null);
 
 export const useLenis = () => {
   const context = useContext(LenisContext);
-  if (!context) {
-    throw new Error('useLenis must be used within LenisProvider');
-  }
   return context;
 };
-
 export const LenisProvider = ({ children }) => {
   const lenisRef = useRef(null);
 

@@ -9,16 +9,14 @@ const Header = () => {
   const [clickedItem, setClickedItem] = useState(null);
   const { t, toggleLanguage } = useTranslation();
 
-  const navItems = [
-    { href: '#hero', textKey: 'menu_about', id: 'hero' },
-    { href: '#metodologias', textKey: 'menu_methodologies', id: 'metodologias' },
-    { href: '#service-details', textKey: 'menu_certificates', id: 'service-details' },
-    { href: '#services', textKey: 'menu_services', id: 'services' },
-    { href: '#services-alt', textKey: 'menu_skills', id: 'services-alt' },
-    { href: '#portfolio', textKey: 'menu_projects', id: 'portfolio' },
-    { href: '#form-section', textKey: 'menu_contact', id: 'form-section' },
-  ];
-
+const navItems = [
+  { href: '#hero', textKey: 'menu_about', id: 'hero' },
+  { href: '#jornada', textKey: 'menu_methodologies', id: 'jornada' },
+  { href: '#skills', textKey: 'menu_skills', id: 'skills' },
+  { href: '#service-details', textKey: 'menu_certificates', id: 'service-details' },
+  { href: '#portfolio', textKey: 'menu_projects', id: 'portfolio' },
+  { href: '#form-section', textKey: 'menu_contact', id: 'form-section' },
+];
   useEffect(() => {
     if (mobileNavActive) {
       document.body.classList.add('mobile-nav-active');
