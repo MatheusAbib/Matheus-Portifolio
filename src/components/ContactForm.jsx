@@ -202,15 +202,15 @@ const ContactForm = () => {
       </div>
 
       <div className="container">
-        <div className="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
-          <div className="contact-info">
-              <div className="contact-info-header">
-                <div className="contact-info-icon">
-                  <i className="bi bi-chat-dots-fill"></i>
-                </div>
-                <h3 data-translate="contact_info_title">{t('contact_info_title')}</h3>
-                <p data-translate="contact_info_text">{t('contact_info_text')}</p>
+        <div className="contact-wrapper">
+          <div className="contact-info" data-aos="fade-right">
+            <div className="contact-info-header">
+              <div className="contact-info-icon">
+                <i className="bi bi-chat-dots-fill"></i>
               </div>
+              <h3 data-translate="contact_info_title">{t('contact_info_title')}</h3>
+              <p data-translate="contact_info_text">{t('contact_info_text')}</p>
+            </div>
             <div className="contact-info-links">
               <a href="https://wa.me/11975072008" target="_blank" rel="noopener noreferrer" className="contact-link">
                 <i className="bi bi-whatsapp"></i>
@@ -243,7 +243,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="contact-form-container">
+          <div className="contact-form-container" data-aos="fade-left">
             <form 
               id="emailForm" 
               className="contact-form"

@@ -82,14 +82,14 @@ const SoftSkills = () => {
       </div>
 
       <div className="container">
-        <div className="section-title" data-aos="fade-up">
+        <div className="section-title">
           <h2 data-translate="softskills_title">{t('softskills_title')}</h2>
         </div>
 
         <div className="softskills-container">
           <div className="softskills-grid">
             {softSkills.map((skill, index) => (
-              <div key={index} className="softskill-card" data-aos="fade-up" data-aos-delay={150 + (index * 100)}>
+              <div key={index} className="softskill-card">
                 <div className="skill-header">
                   <div className="skill-icon">
                     <i className={`bi ${skill.icon}`}></i>

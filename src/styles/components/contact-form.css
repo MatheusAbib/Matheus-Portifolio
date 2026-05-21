@@ -172,7 +172,7 @@
 }
 
 .form-group label .required {
-  color: var(--red-soft);
+  color: #b2282c;
   margin-left: 2px;
 }
 

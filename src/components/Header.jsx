@@ -10,7 +10,7 @@ const Header = () => {
   const { t, toggleLanguage } = useTranslation();
 
 const navItems = [
-  { href: '#hero', textKey: 'menu_about', id: 'hero' },
+  { href: '#sobre-mim-02', textKey: 'menu_about', id: 'sobre-mim-02' },
   { href: '#jornada', textKey: 'menu_methodologies', id: 'jornada' },
   { href: '#skills', textKey: 'menu_skills', id: 'skills' },
   { href: '#service-details', textKey: 'menu_certificates', id: 'service-details' },
@@ -144,10 +144,10 @@ const navItems = [
                     }}
                     className={`d-flex align-items-center ${activeSection === item.id ? 'active' : ''} ${clickedItem === item.id ? 'clicked' : ''}`}
                   >
-                    <span data-translate={item.textKey}>{t(item.textKey)}</span>
-                    {activeSection === item.id && (
-                      <span className="active-dot ms-2"></span>
-                    )}
+{activeSection === item.id && (
+  <span className="active-dot me-2"></span>
+)}
+<span data-translate={item.textKey}>{t(item.textKey)}</span>
                   </a>
                 </li>
               ))}

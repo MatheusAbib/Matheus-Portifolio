@@ -1,136 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 
 const SobreMim = () => {
-  const { t, toggleLanguage } = useTranslation();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isDropdownOpen && !event.target.closest('.dropdown')) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [isDropdownOpen]);
+  const { t } = useTranslation();
 
   return (
     <section id="hero" className="hero">
-      <div className="hero-background">
-        <div className="gradient-orb gradient-orb-1"></div>
-        <div className="gradient-orb gradient-orb-2"></div>
-        <div className="gradient-orb gradient-orb-3"></div>
-      </div>
-
-      <div className="container">
-        <div className="hero-grid">
-          <div className="hero-content">
-            <div className="hero-badge">
-              <i className="bi bi-stars"></i>
-              <span data-translate="hero_badge">{t('hero_badge')}</span>
-            </div>
-
-            <h1 className="hero-title">
-              <span className="hero-greeting" data-translate="hero_title">{t('hero_title')}</span>
-              <span 
-                className="hero-name" 
-                dangerouslySetInnerHTML={{ __html: t('hero_name') }}
-              />
-            </h1>
-
-              <div className="hero-description">
-                <p data-translate="hero_desc_1" dangerouslySetInnerHTML={{ __html: t('hero_desc_1') }} />
-                <p data-translate="hero_desc_2" dangerouslySetInnerHTML={{ __html: t('hero_desc_2') }} />
-                <p data-translate="hero_desc_3" dangerouslySetInnerHTML={{ __html: t('hero_desc_3') }} />
-              </div>
-
-            <div className="hero-actions">
-              <div className="dropdown">
-                <button 
-                  className="btn-primary" 
-                  type="button"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                >
-                  <i className="bi bi-download"></i>
-                  <span data-translate="cv_button">{t('cv_button')}</span>
-                </button>
-                {isDropdownOpen && (
-                  <ul className="dropdown-menu show" style={{ position: 'absolute', display: 'block', marginTop: '0.5rem' }}>
-                    <li>
-                      <a className="dropdown-item" href="/assets/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
-                        <i className="bi bi-flag-br"></i>
-                        <span data-translate="cv_portuguese">{t('cv_portuguese')}</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/assets/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
-                        <i className="bi bi-flag-us"></i>
-                        <span data-translate="cv_english">{t('cv_english')}</span>
-                      </a>
-                    </li>
-                  </ul>
-                )}
-              </div>
-              
-              <button className="btn-secondary" onClick={toggleLanguage}>
-                <i className="bi bi-translate"></i>
-                <span>PT/EN</span>
-              </button>
-            </div>
-          </div>
-
-          <div className="hero-visual">
-            <div className="hero-image-wrapper">
-              <div className="hero-social-top">
-                <a href="https://github.com/MatheusAbib" target="_blank" rel="noopener noreferrer" className="social-top-link">
-                  <i className="bi bi-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" rel="noopener noreferrer" className="social-top-link">
-                  <i className="bi bi-linkedin"></i>
-                </a>
-                <a href="https://wa.me/11975072008" target="_blank" rel="noopener noreferrer" className="social-top-link">
-                  <i className="bi bi-whatsapp"></i>
-                </a>
-              </div>
-              <div className="hero-image-container">
-                <img src="/assets/img/Eu.jpg" alt="Matheus Abib" />
-                <div className="image-overlay">
-                  <div className="overlay-content">
-                    <i className="bi bi-camera-fill"></i>
-                    <span data-translate="photo_overlay">{t('photo_overlay')}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="hero-background-image"></div>
+      <div className="hero-overlay"></div>
+      
+      <div className="hero-content-left" data-aos="fade-up">
+        <div className="hero-top" data-aos="fade-up" data-aos-delay="100">
+          <div className="hero-greeting">{t('hero_title')}</div>
         </div>
-
-        <div className="feature-grid">
-         <div className="feature-card">
-  <div className="feature-icon">
-    <i className="bi bi-code-square"></i>
-  </div>
-  <h3 data-translate="feature_1_title">{t('feature_1_title')}</h3>
-  <p data-translate="feature_1_text">{t('feature_1_text')}</p>
+        <div className="hero-info" data-aos="fade-up" data-aos-delay="200">
+<div className="hero-name-wrapper">
+  <span className="hero-prefix">{t('hero_prefix')}</span>
+  <h1 className="hero-name">{t('hero_name')}</h1>
 </div>
-
-<div className="feature-card">
-  <div className="feature-icon">
-    <i className="bi bi-kanban"></i>
-  </div>
-  <h3 data-translate="feature_2_title">{t('feature_2_title')}</h3>
-  <p data-translate="feature_2_text">{t('feature_2_text')}</p>
-</div>
-
-<div className="feature-card">
-  <div className="feature-icon">
-    <i className="bi bi-graph-up"></i>
-  </div>
-  <h3 data-translate="feature_3_title">{t('feature_3_title')}</h3>
-  <p data-translate="feature_3_text">{t('feature_3_text')}</p>
-</div>
+          <p className="hero-role">{t('hero_role')}</p>
+          <div className="hero-tags" data-aos="fade-up" data-aos-delay="300">
+            <span>Front-end</span>
+            <span>Back-end</span>
+            <span>UI/UX</span>
+          </div>
+            <p className="hero-description-tagline" data-aos="fade-up" data-aos-delay="400">
+              {t('hero_tagline')}
+            </p>
         </div>
       </div>
     </section>

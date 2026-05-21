@@ -7,6 +7,7 @@ import Portfolio from '../components/Portfolio';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import SobreMim from '../components/SobreMim';
+import SobreMim02 from '../components/SobreMim02';
 import Tragetoria from '../components/Tragetoria';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Header />
       <main>
         <SobreMim />
+        <SobreMim02 />
         <Tragetoria />
         <div id="skills">
           <TechStack />

@@ -9,13 +9,17 @@ const translations = {
     menu_contact: "Contato",
     btn_translate: "PT/EN",
     
-hero_name: "Eu sou <span class='highlight'>Matheus Abib</span>",
-hero_badge: "Inovação & Tecnologia",
 hero_title: "Bem-vindo!",
-hero_desc_1: "Sou <strong>desenvolvedor de software</strong> atuando com tecnologias <strong>front-end e back-end</strong>.",
-hero_desc_2: "Atualmente estou no <strong>último semestre de Análise e Desenvolvimento de Sistemas</strong> na Fatec de Mogi das Cruzes e no <strong>quarto semestre de Engenharia de Software</strong> na Universidade de Mogi das Cruzes.",
-hero_desc_3: "Também possuo habilidades em <strong>UI/UX Design, criação de protótipos, análise de requisitos, controle de qualidade</strong>, além de <strong>visualização de dados com Power BI</strong> e domínio em <strong>Word, Excel e PowerPoint</strong>.",
-
+hero_prefix: "Eu sou",
+hero_name: "Matheus Abib",
+hero_badge: "Inovação & Tecnologia",
+hero_desc_1: "Sou um desenvolvedor de software presente na área da tecnologia há cerca de quatro anos, atuando com <strong>front-end e back-end</strong>.",
+hero_desc_2: "Tenho experiência como <strong>estagiário em Desenvolvimento de Software na Prefeitura de Mogi das Cruzes</strong>, onde participo do levantamento de requisitos com clientes e desenvolvo sistemas com <strong>Angular, TypeScript e Spring Boot</strong>, seguindo metodologias ágeis como <strong>Scrum</strong>. Também passei por um estágio em <strong>Suporte na BootComp Tecnologia</strong>, onde atuei com configuração de chatbots e atendimento direto ao cliente<strong></strong>.",
+hero_desc_3: "Minha base técnica inclui <strong>front-end</strong> com HTML, CSS, JavaScript, TypeScript e frameworks como React e Angular; <strong>back-end</strong> com Java Spring, Node.js e MySQL; além de <strong>UI/UX</strong> com Figma e <strong>análise de dados</strong> com Power BI.",
+hero_desc_4: "Atualmente curso <strong>Análise e Desenvolvimento de Sistemas</strong> na Fatec de Mogi das Cruzes e <strong>Engenharia de Software</strong> na Universidade de Mogi das Cruzes, unindo prática profissional e formação acadêmica de qualidade.",
+hero_role: "Desenvolvedor de software",
+about_title: "Sobre mim",
+hero_tagline: "Crio softwares completos, dos requisitos à entrega, unindo tecnologia, design e tomada de decisão.",
 
 cv_button: "Download CV",
 photo_overlay: "Esse sou eu!",
@@ -147,7 +151,7 @@ exp_2_text: "Participo de reuniões com clientes para levantamento de requisitos
     project_tarot_desc: "Plataforma de consultas de tarot dinâmico",
     project_login_desc: "Sistema de autenticação completo com Java Spring e TypeScript",
     
-    tech_title: "Tecnologias que utilizo",
+    tech_title: "Hard Skills",
 
     category_site: "Site",
     category_ferramenta: "Ferramenta",
@@ -364,16 +368,24 @@ exp_2_text: "Participo de reuniões com clientes para levantamento de requisitos
     menu_contact: "Contact",
     btn_translate: "EN/PT",
     
-    hero_name: "I'm <span class='highlight'>Matheus Abib</span>",
-    hero_badge: "Innovation & Technology",
     hero_title: "Welcome!",
-    hero_desc_1: "I'm a <strong>web developer</strong> working with <strong>front-end and back-end technologies</strong>, focused on improving user experience.",
-    hero_desc_2: "Currently in the final semester of Systems Analysis and Development at Mogi das Cruzes Technology College (FATEC-MC) and in the fourth semester of Software Engineering at the University of Mogi das Cruzes (UMC).",
-    hero_desc_3: "I have skills in <strong>UI/UX Design, prototyping, requirements analysis, quality control</strong>, as well as <strong>data visualization with Power BI</strong> and proficiency in <strong>Word, Excel, PowerPoint.</strong>",
+hero_prefix: "I'm",
+
+  hero_name: "Matheus Abib",
+
+    hero_badge: "Innovation & Technology",
+hero_desc_1: "I'm a software developer present in the technology field for about four years, working with <strong>front-end and back-end</strong>.",
+hero_desc_2: "I have experience as a <strong>Software Development Intern at Mogi das Cruzes City Hall</strong>, where I participate in client requirements gathering and develop systems with <strong>Angular, TypeScript and Spring Boot</strong>, following agile methodologies like <strong>Scrum</strong>. I also had a <strong>Support Internship at BootComp Tecnologia</strong>, where I worked with chatbot configuration and direct customer service.",
+hero_desc_3: "My technical background includes <strong>front-end</strong> with HTML, CSS, JavaScript, TypeScript and frameworks like React and Angular; <strong>back-end</strong> with Java Spring, Node.js and MySQL; plus <strong>UI/UX</strong> with Figma and <strong>data analysis</strong> with Power BI.",
+hero_desc_4: "I'm currently studying <strong>Systems Analysis and Development</strong> at Fatec Mogi das Cruzes and <strong>Software Engineering</strong> at the University of Mogi das Cruzes, combining professional practice with quality academic education.",
     cv_button: "Download CV",
     photo_overlay: "That's me!",
     cv_portuguese: "Portuguese",
     cv_english: "English",
+    hero_tagline: "I create complete software, from requirements to delivery, combining technology, design and decision making.",
+
+    hero_role: "Software developer",
+about_title: "About me",
     
     feature_1_title: "Practical Attitude",
     feature_1_text: "Focus on applying my knowledge to solve real problems and deliver immediate value.",
@@ -505,14 +517,12 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
       tools_title: "Tools",
 
       category_site: "Site",
-category_ferramenta: "Tool",
-category_diversao: "Fun",
-category_links: "Links",
-category_fullstack: "Full Stack",
-category_angular: "Angular",
-category_frontend: "Front-end",
-
-
+      category_ferramenta: "Tool",
+      category_diversao: "Fun",
+      category_links: "Links",
+      category_fullstack: "Full Stack",
+      category_angular: "Angular",
+      category_frontend: "Front-end",
           
     footer_bio: "Full Stack Developer & Software Engineer.",
     footer_location: "Mogi das Cruzes, São Paulo",

@@ -1,0 +1,336 @@
+.sobre-mim-02 {
+  position: relative;
+  padding: 100px 0;
+  background-color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.sobre-mim-02::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--green-soft);
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sobre-mim-02-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sobre-mim-02-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sobre-mim-02-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--fg) 0%, var(--green-soft) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  border: 1px solid var(--accent-color) !important;
+  background: none !important;
+  color: var(--accent-color) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-primary:hover {
+  background: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+  transform: translateY(-3px);
+  border-color: var(--accent-color) !important;
+}
+
+.btn-secondary {
+  border: 1px solid var(--hairline) !important;
+  background: var(--surface-1) !important;
+  color: var(--fg-muted) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-2) !important;
+  transform: translateY(-3px);
+  border-color: var(--green-soft) !important;
+  color: var(--accent-color) !important;
+}
+
+.dropdown-menu {
+  background: var(--ink);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  position: absolute;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--fg-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.dropdown-item:hover {
+  background: var(--surface-1);
+  color: var(--accent-color);
+}
+
+.sobre-mim-02-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.contact-link-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+}
+
+.contact-link-mini:hover {
+  transform: translateX(5px);
+  border-color: var(--green-soft);
+  background: var(--surface-1);
+}
+
+.contact-link-mini i {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-1);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  color: var(--accent-color);
+  border: 1px solid var(--hairline);
+}
+
+.contact-link-mini:hover i {
+  background: var(--green-soft);
+  color: var(--contrast-color);
+  border-color: var(--green-deep);
+}
+
+.contact-link-mini span {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+
+.contact-link-mini:hover span {
+  color: var(--accent-color);
+}
+
+.sobre-mim-02-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sobre-mim-02-right p {
+  color: var(--fg-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.sobre-mim-02-right strong {
+  color: var(--accent-color);
+}
+
+.feature-grid-02 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+}
+
+.feature-card-02 {
+  background: var(--surface-1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--hairline);
+}
+
+.feature-card-02:hover {
+  transform: translateY(-8px);
+  background: var(--surface-2);
+  border-color: var(--green-soft);
+}
+
+.feature-icon-02 {
+  width: 70px;
+  height: 70px;
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature-icon-02 i {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.feature-card-02:hover .feature-icon-02 {
+  background: var(--green-soft);
+}
+
+.feature-card-02:hover .feature-icon-02 i {
+  color: var(--contrast-color);
+}
+
+.feature-card-02 h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card-02 p {
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .sobre-mim-02 {
+    padding: 80px 0;
+  }
+
+  .sobre-mim-02-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .sobre-mim-02-left {
+    align-items: center;
+  }
+
+  .sobre-mim-02-contacts {
+    width: 100%;
+  }
+
+  .feature-grid-02 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sobre-mim-02-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-mim-02 {
+    padding: 60px 0;
+  }
+
+  .sobre-mim-02-title {
+    font-size: 2rem;
+  }
+
+  .sobre-mim-02-right p {
+    font-size: 0.9rem;
+  }
+
+  .feature-card-02 {
+    padding: 1.5rem;
+  }
+
+  .feature-icon-02 {
+    width: 55px;
+    height: 55px;
+  }
+
+  .feature-icon-02 i {
+    font-size: 1.3rem;
+  }
+
+  .feature-card-02 h3 {
+    font-size: 1rem;
+  }
+
+  .contact-link-mini {
+    padding: 0.5rem 0.7rem;
+  }
+  
+  .contact-link-mini i {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  
+  .contact-link-mini span {
+    font-size: 0.7rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}

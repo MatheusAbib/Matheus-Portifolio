@@ -2,6 +2,7 @@
 @import './components/common.css';
 @import './components/header.css';
 @import './components/sobre-mim.css';
+@import './components/sobre-mim-02.css';
 @import './components/portfolio.css';
 @import './components/tech-stack.css';
 @import './components/soft-skills.css';
@@ -79,13 +80,14 @@ section, .section {
   margin: auto;
 }
 
-.container {
-  max-width: 1600px;
-  padding: 0 6%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+.container,
+.hero-content-left {
+  max-width: 1600px !important;
+  padding: 0 4% !important;
+  margin: 0 auto !important;
+  width: 100% !important;
 }
+
 
 .container-narrow {
   max-width: 1250px;
