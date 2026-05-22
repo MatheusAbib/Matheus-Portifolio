@@ -165,8 +165,10 @@
 
 .how-we-work .process-item .step-content p {
   color: var(--fg-muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.6;
+  font-family: var(--heading-font);
+  letter-spacing: 0.02em;
   margin: 0;
 }
 

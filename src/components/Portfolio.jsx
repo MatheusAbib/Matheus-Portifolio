@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SectionLabel from './SectionLabel';
+
 
 const Portfolio = () => {
   const { t } = useTranslation();
@@ -429,6 +431,8 @@ useEffect(() => {
       </div>
 
       <div className="container">
+                        <SectionLabel sectionId="portfolio" />
+
         <div className="section-title" data-aos="fade-up">
           <h2 data-translate="portfolio_title">{t('portfolio_title')}</h2>
         </div>

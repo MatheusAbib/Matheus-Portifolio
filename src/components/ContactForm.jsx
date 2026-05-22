@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SectionLabel from './SectionLabel';
+
 
 const ContactForm = () => {
   const { t } = useTranslation();
@@ -196,6 +198,7 @@ const ContactForm = () => {
       </div>
 
       <div className="container">
+        <SectionLabel sectionId="form-section" />
         <div className="section-title" data-aos="fade-up">
           <h2 data-translate="contact_form_title">{t('contact_form_title')}</h2>
         </div>

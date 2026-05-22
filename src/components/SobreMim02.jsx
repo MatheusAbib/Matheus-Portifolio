@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SectionLabel from './SectionLabel';
 
 const SobreMim02 = () => {
   const { t, toggleLanguage } = useTranslation();
@@ -16,68 +17,64 @@ const SobreMim02 = () => {
       </div>
 
       <div className="container">
-        <div className="sobre-mim-02-grid">
-          <div className="sobre-mim-02-left" data-aos="fade-right">
-            <h2 className="sobre-mim-02-title" data-translate="about_title">{t('about_title')}</h2>
-            
-            <div className="sobre-mim-02-contacts">
-              <a href="https://wa.me/11975072008" target="_blank" rel="noopener noreferrer" className="contact-link-mini">
-                <i className="bi bi-whatsapp"></i>
-                <span>(11) 97507-2008</span>
-              </a>
-              <a href="mailto:matheus.abib.ma@gmail.com" className="contact-link-mini">
-                <i className="bi bi-envelope-fill"></i>
-                <span>matheus.abib.ma@gmail.com</span>
-              </a>
-              <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" rel="noopener noreferrer" className="contact-link-mini">
-                <i className="bi bi-linkedin"></i>
-                <span>/in/matheusabib</span>
-              </a>
-              <a href="https://github.com/MatheusAbib" target="_blank" rel="noopener noreferrer" className="contact-link-mini">
-                <i className="bi bi-github"></i>
-                <span>/MatheusAbib</span>
-              </a>
-            </div>
+        <SectionLabel sectionId="sobre-mim-02" />
 
-            <div className="hero-actions" data-aos="fade-right" data-aos-delay="100">
-              <div className="dropdown">
-                <button 
-                  className="btn-primary" 
-                  type="button"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                >
-                  <i className="bi bi-download"></i>
-                  <span data-translate="cv_button">{t('cv_button')}</span>
-                </button>
-                {isDropdownOpen && (
-                  <ul className="dropdown-menu show">
-                    <li>
-                      <a className="dropdown-item" href="/assets/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
-                        <i className="bi bi-flag-br"></i>
-                        <span data-translate="cv_portuguese">{t('cv_portuguese')}</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/assets/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
-                        <i className="bi bi-flag-us"></i>
-                        <span data-translate="cv_english">{t('cv_english')}</span>
-                      </a>
-                    </li>
-                  </ul>
-                )}
-              </div>
-              <button className="btn-secondary" onClick={toggleLanguage}>
-                <i className="bi bi-translate"></i>
-                <span>PT/EN</span>
-              </button>
-            </div>
-          </div>
+        <div className="sobre-mim-02-left">
+          <h2 className="sobre-mim-02-title" data-translate="about_title">{t('about_title')}</h2>
 
-          <div className="sobre-mim-02-right" data-aos="fade-left">
+          <div className="sobre-mim-02-texto">
             <p data-translate="hero_desc_1" dangerouslySetInnerHTML={{ __html: t('hero_desc_1') }} />
             <p data-translate="hero_desc_2" dangerouslySetInnerHTML={{ __html: t('hero_desc_2') }} />
             <p data-translate="hero_desc_3" dangerouslySetInnerHTML={{ __html: t('hero_desc_3') }} />
             <p data-translate="hero_desc_4" dangerouslySetInnerHTML={{ __html: t('hero_desc_4') }} />
+          </div>
+
+          <div className="sobre-mim-02-contacts">
+            <a href="https://wa.me/11975072008" target="_blank" rel="noopener noreferrer" className="contact-link-mini">
+              <i className="bi bi-whatsapp"></i>
+              <span>(11) 97507-2008</span>
+            </a>
+            <a href="mailto:matheus.abib.ma@gmail.com" className="contact-link-mini">
+              <i className="bi bi-envelope-fill"></i>
+              <span>matheus.abib.ma@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/matheusabib/" target="_blank" rel="noopener noreferrer" className="contact-link-mini">
+              <i className="bi bi-linkedin"></i>
+              <span>/in/matheusabib</span>
+            </a>
+            <a href="https://github.com/MatheusAbib" target="_blank" rel="noopener noreferrer" className="contact-link-mini">
+              <i className="bi bi-github"></i>
+              <span>/MatheusAbib</span>
+            </a>
+          </div>
+
+          <div className="hero-actions">
+            <div className="dropdown">
+              <button className="btn-primary" type="button" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                <i className="bi bi-download"></i>
+                <span data-translate="cv_button">{t('cv_button')}</span>
+              </button>
+              {isDropdownOpen && (
+                <ul className="dropdown-menu show">
+                  <li>
+                    <a className="dropdown-item" href="/assets/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                      <i className="bi bi-flag-br"></i>
+                      <span data-translate="cv_portuguese">{t('cv_portuguese')}</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/assets/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                      <i className="bi bi-flag-us"></i>
+                      <span data-translate="cv_english">{t('cv_english')}</span>
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </div>
+            <button className="btn-secondary" onClick={toggleLanguage}>
+              <i className="bi bi-translate"></i>
+              <span>PT/EN</span>
+            </button>
           </div>
         </div>
 

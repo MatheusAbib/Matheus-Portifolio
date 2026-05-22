@@ -18,25 +18,22 @@
   pointer-events: none;
 }
 
-.sobre-mim-02-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
-  position: relative;
-  z-index: 2;
-}
-
 .sobre-mim-02-left {
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
+
+
+
 
 .sobre-mim-02-title {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--fg) 0%, var(--green-soft) 100%);
+  background: var(--cream);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -44,11 +41,82 @@
   margin: 0;
 }
 
+.sobre-mim-02-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: var(--heading-font);
+  letter-spacing: 0.02em;
+  margin-top: 15px;
+}
+
+.sobre-mim-02-texto p {
+  color: var(--fg-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.sobre-mim-02-texto strong {
+  color: var(--accent-color);
+}
+
+.sobre-mim-02-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-link-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: var(--surface-2);
+  border-bottom: 2px solid var(--hairline);
+}
+
+.contact-link-mini:hover {
+  transform: translateX(5px);
+  border-color: var(--green-soft);
+  background: var(--surface-1);
+}
+
+.contact-link-mini i {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-1);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  color: var(--accent-color);
+  border: 1px solid var(--hairline);
+}
+
+.contact-link-mini:hover i {
+  background: var(--green-soft);
+  color: var(--contrast-color);
+  border-color: var(--green-deep);
+}
+
+.contact-link-mini span {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+
+.contact-link-mini:hover span {
+  color: var(--accent-color);
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 0.5rem;
 }
 
 .btn-primary {
@@ -122,76 +190,6 @@
   color: var(--accent-color);
 }
 
-.sobre-mim-02-contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-.contact-link-mini {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem 0.8rem;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-}
-
-.contact-link-mini:hover {
-  transform: translateX(5px);
-  border-color: var(--green-soft);
-  background: var(--surface-1);
-}
-
-.contact-link-mini i {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface-1);
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-  color: var(--accent-color);
-  border: 1px solid var(--hairline);
-}
-
-.contact-link-mini:hover i {
-  background: var(--green-soft);
-  color: var(--contrast-color);
-  border-color: var(--green-deep);
-}
-
-.contact-link-mini span {
-  font-size: 0.8rem;
-  color: var(--fg-muted);
-}
-
-.contact-link-mini:hover span {
-  color: var(--accent-color);
-}
-
-.sobre-mim-02-right {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.sobre-mim-02-right p {
-  color: var(--fg-muted);
-  font-size: 1rem;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.sobre-mim-02-right strong {
-  color: var(--accent-color);
-}
-
 .feature-grid-02 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -251,9 +249,50 @@
 
 .feature-card-02 p {
   color: var(--fg-muted);
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.6;
   margin: 0;
+  font-family: var(--heading-font);
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 769px) {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .sobre-mim-02 {
+    padding: 100px 0;
+  }
+
+  .sobre-mim-02-left {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    max-width: 100%;
+    align-items: start;
+  }
+
+  .sobre-mim-02-title {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .sobre-mim-02-texto {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+  }
+
+  .sobre-mim-02-contacts {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 82%;
+  }
+
+  .hero-actions {
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
 }
 
 @media (max-width: 992px) {
@@ -261,27 +300,9 @@
     padding: 80px 0;
   }
 
-  .sobre-mim-02-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .sobre-mim-02-left {
-    align-items: center;
-  }
-
-  .sobre-mim-02-contacts {
-    width: 100%;
-  }
-
   .feature-grid-02 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-
-  .sobre-mim-02-title {
-    font-size: 2.5rem;
   }
 }
 
@@ -292,10 +313,43 @@
 
   .sobre-mim-02-title {
     font-size: 2rem;
+    text-align: center;
   }
 
-  .sobre-mim-02-right p {
+  .sobre-mim-02-texto p {
     font-size: 0.9rem;
+  }
+
+  .sobre-mim-02-contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .contact-link-mini {
+    padding: 0.5rem;
+  }
+
+  .contact-link-mini span {
+    display: none;
+  }
+
+  .contact-link-mini i {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
   }
 
   .feature-card-02 {
@@ -314,23 +368,21 @@
   .feature-card-02 h3 {
     font-size: 1rem;
   }
+}
 
-  .contact-link-mini {
-    padding: 0.5rem 0.7rem;
-  }
-  
+@media (max-width: 480px) {
   .contact-link-mini i {
-    width: 28px;
-    height: 28px;
-    font-size: 0.85rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
-  
-  .contact-link-mini span {
-    font-size: 0.7rem;
+
+  .hero-actions {
+    gap: 0.5rem;
   }
 
   .btn-primary, .btn-secondary {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
   }
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import SectionLabel from './SectionLabel';
+
 
 const TechStack = () => {
   const frontend = [
@@ -42,6 +44,8 @@ const TechStack = () => {
       </div>
 
       <div className="container">
+        <SectionLabel sectionId="skills" />
+
         <div className="section-title" data-aos="fade-up">
           <h2 data-translate="tech_title">Hard Skills</h2>
         </div>

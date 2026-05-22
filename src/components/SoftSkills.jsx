@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SectionLabel from './SectionLabel';
 
 const SoftSkills = () => {
   const { t } = useTranslation();
@@ -82,6 +83,8 @@ const SoftSkills = () => {
       </div>
 
       <div className="container">
+        <SectionLabel sectionId="softskills" />
+        
         <div className="section-title">
           <h2 data-translate="softskills_title">{t('softskills_title')}</h2>
         </div>

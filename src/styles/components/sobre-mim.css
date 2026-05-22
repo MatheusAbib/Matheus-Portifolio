@@ -124,12 +124,14 @@
 }
 
 .hero-description-tagline {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--fg-muted);
-  line-height: 1.5;
+  line-height: 1.6;
   max-width: 500px;
   margin-top: 0.5rem;
+  font-family: var(--heading-font);
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 1200px) {

@@ -65,8 +65,10 @@
 
 .contact-info-header p {
   color: var(--fg-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.6;
+    font-family: var(--heading-font);
+    letter-spacing: 0.02em;
 }
 
 .contact-info-links {
@@ -203,10 +205,11 @@ textarea.form-input ~ .input-icon {
   background: var(--surface-2);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-md);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--fg);
   transition: all 0.3s ease;
-  font-family: inherit;
+    font-family: var(--heading-font);
+    letter-spacing: 0.02em;
 }
 
 .form-input:focus {
@@ -232,7 +235,8 @@ textarea.form-input:focus + .input-icon {
 textarea.form-input {
   resize: vertical;
   min-height: 120px;
-  font-family: inherit;
+    font-family: var(--heading-font);
+    letter-spacing: 0.02em;
   padding-top: 1rem;
 }
 

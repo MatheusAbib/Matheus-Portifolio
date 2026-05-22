@@ -1,5 +1,8 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import SectionLabel from './SectionLabel';
+
+
 
 const Tragetoria = () => {
   const { t } = useTranslation();
@@ -36,6 +39,8 @@ const Tragetoria = () => {
       </div>
 
       <div className="container">
+        <SectionLabel sectionId="jornada" />
+
         <div className="section-title" data-aos="fade-up">
           <h2 data-translate="journey_title">{t('journey_title')}</h2>
         </div>

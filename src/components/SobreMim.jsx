@@ -14,14 +14,15 @@ const SobreMim = () => {
           <div className="hero-greeting">{t('hero_title')}</div>
         </div>
         <div className="hero-info" data-aos="fade-up" data-aos-delay="200">
-<div className="hero-name-wrapper">
-  <span className="hero-prefix">{t('hero_prefix')}</span>
-  <h1 className="hero-name">{t('hero_name')}</h1>
-</div>
+          <div className="hero-name-wrapper">
+            <span className="hero-prefix">{t('hero_prefix')}</span>
+            <h1 className="hero-name">{t('hero_name')}</h1>
+          </div>
           <p className="hero-role">{t('hero_role')}</p>
           <div className="hero-tags" data-aos="fade-up" data-aos-delay="300">
             <span>Front-end</span>
             <span>Back-end</span>
+            <span>Métodos Ágeis</span>
             <span>UI/UX</span>
           </div>
             <p className="hero-description-tagline" data-aos="fade-up" data-aos-delay="400">
