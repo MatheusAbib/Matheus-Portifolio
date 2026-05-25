@@ -120,6 +120,8 @@ exp_2_text: "Participo ativamente de reuniões com clientes para levantamento de
     project_lamen: "Yummy Lamen - Restaurante de Lamen",
     project_tarot: "Cartas do Destino - Tarot Online",
     project_login: "Página de Login",
+    project_desfumo: "Desfumo - Controle de Consumo ao Tabagismo",
+
     
     project_floricultura_desc: "Site responsivo para floricultura com carrinho de compras e filtros",
     project_receitas_desc: "Sistema completo com cadastro de receitas, busca e categorias",
@@ -142,7 +144,8 @@ exp_2_text: "Participo ativamente de reuniões com clientes para levantamento de
     project_lamen_desc: "Site para restaurante especializado em lamen japonês",
     project_tarot_desc: "Plataforma de consultas de tarot dinâmico",
     project_login_desc: "Sistema de autenticação completo com Java Spring e TypeScript",
-    
+    project_desfumo_desc: "Aplicativo para controle de consumo ao tabagismo com acesso a UPAS e recursos de apoio psicológico",
+
     tech_title: "Hard Skills",
 
     category_site: "Site",

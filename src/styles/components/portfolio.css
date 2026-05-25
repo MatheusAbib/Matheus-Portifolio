@@ -209,7 +209,6 @@
   background: var(--green-soft);
   color: var(--contrast-color) !important;
   transform: translateY(-3px) scale(1.05);
-  border-color: var(--green-deep);
 }
 
 .portfolio-content {
@@ -322,6 +321,18 @@
   background: rgba(247, 223, 30, 0.08);
   color: #e6d33c;
   border: 1px solid rgba(247, 223, 30, 0.2);
+}
+
+.tag.flutter-tag {
+  background: rgba(2, 136, 209, 0.12);
+  color: #4fc3f7;
+  border: 1px solid rgba(2, 136, 209, 0.25);
+}
+
+.tag.dart-tag {
+  background: rgba(0, 180, 216, 0.12);
+  color: #61dafb;
+  border: 1px solid rgba(0, 180, 216, 0.25);
 }
 
 .tag.java-tag {

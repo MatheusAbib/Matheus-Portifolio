@@ -66,6 +66,20 @@ useEffect(() => {
   };
 }, []);
   const projects = [
+            {
+      id: 1,
+      title: "Desfumo - App de Controle de Consumo ao Tabagismo",
+      title_key: "project_desfumo",
+      description_key: "project_desfumo_desc",
+      category: "Site",
+      filter: "motion",
+      stack: "fullstack",
+      image: "/assets/img/portfolio/Desfumo.png",
+      github: "https://github.com/MatheusAbib/Tabagismo-Saude-Publica",
+      live: "https://tinyurl.com/desfumo",
+      tags: ["Flutter", "Dart", "CSS", "Node.Js", "MySQL"],
+      priority: 1
+    },
     {
       id: 2,
       title: "Dashboard de Vendas",
@@ -329,7 +343,9 @@ useEffect(() => {
       live: "https://matheusabib.github.io/Tela-de-links-Figma/",
       tags: ["HTML", "CSS", "JavaScript"],
       priority: 3
-    }
+    },
+    
+
   ];
 
    const filters = [
@@ -413,7 +429,9 @@ useEffect(() => {
       'Charts': 'chart-tag',
       'Authentication': 'auth-tag',
       'H2-Database': 'mysql-tag',
-      'Node.Js': 'js-tag'
+      'Node.Js': 'js-tag',
+      'Flutter': 'flutter-tag',
+      'Dart': 'dart-tag',
     };
     return tagClasses[tag] || 'js-tag';
   };
