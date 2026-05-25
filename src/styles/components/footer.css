@@ -261,14 +261,12 @@
 .footer-services ul li {
   display: flex;
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.85rem;
   padding: 0.6rem;
   background: var(--surface-2);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-md);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: var(--heading-font);
-    letter-spacing: 0.02em;
 }
 
 .footer-services ul li:hover {
@@ -296,7 +294,7 @@
 
 .footer-services ul li span {
   color: var(--fg-muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -309,7 +307,7 @@
 
 .newsletter-text {
   color: var(--fg-muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
     font-family: var(--heading-font);

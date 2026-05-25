@@ -97,7 +97,7 @@
 }
 
 .hero-role {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--fg-muted);
   border-left: 3px solid var(--green-soft);
@@ -109,7 +109,7 @@
 
 .hero-tags {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
   margin-bottom: 1rem;
 }
 
@@ -118,13 +118,13 @@
   font-weight: 500;
   color: var(--green-soft);
   background: rgba(167, 170, 99, 0.1);
-  padding: 0.25rem 0.8rem;
+  padding: 0.4rem 0.9rem;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(167, 170, 99, 0.3);
 }
 
 .hero-description-tagline {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: var(--fg-muted);
   line-height: 1.6;

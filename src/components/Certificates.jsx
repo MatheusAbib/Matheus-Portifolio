@@ -96,85 +96,83 @@ const Certificates = () => {
         </div>
       </div>
 
-      <div className="container">
-        <div className="certificates-sidebar-layout">
-          <div className="certificates-sidebar-list">
-            <button
-              className={`certificate-sidebar-item ${activeCert === 'webdev' ? 'active' : ''}`}
-              onClick={() => setActiveCert('webdev')}
-            >
-              <span className="cert-dot"></span>
-              <span data-translate="certificate_webdev_title">Desenvolvimento Web</span>
-            </button>
-            <button
-              className={`certificate-sidebar-item ${activeCert === 'powerbi' ? 'active' : ''}`}
-              onClick={() => setActiveCert('powerbi')}
-            >
-              <span className="cert-dot"></span>
-              <span data-translate="certificate_powerbi_title">Microsoft Power BI</span>
-            </button>
-            <button
-              className={`certificate-sidebar-item ${activeCert === 'database' ? 'active' : ''}`}
-              onClick={() => setActiveCert('database')}
-            >
-              <span className="cert-dot"></span>
-              <span data-translate="certificate_database_title">Banco de Dados SQL</span>
-            </button>
-            <button
-              className={`certificate-sidebar-item ${activeCert === 'logic' ? 'active' : ''}`}
-              onClick={() => setActiveCert('logic')}
-            >
-              <span className="cert-dot"></span>
-              <span data-translate="certificate_logic_title">Lógica de Programação</span>
-            </button>
-            <button
-              className={`certificate-sidebar-item ${activeCert === 'react' ? 'active' : ''}`}
-              onClick={() => setActiveCert('react')}
-            >
-              <span className="cert-dot"></span>
-              <span data-translate="certificate_react_title">React com JavaScript</span>
-            </button>
-            <button
-              className={`certificate-sidebar-item ${activeCert === 'java' ? 'active' : ''}`}
-              onClick={() => setActiveCert('java')}
-            >
-              <span className="cert-dot"></span>
-              <span data-translate="certificate_java_title">Java & Spring Boot</span>
+<div className="container">
+  <div className="certificates-sidebar-layout" data-aos="fade-up">
+    <div className="certificates-sidebar-list" data-aos="fade-right" data-aos-delay="100">
+      <button
+        className={`certificate-sidebar-item ${activeCert === 'webdev' ? 'active' : ''}`}
+        onClick={() => setActiveCert('webdev')}
+      >
+        <span className="cert-dot"></span>
+        <span data-translate="certificate_webdev_title">Desenvolvimento Web</span>
+      </button>
+      <button
+        className={`certificate-sidebar-item ${activeCert === 'powerbi' ? 'active' : ''}`}
+        onClick={() => setActiveCert('powerbi')}
+      >
+        <span className="cert-dot"></span>
+        <span data-translate="certificate_powerbi_title">Microsoft Power BI</span>
+      </button>
+      <button
+        className={`certificate-sidebar-item ${activeCert === 'database' ? 'active' : ''}`}
+        onClick={() => setActiveCert('database')}
+      >
+        <span className="cert-dot"></span>
+        <span data-translate="certificate_database_title">Banco de Dados SQL</span>
+      </button>
+      <button
+        className={`certificate-sidebar-item ${activeCert === 'logic' ? 'active' : ''}`}
+        onClick={() => setActiveCert('logic')}
+      >
+        <span className="cert-dot"></span>
+        <span data-translate="certificate_logic_title">Lógica de Programação</span>
+      </button>
+      <button
+        className={`certificate-sidebar-item ${activeCert === 'react' ? 'active' : ''}`}
+        onClick={() => setActiveCert('react')}
+      >
+        <span className="cert-dot"></span>
+        <span data-translate="certificate_react_title">React com JavaScript</span>
+      </button>
+      <button
+        className={`certificate-sidebar-item ${activeCert === 'java' ? 'active' : ''}`}
+        onClick={() => setActiveCert('java')}
+      >
+        <span className="cert-dot"></span>
+        <span data-translate="certificate_java_title">Java & Spring Boot</span>
+      </button>
+    </div>
+
+    <div className="certificates-sidebar-content" data-aos="fade-left" data-aos-delay="200">
+      <div className="cert-info">
+        <div className="cert-info-header">
+          <div className="cert-header-top">
+            <span className="cert-date">{currentCert.date}</span>
+            <button className="cert-view-btn" onClick={() => openImageSidebar(currentCert.image)}>
+              <i className="bi bi-eye"></i>
+              {t('cert_view')}
             </button>
           </div>
-
-<div className="certificates-sidebar-content">
-  <div className="cert-info">
-    <div className="cert-info-header">
-      <div className="cert-header-top">
-        <span className="cert-date">{currentCert.date}</span>
-        <button className="cert-view-btn" onClick={() => openImageSidebar(currentCert.image)}>
-          <i className="bi bi-eye"></i>
-          {t('cert_view')}
-        </button>
-      </div>
-      <h3 className="cert-info-title" data-translate={currentCert.title_key}>
-        {t(currentCert.title_key)}
-      </h3>
-    </div>
-    <p className="cert-info-institution">{currentCert.institution}</p>
-    <div className="cert-info-skills">
-      <span className="skills-label">Habilidades desenvolvidas</span>
-      <div className="skills-list">
-        {currentCert.skills.map((skill, idx) => (
-          <span key={idx} className="skill-pill">{skill}</span>
-        ))}
+          <h3 className="cert-info-title" data-translate={currentCert.title_key}>
+            {t(currentCert.title_key)}
+          </h3>
+        </div>
+        <p className="cert-info-institution">{currentCert.institution}</p>
+        <div className="cert-info-skills">
+          <span className="skills-label">Habilidades desenvolvidas</span>
+          <div className="skills-list">
+            {currentCert.skills.map((skill, idx) => (
+              <span key={idx} className="skill-pill">{skill}</span>
+            ))}
+          </div>
+        </div>
+        <p className="cert-info-description" data-translate={currentCert.description_key}>
+          {t(currentCert.description_key)}
+        </p>
       </div>
     </div>
-    <p className="cert-info-description" data-translate={currentCert.description_key}>
-      {t(currentCert.description_key)}
-    </p>
   </div>
 </div>
-        </div>
-      </div>
-
-      {/* Sidebar de imagem */}
       <div className={`image-sidebar-overlay ${isSidebarOpen ? 'active' : ''}`} onClick={closeImageSidebar}></div>
       <div className={`image-sidebar ${isSidebarOpen ? 'active' : ''}`}>
         <div className="image-sidebar-header">
