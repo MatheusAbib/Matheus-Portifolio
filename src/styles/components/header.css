@@ -340,7 +340,7 @@ body.mobile-nav-active .mobile-nav-toggle {
 .btn-translate {
   background: var(--surface-1);
   border: 1px solid var(--hairline);
-  color: var(--accent-color);
+  color: var(--fg-muted);
   padding: 8px 20px;
   border-radius: 40px;
   font-size: 14px;
