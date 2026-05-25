@@ -275,7 +275,7 @@
 }
 
 .portfolio-content p {
-  font-size: 0.8rem;
+  font-size: 0.8rem !important;
   color: var(--fg-muted);
   margin: 0 0 1rem 0;
   line-height: 1.6;

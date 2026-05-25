@@ -9,7 +9,6 @@ const SectionLabel = ({ sectionId }) => {
     'sobre-mim-02': t('sticky_about'),
     'jornada': t('sticky_trajectory'),
     'skills': t('sticky_hard_skills'),
-    'softskills': t('sticky_soft_skills'),
     'service-details': t('sticky_certificates'),
     'portfolio': t('sticky_projects'),
     'form-section': t('sticky_contact')

@@ -118,7 +118,6 @@ useEffect(() => {
       stack: "fullstack",
       image: "/assets/img/portfolio/Livraria-Online.png",
       github: "https://github.com/MatheusAbib/e-commerce-livraria",
-      live: "https://matheusabib.github.io/e-commerce-livraria/",
       tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"],
       priority: 1
     },
@@ -174,7 +173,6 @@ useEffect(() => {
       stack: "angular-badge",
       image: "/assets/img/portfolio/To-Do-List.png",
       github: "https://github.com/MatheusAbib/Gerenciador-de-Tarefas",
-      live: "https://matheusabib.github.io/Gerenciador-de-Tarefas/",
       tags: ["HTML", "SCSS", "TypeScript", "Docker"],
       priority: 1
     },

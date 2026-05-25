@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import Certificates from '../components/Certificates';
-import SoftSkills from '../components/SoftSkills';
 import TechStack from '../components/TechStack';
 import Portfolio from '../components/Portfolio';
 import ContactForm from '../components/ContactForm';
@@ -20,7 +19,6 @@ const Home = () => {
         <Tragetoria />
         <div id="skills">
           <TechStack />
-          <SoftSkills />
         </div>
         <Certificates />
         <Portfolio />

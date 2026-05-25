@@ -11,8 +11,7 @@ const translations = {
 
     sticky_about: "Sobre mim",
     sticky_trajectory: "Trajetória",
-    sticky_hard_skills: "Hard Skills",
-    sticky_soft_skills: "Soft Skills",
+    sticky_hard_skills: "Skills",
     sticky_certificates: "Certificados",
     sticky_projects: "Projetos",
     sticky_contact: "Contato",
@@ -23,7 +22,7 @@ hero_name: "Matheus Abib",
 hero_badge: "Inovação & Tecnologia",
 hero_desc_1: "Sou desenvolvedor de software há cerca de 4 anos, atuando com tecnologias <strong>front-end e back-end</strong> em projetos que vão desde sistemas para a Prefeitura de Mogi das Cruzes até aplicações próprias que publiquei e usei para aprender na prática.",
 hero_desc_2: "Sou formado em <strong>Análise e Desenvolvimento de Sistemas</strong> pela Fatec de Mogi das Cruzes (2023-2026), o lugar que me deu minha primeira base para meu crescimento como programador. Atualmente curso <strong>Engenharia de Software</strong> na Universidade de Mogi das Cruzes e meu objetivo é aperfeiçoar o que eu mais gosto: programar.",
-hero_desc_3: "Tenho experiência com <strong>metodologias ágeis</strong> como Scrum, levantamento de requisitos, controle de qualidade e documentação de sistemas. Busco unir minha prática profissional com minha formação acadêmica para entregar <strong>projetos bem estruturados</strong>, do levantamento de requisitos à entrega final.",
+hero_desc_3: "Tenho experiência com <strong>metodologias ágeis</strong> (Scrum, Kanban), levantamento de requisitos, controle de qualidade e documentação de sistemas. Busco unir minha prática profissional com minha formação acadêmica para entregar <strong>projetos bem estruturados</strong>, do levantamento de requisitos à entrega final.",
 hero_desc_4: "Aqui no meu <strong>portfólio</strong> você vai descobrir muito mais sobre mim!",
 hero_role: "Desenvolvedor de software",
 about_title: "Sobre mim",
@@ -34,7 +33,7 @@ photo_overlay: "Esse sou eu!",
 cv_portuguese: "Português",
 cv_english: "Inglês",
 
-feature_1_title: "Full Stack na Prática",
+feature_1_title: "Full Stack & Arquitetura",
 feature_1_text: "Desenvolvimento de ponta a ponta com Angular, React, Spring Boot e Node.js, criando soluções completas e funcionais.",
 
 feature_2_title: "Metodologias Ágeis & Requisitos",
@@ -51,7 +50,7 @@ exp_1_text: "Configurei e gerenciei chatbot corporativo para clientes, utilizand
 exp_2_title: "Prefeitura de Mogi das Cruzes",
 exp_2_role: "Estágio em Desenvolvimento de Software",
 exp_2_period: "2025 - Presente",
-exp_2_text: "Participo de reuniões com clientes para levantamento de requisitos. Desenvolvo sistemas com Angular, TypeScript e Spring Boot seguindo a metodologia Scrum, com entregas incrementais e melhorias contínuas baseadas no feedback dos clientes.",
+exp_2_text: "Participo ativamente de reuniões com clientes para levantamento de requisitos e validação de entregas. Desenvolvo sistemas com Angular, TypeScript e Spring Boot, seguindo metodologias ágeis (Scrum), com ciclos iterativos e melhorias contínuas baseadas em feedback.",
 
     webdev_tab_title: "Web Development",
     powerbi_tab_title: "Power BI",
@@ -69,14 +68,16 @@ exp_2_text: "Participo de reuniões com clientes para levantamento de requisitos
     certificate_ai_title: "Inteligência Artificial",
     certificate_java_title: "Java & Spring Boot",
     
-    certificate_webdev_desc: "Curso especializado em desenvolvimento web front-end, abordando as tecnologias fundamentais para construção de interfaces modernas e responsivas.",
-    certificate_powerbi_desc: "Curso completo de Microsoft Power BI para Business Intelligence e Data Science, abordando desde conceitos básicos até técnicas avançadas de análise e visualização de dados.",
-    certificate_react_desc: "Curso focado no desenvolvimento de aplicações web dinâmicas com a biblioteca React e JavaScript moderno.",
+    certificate_webdev_desc: "Curso de Desenvolvimento Web Front-end com foco em HTML5, CSS3, JavaScript, Bootstrap e AJAX, abordando tecnologias fundamentais para interfaces modernas e responsivas",
+    certificate_powerbi_desc: "Curso completo de Microsoft Power BI para Business Intelligence e Data Science, abordando com ênfase em DAX, Power Query, modelagem de dados e dashboards interativos.",
+    certificate_react_desc: "Curso de React com JavaScript abordando componentes, hooks, consumo de API REST e práticas modernas de desenvolvimento front-end.",
     certificate_database_desc: "Curso completo de banco de dados relacional, abordando desde conceitos fundamentais até consultas avançadas em SQL, modelagem de dados e otimização de queries.",
     certificate_logic_desc: "Curso introdutório à lógica de programação através do programa GFT Start #6, focado em fundamentos de algoritmos e estruturas de dados utilizando JavaScript.",
     certificate_ai_desc: "Imersão em Inteligência Artificial 2ª edição, abordando desde conceitos fundamentais até técnicas avançadas de machine learning e deep learning com Python.",
     certificate_java_desc: "Minicurso especializado em Java e Spring Boot, abordando desde fundamentos da linguagem até desenvolvimento de APIs RESTful com boas práticas e padrões de projeto.",
     
+    cert_view: "Visualizar Certificado",
+
     certificate_skills_developed: "Habilidades desenvolvidas",
     
     services_title: "Serviços",
@@ -89,24 +90,7 @@ exp_2_text: "Participo de reuniões com clientes para levantamento de requisitos
     service_6_title: "Power BI e Análise de Dados",
     service_6_text: "Estruturo informações em dashboards interativos, facilitando análise e tomada de decisões estratégicas.",
     see_button: "Saiba mais",
-    
-    softskills_title: "Soft Skills",
-    softskill_level: "Nível de experiência",
-    softskill_proactivity_title: "Proatividade",
-    softskill_proactivity_desc: "Busco soluções antes que se tornem problemas, sempre pensando à frente para otimizar processos.",
-    softskill_proactivity_item1: "Iniciativa em novos projetos",
-    softskill_proactivity_item2: "Solução antecipada de problemas",
-    softskill_proactivity_item3: "Melhoria contínua de processos",
-    softskill_learning_title: "Aprendizado Contínuo",
-    softskill_learning_desc: "Estudo constantemente atualização em tecnologias e metodologias do mercado atual.",
-    softskill_learning_item1: "Curiosidade intelectual",
-    softskill_learning_item2: "Adaptação a novas tecnologias",
-    softskill_learning_item3: "Compartilhamento de conhecimento",
-    softskill_adaptability_title: "Adaptabilidade",
-    softskill_adaptability_desc: "Me ajusto rapidamente a mudanças e ambientes, mantendo a qualidade do trabalho.",
-    softskill_adaptability_item1: "Flexibilidade em diferentes cenários",
-    softskill_adaptability_item2: "Resiliência frente a mudanças",
-    softskill_adaptability_item3: "Capacidade de pivotar quando necessário",
+  
     
     portfolio_title: "Meus Projetos",
     filter_all: "Todos",
@@ -378,7 +362,7 @@ exp_2_text: "Participo de reuniões com clientes para levantamento de requisitos
 
     sticky_about: "About me",
     sticky_trajectory: "Trajectory",
-    sticky_hard_skills: "Hard Skills",
+    sticky_hard_skills: "Skills",
     sticky_soft_skills: "Soft Skills",
     sticky_certificates: "Certificates",
     sticky_projects: "Projects",
@@ -403,12 +387,14 @@ hero_desc_4: "Here in my <strong>portfolio</strong> you'll discover much more ab
     hero_role: "Software developer",
 about_title: "About me",
     
-    feature_1_title: "Practical Attitude",
-    feature_1_text: "Focus on applying my knowledge to solve real problems and deliver immediate value.",
-    feature_2_title: "Code & Experience",
-    feature_2_text: "Responsive design, clean code, and obsessive attention to detail for the best user experience.",
-    feature_3_title: "Collaboration",
-    feature_3_text: "Proactive communication to align the team and deliver projects efficiently and seamlessly.",
+feature_1_title: "Full Stack & Architecture",
+feature_1_text: "End-to-end development with Angular, React, Spring Boot and Node.js, creating complete and functional solutions.",
+
+feature_2_title: "Agile Methodologies & Requirements",
+feature_2_text: "Experience with Scrum and direct client requirements gathering to deliver solutions aligned with real needs.",
+
+feature_3_title: "UI/UX & Data",
+feature_3_text: "Prototype creation in Figma and data visualization with Power BI, combining design, quality and decision making.",
     
 journey_title: "Professional Trajectory",
 exp_1_title: "BootComp Tecnologia",
@@ -444,6 +430,8 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
     certificate_ai_desc: "Artificial Intelligence Immersion 2nd edition, covering from fundamental concepts to advanced machine learning and deep learning techniques with Python.",
     certificate_java_desc: "Specialized mini-course in Java and Spring Boot, covering from language fundamentals to RESTful API development with best practices and design patterns.",
     
+    cert_view: "View Certificate",
+
     certificate_skills_developed: "Developed Skills",
     
     services_title: "Services",
@@ -456,24 +444,7 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
     service_6_title: "Power BI and Data Analysis",
     service_6_text: "I structure complex information in interactive dashboards, facilitating analysis and strategic decision making.",
     see_button: "Learn More",
-    
-    softskills_title: "Soft Skills",
-    softskill_level: "Experience level",
-    softskill_proactivity_title: "Proactivity",
-    softskill_proactivity_desc: "I anticipate needs and seek solutions before they become problems, always thinking ahead to optimize processes.",
-    softskill_proactivity_item1: "Initiative in new projects",
-    softskill_proactivity_item2: "Early problem solving",
-    softskill_proactivity_item3: "Continuous process improvement",
-    softskill_learning_title: "Continuous Learning",
-    softskill_learning_desc: "I constantly seek updates in technologies and methodologies, staying ahead of market trends.",
-    softskill_learning_item1: "Intellectual curiosity",
-    softskill_learning_item2: "Adaptation to new technologies",
-    softskill_learning_item3: "Knowledge sharing",
-    softskill_adaptability_title: "Adaptability",
-    softskill_adaptability_desc: "I quickly adapt to changes, dynamic environments and new requirements while maintaining work quality.",
-    softskill_adaptability_item1: "Flexibility in different scenarios",
-    softskill_adaptability_item2: "Resilience to change",
-    softskill_adaptability_item3: "Ability to pivot when necessary",
+  
     
     portfolio_title: "My Projects",
     filter_all: "All",

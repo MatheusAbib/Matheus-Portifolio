@@ -86,7 +86,7 @@
 }
 
 .hero-name {
-  font-size: 6rem;
+  font-size: 5.5rem;
   font-weight: 800;
   line-height: 1.1;
   margin: 0;
@@ -97,7 +97,7 @@
 }
 
 .hero-role {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: var(--fg-muted);
   border-left: 3px solid var(--green-soft);
@@ -124,7 +124,7 @@
 }
 
 .hero-description-tagline {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--fg-muted);
   line-height: 1.6;

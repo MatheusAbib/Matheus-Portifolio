@@ -165,7 +165,7 @@
 
 .how-we-work .process-item .step-content p {
   color: var(--fg-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.6;
   font-family: var(--heading-font);
   letter-spacing: 0.02em;
@@ -307,7 +307,7 @@
   }
 
   .how-we-work .process-item .step-content p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   .how-we-work {
     padding: 40px 0;
@@ -330,13 +330,6 @@
     font-size: 1.4rem;
   }
 
-  .how-we-work .process-item .step-content h3 {
-    font-size: 1.1rem;
-  }
-
-  .how-we-work .process-item .step-content p {
-    font-size: 0.85rem;
-  }
 
   .section-waves-enhanced {
     opacity: 0.05;
