@@ -23,7 +23,7 @@
   gap: 3rem;
   position: relative;
   z-index: 2;
-  background: var(--surface-1);
+  background: #bba77315;
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--hairline);
