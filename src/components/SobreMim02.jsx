@@ -57,13 +57,13 @@ const SobreMim02 = () => {
               {isDropdownOpen && (
                 <ul className="dropdown-menu show">
                   <li>
-                    <a className="dropdown-item" href="/assets/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                    <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
                       <i className="bi bi-flag-br"></i>
                       <span data-translate="cv_portuguese">{t('cv_portuguese')}</span>
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/assets/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                    <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
                       <i className="bi bi-flag-us"></i>
                       <span data-translate="cv_english">{t('cv_english')}</span>
                     </a>
