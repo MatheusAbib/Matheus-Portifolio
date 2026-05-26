@@ -160,11 +160,13 @@ const Certificates = () => {
         <p className="cert-info-institution">{currentCert.institution}</p>
         <div className="cert-info-skills">
           <span className="skills-label">Habilidades desenvolvidas</span>
-          <div className="skills-list">
-            {currentCert.skills.map((skill, idx) => (
-              <span key={idx} className="skill-pill">{skill}</span>
-            ))}
-          </div>
+<div className="skills-list">
+  {currentCert.skills.map((skill, idx) => (
+    <span key={idx} className="skill-pill" data-skill={skill}>
+      {skill}
+    </span>
+  ))}
+</div>
         </div>
         <p className="cert-info-description" data-translate={currentCert.description_key}>
           {t(currentCert.description_key)}
