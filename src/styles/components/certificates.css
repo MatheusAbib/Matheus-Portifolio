@@ -3,7 +3,6 @@
   overflow: hidden;
   padding: 80px 0;
   background-color: var(--ink);
-  border-bottom: 1px solid var(--hairline);
 }
 
 .service-details::before {
