@@ -1,8 +1,6 @@
 .service-details {
+  background-color: #2f2f2a;
   position: relative;
-  overflow: hidden;
-  padding: 80px 0;
-  background-color: var(--ink);
 }
 
 .service-details::before {
@@ -12,11 +10,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--green-soft);
-  opacity: 0.03;
+  background: var(--green-deep);
+  opacity: 0.05;
   z-index: 0;
   pointer-events: none;
 }
+
 
 .certificates-sidebar-layout {
   display: flex;

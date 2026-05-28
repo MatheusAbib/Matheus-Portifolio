@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+
+ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import SectionLabel from './SectionLabel';
-
 
 const Portfolio = () => {
   const { t } = useTranslation();
@@ -11,68 +11,87 @@ const Portfolio = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
 
-useEffect(() => {
-  let velocity = 0;
-  let animationId = null;
-  let targetScroll = 0;
-  let isScrolling = false;
+  useEffect(() => {
+    let velocity = 0;
+    let animationId = null;
+    let targetScroll = 0;
+    let isScrolling = false;
 
-  const wrapper = scrollWrapperRef.current;
+    const wrapper = scrollWrapperRef.current;
 
-  const smoothScroll = () => {
-    if (!wrapper) return;
-    
-    if (Math.abs(velocity) < 0.1 && !isScrolling) {
-      animationId = null;
-      return;
-    }
-    
-    velocity *= 0.92;
-    wrapper.scrollLeft += velocity;
-    
-    animationId = requestAnimationFrame(smoothScroll);
-  };
-
-  const handleWheel = (e) => {
-    if (wrapper && wrapper.contains(e.target)) {
-      e.preventDefault();
-      e.stopPropagation();
+    const smoothScroll = () => {
+      if (!wrapper) return;
       
-      velocity += e.deltaY * 0.8;
-      targetScroll = wrapper.scrollLeft + e.deltaY * 2;
-      isScrolling = true;
+      if (Math.abs(velocity) < 0.1 && !isScrolling) {
+        animationId = null;
+        return;
+      }
       
-      if (animationId) cancelAnimationFrame(animationId);
+      velocity *= 0.92;
+      wrapper.scrollLeft += velocity;
+      
       animationId = requestAnimationFrame(smoothScroll);
-      
-      setTimeout(() => {
-        isScrolling = false;
-      }, 150);
-      
-      return false;
-    }
-  };
+    };
 
-  if (wrapper) {
-    wrapper.addEventListener('wheel', handleWheel, { passive: false });
-  }
+    const handleWheel = (e) => {
+      if (wrapper && wrapper.contains(e.target)) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        velocity += e.deltaY * 0.8;
+        targetScroll = wrapper.scrollLeft + e.deltaY * 2;
+        isScrolling = true;
+        
+        if (animationId) cancelAnimationFrame(animationId);
+        animationId = requestAnimationFrame(smoothScroll);
+        
+        setTimeout(() => {
+          isScrolling = false;
+        }, 150);
+        
+        return false;
+      }
+    };
 
-  return () => {
+    const checkArrows = () => {
+      if (wrapper) {
+        setShowLeftArrow(wrapper.scrollLeft > 20);
+        setShowRightArrow(wrapper.scrollLeft < wrapper.scrollWidth - wrapper.clientWidth - 20);
+      }
+    };
+
     if (wrapper) {
-      wrapper.removeEventListener('wheel', handleWheel);
+      wrapper.addEventListener('wheel', handleWheel, { passive: false });
+      wrapper.addEventListener('scroll', checkArrows);
+      setTimeout(checkArrows, 100);
     }
-    if (animationId) cancelAnimationFrame(animationId);
+
+    return () => {
+      if (wrapper) {
+        wrapper.removeEventListener('wheel', handleWheel);
+        wrapper.removeEventListener('scroll', checkArrows);
+      }
+      if (animationId) cancelAnimationFrame(animationId);
+    };
+  }, []);
+
+  const scrollBy = (amount) => {
+    if (scrollWrapperRef.current) {
+      scrollWrapperRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+    }
   };
-}, []);
+
   const projects = [
-            {
+    {
       id: 1,
       title: "Desfumo - App de Controle de Consumo ao Tabagismo",
       title_key: "project_desfumo",
       description_key: "project_desfumo_desc",
       category: "Site",
-      filter: "motion",
+      filter: "web",
       stack: "fullstack",
       image: "/assets/img/portfolio/Desfumo.png",
       github: "https://github.com/MatheusAbib/Tabagismo-Saude-Publica",
@@ -136,7 +155,7 @@ useEffect(() => {
       priority: 1
     },
     {
-      id: 8,
+      id: 6,
       title: "CRUD - Formulário de Cadastro",
       title_key: "project_crud",
       description_key: "project_crud_desc",
@@ -150,7 +169,7 @@ useEffect(() => {
       priority: 1
     },
     {
-      id: 18,
+      id: 7,
       title: "Cartas do Destino - Tarot Online",
       title_key: "project_tarot",
       description_key: "project_tarot_desc",
@@ -164,7 +183,7 @@ useEffect(() => {
       priority: 1
     },
     {
-      id: 19,
+      id: 8,
       title: "Página de Login",
       title_key: "project_login",
       description_key: "project_login_desc",
@@ -178,7 +197,7 @@ useEffect(() => {
       priority: 1
     },
     {
-      id: 15,
+      id: 9,
       title: "To Do List",
       title_key: "project_todolist",
       description_key: "project_todolist_desc",
@@ -191,7 +210,7 @@ useEffect(() => {
       priority: 1
     },
     {
-      id: 1,
+      id: 10,
       title: "Floricultura Web",
       title_key: "project_floricultura",
       description_key: "project_floricultura_desc",
@@ -205,7 +224,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 13,
+      id: 11,
       title: "Dona Sucos - Loja de Sucos",
       title_key: "project_sucos",
       description_key: "project_sucos_desc",
@@ -219,7 +238,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 17,
+      id: 12,
       title: "Yummy Lamen - Restaurante de Lamen",
       title_key: "project_lamen",
       description_key: "project_lamen_desc",
@@ -233,11 +252,11 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 6,
+      id: 13,
       title: "Calendário",
       title_key: "project_calendario",
       description_key: "project_calendario_desc",
-      category: "ferramenta",
+      category: "Ferramenta",
       filter: "motion",
       stack: "frontend-only",
       image: "/assets/img/portfolio/Calendario.png",
@@ -247,7 +266,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 11,
+      id: 14,
       title: "Editor de Imagem",
       title_key: "project_editor",
       description_key: "project_editor_desc",
@@ -261,7 +280,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 12,
+      id: 15,
       title: "Bloco de Notas",
       title_key: "project_notas",
       description_key: "project_notas_desc",
@@ -275,7 +294,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 7,
+      id: 16,
       title: "Jogo da Forca",
       title_key: "project_forca",
       description_key: "project_forca_desc",
@@ -289,7 +308,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 10,
+      id: 17,
       title: "UNO",
       title_key: "project_uno",
       description_key: "project_uno_desc",
@@ -303,7 +322,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 14,
+      id: 18,
       title: "Tocador de Música",
       title_key: "project_musica",
       description_key: "project_musica_desc",
@@ -317,7 +336,7 @@ useEffect(() => {
       priority: 2
     },
     {
-      id: 9,
+      id: 19,
       title: "Meus Dashboards Power BI",
       title_key: "project_dashboards",
       description_key: "project_dashboards_desc",
@@ -331,7 +350,7 @@ useEffect(() => {
       priority: 3
     },
     {
-      id: 16,
+      id: 20,
       title: "Meus Projetos Figma",
       title_key: "project_figma_links",
       description_key: "project_figma_links_desc",
@@ -344,11 +363,9 @@ useEffect(() => {
       tags: ["HTML", "CSS", "JavaScript"],
       priority: 3
     },
-    
-
   ];
 
-   const filters = [
+  const filters = [
     { key: '*', label: 'filter_all' },
     { key: 'web', label: 'filter_websites' },
     { key: 'motion', label: 'filter_tools' },
@@ -378,7 +395,6 @@ useEffect(() => {
       const timeoutId = setTimeout(() => {
         setVisibleProjects(filteredProjects.map(p => p.id));
       }, 300);
-      
       return () => clearTimeout(timeoutId);
     }
   }, [activeFilter, filteredProjects]);
@@ -447,8 +463,7 @@ useEffect(() => {
       </div>
 
       <div className="container">
-                        <SectionLabel sectionId="portfolio" />
-
+        <SectionLabel sectionId="portfolio" />
         <div className="section-title" data-aos="fade-up">
           <h2 data-translate="portfolio_title">{t('portfolio_title')}</h2>
         </div>
@@ -470,6 +485,12 @@ useEffect(() => {
         </div>
 
         <div className="portfolio-scroll-container">
+          {showLeftArrow && (
+            <button className="scroll-arrow scroll-arrow-left" onClick={() => scrollBy(-400)}>
+              <i className="bi bi-chevron-left"></i>
+            </button>
+          )}
+          
           <div 
             ref={scrollWrapperRef}
             className="portfolio-scroll-wrapper"
@@ -516,43 +537,50 @@ useEffect(() => {
                         </div>
                       </div>
                     </div>
-<div className="portfolio-content">
-<div className="category-wrapper">
-  <span className="category">
-    <span className={`category-dot ${project.filter}`}></span>
-    {project.category === "Site" && t('category_site')}
-    {project.category === "Ferramenta" && t('category_ferramenta')}
-    {project.category === "Diversão" && t('category_diversao')}
-    {project.category === "Links" && t('category_links')}
-  </span>
-  <div className="stack-simple">
-    <i className="bi bi-code-slash"></i>
-    <span>
-      {project.stack.includes('angular-badge') ? 'Angular' : 
-       project.stack.includes('fullstack') ? 'Full Stack' : 'Front-end'}
-    </span>
-  </div>
-</div>
-  <h3 data-translate={project.title_key}>{t(project.title_key)}</h3>
-  <div className="tech-tags">
-    {project.tags.slice(0, 4).map((tag, idx) => (
-      <span key={idx} className={`tag ${getTagClass(tag)}`}>
-        {tag}
-      </span>
-    ))}
-  </div>
-  <p data-translate={project.description_key}>{t(project.description_key)}</p>
-</div>
+                    <div className="portfolio-content">
+                      <div className="category-wrapper">
+                        <span className="category">
+                          <span className={`category-dot ${project.filter}`}></span>
+                          {project.category === "Site" && t('category_site')}
+                          {project.category === "Ferramenta" && t('category_ferramenta')}
+                          {project.category === "Diversão" && t('category_diversao')}
+                          {project.category === "Links" && t('category_links')}
+                        </span>
+                        <div className="stack-simple">
+                          <i className="bi bi-code-slash"></i>
+                          <span>
+                            {project.stack.includes('angular-badge') ? 'Angular' : 
+                             project.stack.includes('fullstack') ? 'Full Stack' : 'Front-end'}
+                          </span>
+                        </div>
+                      </div>
+                      <h3 data-translate={project.title_key}>{t(project.title_key)}</h3>
+                      <div className="tech-tags">
+                        {project.tags.slice(0, 4).map((tag, idx) => (
+                          <span key={idx} className={`tag ${getTagClass(tag)}`}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <p data-translate={project.description_key}>{t(project.description_key)}</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="scroll-hint">
-            <i className="bi bi-arrow-left-right"></i>
-            <span>Role ou arraste para ver mais projetos</span>
-          </div>
+          
+          {showRightArrow && (
+            <button className="scroll-arrow scroll-arrow-right" onClick={() => scrollBy(400)}>
+              <i className="bi bi-chevron-right"></i>
+            </button>
+          )}
         </div>
+        
+<div className="scroll-hint">
+  <i className="bi bi-arrow-left-right"></i>
+  <span data-translate="scroll_hint">{t('scroll_hint')}</span>
+</div>
       </div>
     </section>
   );

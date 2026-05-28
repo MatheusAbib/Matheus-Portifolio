@@ -146,6 +146,8 @@ exp_2_text: "Participo ativamente de reuniões com clientes para levantamento de
     project_login_desc: "Sistema de autenticação completo com Java Spring e TypeScript",
     project_desfumo_desc: "Aplicativo para controle de consumo ao tabagismo com acesso a UPAS e recursos de apoio psicológico",
 
+    scroll_hint: "Role ou use as setas para ver mais projetos",
+
     tech_title: "Hard Skills",
 
     category_site: "Site",
@@ -456,6 +458,7 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
     filter_tools: "Tools",
     filter_fun: "Fun",
     
+    project_desfumo: "Desfumo - Smoking Cessation Control App",
     project_floricultura: "Floriculture Website",
     project_receitas: "Recipe Journal",
     project_dashboard: "Sales Dashboard",
@@ -499,7 +502,10 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
     project_lamen_desc: "Website for restaurant specialized in Japanese ramen",
     project_tarot_desc: "Dynamic tarot consultation platform",
     project_login_desc: "Complete authentication system with Java Spring and TypeScript",
-    
+    project_desfumo_desc: "App for smoking consumption control with access to UPAS and psychological support resources",
+
+    scroll_hint: "Scroll or use the arrows to see more projects",
+
     tech_title: "Hard Skills",
       frontend_title: "Front-end",
       frameworks_title: "Frameworks", 

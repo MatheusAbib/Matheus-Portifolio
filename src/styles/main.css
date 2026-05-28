@@ -10,12 +10,6 @@
 @import './components/contact-form.css';
 @import './components/footer.css';
 
-body {
-  background-color: var(--background-color);
-  color: var(--default-color);
-  font-family: var(--default-font);
-}
-
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -32,10 +26,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
 }
 
+body {
+  background: var(--ink);
+}
+
 section, .section {
   scroll-margin-top: 98px;
   overflow: hidden;
   position: relative;
+  border-bottom: none;
 }
 
 .section-title {
@@ -86,7 +85,6 @@ section, .section {
   margin: 0 auto !important;
   width: 100% !important;
 }
-
 
 .container-narrow {
   max-width: 1250px;
@@ -217,4 +215,3 @@ section, .section {
     padding: 0 5%;
   }
 }
-

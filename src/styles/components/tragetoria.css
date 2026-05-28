@@ -1,11 +1,20 @@
 .how-we-work {
+  background-color: #242421;
   position: relative;
-  background-color: #2f2f2a;
-  overflow: hidden;
-  padding: 80px 0;
-  border-bottom: 1px solid var(--hairline);
 }
 
+.how-we-work::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--green-soft);
+  opacity: 0.04;
+  z-index: 0;
+  pointer-events: none;
+}
 .section-waves-enhanced {
   position: absolute;
   top: 0;

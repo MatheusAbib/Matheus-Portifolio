@@ -1,8 +1,6 @@
 .contact-section {
+  background-color: #1e1e1c;
   position: relative;
-  overflow: hidden;
-  padding: 80px 0;
-  background-color: var(--ink);
   border-bottom: 1px solid var(--hairline);
 }
 
@@ -13,8 +11,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 70%, var(--green-soft), transparent 60%);
-  opacity: 0.05;
+  background: var(--green-soft);
+  opacity: 0.02;
   z-index: 0;
   pointer-events: none;
 }

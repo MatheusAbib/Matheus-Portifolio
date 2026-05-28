@@ -1,8 +1,7 @@
 .sobre-mim-02 {
+
+  background-color: #1c1c1a;
   position: relative;
-  padding: 100px 0;
-  background-color: var(--ink);
-  border-bottom: 1px solid var(--hairline);
 }
 
 .sobre-mim-02::before {
@@ -26,9 +25,6 @@
   gap: 2rem;
   margin-bottom: 4rem;
 }
-
-
-
 
 .sobre-mim-02-title {
   font-size: 3.5rem;
