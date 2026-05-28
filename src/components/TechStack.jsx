@@ -16,7 +16,6 @@ const TechStack = () => {
     { name: "Flutter", isIconify: true, iconifyIcon: "logos:flutter" },
     { name: "Spring Boot", isIconify: true, iconifyIcon: "logos:spring-icon" },
     { icon: "", name: "Express", isIconify: true, iconifyIcon: "simple-icons:express" },
-
   ];
 
   const backend = [
