@@ -1,7 +1,6 @@
 import React from 'react';
 import SectionLabel from './SectionLabel';
 
-
 const TechStack = () => {
   const frontend = [
     { icon: "fab fa-html5", name: "HTML", color: "#E34F26" },
@@ -14,14 +13,15 @@ const TechStack = () => {
   const frameworks = [
     { icon: "fab fa-react", name: "React", color: "#61DAFB" },
     { icon: "fab fa-angular", name: "Angular", color: "#DD0031" },
-    { name: "Flutter", isIconify: true, iconifyIcon: "logos:flutter" }
+    { name: "Flutter", isIconify: true, iconifyIcon: "logos:flutter" },
+    { name: "Spring Boot", isIconify: true, iconifyIcon: "logos:spring-icon" },
+    { icon: "", name: "Express", isIconify: true, iconifyIcon: "simple-icons:express" },
+
   ];
 
   const backend = [
     { icon: "fab fa-java", name: "Java", color: "#f89820" },
     { icon: "fab fa-node", name: "Node.js", color: "#339933" },
-    { icon: "", name: "Express", isIconify: true, iconifyIcon: "simple-icons:express" },
-    { icon: "fab fa-php", name: "PHP", color: "#777BB3" },
     { icon: "", name: "MySQL", isIconify: true, iconifyIcon: "logos:mysql" }
   ];
 
@@ -29,7 +29,6 @@ const TechStack = () => {
     { icon: "fab fa-figma", name: "Figma", color: "#f2371eff" },
     { icon: "bi-kanban", name: "Trello", color: "#0079BF" },
     { icon: "bi-graph-up", name: "Power BI", color: "#F2C811" },
-    { icon: "fab fa-git-alt", name: "Git", color: "#F05032" },
     { icon: "fab fa-github", name: "GitHub", color: "#181717" }
   ];
 

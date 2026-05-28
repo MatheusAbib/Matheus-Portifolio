@@ -121,7 +121,6 @@ exp_2_text: "Participo ativamente de reuniões com clientes para levantamento de
     project_tarot: "Cartas do Destino - Tarot Online",
     project_login: "Página de Login",
     project_desfumo: "Desfumo - Controle de Consumo ao Tabagismo",
-
     
 project_floricultura_desc: "E-commerce de flores com carrinho de compras, filtros por categoria e sistema de busca integrado.",
 project_receitas_desc: "Aplicação completa de receitas com cadastro, edição, busca por ingredientes e categorias organizadas.",
