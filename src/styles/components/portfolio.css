@@ -515,7 +515,7 @@
   }
 
   .portfolio-filters {
-    gap: 0.5rem;
+    gap: 10px !important; 
   }
 
   .portfolio-filters li {
