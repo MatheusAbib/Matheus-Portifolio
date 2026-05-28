@@ -22,11 +22,11 @@
   gap: 3rem;
   position: relative;
   z-index: 2;
-  background: #bba77315;
+  background: var(--surface-1);
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--hairline);
-  padding: 2rem;
+  padding: 3rem 2rem 3rem;
 }
 
 .certificates-sidebar-list {
