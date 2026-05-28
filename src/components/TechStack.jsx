@@ -20,7 +20,7 @@ const TechStack = () => {
   const backend = [
     { icon: "fab fa-java", name: "Java", color: "#f89820" },
     { icon: "fab fa-node", name: "Node.js", color: "#339933" },
-    { icon: "", name: "Express.js", isIconify: true, iconifyIcon: "simple-icons:express" },
+    { icon: "", name: "Express", isIconify: true, iconifyIcon: "simple-icons:express" },
     { icon: "fab fa-php", name: "PHP", color: "#777BB3" },
     { icon: "", name: "MySQL", isIconify: true, iconifyIcon: "logos:mysql" }
   ];

@@ -147,6 +147,8 @@ exp_2_text: "Participo ativamente de reuniões com clientes para levantamento de
     project_desfumo_desc: "Aplicativo para controle de consumo ao tabagismo com acesso a UPAS e recursos de apoio psicológico",
 
     scroll_hint: "Role ou use as setas para ver mais projetos",
+    show_more: "Ver",
+    show_less: "Ver menos",
 
     tech_title: "Hard Skills",
 
@@ -505,6 +507,9 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
     project_desfumo_desc: "App for smoking consumption control with access to UPAS and psychological support resources",
 
     scroll_hint: "Scroll or use the arrows to see more projects",
+
+    show_more: "See",
+    show_less: "Show less",
 
     tech_title: "Hard Skills",
       frontend_title: "Front-end",

@@ -13,6 +13,8 @@ const Portfolio = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [showAllTags, setShowAllTags] = useState({});
+
 
   useEffect(() => {
     let velocity = 0;
@@ -96,7 +98,7 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Desfumo.png",
       github: "https://github.com/MatheusAbib/Tabagismo-Saude-Publica",
       live: "https://tinyurl.com/desfumo",
-      tags: ["Flutter", "Dart", "CSS", "Node.Js", "MySQL"],
+      tags: ["Flutter", "Dart", "Node.js", "CSS", "Express", "MySQL"],
       priority: 1
     },
     {
@@ -110,7 +112,7 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Dashboard.png",
       github: "https://github.com/MatheusAbib/Dashboard-Vendas",
       live: "https://tinyurl.com/vendas-dashboard",
-      tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL", "Charts"],
+      tags: ["HTML", "CSS", "Node.Js", "Express", "Java", "MySQL", "Charts"],
       priority: 1
     },
     {
@@ -124,7 +126,7 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Jornal-de-Receitas.png",
       github: "https://github.com/MatheusAbib/Jornal-de-Receitas",
       live: "https://jornal-de-receitas-b6ti.onrender.com",
-      tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"],
+      tags: ["HTML", "CSS", "Java", "JavaScript", "MySQL"],
       priority: 1
     },
     {
@@ -138,7 +140,7 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Organizador-Arquivos.png",
       github: "https://github.com/MatheusAbib/Organizador-de-Arquivos",
       live: "https://tinyurl.com/organizador-arquivos",
-      tags: ["HTML", "CSS", "JavaScript", "Node.Js", "MySQL"],
+      tags: ["HTML", "CSS", "Node.Js", "Express", "MySQL"],
       priority: 1
     },
     {
@@ -151,7 +153,7 @@ const Portfolio = () => {
       stack: "fullstack",
       image: "/assets/img/portfolio/Livraria-Online.png",
       github: "https://github.com/MatheusAbib/e-commerce-livraria",
-      tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"],
+      tags: ["HTML", "CSS",  "Java", "Node.Js", "Express", "MySQL"],
       priority: 1
     },
     {
@@ -165,7 +167,7 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/CRUD-Cadastro.png",
       github: "https://github.com/MatheusAbib/Formulario-Cliente",
       live: "https://tinyurl.com/crud-correios",
-      tags: ["HTML", "CSS", "JavaScript", "Java", "MySQL"],
+      tags: ["HTML", "CSS", "Java", "JavaScript", "MySQL"],
       priority: 1
     },
     {
@@ -179,7 +181,7 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Tarot-Online.png",
       github: "https://github.com/MatheusAbib/Consulta-de-Tarot",
       live: "https://matheusabib.github.io/Consulta-de-Tarot/",
-      tags: ["HTML", "CSS", "JavaScript", "PHP", "Docker"],
+      tags: ["HTML", "CSS", "PHP", "JavaScript", "Docker"],
       priority: 1
     },
     {
@@ -193,7 +195,7 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Pagina-de-Login.png",
       github: "https://github.com/MatheusAbib/Pagina-de-login",
       live: "https://pagina-de-login.up.railway.app/login",
-      tags: ["HTML", "SCSS", "Java", "TypeScript", "H2-Database", "Authentication"],
+      tags: ["HTML", "SCSS", "TypeScript", "Java", "H2-Database", "Authentication"],
       priority: 1
     },
     {
@@ -555,13 +557,21 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <h3 data-translate={project.title_key}>{t(project.title_key)}</h3>
-                      <div className="tech-tags">
-                        {project.tags.slice(0, 4).map((tag, idx) => (
-                          <span key={idx} className={`tag ${getTagClass(tag)}`}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+<div className="tech-tags">
+  {project.tags.slice(0, showAllTags[project.id] ? project.tags.length : 3).map((tag, idx) => (
+    <span key={idx} className={`tag ${getTagClass(tag)}`}>
+      {tag}
+    </span>
+  ))}
+  {project.tags.length > 3 && (
+    <button 
+      className="show-more-tags"
+      onClick={() => setShowAllTags(prev => ({...prev, [project.id]: !prev[project.id]}))}
+    >
+      {showAllTags[project.id] ? t('show_less') : `${t('show_more')} +${project.tags.length - 3} `}
+    </button>
+  )}
+</div>
                       <p data-translate={project.description_key}>{t(project.description_key)}</p>
                     </div>
                   </div>
