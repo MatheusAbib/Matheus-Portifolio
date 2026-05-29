@@ -27,6 +27,7 @@ const SobreMim02 = () => {
             <p data-translate="hero_desc_2" dangerouslySetInnerHTML={{ __html: t('hero_desc_2') }} />
             <p data-translate="hero_desc_3" dangerouslySetInnerHTML={{ __html: t('hero_desc_3') }} />
             <p data-translate="hero_desc_4" dangerouslySetInnerHTML={{ __html: t('hero_desc_4') }} />
+            
           </div>
 
           <div className="sobre-mim-02-contacts">

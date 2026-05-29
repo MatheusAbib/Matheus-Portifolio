@@ -252,6 +252,10 @@
   letter-spacing: 0.02em;
 }
 
+.feature-card-02 p strong{
+  color: var(--green-soft);
+}
+
 @media (min-width: 769px) {
   .container {
     max-width: 1600px;
