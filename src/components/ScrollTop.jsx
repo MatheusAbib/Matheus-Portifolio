@@ -6,12 +6,15 @@ const ScrollTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      const scrollHeight = document.documentElement.scrollHeight;
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollTop = window.pageYOffset;
-      const isNearBottom = scrollTop + clientHeight >= scrollHeight - 100;
+      const projetosSection = document.getElementById('service-details');
       
-      setIsVisible(isNearBottom);
+      if (projetosSection) {
+        const projetosTop = projetosSection.offsetTop;
+        const scrollPosition = window.pageYOffset;
+        const projetosVisible = scrollPosition >= projetosTop - 200;
+        
+        setIsVisible(projetosVisible);
+      }
     };
 
     const handleMobileMenuChange = () => {
@@ -45,7 +48,7 @@ const ScrollTop = () => {
     <a 
       href="#" 
       id="scroll-top" 
-      className={`scroll-top d-flex align-items-center justify-content-center active`}
+      className="scroll-top d-flex align-items-center justify-content-center active"
       onClick={scrollToTop}
     >
       <i className="bi bi-arrow-up-short"></i>

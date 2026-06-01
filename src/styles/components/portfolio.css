@@ -98,6 +98,7 @@
   background: var(--green-soft);
   color: var(--contrast-color);
   transform: translateY(-50%) scale(1.05);
+  
 }
 
 .scroll-arrow-left {
