@@ -26,7 +26,7 @@ hero_desc_3: "Tenho experiência com <strong>Scrum e Kanban</strong> (sprints, b
 hero_desc_4: "Aqui no meu portfólio você vai descobrir muito mais sobre mim!",
 hero_role: "Desenvolvedor de software",
 about_title: "Sobre mim",
-hero_tagline: "Crio softwares completos, dos requisitos à entrega, unindo tecnologia, design e tomada de decisão.",
+hero_tagline: "Crio softwares completos, dos requisitos à entrega, unindo minhas habilidades em tecnologia, design e tomada de decisão.",
 
 cv_button: "Download CV",
 photo_overlay: "Esse sou eu!",
@@ -44,21 +44,13 @@ feature_3_text: "<strong>Crio</strong> protótipos no Figma e visualização de 
 
 journey_title: "Trajetória Profissional",
 exp_1_title: "BootComp Tecnologia",
-exp_1_role: "Estágio em Suporte",
+exp_1_role: "Suporte Técnico",
 exp_1_period: "2023 - 2024",
-exp_1_text: "Configurei e gerenciei chatbot corporativo para clientes, utilizando Trello para organização das tarefas. Prestei suporte remoto via AnyDesk e mantive contato direto com clientes para levantamento de requisitos e resolução de demandas.",
+exp_1_text: "Configuração e testes de qualidade (QA) em sistemas de chatbot corporativos. Atendimento direto a clientes para levantamento de necessidades e resolução de problemas técnicos. Organização do fluxo de tarefas com Trello, garantindo prazos e qualidade.",
 exp_2_title: "Prefeitura de Mogi das Cruzes",
 exp_2_role: "Estágio em Desenvolvimento de Software",
 exp_2_period: "2025 - Presente",
-exp_2_text: "Levantamento de requisitos e validação de entregas com clientes. Desenvolvimento com Angular, TypeScript e Spring Boot seguindo Scrum. Iterações curtas e melhorias contínuas baseadas em feedback.",
-    webdev_tab_title: "Web Development",
-    powerbi_tab_title: "Power BI",
-    react_tab_title: "React",
-    database_tab_title: "Banco de Dados",
-    logic_tab_title: "Lógica de Programação",
-    ai_tab_title: "Inteligência Artificial",
-    java_tab_title: "Java",
-    
+exp_2_text: "Desenvolvimento de aplicações para as secretarias de Saúde e Esportes, substituindo processos arcaicos por sistemas digitalizados. Utilização de Angular, TypeScript e Spring Boot. Levantamento de requisitos diretamente com os setores internos para garantir soluções alinhadas às necessidades reais.",
     certificate_webdev_title: "Desenvolvimento Web",
     certificate_powerbi_title: "Microsoft Power BI",
     certificate_react_title: "React com JavaScript",
@@ -78,17 +70,6 @@ exp_2_text: "Levantamento de requisitos e validação de entregas com clientes. 
     cert_view: "Visualizar Certificado",
 
     certificate_skills_developed: "Habilidades desenvolvidas",
-    
-    services_title: "Serviços",
-    service_1_title: "Desenvolvimento Full Stack",
-    service_1_text: "Eu crio softwares modernas, performáticas e precisas para usuários.",
-    service_3_title: "UI/UX Design e Protótipos",
-    service_3_text: "Crio layouts funcionais para o usuário, utilizando Figma, Canva e boas práticas de design UI/UX.",
-    service_4_title: "Engenharia de Software",
-    service_4_text: "Análise de requisitos, metodologias ágeis, controle de qualidade e documentação para sistemas.",
-    service_6_title: "Power BI e Análise de Dados",
-    service_6_text: "Estruturo informações em dashboards interativos, facilitando análise e tomada de decisões estratégicas.",
-    see_button: "Saiba mais",
   
     
     portfolio_title: "Meus Projetos",
@@ -97,6 +78,9 @@ exp_2_text: "Levantamento de requisitos e validação de entregas com clientes. 
     filter_links: "Tela de Links",
     filter_tools: "Ferramentas",
     filter_fun: "Diversão",
+
+    projects_count: "projetos",
+
     
     project_floricultura: "Floricultura Web",
     project_receitas: "Jornal de Receitas",
@@ -401,15 +385,15 @@ feature_2_text: "<strong>I work</strong> directly with clients to gather require
 feature_3_title: "UI/UX & Data",
 feature_3_text: "<strong>I create</strong> prototypes in Figma and data visualizations with Power BI, combining design and decision-making.",
     
-journey_title: "Professional Trajectory",
+journey_title: "Professional Journey",
 exp_1_title: "BootComp Tecnologia",
-exp_1_role: "Support Intern",
+exp_1_role: "Technical Support",
 exp_1_period: "2023 - 2024",
-exp_1_text: "Configured and managed corporate chatbots for clients, using Trello for task organization. Provided remote support via AnyDesk and maintained direct contact with clients for requirements gathering and issue resolution.",
+exp_1_text: "Configuration and QA testing of corporate chatbot systems. Direct client support for requirements gathering and technical issue resolution. Task organization using Trello, ensuring deadlines and quality.",
 exp_2_title: "Mogi das Cruzes City Hall",
 exp_2_role: "Software Development Intern",
 exp_2_period: "2025 - Present",
-exp_2_text: "Participate in client meetings for requirements gathering. Develop systems with Angular, TypeScript and Spring Boot following Scrum methodology, with incremental deliveries and continuous improvements based on client feedback.",
+exp_2_text: "Development of applications for the Health and Sports departments, replacing manual paper and Excel processes with digital systems. Using Angular, TypeScript and Spring Boot. Requirements gathering directly with internal departments to ensure solutions aligned with real needs.",
     
     webdev_tab_title: "Web Development",
     powerbi_tab_title: "Power BI",
@@ -438,19 +422,7 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
     cert_view: "View Certificate",
 
     certificate_skills_developed: "Developed Skills",
-    
-    services_title: "Services",
-    service_1_title: "Full Stack Development",
-    service_1_text: "I create modern, high-performance, and precise web interfaces for users.",
-    service_3_title: "UI/UX Design and Prototypes",
-    service_3_text: "I create functional and intuitive layouts for users, using Figma, Canva and good UI/UX design practices.",
-    service_4_title: "Software Engineering",
-    service_4_text: "I perform continuous testing and evaluations to ensure systems function according to specifications and meet quality standards.",
-    service_6_title: "Power BI and Data Analysis",
-    service_6_text: "I structure complex information in interactive dashboards, facilitating analysis and strategic decision making.",
-    see_button: "Learn More",
   
-    
     portfolio_title: "My Projects",
     filter_all: "All",
     filter_websites: "Websites",
@@ -458,6 +430,9 @@ exp_2_text: "Participate in client meetings for requirements gathering. Develop 
     filter_tools: "Tools",
     filter_fun: "Fun",
     
+    projects_count: "projects",
+
+
     project_desfumo: "Desfumo - Smoking Cessation Control App",
     project_floricultura: "Floriculture Website",
     project_receitas: "Recipe Journal",

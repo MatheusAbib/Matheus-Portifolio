@@ -54,17 +54,19 @@ const SobreMim02 = () => {
               <button className="btn-primary" type="button" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                 <i className="bi bi-download"></i>
                 <span data-translate="cv_button">{t('cv_button')}</span>
+                <i className="bi bi-chevron-down"></i>
+
               </button>
               {isDropdownOpen && (
                 <ul className="dropdown-menu show">
                   <li>
-                    <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                    <a className="dropdown-item" href="/assets/CV/matheus_abib_curriculo.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
                       <i className="bi bi-flag-br"></i>
                       <span data-translate="cv_portuguese">{t('cv_portuguese')}</span>
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/assets/CV/Matheus-Abib-Resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
+                    <a className="dropdown-item" href="/assets/CV/matheus_abib_resume.pdf" target="_blank" onClick={() => setIsDropdownOpen(false)}>
                       <i className="bi bi-flag-us"></i>
                       <span data-translate="cv_english">{t('cv_english')}</span>
                     </a>

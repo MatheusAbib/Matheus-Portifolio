@@ -226,20 +226,6 @@ const Portfolio = () => {
       priority: 2
     },
     {
-      id: 11,
-      title: "Dona Sucos - Loja de Sucos",
-      title_key: "project_sucos",
-      description_key: "project_sucos_desc",
-      category: "Site",
-      filter: "web",
-      stack: "frontend-only",
-      image: "/assets/img/portfolio/Dona-Sucos.png",
-      github: "https://github.com/MatheusAbib/Loja-de-Sucos",
-      live: "https://matheusabib.github.io/Loja-de-Sucos/",
-      tags: ["HTML", "CSS", "JavaScript"],
-      priority: 2
-    },
-    {
       id: 12,
       title: "Yummy Lamen - Restaurante de Lamen",
       title_key: "project_lamen",
@@ -292,20 +278,6 @@ const Portfolio = () => {
       image: "/assets/img/portfolio/Bloco-de-Notas.png",
       github: "https://github.com/MatheusAbib/Bloco-de-Notas",
       live: "https://matheusabib.github.io/Bloco-de-Notas/",
-      tags: ["HTML", "CSS", "JavaScript"],
-      priority: 2
-    },
-    {
-      id: 16,
-      title: "Jogo da Forca",
-      title_key: "project_forca",
-      description_key: "project_forca_desc",
-      category: "Diversão",
-      filter: "brand",
-      stack: "frontend-only",
-      image: "/assets/img/portfolio/Jogo-da-Forca.png",
-      github: "https://github.com/MatheusAbib/Jogo-da-Forca",
-      live: "https://matheusabib.github.io/Jogo-da-Forca/",
       tags: ["HTML", "CSS", "JavaScript"],
       priority: 2
     },
@@ -468,6 +440,7 @@ const Portfolio = () => {
         <SectionLabel sectionId="portfolio" />
         <div className="section-title" data-aos="fade-up">
           <h2 data-translate="portfolio_title">{t('portfolio_title')}</h2>
+          <span className="projects-count">{filteredProjects.length} {t('projects_count')}</span>
         </div>
       </div>
 

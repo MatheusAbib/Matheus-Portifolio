@@ -2,13 +2,14 @@ import React from 'react';
 import SectionLabel from './SectionLabel';
 
 const TechStack = () => {
-  const frontend = [
-    { icon: "fab fa-html5", name: "HTML", color: "#E34F26" },
-    { icon: "fab fa-css3-alt", name: "CSS", color: "#1572B6" },
-    { name: "SCSS", isIconify: true, iconifyIcon: "logos:sass" },
-    { icon: "fab fa-js-square", name: "JavaScript", color: "#F7DF1E" },
-    { icon: "devicon-typescript-plain", name: "TypeScript", color: "#3178C6" }
-  ];
+const frontend = [
+  { icon: "fab fa-html5", name: "HTML", color: "#E34F26" },
+  { icon: "fab fa-css3-alt", name: "CSS", color: "#1572B6" },
+  { name: "SCSS", isIconify: true, iconifyIcon: "logos:sass" },
+  { icon: "fab fa-js-square", name: "JavaScript", color: "#F7DF1E" },
+  { icon: "devicon-typescript-plain", name: "TypeScript", color: "#3178C6" },
+  { name: "Dart", isIconify: true, iconifyIcon: "logos:dart" }
+];
 
   const frameworks = [
     { icon: "fab fa-react", name: "React", color: "#61DAFB" },
@@ -19,10 +20,11 @@ const TechStack = () => {
   ];
 
   const backend = [
-    { icon: "fab fa-java", name: "Java", color: "#f89820" },
+    { icon: "devicon-java-plain", name: "Java", color: "#f89820" },
     { icon: "fab fa-node", name: "Node.js", color: "#339933" },
     { icon: "", name: "MySQL", isIconify: true, iconifyIcon: "logos:mysql" }
   ];
+
 
   const tools = [
     { icon: "fab fa-figma", name: "Figma", color: "#f2371eff" },

@@ -7,7 +7,8 @@ const Header = () => {
   const [mobileNavClosing, setMobileNavClosing] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [clickedItem, setClickedItem] = useState(null);
-  const { t, toggleLanguage } = useTranslation();
+  const [isCvDropdownOpen, setIsCvDropdownOpen] = useState(false);
+  const { t, toggleLanguage, currentLanguage } = useTranslation();
 
 const navItems = [
   { href: '#sobre-mim-02', textKey: 'menu_about', id: 'sobre-mim-02' },
@@ -17,6 +18,7 @@ const navItems = [
   { href: '#portfolio', textKey: 'menu_projects', id: 'portfolio' },
   { href: '#form-section', textKey: 'menu_contact', id: 'form-section' },
 ];
+
   useEffect(() => {
     if (mobileNavActive) {
       document.body.classList.add('mobile-nav-active');
@@ -70,6 +72,17 @@ const navItems = [
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, [navItems]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isCvDropdownOpen && !event.target.closest('.cv-dropdown')) {
+        setIsCvDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isCvDropdownOpen]);
 
   const closeMobileNav = () => {
     setMobileNavClosing(true);
@@ -144,10 +157,10 @@ const navItems = [
                     }}
                     className={`d-flex align-items-center ${activeSection === item.id ? 'active' : ''} ${clickedItem === item.id ? 'clicked' : ''}`}
                   >
-{activeSection === item.id && (
-  <span className="active-dot me-2"></span>
-)}
-<span data-translate={item.textKey}>{t(item.textKey)}</span>
+                    {activeSection === item.id && (
+                      <span className="active-dot me-2"></span>
+                    )}
+                    <span data-translate={item.textKey}>{t(item.textKey)}</span>
                   </a>
                 </li>
               ))}
@@ -171,7 +184,45 @@ const navItems = [
             ></i>
           </nav>
 
-          <div className="d-none d-xl-block">
+          <div className="d-none d-xl-flex align-items-center gap-2">
+            <div className="cv-dropdown">
+              <button 
+                className="btn-cv"
+                type="button" 
+                onClick={() => setIsCvDropdownOpen(!isCvDropdownOpen)}
+              >
+                <i className="bi bi-download"></i>
+                <span>CV</span>
+                <i className="bi bi-chevron-down"></i>
+              </button>
+              {isCvDropdownOpen && (
+                <ul className="dropdown-menu-cv show">
+                  <li>
+                    <a 
+                      className="dropdown-item-cv" 
+                      href="/assets/CV/matheus_abib_curriculo.pdf" 
+                      target="_blank" 
+                      onClick={() => setIsCvDropdownOpen(false)}
+                    >
+                      <i className="bi bi-flag-br"></i>
+                      <span data-translate="cv_portuguese">{t('cv_portuguese')}</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      className="dropdown-item-cv" 
+                      href="/assets/CV/matheus_abib_resume.pdf" 
+                      target="_blank" 
+                      onClick={() => setIsCvDropdownOpen(false)}
+                    >
+                      <i className="bi bi-flag-us"></i>
+                      <span data-translate="cv_english">{t('cv_english')}</span>
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </div>
+
             <button 
               className="btn-translate" 
               id="translateBtnDesktop" 
