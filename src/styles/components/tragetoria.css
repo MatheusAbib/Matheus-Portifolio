@@ -272,7 +272,6 @@
     gap: 1.5rem;
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
   .how-we-work .process-item .step-number {
