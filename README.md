@@ -59,4 +59,4 @@
 
 ---
 
-🔹 **Última atualização:** Maio de 2026
+🔹 **Última atualização:** Junho de 2026
