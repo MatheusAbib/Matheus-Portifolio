@@ -3,11 +3,9 @@
   position: relative;
 }
 
-
 #portfolio .section-title {
   margin-bottom: 2rem !important;
 }
-
 
 #portfolio::before {
   content: '';
@@ -116,14 +114,14 @@
 
 .portfolio-horizontal-grid {
   display: flex;
-  gap: 1rem;
-  padding: 0.75rem 0.5rem;
+  gap: 1.5rem;
+  padding: 1rem 0;
   min-width: min-content;
 }
 
 .portfolio-item {
-  flex: 0 0 280px;
-  max-width: 75vw;
+  flex: 0 0 85vw;
+  max-width: 85vw;
   opacity: 0;
   transform: translateX(30px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -154,7 +152,7 @@
 
 .portfolio-image {
   position: relative;
-  height: 180px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -163,9 +161,9 @@
   margin-top: 0.5rem;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--fg-muted);
-  background: var(--surface-2);
-  padding: 0.35rem 1rem;
+  color: var(--cream);
+  background: var(--green-deep);
+  padding: 0.35rem 1.5rem;
   border-radius: 15px;
 }
 
@@ -209,15 +207,15 @@
 }
 
 .portfolio-actions a {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   backdrop-filter: blur(10px);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--fg-muted) !important;
   transition: all 0.2s ease;
 }
@@ -237,7 +235,7 @@
 .portfolio-actions a:nth-child(3) { transition-delay: 0.15s; }
 
 .portfolio-content {
-  padding: 1rem;
+  padding: 1.25rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -287,7 +285,7 @@
 }
 
 .portfolio-content h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 0 0 0.5rem 0;
   font-weight: 700;
   color: var(--fg);
@@ -299,12 +297,12 @@
 }
 
 .portfolio-content p {
-  font-size: 0.7rem !important;
+  font-size: 0.85rem !important;
   color: var(--fg-muted);
   margin: 0 0 1rem 0;
   line-height: 1.6;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-family: var(--heading-font);
@@ -502,157 +500,146 @@
 }
 
 @media (min-width: 576px) {
-  .portfolio-horizontal-grid {
-    gap: 1rem;
-    padding: 0.75rem 0.75rem;
-  }
   .portfolio-item {
-    flex: 0 0 300px;
+    flex: 0 0 380px;
+    max-width: 380px;
   }
   .portfolio-image {
-    height: 200px;
+    height: 240px;
   }
-  .portfolio-content {
-    padding: 1rem;
+  .portfolio-horizontal-grid {
+    gap: 1.5rem;
+    padding: 1rem 0;
   }
 }
 
 @media (min-width: 768px) {
-  .portfolio-horizontal-grid {
-    gap: 1.25rem;
-    padding: 1rem 1rem;
-  }
   .portfolio-item {
-    flex: 0 0 340px;
+    flex: 0 0 460px;
+    max-width: 460px;
   }
   .portfolio-image {
-    height: 220px;
+    height: 280px;
   }
-  .portfolio-content h3 {
-    font-size: 1.1rem;
-  }
-  .portfolio-content p {
-    font-size: 0.75rem !important;
-    -webkit-line-clamp: 4;
+  .portfolio-horizontal-grid {
+    gap: 1.5rem;
+    padding: 1rem 0;
   }
 }
 
 @media (min-width: 992px) {
-  .portfolio-horizontal-grid {
-    gap: 1.5rem;
-    padding: 1rem 1.5rem;
-  }
   .portfolio-item {
-    flex: 0 0 420px;
+    flex: 0 0 540px;
+    max-width: 540px;
   }
   .portfolio-image {
-    height: 260px;
+    height: 320px;
   }
-  .portfolio-content {
-    padding: 1.25rem;
+  .portfolio-horizontal-grid {
+    gap: 1.75rem;
+    padding: 1rem 0;
   }
   .portfolio-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .portfolio-content p {
-    font-size: 0.8rem !important;
-    -webkit-line-clamp: 4;
+    font-size: 0.9rem !important;
+  }
+  .portfolio-actions a {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .portfolio-horizontal-grid {
-    gap: 1.75rem;
-    padding: 1rem 2rem;
-  }
   .portfolio-item {
-    flex: 0 0 500px;
+    flex: 0 0 620px;
+    max-width: 620px;
   }
   .portfolio-image {
-    height: 300px;
+    height: 360px;
   }
-  .portfolio-content h3 {
-    font-size: 1.3rem;
-  }
-
-  .portfolio-actions a {
-    width: 44px;
-    height: 44px;
-    font-size: 1.3rem;
+  .portfolio-horizontal-grid {
+    gap: 2rem;
+    padding: 1rem 0;
   }
 }
 
 @media (min-width: 1400px) {
-  .portfolio-horizontal-grid {
-    gap: 2rem;
-    padding: 1rem 2.5rem;
-  }
   .portfolio-item {
-    flex: 0 0 560px;
+    flex: 0 0 700px;
+    max-width: 680px;
   }
   .portfolio-image {
-    height: 350px;
+    height: 400px;
+  }
+  .portfolio-horizontal-grid {
+    gap: 1.5rem;
+    padding: 1rem 0;
   }
 }
 
 @media (min-width: 1600px) {
-  .portfolio-horizontal-grid {
-    gap: 2.5rem;
-    padding: 1rem 0rem;
-  }
   .portfolio-item {
-    flex: 0 0 650px;
+    flex: 0 0 800px;
+    max-width: 800px;
+  }
+  .portfolio-image {
+    height: 440px;
+  }
+  .portfolio-horizontal-grid {
+    gap: 2rem;
+    padding: 1rem 0;
   }
 }
 
 @media (max-width: 575px) {
   .portfolio-horizontal-grid {
-    gap: 0.75rem;
-    padding: 0.5rem;
+    gap: 1rem;
+    padding: 0.75rem 0;
   }
   .portfolio-item {
-    flex: 0 0 260px;
+    flex: 0 0 85vw;
+    max-width: 85vw;
   }
   .portfolio-image {
-    height: 160px;
+    height: 220px;
   }
   .portfolio-content {
-    padding: 0.75rem;
+    padding: 1rem;
   }
   .portfolio-content h3 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .portfolio-content p {
-    font-size: 0.65rem !important;
+    font-size: 0.8rem !important;
     -webkit-line-clamp: 4;
   }
   .tech-tags .tag {
-    padding: 0.1rem 0.4rem;
-    font-size: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.55rem;
   }
   .show-more-tags {
     padding: 0.2rem 0.6rem;
     font-size: 0.6rem;
   }
   .stack-simple {
-    font-size: 0.55rem;
-    padding: 0.1rem 0.5rem;
+    font-size: 0.6rem;
+    padding: 0.15rem 0.5rem;
   }
   .portfolio-actions a {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
   }
   .scroll-hint {
     margin-top: 1rem;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
 }
 
 @media (max-width: 768px) {
-  .scroll-arrow {
-    display: none;
-  }
   .portfolio-overlay {
     opacity: 1;
     visibility: visible;
@@ -671,6 +658,9 @@
   }
   .tech-tags {
     gap: 0.3rem;
+  }
+  .projects-count {
+    display: none;
   }
 }
 
