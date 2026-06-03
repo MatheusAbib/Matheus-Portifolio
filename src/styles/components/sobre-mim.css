@@ -72,11 +72,10 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-bottom: 0.5rem;
 }
 
 .hero-prefix {
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 800;
   background: var(--green-soft);
   -webkit-background-clip: text;
