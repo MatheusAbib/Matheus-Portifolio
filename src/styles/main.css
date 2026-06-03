@@ -29,6 +29,11 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background: var(--ink);
 }
+.footer-about .logo .sitename{
+    font-family: var(--heading-font);
+
+}
+
 
 section, .section {
   scroll-margin-top: 98px;
