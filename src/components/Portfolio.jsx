@@ -153,6 +153,7 @@ const Portfolio = () => {
       stack: "fullstack",
       image: "/assets/img/portfolio/Livraria-Online.png",
       github: "https://github.com/MatheusAbib/e-commerce-livraria",
+      live: "https://tinyurl.com/livrariaonline",
       tags: ["HTML", "CSS",  "Java", "Node.Js", "Express", "MySQL"],
       priority: 1
     },
@@ -168,20 +169,6 @@ const Portfolio = () => {
       github: "https://github.com/MatheusAbib/Formulario-Cliente",
       live: "https://tinyurl.com/crud-correios",
       tags: ["HTML", "CSS", "Java", "JavaScript", "MySQL"],
-      priority: 1
-    },
-    {
-      id: 7,
-      title: "Cartas do Destino - Tarot Online",
-      title_key: "project_tarot",
-      description_key: "project_tarot_desc",
-      category: "Site",
-      filter: "web",
-      stack: "fullstack",
-      image: "/assets/img/portfolio/Tarot-Online.png",
-      github: "https://github.com/MatheusAbib/Consulta-de-Tarot",
-      live: "https://matheusabib.github.io/Consulta-de-Tarot/",
-      tags: ["HTML", "CSS", "PHP", "JavaScript", "Docker"],
       priority: 1
     },
     {
